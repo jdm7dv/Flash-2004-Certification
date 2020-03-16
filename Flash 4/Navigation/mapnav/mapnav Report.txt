@@ -1,0 +1,35 @@
+Movie Report
+------------
+
+Frame #    Frame Bytes    Total Bytes    Page
+-------    -----------    -----------    ---------------
+    1         63717          63717        Scene 1
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Scene 1                           0             0
+
+Symbol                     Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Button                           39             0
+compass                         110             0
+directionbuttns                   0             0
+dummy                             0             0
+fz                             1475           111
+map                            2745          1284
+navigtr                        1508           123
+needle                           79             0
+schiebemovie                      0             0
+schieber                        148             0
+skala                           461             0
+triggr                           35             0
+x                                 0             0
+y                                 0             0
+zoom                              0             0
+zoomruler                         0             0
+
+Font Name                  Bytes       Characters
+-----------------------    --------    -----------
+Lucida Sans                   273        ENSW
+Futurist                     1798         abcdeghilorstuyz
+FuturistExtrabold            5070        -.ABCDEFGHIKLMNOPRSTUWZabcdefghimnorsuÖÜßü

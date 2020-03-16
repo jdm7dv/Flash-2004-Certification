@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0056)http://www.enetserve.com/tutorials/tutorial3dmotion.html -->
+<HTML><HEAD><TITLE>3D Motion with Macromedia Flash</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2014.210" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<H1>3D Motion with Macromedia Flash</H1>
+<P>by <FONT size=+1><A href="mailto:bill@networkserv.com">Bill Tagliaferro</A>, 
+ENS Inc.</FONT> <BR>[<A 
+href="http://www.enetserve.com/tutorials/3dmotion.zip">Download Source</A>]</P>
+<P>This tutorial is based on early work from <A 
+href="http://www.fortunecity.com/rivendell/krondor/531/home.html">Colin Ln</A>, 
+who has been a very good source of help and inspiration. In many ways he stands 
+out as a Flash Master.</P><A href="javascript:void(0)" 
+onclick='window.open("soccerball.html","Example", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,copyhistory=0,width=340,height=480"); '>
+<H3>Preview (with mouse control)</A> &nbsp;&nbsp;&nbsp;&nbsp; <A 
+href="javascript:void(0)" 
+onclick='window.open("soccerkeys.html","Example", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,copyhistory=0,width=340,height=300"); '>Preview 
+(with key control)</H3></A>
+<P>This tutorial was produced as a result of numerous requests for an 
+explanation of how to do the 2D and 3D motion seen in my "Tell Target" tutorial. 
+It has many application, especially for those who want to use Flash for games. 
+The motion itself can be controlled from within the movie or from a Javascript 
+routine outside the movie. Both will be covered here. The real strength of this 
+technique is in the Javascript interaction. <I>If you're uncomfortable with 
+Javascript this tutorial may not be for you.</I> </P>
+<P>Prerequisites for this tutorial are:</P>
+<UL>
+  <LI>A good understanding on the use of the <A 
+  href="http://www.enetserve.com/tutorials">"Tell Target"</A> action(s). 
+  <LI>A working knowledge of Javascript 1.2. 
+  <LI>A working knowledge of Flash 3. </LI></UL>
+<HR>
+
+<H2>Step-by-step</H2>
+<H3>Overview:</H3>
+<OL>
+  <LI>Make your object symbol (soccer ball in this case).<BR>
+  <LI>Make your X (left and right) motion clip.<BR>
+  <LI>Make your Y (up and down) motion clip.<BR>
+  <LI>Make your Z (in and out of the page) motion clip.<BR>
+  <LI>Inserting the final clip into the main scene and initializing it. 
+  <LI>Write the Javascript and HTML code.<BR><BR></LI></OL>
+<P>Within each of these steps there will be several other steps that must be 
+taken. It will be easier to follow all of the steps as we go through them, if 
+you keep in mind the four major steps. What you will then see is a pattern 
+emerging for each axis motion. This pattern is very important because it can be 
+used in a number of very interesting applications. </P>
+<OL type=1><I><B>
+  <LI>Making your object symbol.</B></I><BR>
+  <P>To learn this technique I suggest that you pick a very simple object to 
+  move in 3-dimensions. One of the famous (or infamous) spheres should do fine. 
+  I've used a soccer ball just for fun.</P>
+  <OL type=i>
+    <LI>Make a sphere by drawing a circle and giving it a radial fill. 
+    <LI>Once you have your sphere, select it and make a symbol out of it by 
+    going to <B>Insert|Create Symbol</B> or just press <B>F8</B>. 
+    <LI>When the symbol properties box pops up, make sure that you give your 
+    symbol a name and click the graphic behavior.<BR><IMG align=right border=0 
+    height=178 src="3D Motion with Macromedia Flash_files/symprop.jpg" 
+    width=345> 
+    <LI>Now clear your main scene if you used it to make your sphere symbol 
+    (<B>Edit|Select ALL</B> then <B>Delete</B>). </LI></OL><BR><BR><BR><I><B>
+  <LI>Making your X motion clip.</B></I><BR>
+  <P>Your X motion will be the motion from left to right. The amount of movement 
+  depends on your taste and needs. In this tutorial I just move the ball from 
+  edge to edge of the scene. We will use this as our limits as well.</P>
+  <OL type=i>
+    <LI>If your library window isn't open, go to <B>Window|Library</B> to open 
+    it. We will use this window often in this tutorial. It's where we'll start 
+    all movie clips.<BR><IMG align=right border=0 height=248 
+    src="3D Motion with Macromedia Flash_files/library.jpg" width=152> 
+    <LI>Click on the down arrow and select <B>Create</B>. 
+    <LI>When the symbol properties window opens, give this clip the name 
+    "Xmotion" and select <B>Movie Clip</B> as the behavior.<BR><IMG align=right 
+    border=0 height=178 
+    src="3D Motion with Macromedia Flash_files/xmotionprop.jpg" width=345> 
+    <LI>Drag an instance of your object symbol (soccer ball in this case) into 
+    the movie clip scene and center it. 
+    <LI>Insert<B> (F5)</B> however many frames you want for the Xmotion (more 
+    frames mean finer resolution). 
+    <LI>Move the symbol to the left most position of the Xmotion keeping the 
+    symbol on the horizontal centerline. 
+    <LI>Put a stop action in the first keyframe. 
+    <LI>Insert <B>(F6)</B> a keyframe in the last frame of your time line and 
+    then move the symbol to the right most position of the Xmotion, keeping it 
+    centered horizontally. 
+    <LI>Highlight the entire timeline and motion tween it (<B>Modify|Frame</B> 
+    or <B>Ctrl-F</B>).<BR><BR><IMG align=right border=0 height=275 
+    src="3D Motion with Macromedia Flash_files/motiontween.jpg" width=439> 
+    <LI>Insert one last keyframe in the time line at its mid point (frame 50 of 
+    a 100 frame clip). <IMG align=left border=0 height=278 
+    src="3D Motion with Macromedia Flash_files/midlabel.jpg" width=496> <BR 
+    clear=all>
+    <LI>Label this keyframe Xmid. This will be where the movie is initialized. 
+    </LI></OL><BR><BR><BR><I><B>
+  <LI>Making your Y motion clip.</B></I><BR>
+  <P>The Ymotion clip is built using the same steps as the Xmotion with two 
+  exceptions: 1)the symbol used is the Xmotion, and 2) the motion itself is in 
+  the vertical plane.</P>
+  <OL type=i>
+    <LI>Your library window should still be open. 
+    <LI>Click on the down arrow and select <B>Create</B>. 
+    <LI>When the symbol properties window opens, give this clip the name 
+    "Ymotion" and select <B>Movie Clip</B> as the behavior.<BR>
+    <LI>Drag an instance of your Xmotion symbol into the movie clip scene. 
+    <LI>Make sure that the center of the Xmotion ( the + sign) is centered in 
+    the scene. 
+    <LI>Double click on the Xmotion symbol and give it an instance name of 
+    "Xmotion".<BR><IMG border=0 height=278 
+    src="3D Motion with Macromedia Flash_files/instanceproperties.jpg" 
+    width=577><BR>
+    <LI>Insert<B> (F5)</B> however many frames you want for the Ymotion (more 
+    frames mean finer resolution). 
+    <LI>Move the symbol to the bottom most position of the Ymotion keeping the 
+    +sign of the symbol on the vertical centerline. 
+    <LI>Put a stop action in the first keyframe. 
+    <LI>Insert <B>(F6)</B> a keyframe in the last frame of your time line and 
+    then move the symbol to the top most position of the Ymotion, keeping it 
+    centered vertically. 
+    <LI>Highlight the entire timeline and motion tween it (<B>Modify|Frame</B> 
+    or <B>Ctrl-F</B>).<BR><BR>
+    <LI>Insert one last keyframe in the time line at its mid point (frame 50 of 
+    a 100 frame clip). 
+    <LI>Label this keyframe Ymid (see Xmid). This will be where the movie is 
+    initialized.<BR></LI></OL><BR><BR><BR><I><B>
+  <LI>Making your Z motion clip.</B></I><BR>
+  <P>The Zmotion clip is built using the same steps as the Ymotion with two 
+  exceptions: 1)the symbol used is the Ymotion, and 2) the motion itself is in 
+  and out of the scene.</P>
+  <OL type=i>
+    <LI>Your library window should still be open. 
+    <LI>Click on the down arrow and select <B>Create</B>. 
+    <LI>When the symbol properties window opens, give this clip the name 
+    "Zmotion" and select <B>Movie Clip</B> as the behavior.<BR>
+    <LI>Drag an instance of your Ymotion symbol into the movie clip scene. 
+    <LI>Make sure that the center of the Ymotion ( the + sign) is centered in 
+    the scene. 
+    <LI>Double click on the Ymotion symbol and give it an instance name of 
+    "Ymotion".<BR>
+    <LI>Insert<B> (F5)</B> however many frames you want for the Zmotion (more 
+    frames mean finer resolution). 
+    <LI>Scale the symbol to the maximum size you want to represent the near 
+    field. 
+    <LI>Put a stop action in the first keyframe. 
+    <LI>Insert <B>(F6)</B> a keyframe in the last frame of your time line and 
+    then scale the symbol to the minimum size you want to represent the far 
+    field. 
+    <LI>Highlight the entire timeline and motion tween it (<B>Modify|Frame</B> 
+    or <B>Ctrl-F</B>).<BR><BR>
+    <LI>Insert one last keyframe in the time line at its mid point (frame 50 of 
+    a 100 frame clip). 
+    <LI>Label this keyframe Zmid (see Xmid). This will be where the movie is 
+    initialized.<BR></LI></OL><BR><BR><BR><I><B>
+  <LI>Inserting the final clip into the main scene and initializing 
+  it.</B></I><BR>
+  <P>At this point you should have an empty scene with a symbol library that 
+  looks something like this.<IMG align=right border=0 height=251 
+  src="3D Motion with Macromedia Flash_files/mainlibrary.jpg" width=150> The 
+  final motion is totally contained in the Zmotion clip. This is the one we will 
+  put on stage to be controlled by the Javascript function. One important thing 
+  to remember at this point is that the Zmotion clip will not be initialized 
+  (all clips positioned at their "MID" frame). This means that the clip will 
+  have to be placed in a location so that when initialized it will be at the 
+  correct location on stage. <BR><BR><I><B>Hint:</B> put a small dot at the 
+  location where you want the object (soccer ball) to be when initialized. Make 
+  your adjustments to the symbol's location until it's on the dot. Then get rid 
+  of the dot.</I> </P>
+  <OL type=i>
+    <LI>Drag your Zmotion symbol onto the stage. Remember to place it so that 
+    when initialized to the mid points it will be at the correct location (see 
+    Hint above). 
+    <LI>Double click on the Zmotion symbol to open the instance properties 
+    window. Give this the name Zmotion. <BR><IMG align=left border=0 height=278 
+    src="3D Motion with Macromedia Flash_files/mainproperties.jpg" width=496><BR 
+    clear=all>
+    <LI>Using the "Tell Target" action position each clip to its mid point 
+    (Xmid, Ymid, Zmid remember?). The paths are: 
+    <OL type=a>
+      <LI>For Xmotion: /Zmotion/Ymotion/Xmotion 
+      <LI>For Ymotion: /Zmotion/Ymotion 
+      <LI>For Zmotion: /Zmotion </LI></OL></LI></OL>
+  <P></P><I><B>
+  <LI>Writting the Javascript and HTML code.</B></I><BR>
+  <P>If you're not into Javascript then you may want to build some <A 
+  href="http://www.enetserve.com/tutorials">continuous feedback buttons</A> to 
+  control the motion in 3D. This example use Javascript and mouse actions to 
+  control the soccer ball in 3D space. <BR clear=all>
+  <FORM action="" method=get>
+  <H3>The <I>CUT-N-PASTE This Code</I></H3><TEXTAREA cols=70 name=HTMLArea rows=20 wrap=VIRTUAL>&lt;!-BEGIN SAMPLE CODE---&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Flask Soccer&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;SCRIPT LANGUAGE=JavaScript&gt;
+&lt;!--
+//
+// based on browser set object
+//
+function whichObj(objName) {
+	if(navigator.appName=="Netscape") {
+		return document[objName]
+	} else {
+		return window[objName]
+	}
+}
+//--&gt;
+&lt;/SCRIPT&gt;
+&lt;BODY text="#FF0000" link="#FFFFFF" bgcolor="#000000" vlink="#FFFF00"&gt;
+&lt;OBJECT ID="sball" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+    	codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=3,0,0,0"
+      width="320" height="240"&gt; 
+     		&lt;PARAM name="Movie" value="soccerball.swf"&gt;
+     		&lt;PARAM NAME="BGColor" VALUE="#FFFFFF"&gt;
+     		&lt;PARAM NAME="Quality" VALUE="High"&gt;
+     		&lt;PARAM NAME="Loop" VALUE="False"&gt;
+     		&lt;PARAM NAME="Play" VALUE="True"&gt;
+	&lt;EMBED SRC="soccerball.swf"
+		swLiveConnect="true"
+		name="sball"
+		LOOP=false 
+		WIDTH=320
+		HEIGHT=240
+		QUALITY=high 
+		BGCOLOR=#FFFFFF
+		TYPE="application/x-shockwave-flash" 	PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"&gt;
+	&lt;/EMBED&gt;
+&lt;/object&gt;
+&lt;SCRIPT LANGUAGE=JavaScript&gt;
+&lt;!-- 
+for(i=0; i&lt;32767; i++) {
+	if(whichObj('sball').PercentLoaded() == 100) {
+		whichObj('sball').TGotoFrame('_level0/Zmotion',49);
+		whichObj('sball').TGotoFrame('_level0/Zmotion/Ymotion',49);
+		whichObj('sball').TGotoFrame('_level0/Zmotion/Ymotion/Xmotion',49);
+		break;
+	}
+	if(i == 32767) alert("Error loading soccer!\n\nClick your browser Reload.");
+}
+ns4 = (document.layers)? true:false
+ie4 = (document.all)? true:false
+var Izf = 0;
+function zclick() {
+	Izf+=10;
+	if(Izf &gt;100) Izf = 0;
+}
+function mouseMove(e) {
+     if (ns4) {var x=e.screenX; var y=e.screenY}
+     if (ie4) {var x=event.screenX; var y=event.screenY}
+	Ixf = Math.round(x*.3);
+	Iyf = 100 - Math.round( (y-340)*0.4)
+	whichObj('sball').TGotoFrame('_level0/Zmotion/Ymotion/Xmotion',Ixf);
+	whichObj('sball').TGotoFrame('_level0/Zmotion/Ymotion',Iyf);
+	whichObj('sball').TGotoFrame('_level0/Zmotion',Izf);
+}
+if (ns4) document.captureEvents(Event.MOUSEMOVE || Event.MOUSECLICK) 
+document.onmousemove =mouseMove 
+document.onclick = zclick
+//--&gt;
+&lt;/SCRIPT&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+&lt;!-END SAMPLE CODE---&gt;
+			</TEXTAREA> </FORM>
+  <P></P>
+  <OL type=i></OL></LI></OL><BR><BR><BR>
+<HR>
+
+<P><A href="javascript:void(0)" 
+onclick='window.open("soccerball.html","Example", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,copyhistory=0,width=340,height=480"); '>
+<H3>Preview (with mouse control)</A> &nbsp;&nbsp;&nbsp;&nbsp; <A 
+href="javascript:void(0)" 
+onclick='window.open("soccerkeys.html","Example", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,copyhistory=0,width=340,height=300"); '>Preview 
+(with key control)</H3></A>
+<P></P>
+<HR>
+
+<H2>Tips During Development</H2>
+<P>Creating this type of webpage is not very forgiving. There are few if any 
+error messages when your code doesn't work I have found that it pays to plan as 
+far ahead as possible and then have a note pad handy for things you missed. For 
+example, when you're coding the Javascript functions it's nice to have the movie 
+clip paths handy.</P></BODY></HTML>

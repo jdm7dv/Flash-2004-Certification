@@ -1,0 +1,1 @@
+marquee=This is a test of Flash 4's read variables from a file action

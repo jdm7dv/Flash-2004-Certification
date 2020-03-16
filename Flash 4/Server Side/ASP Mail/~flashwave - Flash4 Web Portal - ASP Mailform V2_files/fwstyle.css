@@ -1,0 +1,36 @@
+.fullstory {
+	COLOR: #728eb6; FONT-WEIGHT: bold; TEXT-DECORATION: none; visited: #728EB6
+}
+.fullstory:hover {
+	COLOR: #1d63a3; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.headline {
+	TEXT-DECORATION: none
+}
+.topnav {
+	COLOR: #ffffff; TEXT-DECORATION: none; visited: #ffffff
+}
+.topnav:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline; visited: #ffffff
+}
+.topnav2 {
+	COLOR: #000000; TEXT-DECORATION: none; visited: #ffffff
+}
+.topnav3:hover {
+	COLOR: #000000; TEXT-DECORATION: underline; visited: #ffffff
+}
+.topnav3 {
+	COLOR: #000000; TEXT-DECORATION: none; visited: #ffffff
+}
+.related {
+	COLOR: #000000; TEXT-DECORATION: none; visited: #e4e4e4
+}
+.related:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.subnav {
+	TEXT-DECORATION: none
+}
+FORM {
+	MARGIN-BOTTOM: 0px
+}

@@ -1,0 +1,54 @@
+H1 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 18pt; FONT-WEIGHT: bold
+}
+H2 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 16pt; FONT-WEIGHT: bold
+}
+H3 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14pt; FONT-WEIGHT: bold
+}
+H4 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: bold
+}
+A {
+	COLOR: #0066cc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0099ff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+P {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt
+}
+UL {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt
+}
+OL {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt
+}
+TD {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt
+}
+.menubar {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: normal
+}
+.menulink {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.menulink:hover {
+	COLOR: #0066cc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.byline {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 9pt
+}
+.note {
+	BACKGROUND-COLOR: #ffffcc; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.formbutton {
+	COLOR: #000000; FONT-SIZE: 9pt; FONT-WEIGHT: bold
+}
+.formtext {
+	COLOR: #000000; FONT-SIZE: 10pt; FONT-WEIGHT: normal
+}
+.head1 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14pt; FONT-WEIGHT: bold
+}

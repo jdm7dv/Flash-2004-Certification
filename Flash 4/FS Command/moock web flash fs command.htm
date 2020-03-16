@@ -1,0 +1,587 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0057)http://www.moock.org/webdesign/flash/fscommand/index.html -->
+<HTML><HEAD><TITLE>moock>> web>> flash>> fs command</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="macromedia, flash, javascript, fscommand" name=keywords>
+<SCRIPT language=JavaScript>
+
+function preventframing() {
+	if (self.parent.frames.length != 0 && window.location.hostname != "www.moock.org")
+	self.parent.location="http://www.moock.org/webdesign/flash/";
+}
+
+
+
+<!--
+// first, check if the image property exists
+        if (document.images) {            
+// next, preload the rollover state of the image, and assign it an 'on' name
+            uparrow1on = new Image();      
+            uparrow1on.src = "../../../images/icon-uparrow-hilite.gif"; 
+// then, preload the off state of the image, and assign it an 'off' name
+            uparrow1off = new Image(); 
+            uparrow1off.src = "../../../images/icon-uparrow.gif";
+         }
+// this function changes images to the rollover state (assigned above)
+// it's called by the ONMOUSEOVER attribute of the HREF element
+function rollon(imgName) {
+        if (document.images) {
+            document[imgName].src = eval(imgName + "on.src");
+        }
+}
+// this function changes images to the off state (assigned above)
+// it's called by the ONMOUSEOUT attribute of the HREF element
+function rolloff(imgName) {
+        if (document.images) {
+            document[imgName].src = eval(imgName + "off.src");
+        }
+}
+// -->
+</SCRIPT>
+
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR></HEAD>
+<BODY vLink=#333333 link=#ffffff bgColor=#669966 onload=preventframing()>
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=bottom align=right bgColor=#336633><FONT 
+      face=Verdana,arial,helvetica color=#999966><B>MACROMEDIA 
+      FLASH</B></FONT>&nbsp;&nbsp;<A onmouseover="rollon('uparrow1')" 
+      onmouseout="rolloff('uparrow1')" 
+      href="http://www.moock.org/webdesign/flash/index.html"><IMG height=13 
+      alt="back to" src="moock web flash fs command_files/icon-uparrow.gif" 
+      width=13 border=0 name=uparrow1></A></TD></TR>
+  <TR>
+    <TD align=right bgColor=#999966><FONT face=Verdana,Arial,Helvetica 
+      color=#003300 size=-1><B>YOUR FIRST FS COMMAND</B></FONT>&nbsp;&nbsp;<IMG 
+      height=13 
+      src="moock web flash fs command_files/icon-uparrow-placeholder.gif" 
+      width=13 border=0></TD></TR></TBODY></TABLE>
+<DIV align=right>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD align=right><FONT face=Arial,Helvetica color=#003300 size=-1><I>Table 
+      of Contents</I><BR><A 
+      href="http://www.moock.org/webdesign/flash/fscommand/index.html#intro">FS 
+      Command: A Short Introduction</A><BR><A 
+      href="http://www.moock.org/webdesign/flash/fscommand/index.html#support">Support 
+      for FS Command</A><BR><A 
+      href="http://www.moock.org/webdesign/flash/fscommand/index.html#2directions">Two 
+      Directions of Communication</A><BR><A 
+      href="http://www.moock.org/webdesign/flash/fscommand/index.html#flashtojavascript">How 
+      Flash Talks to JavaScript</A><BR><A 
+      href="http://www.moock.org/webdesign/flash/fscommand/index.html#javascripttoflash">How 
+      JavaScript Talks to Flash</A><BR><A 
+      href="http://www.moock.org/webdesign/flash/fscommand/index.html#methods">Available 
+      Flash JavaScript Methods</A><BR><A 
+      href="http://www.moock.org/webdesign/flash/fscommand/index.html#references">References</A></FONT></TD>
+    <TD><IMG height=40 src="moock web flash fs command_files/dot-clear.gif" 
+      width=40 border=0></TD></TD></TR></TBODY></TABLE></DIV><A name=intro></A>
+<P><FONT face=arial,helvetica color=#ffffff><B>FS Command: A Short 
+Introduction</B> <BR><FONT color=#000000>For the purposes of this article, "FS 
+Command" refers mainly to Flash/JavaScript communication (ie. scripted Flash on 
+the web). The descriptions and tutorials below teach the use of FS Command in 
+those applications. However, FS Command's scope is actually broader than that. 
+Without going into too much detail, here's a slightly longer description of FS 
+Command: <BR><BR>"FS Command" is the name of the system Flash uses to 
+communicate with its host application ("application" means anything that can 
+play Flash media, whether natively, eg. the stand-alone Flash player, or with 
+the use of a plug-in, eg. a web browser). On the web, FS Command communication 
+typically entails either Flash sending commands to a scripting language (such as 
+JavaScript or VB Script), or a scripting language sending commands to Flash. 
+Common uses of web-based FS Commands are: a) an action on a keyframe or a button 
+launches a JavaScript function, or b) a JavaScript function controls the Flash 
+movie playback (for instance by stopping the movie, playing the movie, or 
+sending the playback head to a specific frame). FS Command can also be used to 
+communicate with Lingo and to send a limited set of built-in commands to the 
+stand-alone Flash player (eg. "Quit", "FullScreen", "AllowScale", 
+"ShowMenu"--check "Actions" &gt;&gt; "FS Command" in the Help Index included 
+with Flash 3.0 for full details). </FONT></FONT></P><A name=support></A>
+<P><FONT face=arial,helvetica color=#ffffff><B>Support for FS Command</B> 
+<BR><FONT color=#000000>Okay, let's get back to the topic at hand: using FS 
+Command on the web. If you intend to develop scripted Flash movies for the web, 
+you need to be aware that not all browsers support FS Command. The specific 
+browsers that support it are: Netscape 3 or greater on Win95/98/NT, Mac PPC, and 
+Internet Explorer 3+ on Win95/98/NT. Browsers that don't (those on Windows 3.1 
+or Macintosh 68K machines, and IE on any Mac) lack the ActiveX (IE) or 
+LiveConnect (Netscape) required to communicate between the plugin and the 
+browser. Further, starting with Flash 3.0, if you are developing FS Command 
+Flash content for Netscape, you'll need to explicitly enable LiveConnect on 
+every page that hosts a scripted Flash movie. To enable LiveConnect, you include 
+this attribute in your movie's EMBED tag: <FONT face="Courier New" 
+color=#333333>swLiveConnect="true"</FONT>. During the enabling process, users 
+will see "Starting Java..." in the Netscape status bar, and will experience a 
+delay (15 seconds is not uncommon) while Java loads. </FONT></FONT></P><A 
+name=2directions></A>
+<P><FONT face=arial,helvetica color=#ffffff><B>Two Directions of 
+Communication</B> <BR><FONT color=#000000>So now that you know <I>where</I> FS 
+Command works, you probably want to know <I>how</I> it works. How it works 
+depends on what's sending info and what's receiving it--Flash or JavaScript. 
+Using FS Command, Flash can send information to JavaScript, and JavaScript can 
+send commands to Flash. Though these two different kinds of communication are 
+both referred to as FS Commands, their implementation methods differ. I'll deal 
+with each direction of communication separately, but in practise, they are often 
+used in tandem. </FONT></FONT></P><A name=flashtojavascript></A>
+<P><FONT face=arial,helvetica color=#ffffff><B>How Flash Talks to JavaScript</B> 
+<FONT color=#000000><BR>Flash attempts to send a message to JavaScript whenever 
+the movie playback head hits a keyframe on which an FS Command is set, or when a 
+button event with an FS Command action occurs. When the browser receives an FS 
+Command from Flash, it checks if there's a matching JavaScript function (or VB 
+Script in the case of IE) that can "catch" the command. If there is, it starts 
+the function, sending two parameters to it--the values of the "Command" and 
+"Arguments" fields from the Flash FS Command action dialog. <BR><BR>The 
+following diagram illustrates the process, using the example of an FS Command 
+that calls a JavaScript alert, and passes the text "Hello world!" as an argument 
+for display in the alert box. The implementation of FS Command in Netscape and 
+IE differs slightly, hence the diagram, accordingly, shows how the command 
+travels from Flash to JavaScript in both browsers. Below the diagram is the 
+matching Flash sample movie. Take a look at the model and the sample, then I'll 
+get into the details of how to do it. </FONT></P><A name=diagram1></A>
+<DIV align=center>
+<OBJECT id=diagram1 codeBase=http://active.macromedia.com/flash3/cabs/ 
+classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width=550 height=200><PARAM NAME="MOVIE" VALUE="fscommand-diagram1.swf"><PARAM NAME="PLAY" VALUE="false"><PARAM NAME="LOOP" VALUE="false"><PARAM NAME="QUALITY" VALUE="high"><PARAM NAME="SCALE" VALUE="SHOWALL">
+							<EMBED		NAME="diagram1"		SRC="fscommand-diagram1.swf"		WIDTH="550"
+		HEIGHT="200"		PLAY="false" 		LOOP="false"		QUALITY="high"		SCALE="SHOWALL" 
+		swLiveConnect="true"
+		PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+	</EMBED></OBJECT><BR><FONT color=#000000><BR>Sample FS Command Movie: <A 
+href="http://www.moock.org/webdesign/flash/fscommand/flash-to-javascript.html">Flash 
+Calls a JavaScript Alert</A> </FONT></DIV><BR><FONT color=#000000>Let's follow 
+along with the diagram above to see how to implement a Flash to JavaScript FS 
+Command. You can <A 
+href="http://www.moock.org/webdesign/flash/fscommand/fscommand-sample1.zip">Download 
+a .zip</A> of sample 1 that includes the .fla, .swf, and .html files described 
+in the steps below. <BR>
+<DL>
+  <DT>1) <I>Create an FS Command action in Flash.</I> 
+  <DD>
+  <UL>
+    <LI>Start a new movie and make a keyframe a few seconds in to the timeline. 
+    <LI>Bring up the "Properties" dialog on that keyframe. 
+    <LI>Under the "Actions" tab, add an "FS Command" action. You'll see "FS 
+    Command" added to your list of actions, and two text entry fields called 
+    "Command" and "Arguments". These two fields are the parameters that will be 
+    passed to the JavaScript FS Command catching function. They can be used for 
+    anything, but normally the Command field contains the name of the function 
+    you want the FS Command to launch, and the Arguments field contains your 
+    parameter(s). 
+    <LI>In the "Command" text field, enter "call_alert". 
+    <LI>In the "Arguments" text field, enter "Hello world!". </LI></UL>
+  <DT><BR>2) <I>Embed your movie in an HTML document.</I> 
+  <DD>
+  <UL>
+    <LI>Make an HTML document for your movie, and use the OBJECT and EMBED tags 
+    to put your movie on the page. In your OJBECT and EMBED tags, <B>make sure 
+    to name your movie</B> using "ID" for the OBJECT tag and "NAME" for the 
+    EMBED tag. It is extremely important that you name your movie, and that the 
+    names be identical for the OBJECT and EMBED tags. Your FS Command catching 
+    function will rely on the movie's name to identify all incoming FS Commands. 
+    Also remember to turn Netscape's LiveConnect on using 
+    "swLiveConnect='true'". Your page should look something like this (ID, NAME, 
+    and swLiveConnect are bolded...don't forget them): <BR><PRE><!--BEGIN SAMPLE CODE-->
+&lt;HTML&gt;
+&lt;HEAD&gt;
+	&lt;TITLE&gt;My First FS Command&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+&lt;OBJECT
+	CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+	WIDTH="100%"
+	HEIGHT="100%"
+	CODEBASE="http://active.macromedia.com/flash3/cabs/"
+	<B>ID=testmovie</B>&gt;
+	&lt;PARAM NAME="MOVIE" VALUE="mymovie.swf"&gt;
+	&lt;PARAM NAME="PLAY" VALUE="false"&gt;
+	&lt;PARAM NAME="LOOP" VALUE="false"&gt;	
+	&lt;PARAM NAME="QUALITY" VALUE="high"&gt;
+	&lt;PARAM NAME="SCALE" VALUE="SHOWALL"&gt;
+
+	&lt;EMBED
+		<B>NAME="testmovie"</B>
+		SRC="mymovie.swf"
+		WIDTH="100%"
+		HEIGHT="100%"
+		PLAY="false" 
+		LOOP="false"
+		QUALITY="high"
+		SCALE="SHOWALL" 
+		<B>swLiveConnect="true"</B>
+		PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"&gt;
+	&lt;/EMBED&gt;
+&lt;/OBJECT&gt;
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+<!--END SAMPLE CODE-->
+</PRE></LI></UL>
+  <DT>3) <I>Add the VB Script for IE.</I> 
+  <DD>
+  <UL>
+    <LI>Remember from Stage 2, in the IE version of Diagram 1, above, that IE 
+    uses a "teeny bit" of VB Script to catch FS Commands and pass them to 
+    JavaScript. That's the next thing you need to add. Put the following VB 
+    Script code into the HEAD element of your document, making sure to change 
+    the word "testmovie" to the name you gave your movie in your OBJECT and 
+    EMBED tags: <PRE><!--BEGIN SAMPLE CODE-->
+&lt;SCRIPT LANGUAGE="VBScript"&gt;
+&lt;!-- 
+//  Catch FS Commands in IE, and pass them to the corresponding JavaScript function.
+
+Sub testmovie_FSCommand(ByVal command, ByVal args)
+    call testmovie_DoFSCommand(command, args)
+end sub
+
+//--&gt;
+&lt;/SCRIPT&gt;
+<!--END SAMPLE CODE-->
+</PRE></LI></UL>
+  <DT>4) <I>Add the JavaScript function that catches the FS Command.</I> 
+  <DD>
+  <UL>
+    <LI>So far you've created a movie that sends an FS Command action to the 
+    browser, you've embedded the movie into an HTML page (making sure to name 
+    it), and you've created a VB Script that forwards your FS Command to 
+    JavaScript if the browser is IE. All you need now is a JavaScript function 
+    to catch the FS Command and execute the alert. Put the following JavaScript 
+    code into the HEAD element of your document, making sure to change the word 
+    "testmovie" to the name you gave your movie in your OBJECT and EMBED tags: <PRE><!--BEGIN SAMPLE CODE-->
+&lt;SCRIPT LANGUAGE="JavaScript"&gt; 
+&lt;!--  
+function testmovie_DoFSCommand(command, args)
+{ 
+	if ( command == "call_alert" )
+	{ 
+		alert("Here's the Flash message: " + args);
+	}
+}
+
+//--&gt;
+&lt;/SCRIPT&gt;
+<!--END SAMPLE CODE-->
+</PRE>
+    <LI>A bit of explanation on the JavaScript. The "testmovie_DoFSCommand" 
+    function is called any time the movie named "testmovie" sends an FS Command. 
+    "DoFSCommand" is a keyword used by Flash to identify functions that should 
+    be launched by FS Commands. The "testmovie_" prefix indicates the name of 
+    the movie calling the command. Hence, a function called 
+    "foomovie_DoFSCommand" would be launched when a movie named "foomovie" 
+    called an FS Command. The "(command,args)" are the two parameters passed to 
+    the function, and carry the values of the "Command" and "Arguments" fields 
+    entered in the Flash editor under the FS Command action--in our case 
+    "call_alert" and "Hello world!", respectively. </LI></UL></DD></DL>Once your 
+JavaScript function is in place, your FS Command should successfully launch the 
+alert. <BR><BR>You've learned how to do the first kind of FS Command--sending 
+information from Flash to JavaScript. If you want to take a closer look at the 
+files used in the instructions above, remember to <A 
+href="http://www.moock.org/webdesign/flash/fscommand/fscommand-sample1.zip">download 
+the zip file</A> of sample 1. Next you'll learn how to make FS Commands go the 
+other way, so JavaScript can control Flash. </FONT></FONT><A 
+name=javascripttoflash></A>
+<P><FONT face=arial,helvetica color=#ffffff><B>How JavaScript talks to Flash</B> 
+<BR><FONT color=#000000>JavaScript can send commands to Flash by invoking 
+built-in methods on embedded movie objects. Calling Flash methods works exactly 
+like all calls to built-in methods on JavaScript objects (eg. document.write() 
+or window.close()). From a developer point of view, this direction of 
+communication is much more one sided than the opposite direction--most of the 
+simple JavaScript commands that control a Flash movie can be carried out 
+entirely in JavaScript, without doing anything to the Flash movie. <BR><BR>I'll 
+go through a single example of controlling a movie by calling a JavaScript Flash 
+method. You can then extrapolate the technique and apply it to any of the Flash 
+methods available (for a complete list of Flash 2.0 and 3.0 methods, see 
+Macromedia's <A 
+href="http://www.macromedia.com/support/flash/how/subjects/scriptingwithflash/scriptingwithflash04.html">Flash 
+Methods</A> reference document). Take a look at the following sample movie to 
+see an example of Flash controlled by JavaScript. <A 
+name=diagram2></A><BR><BR>Sample FS Command Movie: <A 
+href="http://www.moock.org/webdesign/flash/fscommand/javascript-to-flash.html">JavaScript 
+Controls a Flash Movie</A> <BR><BR>Then follow the steps below to see how to it 
+works. For reference, you can <A 
+href="http://www.moock.org/webdesign/flash/fscommand/fscommand-sample2.zip">download 
+a .zip</A> of the files used in sample 2. </FONT></FONT></P><FONT 
+face=arial,helvetica color=#000000>
+<DL>
+  <DT><BR>1) <I>Embed your movie in an HTML document.</I> 
+  <DD>
+  <UL>
+    <LI>Make an HTML document for your movie, and use the OBJECT and EMBED tags 
+    to put your movie on the page. In your OJBECT and EMBED tags, <B>make sure 
+    to name your movie</B> using "ID" for the OBJECT tag and "NAME" for the 
+    EMBED tag. It is extremely important that you name your movie, and that the 
+    names be identical for the OBJECT and EMBED tags because your JavaScript 
+    function will need to refer the movie it is controlling by name. Also 
+    remember to turn Netscape's LiveConnect on using "swLiveConnect='true'". 
+    Your page should look something like this (ID, NAME, and swLiveConnect are 
+    bolded...don't forget them): <BR><PRE><!--BEGIN SAMPLE CODE-->
+&lt;HTML&gt;
+&lt;HEAD&gt;
+	&lt;TITLE&gt;My Second FS Command&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+&lt;OBJECT
+	CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+	WIDTH="100%"
+	HEIGHT="100%"
+	CODEBASE="http://active.macromedia.com/flash3/cabs/"
+	<B>ID=testcommand</B>&gt;
+	&lt;PARAM NAME="MOVIE" VALUE="mymovie.swf"&gt;
+	&lt;PARAM NAME="PLAY" VALUE="false"&gt;
+	&lt;PARAM NAME="LOOP" VALUE="false"&gt;	
+	&lt;PARAM NAME="QUALITY" VALUE="high"&gt;
+	&lt;PARAM NAME="SCALE" VALUE="SHOWALL"&gt;
+
+	&lt;EMBED
+		<B>NAME="testcommand"</B>
+		SRC="mymovie.swf"
+		WIDTH="100%"
+		HEIGHT="100%"
+		PLAY="false" 
+		LOOP="false"
+		QUALITY="high"
+		SCALE="SHOWALL" 
+		<B>swLiveConnect="true"</B>
+		PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"&gt;
+	&lt;/EMBED&gt;
+&lt;/OBJECT&gt;
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+<!--END SAMPLE CODE-->
+</PRE></LI></UL>
+  <DT><BR>1) <I>Add a cross-browser function to refer to your movie object.</I> 
+  <DD>
+  <UL>
+    <LI>There are two main components to a JavaScript that calls Flash: 1) the 
+    function that calls the Flash method, and 2) the function that returns the 
+    appropriate syntax for referring to the Flash movie object, depending on the 
+    browser. You didn't think Microsoft and Netscape would implement this in the 
+    same way did you? Nope, neither did I. Sigh. So the first bit of script you 
+    need simply gives us the right syntax ("document[moviename]" for Netscape 
+    and "window[moviename]" for MSIE). You *could* hard code the movie syntax 
+    into your method call, but this is nice and portable, and will turn out to 
+    be less work. Just drop it into every Flash method-calling script you have 
+    and you won't have to worry about compatibility. We'll call the 
+    compatibility function when we invoke any Flash method. Here's the code: <PRE>&lt;SCRIPT LANGUAGE="JavaScript"&gt; 
+&lt;!--  
+var moviename = "testcommand";
+
+function movieobject(moviename)
+{
+//IE and Netscape refer to the movie object differently.
+//This function returns the appropriate syntax depending on the browser.
+
+	if (navigator.appName.indexOf ("Microsoft") !=-1) 
+	{
+	return window[moviename]
+	}
+
+	else
+	{
+	return document[moviename]
+	}
+}
+</PRE>
+    <LI>Set the value of the "moviename" variable to match the name you gave 
+    your movie in the EMBED and OBJECT tags. </LI></UL>
+  <DT><BR>2) <I>Add the function that calls your Flash method.</I> 
+  <DD>
+  <UL>
+    <LI>Once you've dealt with the compatibility issue, calling a Flash method 
+    is easy. You refer to the movie object by calling the compatibility script, 
+    and passing it the variable which holds the name of your movie 
+    ("moviename"). Then you tack on the name of the Flash method you want to 
+    call. Like this: <PRE>function playmovie()
+	{
+			movieobject(moviename).Play();
+	}
+	
+//--&gt;
+&lt;/SCRIPT&gt; 
+</PRE>
+    <LI>But WAIT! You're not done. What happens if you call a method on a movie 
+    that hasn't finished loading yet? Or hasn't even <I>started</I> loading yet? 
+    Errors, that's what. So you'll want to check a) that the movie object 
+    exists, and b) that it is sufficiently loaded to start your method. The 
+    easiest and most reliable way to check those two conditions is to use an FS 
+    Command in your Flash movie to start a JavaScript that invokes the method 
+    you are using. That way you have down-to-the-frame control over the timing 
+    of your method launch. However, if you're feeling daring you can also check 
+    those conditions with JavaScript by evaluating the movie object, and then 
+    calling the "PercentLoaded()" method on it. I say "daring" because 
+    JavaScript can have problems working with objects that are in the process of 
+    being initialized. Anyway, if you want to do it with JavaScript the 
+    "playmovie" function above would really be: <PRE>var movie_ready = "false";
+
+function playmovie()
+{
+	if(movie_ready == "false")
+		{
+			while(movie_ready == "false")
+			{
+				if(movieobject(moviename).PercentLoaded() == 100)
+				{
+					movieobject(moviename).Play();
+					movie_ready = "true";
+				}
+			}
+		}
+		
+	else
+	{
+		movieobject(moviename).Play();
+	}
+}
+
+//--&gt;
+&lt;/SCRIPT&gt; 
+</PRE>which waits until the movie exists, and then until it is fully loaded 
+    before executing the Play method. Remember to initialize the "movie_ready" 
+    variable outside your Flash method calling functions so the true/false state 
+    is set as a global variable which will retain the state of your movie as 
+    long as the page is in memory. </LI></UL>
+  <DT><BR>3) <I>Add an event to call your Flash method function.</I> 
+  <DD>
+  <UL>
+    <LI>Now that your function to control Flash is ready, all you need to do is 
+    call it. For the purposes of testing, I use a form button to call my Flash 
+    functions: <PRE>&lt;FORM&gt;
+	&lt;INPUT TYPE="BUTTON" VALUE="Play" ONCLICK="playmovie()"&gt;
+&lt;/FORM&gt;
+</PRE></LI></UL>
+  <DT><BR>4) <I>Extrapolate to other methods.</I> 
+  <DD>
+  <UL>
+    <LI>You've learned how to call one JavaScript method--"Play()"--on a Flash 
+    movie. You can use the same technique to call any JavaScript method. The 
+    methods available with the Flash 3.0 player are listed below, but you should 
+    check Macromedia's article on <A 
+    href="http://www.macromedia.com/support/flash/how/subjects/scriptingwithflash/scriptingwithflash.html">Scripting 
+    with Flash</A> to get the latest information. If you're using the Tell 
+    Target methods to send JavaScript commands to Flash Movie Clips, make sure 
+    to read the notes--those methods are a bit picky... <A 
+    name=methods></A><BR><BR><B>Flash 2.0 and 3.0 Methods</B> 
+    <UL>
+      <LI><B>Play()</B>: Play the movie. 
+      <LI><B>StopPlay()</B>: Stop the movie. 
+      <LI><B>IsPlaying()</B>: Check if the movie's playing. 
+      <LI><B>GotoFrame (x)</B>: Go to frame "x". "x" must be an integer. 
+      <LI><B>TotalFrames()</B>: Check how many frames are in the movie. 
+      <LI><B>Rewind()</B>: Go to frame 1 and stop. 
+      <LI><B>SetZoomRect (x1,y1,x2,y2)</B>: Zoom on rectangle with the 
+      coordinates (top left: x1,y1) (bottom right: x2,y2). Units are TWIPS. 
+      There are 1440 TWIPS in an inch, and 20 TWIPS in a single point. 
+      <LI><B>Zoom(percent)</B>:Zoom in. Opposite of what you'd expect: 
+      <BR>Zoom(50) = 2 times movie size <BR>Zoom(200) = 1/2 movie size 
+      <BR>Zoom(0) = back to original size 
+      <LI><B>Pan (x,y,mode)</B>: Move around a zoomed in movie. "mode" should be 
+      set to "0" to move in pixels, and "1" to move in percentage. 
+      <LI><B>PercentLoaded()</B>: Check how much of the movie has downloaded to 
+      the browser. Returns a value between 0 and 100. </LI></UL><BR><BR><B>Flash 
+    3.0 Only Methods</B> <BR>In Flash 3, Movie Clips can be controlled by the 
+    "Tell Target" action. The methods added in Flash 3.0 are mostly controls for 
+    Movie Clips, and work the same way as internal "Tell Target" actions. The 
+    exception is "LoadMovie" which behaves as an internal LoadMovie action does. 
+    Notes: 1) the syntax you'll need to use for the Tell Target methods is given 
+    as an example of TGotoFrame and TGotoLabel, 2) in all Tell Target methods, 
+    the value of "target" must be a string enclosed in quotation marks. The 
+    value of "framenumber" must be an integer. <BR><BR>
+    <UL>
+      <LI><B>TGotoFrame(target, framenumber)</B> <BR>In the "target" movie clip, 
+      goto frame "framenumber". Note that "framenumber" starts at 0 in 
+      JavaScript, but at 1 in Flash, so TGotoFrame("level0/",5) will actually go 
+      to frame 4. <BR>eg1: TGotoFrame("_level0/",5) <BR>&nbsp;&nbsp;&nbsp;On the 
+      main movie timeline, go to frame 4.<BR>eg2: 
+      TGotoFrame("_level0/colours",5) <BR>&nbsp;&nbsp;&nbsp;In the Movie Clip 
+      named "colours", go to frame 4. 
+      <LI><B>TGotoLabel(target, frame label)</B> <BR>On the main movie timeline, 
+      go to the specified frame label. <BR>eg1: 
+      TGotoLabel("_level0/","redframe") <BR>&nbsp;&nbsp;&nbsp;On the main movie, 
+      go to the frame labeled "redframe".<BR>eg2: 
+      TGotoLabel("_level0/colours","greenframe") <BR>&nbsp;&nbsp;&nbsp;In the 
+      Movie Clip named "colours", go to the frame labeled "greenframe". 
+      <LI><B>TCurrentFrame(target)</B>: Returns the number of the frame on which 
+      the playback head rests when the method is called. Use "_level0/" as the 
+      target for the main timeline. 
+      <LI><B>String TCurrentLabel(target)</B>: Returns the label of the frame on 
+      which the playback head rests when the method is called. Returns null if 
+      no the frame is not labeled. Use "_level0/" as the target for the main 
+      timeline. 
+      <LI><B>TPlay(target)</B>: Play the specified Movie Clip. 
+      <LI><B>TStopPlay(target)</B>: Stop the specified Movie Clip. 
+      <LI><B>LoadMovie(layer,url)</B>: Load a movie onto "layer" from "url". 
+      Note that the value of layer must be an integer, while url must be a 
+      string enclosed in quotation marks. </LI></UL></LI></UL></DD></DL><BR>Well, I 
+think that just about does it. If there's an error in this article, or something 
+missing that you're dying to know about, please let me know at <A 
+href="mailto:colin_moock@iceinc.com">mailto:colin_moock@iceinc.com</A>. Good 
+luck with your FS Commands! </FONT><A name=references></A>
+<P><FONT face=arial,helvetica color=#ffffff><B>References</B> <BR><FONT 
+color=#000000><I>Macromedia's <A 
+href="http://www.macromedia.com/support/flash/ts/documents/tn4160.html">Technote 
+04160 (Scripting with Flash)</A></I> <BR>The first developer article on 
+scripting with Flash. Most of the technical information about FS Command is 
+there, but you won't find any easy to follow tutorials or step by step 
+instructions on using FS Command. Contains a list of Flash 2.0 built-in methods. 
+<BR><BR><I>Macromedia's <A 
+href="http://www.macromedia.com/support/flash/how/subjects/scriptingwithflash/scriptingwithflash.html">Scripting 
+with Flash</A> Tutorial</I> <BR>A tutorial on how to use FS Command. Starts out 
+well, but glosses over some implementation details towards the middle. Includes 
+a list of Flash 2.0 and 3.0 built-in methods with short descriptions on 
+functionality and use. <BR><BR><I>Macromedia's <A 
+href="http://www.macromedia.com/support/flash/publishexport/scriptingwithflash4/">Scripting 
+with Flash 4</A> Tutorial</I> <BR>Finally a pretty decent from Macromedia on the 
+subject of FS Command. Covers all the new ActionScript FS Commands available for 
+use with Flash 4. <BR><BR><I>Macromedia's <A 
+href="http://www.macromedia.com/support/flash/how/subjects/javascriptdemo/contents.html">Creating 
+a smarter Site Navigation Bar with Flash and JavaScript</A></I> <BR>A short 
+discussion on how to use JavaScript to maintain the state of a Flash navigation 
+bar across frames. Thin from a documentation standpoint, but useful for its 
+sample code. <BR><BR><I>Macromedia's <A 
+href="http://www.flashcentral.com/Tech/HawaiiMap/">Hawaii Map Demo</A></I> 
+<BR>Originally a sample site by Jon Gay, (one of the Flash programmers at 
+Macromedia), which demonstrates some of the things you can do with FS Command. 
+This demo is now up at Flash Central. Again, good for the samples, but light on 
+documentation. You'll have to root around with View Source... 
+<BR><BR><I>Macromedia's <A 
+href="http://www.macromedia.com/support/flash/ts/documents/activex_script.htm">Scripting 
+with Flash and ActiveX</A></I> <BR>A list of the ActiveX-only (ie. *not* 
+Netscape) methods available with Flash. <BR><BR><I>Dave Livesay's <A 
+target=_blank href="http://www.erols.com/dlivesay/FSCommand.html">Getting 
+Started with FSCommand</A></I> <BR>A decent, to the point, description of how to 
+use FS Command. <BR><BR><I>John Croteau's <A 
+href="http://www.ahref.com/guides/design/199807/0720croteau.html">JavaScript/Flash 
+Clock Tutorial</A></I> <BR>A well written, in depth tutorial on making a clock 
+in Flash movies that's run by JavaScript. A good application of FS Command 
+that's worth checking out once you're familiar with FS Command basics. 
+<BR><BR><I>John Croteau's <A 
+href="http://www.flashtek.com/Bible/FSCommand_Commands.htm">FS Command Methods 
+Table</A></I> <BR>A complete spread-sheet style table listing the FS Command 
+methods for JavaScript, the stand-alone player, and ActiveX. <BR><BR><I>Flash 
+Zone's <A href="http://www.labyrinth.cx/puzzle.html">Tile Puzzle Game</A></I> 
+<BR>The classic puzzle game where you slide pieces of a jumbled picture back 
+into place. Completely implemented with FS Command and Flash. A good starter 
+project if you're making Flash games or want to see a practical use of FS 
+Command. </FONT></FONT></P>
+<DL>
+  <DT><FONT face=arial,helvetica color=#ffffff><B>Revision History</B></FONT> 
+  <DT><FONT face=Arial,Helvetica color=#000000>
+  <OL>
+    <LI>January 10, 1999: Posted. 
+    <LI>January 25, 1999: Reworded "Support for FS Command" section to make list 
+    of supported browsers clearer. 
+    <LI>February 17, 1999: Added VBSCRIPT comment ("//--&gt;"). Fixed reversed 
+    JavaScript comment (cut'n'paste code only). 
+    <LI>February 22, 1999: Fixed typo in cut'n'paste code (line was: var 
+    movie_ready == "false";). 
+    <LI>April 22, 1999: Fixed a couple of typos in the article copy. 
+    <LI>May 5, 1999: Fixed link to Jon Gay's Hawaii Map demo. Jon's site at 
+    Macromedia was taken down... 
+    <LI>Sept 14, 1999: Added link to Macromedia's Flash 4 FS Command article 
+    that covers ActionScript methods. 
+    <LI>Sept 14, 1999: Added some missing &lt;/SCRIPT&gt; tags in the 
+    cut'n'paste code for step 2 of javascript-&gt;flash communication. thanks to 
+    dave hollinden for noticing that. </LI></OL></FONT></DT></DL></BODY></HTML>

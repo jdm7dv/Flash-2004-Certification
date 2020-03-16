@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0067)http://www.macromedia.com/support/flash/ts/documents/movemc_var.htm -->
+<HTML><HEAD><TITLE>Macromedia - How to change the property of a movie clip based on a the value of a variable</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Last-Modified content="Mon, 30 Aug 1999 21:56:31 GMT">
+<META http-equiv=Version content=1.0 name=DOCVERSION>
+<META content="Mon, 30 Aug 1999 21:56:31 GMT" name=LASTMODIFIED>
+<META content="Tips &amp; Tricks" name=AREA>
+<META content=Yes name=PUBLIC>
+<META content="Meredith Hines" name=AUTHOR>
+<META content=2 name=IMPORTANCE>
+<META 
+content="action, action script, variable, movie clip, set property, set variable, x position" 
+name=KEYWORDS>
+<META content=All name=PLATFORM>
+<META content=Flash name=PRODUCT>
+<META content=4 name=VERFROM>
+<META content=99 name=VERTO>
+<META content="4 and above" name=VERSIONS>
+<META 
+content="How to change the property of a movie clip based on a the value of a variable" 
+name=DOCTITLE>
+<META content=14039 name=DOCID>
+<META content=Done! name=STATUS>
+<META content="August 30, 1999" name=DATECREATED>
+<META content="September  3, 1999" name=DATEMODIFIED>
+<META content=TechNote name=KIND>
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR></HEAD>
+<BODY vLink=#660033 aLink=#000000 link=#333399 bgColor=#ffffff><!-- begin flash TechNotes top fragment -->
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=bottom noWrap><IMG height=17 src="movemc_var_files/pixel.gif" 
+      width=18 border=0><A target=_top href="http://www.macromedia.com/"><IMG 
+      height=12 alt=macromedia src="movemc_var_files/crumb_macromedia_blue.gif" 
+      width=99 border=0></A><IMG height=12 alt=: 
+      src="movemc_var_files/crumb_colon.gif" width=15 border=0><A target=_top 
+      href="http://www.macromedia.com/software/"><IMG height=12 alt=products 
+      src="movemc_var_files/crumb_products_blue.gif" width=69 border=0></A><IMG 
+      height=12 alt=: src="movemc_var_files/crumb_colon.gif" width=15 
+      border=0><A target=_top 
+      href="http://www.macromedia.com/software/flash/"><IMG height=12 alt=flash 
+      src="movemc_var_files/crumb_flash_blue.gif" width=40 border=0></A><IMG 
+      height=12 alt=: src="movemc_var_files/crumb_colon.gif" width=15 
+      border=0><A target=_top 
+      href="http://www.macromedia.com/support/flash/"><IMG height=12 alt=support 
+      src="movemc_var_files/crumb_support_blue.gif" width=61 border=0></A><IMG 
+      height=12 alt=: src="movemc_var_files/crumb_colon.gif" width=15 
+      border=0><A 
+      href="http://www.macromedia.com/support/flash/technotes.html"><IMG 
+      height=12 alt=technotes src="movemc_var_files/crumb_technotes_blue.gif" 
+      width=79 border=0></A></TD></TR></TBODY></TABLE><IMG height=30 
+src="movemc_var_files/pixel.gif" width=2 border=0>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="10%"><IMG height=60 alt="flash icon" 
+      src="movemc_var_files/flash_logo.gif" width=72 border=0> <IMG height=2 
+      src="movemc_var_files/pixel.gif" width=120 border=0> </TD>
+    <TD vAlign=top width="90%"><IMG height=34 alt="flash technotes" 
+      src="movemc_var_files/head_technotes.gif" width=134 border=0> 
+      <HR width="100%" noShade SIZE=1>
+<!-- at this point we are inside a table inside a table -->
+      <H3><FONT face="Arial, Helvetica, sans-serif" size=+1><B>How to change the 
+      property of a movie clip based on a the value of a 
+variable</B></FONT></H3>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Product: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Flash</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Platform: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>All</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Versions: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>4 and above</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>ID: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>14039</FONT> </TD></TR></TBODY></TABLE>
+      <P><!--mm-contents --><FONT face="Arial, Helvetica, sans-serif" 
+      size=3><B></B></FONT>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Follow the 
+      steps below to create the movie clip and set up the stage:</B></FONT> 
+      <BR><BR>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=13 height=46><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">1</FONT> </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2 height=46>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Begin by 
+            opening a new Flash document and immediately saving it.</FONT> 
+          </P></TD></TR>
+        <TR>
+          <TD vAlign=top width=13 height=45><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">2</FONT> </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2 height=45>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            Insert&gt;New Symbol. Leave the Behavior at Graphic and set the Name 
+            to Circle. Click OK.</FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2> 
+</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=13 height=45><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">3</FONT> </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2 height=45>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            the circle tool, leaving the fill at red and the outline black. Draw 
+            a circle around the center centerpoint crosshairs.</FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2> 
+</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=13 height=45><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">4</FONT> </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2 height=45>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            Insert&gt;New Symbol. Set the Behavior to Movie Clip and the Name to 
+            Red.</FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2> 
+            </FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=13 height=55><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">5</FONT> </B></FONT></TD>
+          <TD vAlign=top width=432 colSpan=2 height=55>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            Window&gt;Library to open the library for this document. Drag the 
+            Circle symbol out onto the stage and center it on the centerpoint 
+            crosshairs.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=13><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">6</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            Edit&gt;Edit Movie to return to the main stage. </FONT></P>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><I>Right 
+            now the canvas should be blank, and there should be only two symbols 
+            in the library - the Red movie clip symbol and the Circle graphic 
+            symbol..</I></FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=13 height=47><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">7</FONT> </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2 height=47>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            the text tool and press the Text Field button at the bottom of the 
+            toolbar to enable the editable text field option. Draw a text box 
+            near the bottom of the stage, and type 450 into it.</FONT></P>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2><I>You'll know you've got a text field (not a normal text 
+            block) if you can see its outline when it isn't 
+            selected.</I></FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=13 rowSpan=2><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">8</FONT></B></FONT><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B> </B></FONT></TD>
+          <TD vAlign=top width=216 height=222>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            the arrow tool and then Modify&gt;Text Field to open the Text Field 
+            properties window. Give it the name Varfield, leave all other 
+            options at their defaults and click OK.</FONT></P></TD>
+          <TD vAlign=top width=216 height=222><IMG height=213 
+            src="movemc_var_files/txfiprop.gif" width=249 name=image2></TD></TR>
+        <TR>
+          <TD vAlign=top width=658 colSpan=2><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2><I>Because the 
+            Text Field option was activated, this field will be a variable in 
+            addition to just holding text. It must have its own unique name, 
+            which allows it to be identified for access to its 
+          value.</I></FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=13><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">9</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Drag the Red 
+            movie clip symbol out of the library and onto the center of the 
+            stage, above the Text Field. Double-click it, and in the Definition 
+            tab, type 'redmc' into the Instance Name field. Click 
+        OK.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=13 height=65><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">10</FONT> </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2 height=65><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            Libraries&gt;Buttons. Drag the Diamond Blue button from the Button 
+            library onto the stage below the Red movie clip symbol and resize as 
+            necessary.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=13 height=30><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">11</FONT> </B></FONT></TD>
+          <TD vAlign=top width=658 colSpan=2 height=30><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            File&gt;Save.</FONT> </TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width=400 border=0>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Before 
+            going on, make sure the document is set up correctly. There should 
+            be only three items on the stage - the Red movie clip symbol with 
+            the instance name redmc, the Diamond Blue button symbol and the Text 
+            Field with the Variable name Varfield. If there are any other 
+            symbols or shapes on the stage, delete them now.</FONT></TD>
+          <TD><IMG height=204 src="movemc_var_files/stagectf.gif" width=158 
+            name=image3></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>To assign 
+      the property changes to the movie clip do the following:</B></FONT> </P>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=11><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">1</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top colSpan=2><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Double-click the 
+            button to open the instance properties window, and click on the 
+            actions tab.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=11 height=45 rowSpan=2><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">2</FONT></B></FONT><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B> </B></FONT></TD>
+          <TD vAlign=top width=167 height=45><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2></FONT>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Click 
+            the + and choose Set Property</FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>. From the Set 
+            pulldown menu choose X Position. In the Target field type /redmc. In 
+            the Value field, type Varfield and change the value type to 
+            Expression. Click OK.</FONT></P></TD>
+          <TD vAlign=top width=238 height=45>
+            <DIV align=center><IMG height=208 src="movemc_var_files/setprop.gif" 
+            width=244 name=image4></DIV></TD></TR>
+        <TR>
+          <TD vAlign=top colSpan=2 height=42><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2><I>It is not 
+            necessary to 'Eval' the variable; simply referencing its name is 
+            sufficient. For more on Strings and Expressions, see page 196 in the 
+            Using Flash manual.</I> </FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=11 height=46><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">3</FONT> </B></FONT></TD>
+          <TD vAlign=top colSpan=2 height=46><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            Modify&gt;Movie to open the Movie Properties window. Set the Ruler 
+            Units to Pixels, and click OK.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=11><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">4</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top colSpan=2><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>If you cannot 
+            already see the rulers in the editing window, choose View&gt;Rulers 
+            to display them. Note where 450 is on the ruler. That is the target 
+            location for the red circle movie clip to move to.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=11><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">5</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top colSpan=2>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Choose 
+            Control&gt;Test Movie to open the Test Movie window. Click the 
+            button and watch the red circle move to 450. </FONT></P>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Type 
+            another number, like 25, into the text field and click the button 
+            again. Watch the red circle move to the new 
+        location.</FONT></P></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" color=#666666 
+      size=2><B>Note: </B></FONT><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>The Set Property action 
+      is not restricted to buttons. It can also be assigned to a frame as a 
+      frame action. </FONT></P>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>Additional 
+      information<BR></B></FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>For another 
+      advanced tutorial using variables please refer to <A 
+      href="http://www.macromedia.com/support/flash/ts/documents/random_movie_clip.htm">How 
+      to Duplicate a Movie Clip in Random Locations</A> (TechNote 13940) or <A 
+      href="http://www.macromedia.com/support/flash/technotes.html">search the 
+      TechNotes</A> using the keyword 'variable'.</FONT><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2> </FONT></P><!--mm-end-contents -->
+      <P>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD colSpan=2><FONT face="Arial, Helvetica, sans-serif" 
+            size=2><B>Keywords: </B></FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>action, action 
+            script, variable, movie clip, set property, set variable, x 
+            position</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Last 
+            updated: </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>September 3, 1999</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Author: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Meredith Hines</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Area: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Tips 
+            &amp; Tricks</FONT> </TD></TR></TBODY></TABLE><!-- insert a little gap after the bottom table --><BR>&nbsp; 
+<!-- close the table row that the body is in --></P></TD></TR>
+  <TR>
+    <TD vAlign=bottom align=right width="10%"><A target=_top 
+      href="http://www.macromedia.com/buy/"><IMG height=21 alt=buy 
+      src="movemc_var_files/buy.gif" width=67 border=0></A><BR><A 
+      href="http://www.macromedia.com/support/search/powersearch.html"><IMG 
+      height=21 alt="power search" src="movemc_var_files/search.gif" width=90 
+      border=0></A><BR></TD>
+    <TD>
+      <CENTER>
+      <HR width="100%" noShade SIZE=1>
+      <BR><FONT face="Arial, Helvetica" size=-1>[<A target=_top 
+      href="http://www.macromedia.com/">home</A>] [<A target=_top 
+      href="http://www.macromedia.com/software/">products</A>] [<A target=_top 
+      href="http://www.macromedia.com/support/">support</A>] [<A target=_top 
+      href="http://www.macromedia.com/downloads/">downloads</A>] [<A target=_top 
+      href="http://www.macromedia.com/macromedia/">about us</A>] [<A 
+      target=mm_window 
+      href="http://www.macromedia.com/OUTGOING/http://www.shockwave.com/">shockwave.com</A>] 
+      [<A target=_top href="http://www.macromedia.com/help/">help</A>] <BR><FONT 
+      size=-2><A href="http://www.macromedia.com/help/copyright.html">Trademarks 
+      Copyright</A> ©1995-2000 Macromedia, Inc. All rights reserved. <A 
+      href="http://www.macromedia.com/help/privacy.html">Privacy policy</A>. 
+      </FONT><BR></FONT></CENTER></TD></TR></TBODY></TABLE><!-- whitespace required to workaround Nav 3.04 Win scrollbar bug --><BR></BODY></HTML>

@@ -1,0 +1,38 @@
+<HTML xmlns:MMflash>
+<?IMPORT namespace="MMflash" implementation="slideshow.htc">
+<html>
+<head>
+<title>Slideshow example</title>
+<style>
+body {font-family: sans-serif}
+</style>
+
+<script>
+
+</script>
+</head>
+<body>
+
+<p><a href="#" onclick="feh.all[0].text = 'This text has been changed'">change</a>
+</p>
+<p>The slideshow tag prints out a list of bullet points withing two colored bars. The tag has the standard width and height attributes, as well as attributes that control the color of the top bar; COLOR for text, barcolor for the bar, buttoncolor for the interface normal state, and mouseovercolor for the color when the mouse is hovering. It also takes the title of the presentation as well as the page that you are starting on.</p>
+<p>Inside the tag are groups of items that are printed out. Up to six on a page. Each item consists of a bullet and a bit of text that link to a web page. Color and Bulletcolor
+control the appearance of an item, while href and target mimic the HTML anchor tag. The text is set with the text attribute, while it's order is set by the page attribute.</p>
+
+<MMflash:slideshow id="feh" title="Macromedia & Microsoft" width="500" height="500" color="red" barcolor="yellow" buttoncolor="blue" mouseovercolor="green" page="1">
+      <item page="1" color="orange" bulletcolor="green" target="_blank" href="http://www.flash.com/" text="ViewLink and Macromedia Flash" />
+      <item page="1" color="orange" bulletcolor="red" target="sna" href="http://www.flash.com/" target="_top" text="tight integration." />
+      <item page="1" color="orange" bulletcolor="purple" target="sna" href="http://www.flash.com/" text="Macromedia Flash Player" />
+      <item page="1" color="orange" bulletcolor="blue" href="http://www.macromedia.com/" text="Internet Explorer 5.5 - release July 00" />
+      <item page="1" color="blue" bulletcolor="green" text=" @ Microsoft PDC - Orlando" />
+      <item page="2" bulletcolor="green" text="create rich Web applications" />
+      <item page="2" color="green" bulletcolor="green" text="the standard of the internet" />
+      <item page="2" color="red" bulletcolor="green" text="Internet Explorer 5.0 is the market Leader" />
+      <item page="2" bulletcolor="green" text="Macromedia Flash is part of the typical install" />
+      <item page="2" bulletcolor="green" text="Macromedia Flash Player 4" />
+      <item page="2" text="the solution for creating high-impact vector based Web sites" />
+</MMflash:slideshow>
+
+
+</body>
+</html>

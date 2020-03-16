@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>Flash 4 Continuous Feedback Buttons Tutorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h1>Continuous Feedback Buttons</h1>
+<p>by Bill Tagliaferro<br>
+  [<a href="continuousfeedback.zip">Download Source</a>]</p>
+<p>This tutorial is designed to show you how to build what I call <i><b>continuous feedback buttons.</b></i>  Continuous feedback buttons
+are simply buttons that as long as you press them or have your mouse over them they continue to
+provide actions.  An example might be a scroll arrow as you would find on your  browser window.  
+As long as you continue to press the scroll arrow the window continues to scroll up or down.<p >
+<!-- (C) 1999 Copyright ENS Inc. -->
+<center>
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+ ID=continuousfeedback WIDTH=400 HEIGHT=200>
+	<PARAM NAME=movie VALUE="continuousfeedback.swf"> 
+	<PARAM NAME=quality VALUE=high> 
+	<PARAM NAME=bgcolor VALUE=#FFFFFF> 
+	<EMBED src="continuousfeedback.swf" 
+		quality=high 
+		bgcolor=#FFFFFF  
+		WIDTH=400 
+		HEIGHT=200 
+		TYPE="application/x-shockwave-flash" 
+		PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+	</EMBED>
+</OBJECT>
+</center>
+</p>
+
+<p>This tutorial is intended for beginner Flash 4 users.</p>
+<ul>
+  <li>No previous tutorials are required.</li>
+  <li>Download the <a href="continuousfeedback.zip">source</a> files and have them unzipped for review during this tutorial.</li>
+</ul>
+<hr>
+<h2>Step-by-step</h2>
+<h3>Overview:</h3>
+<p >Continuous feedback buttons (CFB) have numerous applications, one of which was mentioned above.  Another application might be
+similar to the one used in this tutorial where the CFB magnifies an image.  The whole process can be summarized as follows:</p>
+<ol>
+  <li>Definition of Variables or Actions.</li><br>
+  <li>Building a contineous feedback loops.</li><br>
+  <li>Assigning button actions for the loop.</li><br>
+</ol>
+<hr>
+<i><b>Background</b></i><br>
+<p >CFB's can be built in a number of ways.  It's more important to understand the theory behind a CFB than the mechanics of building one.
+Basically, a continuous feedback loop in what programmers call an "infinite loop" in the sense that nothing within the loop itself stop it once it has started.
+What save this loop from being truely an infinite loop is a button.  The button can start the loop and then interupt it to stop.</p>
+<ol type=1>
+<br><br><li>Definition of Variables or Actions.  
+	<p>As with any good Flash movie planning starts first.  Think about your CFB application.  What is the CFB going to control, variables or actions?  Variables can be assigned to specific instances of movie clips or they can be global.  For example,
+	in this tutorial the image that is magnified is named "mouthman" and I have assigned a variable to it called "scaleval".  The CFB's
+	(i.e. the "+" and "-" buttons) in this tutorial increas or decrease "scaleval" which in turn becomes the Scale Property for "mouthman".
+	</p>
+	<p >The point is this, pick variables names that relate to what the CFB will do.  Then descide whether the variable should be global or assigned to a 
+	specific instance of a movie clip.  In this tutorial we will assign the variables to the "mouthman" movie clip.
+	</p>
+	<p >One last point.  There can be many application where variables are not needed for a CFB.  An example might be where your actions just move
+	a movie clip to the next or previous frame.
+	</p>
+	<ol type=a>
+		<li>The first step is to define variables and assign them to your movie clip.  In this case I want to scale an instance of mouthman to simulate
+			magnification.  The variable I will use to keep track of the curent scale value is "scaleval".
+		<li>At this point I have an instance of mouthman on stage, that is named "mouthman", and two buttons, one for "+" and the other for "-".
+		<li>To define a variable all you have to do is set it.  In this case we want to define a variable of "mouthman" as "scaleval" and initially set it to 100 (for 100%).  
+		<li>Double click on the first keyframe and assign the following actions:<br><br>
+			Set Variable: "scaleval" = 100
+	</ol>
+	
+<br><br><li>Building a Continuous Feedback Loop.
+
+	<ol type=a>
+		<li>Now create another new movie clip (<b>CTRL + F8</b>).  Name this clip "Button + Trigger".
+		<li>This movie clip will have three frames all of which are keyframes, so insert two more keyframes (<b>F6</b>).
+		<li>Double click on the first keyframe and give it an action of "Stop".
+		<li>Double click on the third keyframe and give it an action of "Go to and Play (2)"
+		<li>Double click on the second keyframe  to open its Frame Properties window and click on the <b>Action Tab</b>.
+		<li>Assign the following action to this frame:<br><br>
+			Set Variable: "/mouthman:scaleval" = /mouthman:scaleval + 10<br>
+			Set Property ("/mouthman", X Scale) = /mouthman:scaleval<br>
+			Set Property ("/mouthman", Y Scale) = /mouthman:scaleval<br><br>
+		<li>Go back to your main movie and drop an instance of this clip on stage.
+		<li>Give it the name "uptrigger".<br><br>
+
+		<li>Now create another new movie clip (<b>CTRL + F8</b>).  Name this clip "Button - Trigger".
+		<li>This movie clip will have three frames all of which are keyframes, so insert two more keyframes (<b>F6</b>).
+		<li>Double click on the first keyframe and give it an action of "Stop".
+		<li>Double click on the third keyframe and give it an action of "Go to and Play (2)"
+		<li>Double click on the second keyframe  to open its Frame Properties window and click on the <b>Action Tab</b>.
+		<li>Assign the following action to this frame:<br><br>
+			Set Variable: "/mouthman:scaleval" = /mouthman:scaleval - 10<br>
+			Set Property ("/mouthman", X Scale) = /mouthman:scaleval<br>
+			Set Property ("/mouthman", Y Scale) = /mouthman:scaleval<br><br>
+		<li>Go back to your main movie and drop an instance of this clip on stage.
+		<li>Give it the name "downtrigger".
+
+	</ol>
+<br><br><li>Assigning Button Actions.
+	<ol type=a>
+		<li>Drop two instances of any button into your scene.
+		<li>Add a "+" label one and a "-" label to the other.
+		<li>Double click on the the "+" button and add these actions:<br><br>
+		On (Press)<br>
+		<span style="margin-left:2%">
+      		Begin Tell Target ("/uptrigger")<br>
+				<span style="margin-left:2%">
+            		Go to and Play (2)<br>
+				</span>
+      		End Tell Target<br>
+		</span>
+		End On<br>
+		On (Release)<br>
+		<span style="margin-left:2%">
+      		Begin Tell Target ("/uptrigger")<br>
+			<span style="margin-left:2%">
+            		Go to and Stop (1)<br>
+			</span>
+      		End Tell Target<br>
+		</span>
+		End On<br><br>
+		<li>Double click on the the "-" button and add these actions:<br><br>
+		On (Press)<br>
+		<span style="margin-left:2%">
+      		Begin Tell Target ("/downtrigger")<br>
+				<span style="margin-left:2%">
+            		Go to and Play (2)<br>
+				</span>
+      		End Tell Target<br>
+		</span>
+		End On<br>
+		On (Release)<br>
+		<span style="margin-left:2%">
+      		Begin Tell Target ("/downtrigger")<br>
+			<span style="margin-left:2%">
+            		Go to and Stop (1)<br>
+			</span>
+      		End Tell Target<br>
+		</span>
+		End On<br><br>
+	</ol>
+</ol>
+
+<hr>
+<h2>Need More Help?</h2>
+<p>[<a href="continuousfeedback.zip">Download Source</a>]<br>Don't forget to get the source files and look them over.</p>
+<hr>
+<h2>Troubleshooting</h2>
+<p>The main problem you will have in this tutorial is remembering the paths to movie clips and variables.
+Try to use names that you will remember and have some association with the movie, instance or variable.</p>
+</body>
+</html>

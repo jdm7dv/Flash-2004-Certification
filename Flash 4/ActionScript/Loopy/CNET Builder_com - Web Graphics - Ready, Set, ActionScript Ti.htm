@@ -1,0 +1,576 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.builder.com/Graphics/ActionScript/ss04.html -->
+<HTML><HEAD><TITLE>CNET Builder.com - Web Graphics - Ready, Set, ActionScript Tips! - 1/18/00</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=JavaScript>
+
+<!--
+if (location.search && window.focus) { // for NN2
+ if (location.search.indexOf("buFocus") >= 0) {
+  top.focus();
+  } 
+ }
+//-->
+
+</SCRIPT>
+
+<STYLE type=text/css>.ctext CODE {
+	FONT-FAMILY: Courier,Courier New
+}
+.ctext SUP {
+	FONT-SIZE: 8pt
+}
+.csub {
+	FONT-SIZE: 11pt
+}
+A.perm {
+	COLOR: #0033cc
+}
+A.perm:active {
+	COLOR: #cc0000
+}
+DIV.cbar A:hover {
+	COLOR: #ff0000
+}
+DIV.cbar A:hover FONT {
+	COLOR: #ff0000
+}
+DIV.cbar A:link FONT {
+	COLOR: #0033cc
+}
+.invert1 {
+	BACKGROUND: #cc0000
+}
+.invert2 {
+	BACKGROUND: #ffffcc
+}
+</STYLE>
+
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR></HEAD>
+<BODY id=bu text=#000000 aLink=#cc0000 link=#0033cc bgColor=#ffffff><A 
+name=top></A><MAP name=redball><AREA shape=CIRCLE coords=28,25,25 
+  href="http://home.cnet.com/?tag=st.bl.bl-ros.yhed.1"><AREA shape=RECT 
+  coords=0,0,0,0 href="http://www.builder.com/?tag=st.bl.bl-ros.yhed.bl"></MAP>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#000000 border=0>
+  <TBODY>
+  <TR>
+    <TD noWrap align=left height=25><FONT style="COLOR: #ffcc00" 
+      face="MS Sans serif,Geneva" color=#ffcc00 size=-2>&nbsp;&nbsp; <A 
+      href="http://home.cnet.com/?tag=st.bl.bl-ros.sb.1"><FONT 
+      color=#ffcc00><B>CNET</B></FONT></A> | <A 
+      href="http://news.cnet.com/news/0-1002.html?tag=st.bl.bl-ros.sb.1002"><FONT 
+      color=#ffcc00><B>News</B></FONT></A> | <A 
+      href="http://computers.cnet.com/hardware/0-1016.html?tag=st.bl.bl-ros.sb.1016"><FONT 
+      color=#ffcc00><B>Hardware</B></FONT></A> | <A 
+      href="http://www.download.com/?tag=st.bl.bl-ros.sb.dl"><FONT 
+      color=#ffcc00><B>Downloads</B></FONT></A> | <A 
+      href="http://home.cnet.com/specialreports/0-6014.html?tag=st.bl.bl-ros.sb.6014"><FONT 
+      color=#ffcc00><B>Trends</B></FONT></A> | <A 
+      href="http://www.gamecenter.com/?tag=st.bl.bl-ros.sb.gc"><FONT 
+      color=#ffcc00><B>Games</B></FONT></A> | <A 
+      href="http://home.cnet.com/techjobs/0-7067.html?tag=st.bl.bl-ros.sb.7067"><FONT 
+      color=#ffcc00><B>Jobs</B></FONT></A> | <A 
+      onmouseover="status='http://auctions.cnet.com/';return true;" 
+      onmouseout="status=''" 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.sb.au&amp;destUrl=http%3A%2F%2Fauctions%2Ecnet%2Ecom%2F"><FONT 
+      color=#ffcc00><B>Auctions</B></FONT></A> | <A 
+      href="http://shopper.cnet.com/shopping/0-1257.html?tag=st.bl.bl-ros.sb.1257"><FONT 
+      color=#ffcc00><B>Prices</B></FONT></A> | <A 
+      onmouseover="status='http://www.help.com/';return true;" 
+      onmouseout="status=''" 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.sb.hp&amp;destUrl=http%3A%2F%2Fwww%2Ehelp%2Ecom%2F"><FONT 
+      color=#ffcc00><B>Tech Help</B></FONT></A> </FONT></TD>
+    <TD noWrap align=right><FONT style="COLOR: #ffcc00" 
+      face="MS Sans serif,Geneva" color=#ffcc00 size=-2><A 
+      onmouseover="status='http://www.email.com/';return true;" 
+      onmouseout="status=''" 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.sb.email&amp;destURL=http://www.email.com/%3Fsr=ex.email.hb.bl"><FONT 
+      color=#ffcc00><B>Free Email</B></FONT></A>&nbsp;&nbsp; 
+  </FONT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffcc00 border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG height=55 alt="CNET Builder.com" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/0-3880-title-sm.gif" 
+      width=370 useMap=#redball border=0></TD>
+    <TD align=right>
+      <TABLE cellSpacing=0 cellPadding=1 bgColor=#ffcc00 border=0>
+        <FORM 
+        action=/FileSearch/Redirect/1,1014,,00.html?st.bl.bl-ros.srch.redirect 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD align=right><FONT face=Helvetica,Arial 
+            size=-1><B>Search</B>&nbsp;</FONT></TD>
+          <TD><INPUT size=13 name=keyword>&nbsp;<INPUT type=submit value=Go! name=search>&nbsp;</TD></TR>
+        <TR>
+          <TD><FONT face=Arial,Helvetica size=-2><A 
+            href="http://home.cnet.com/search/advanced/0,10043,,00.html?tag=st.bl.bl-ros.srch.asf">Advanced</A>&nbsp;• 
+            <A 
+            href="http://home.cnet.com/search/tips/0,10066,,00.html?tag=st.bl.bl-ros.srch.stp">Tips</A> 
+            &nbsp;</FONT></TD>
+          <TD align=left><SELECT name=search_level> <OPTION value=SS 
+              selected>Builder.com<OPTION value=BZ>Builder Buzz<OPTION 
+              value=AC>All CNET<OPTION value=TW>The Web</OPTION></SELECT> 
+            <BZCUT><INPUT type=hidden name=bzLocation> <INPUT type=hidden 
+            name=bzCertificate></BZCUT> </TD></TR></FORM></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD bgColor=#cc9900 colSpan=2><IMG height=1 hspace=0 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1 border=0></TD></TR>
+  <TR>
+    <TD bgColor=#996600 colSpan=2><IMG height=1 hspace=0 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1 border=0></TD></TR>
+  <TR>
+    <TD bgColor=#663300 colSpan=2><IMG height=1 hspace=0 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1 border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=7 width="100%" bgColor=#eeeeee border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle><A 
+      href="http://www.builder.com/cgi-bin/acc_clickthru?clickid=00002f2fee95151800000000&amp;edition=CNET&amp;adt=001:00:100&amp;category=1:3880:3883:&amp;site=CN&amp;url=http%3A%2F%2Fclick%2Eaccendo%2Ecom%2Fiballs%2Fgo%2Fcnet%5Feportfolio%5Fep002%5F011600da%5F01%2Fdirect%2F01%2F%5BTIME%5FDATE%5FSTAMP%5D%3Fmisc%3D2000.01.28.18.44.17%3B"><IMG 
+      height=60 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/fa_ep_time_468x60.gif" 
+      width=468 border=0><BR>
+      <CENTER><FONT face="Verdana, Arial, Helvetica" 
+size=-2></FONT></CENTER></A><!-- c|net Tue Jan 18 15:03:06 2000  $Revision: 2.29 $  --></TD></TR></TBODY></TABLE><!-- Breadcrumb -->
+<TABLE cellSpacing=0 cellPadding=1 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#006633>
+    <TD height=25><FONT size=+1>&nbsp;</FONT></TD>
+    <TD width="100%"><FONT style="COLOR: #ffcc00" face=Arial,Helvetica 
+      color=#ffcc00 size=2><A 
+      href="http://home.cnet.com/?tag=st.bl.bl-ros.bc.fd"><FONT 
+      color=#ffcc00>CNET</FONT></A> : <A 
+      href="http://home.cnet.com/webbuilding/0-3880.html?st.bl.bl-ros.bc.gp"><FONT 
+      color=#ffcc00>Web Building</FONT></A> : <A 
+      href="http://home.cnet.com/webbuilding/0-3883.html?st.bl.bl-ros.bc.gp"><FONT 
+      color=#ffcc00>Design</FONT></A> : <B><FONT style="COLOR: #ffffff" 
+      color=#ffffff size=3>Ready, Set, ActionScript Tips!</FONT></B> 
+  </FONT></TD></TR></TBODY></TABLE><!-- /Breadcrumb -->
+<P><!--title bar GIF here--><MAP name=scully><AREA shape=RECT target=_top 
+  coords=15,26,100,44 
+  href="http://www.builder.com/Graphics/ActionScript/index.html"></MAP>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=500 rowSpan=99><IMG height=44 
+      alt="Take a Tour Inside HomeSite 4.5" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/header_back2_left.gif" 
+      width=500 border=0></TD>
+    <TD width="100%" bgColor=#ffffff><IMG height=25 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1 border=0></TD>
+    <TD width=100 rowSpan=99><IMG height=44 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/header_back2_right.gif" 
+      width=100 useMap=#scully border=0></TD></TR>
+  <TR>
+    <TD bgColor=#cccccc><IMG height=4 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=1 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#ffcc00><IMG height=4 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=1 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#ffcc00><IMG height=4 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=1 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1></TD></TR>
+  <TR>
+    <TD bgColor=#cccccc><IMG height=4 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1></TD></TR></TBODY></TABLE><!--end title bar-->
+<P>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD></TD>
+    <TD vAlign=top><FONT face="Arial, Helvetica" size=-1>
+      <P><FONT size=+2><B>Get Loopy</B></FONT><BR>The Loop action is used to 
+      execute a block of ActionScript repeatedly while a condition that is set 
+      in the beginning of the loop remains true. An important thing to remember 
+      about the Loop action is that the screen is not updated until the loop has 
+      finished. 
+      <P>Let's say you want to set up a loop that will move a movie clip to the 
+      left by 10 pixels and stop when the clip has moved over by 50 pixels. 
+      Well, some ActionScript that looks like this seems as if it should do just 
+      that: 
+      <P><FONT class=bCode color=#006600>Set Variable: "i" = "1"<BR>Loop While 
+      (i &lt;= 5)<BR>Set Property ("/clip", X Position) = GetProperty("/clip", 
+      _x) - 10<BR>Set Variable: "i" = i + 1<BR>End Loop </FONT>
+      <P>Looks like it should work, right? Unfortunately, since Flash doesn't 
+      update the screen until the loop completes, this ActionScript would just 
+      make the movie clip jump 50 pixels to the left, instead of showing the 
+      10-pixel jumps in between. 
+      <P>To implement this kind of action, you have to make your own loop action 
+      using a two-keyframe movie clip and a counter variable. First, set a 
+      variable on the main timeline that will act as the counter variable. It 
+      will keep track of how many times the looping movie clip has run. Set the 
+      variable like this: 
+      <P><FONT class=bCode color=#006600>Set Variable: "counter" = "1" </FONT>
+      <P>Next, create a new movie clip symbol with three blank keyframes. Add a 
+      Stop action in the first keyframe, which will prevent the movie clip from 
+      running until you tell it to do so. Leave the second frame blank, and 
+      double-click the third keyframe to bring up the Frame Properties dialog 
+      box, adding the following ActionScript in the Actions tab: 
+      <P><FONT class=bCode color=#006600>If (/:counter &lt;= 5)<BR>Set Property 
+      ("/clip", X Position) = GetProperty("/clip", _x) - 10<BR>Set Variable: 
+      "/:counter" = /:counter + 1<BR>Go To and Play (2)<BR>Else<BR>Go To and 
+      Stop (1)<BR>End If </FONT>
+      <P>Notice how the ActionScript referenced the counter variable; it 
+      precedes it with <FONT color=#006600>/:</FONT>. This is because the 
+      counter variable is on the main timeline, and you have to give Flash the 
+      path to the variable (see "<A 
+      href="http://www.builder.com/Graphics/ActionScript/ss07.html">Know Where 
+      Your Variables Are</A>" for more info). The code will check to see if the 
+      variable counter you set in the main timeline is less than or equal to 5; 
+      if it is, move the specified clip over 10 pixels each time the movie clip 
+      runs. 
+      <P>Whenever the clip runs, it will move the counter variable up by one. 
+      When the counter variable has reached the limit set in the If statement (5 
+      in this case), it will send the clip back to the first frame and will 
+      prevent the loop from running. When you're finished, drag an instance of 
+      the loop movie clip from the Library onto the stage. Give it an instance 
+      name of Looper, say when you want the clip to start its loop, and call it 
+      with a Tell Target action: 
+      <P><FONT class=bCode color=#006600>Begin Tell Target ("/looper")<BR>Go To 
+      and Play (2)<BR>End Tell Target" </FONT>
+      <P></FONT><BR clear=all><!--nose ring-->
+      <TABLE cellSpacing=0 cellPadding=0 width="99%" border=0>
+        <TBODY>
+        <TR vAlign=center>
+          <TD align=right width="100%"><FONT face=Helvetica,Arial size=-1><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss05.html">A 
+            random tip</A>&nbsp;</FONT></TD>
+          <TD align=right width=25 rowSpan=2><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss05.html"><IMG 
+            height=21 alt="" hspace=0 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/arrowright.w.gif" 
+            width=21 border=0></A></TD></TR></TBODY></TABLE><!--end nose ring-->
+      <P><!--text nav-->
+      <DIV align=center>
+      <TABLE cellSpacing=0 cellPadding=7 width="100%" border=0>
+        <TBODY>
+        <TR align=left bgColor=#ffffff>
+          <TD vAlign=left>
+            <LI><FONT face="Arial, Helvetica" color=#0000ff size=-1><B><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss01.html">Give 
+            Your Users Keyboard Shortcuts</A></B><BR></FONT></LI></TD>
+          <TD vAlign=left>
+            <LI><FONT face="Arial, Helvetica" color=#0000ff size=-1><B><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss05.html">Randomize 
+            It</A></B></FONT><BR></LI></TD></TR>
+        <TR align=left bgColor=#ffffff>
+          <TD vAlign=left>
+            <LI><FONT face="Arial, Helvetica" color=#0000ff size=-1><B><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss02.html">Optimize 
+            Your Movie</A></B><BR></FONT></LI></TD>
+          <TD vAlign=left>
+            <LI><FONT face="Arial, Helvetica" color=#0000ff size=-1><B><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss06.html">Dial 
+            the Correct Operator</A></B><BR></FONT></LI></TD></TR>
+        <TR align=left bgColor=#ffffff>
+          <TD vAlign=left>
+            <LI><FONT face="Arial, Helvetica" color=#0000ff size=-1><B><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss03.html">Have 
+            Fun With Text</A></B></FONT><BR></LI></TD>
+          <TD vAlign=left>
+            <LI><FONT face="Arial, Helvetica" color=#0000ff size=-1><B><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss07.html">Know 
+            Where Your Variables Are</A></B></FONT><BR></LI></TD></TR>
+        <TR align=left bgColor=#ffffff>
+          <TD vAlign=left>
+            <LI><FONT face="Arial, Helvetica" color=#000000 size=-1><B>Get 
+            Loopy</B><BR></FONT></LI></TD>
+          <TD vAlign=left>
+            <LI><FONT face="Arial, Helvetica" color=#0000ff size=-1><B><A 
+            href="http://www.builder.com/Graphics/ActionScript/ss08.html">Use 
+            the <FONT color=#006600>droptarget</FONT> 
+            Property</A></B><BR></FONT></LI></TD></TR></TBODY></TABLE></DIV><!--/end text nav-->
+      <P><!--Stretchy Navigation-->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=350 rowSpan=99><IMG height=9 alt="" 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/nav_left.gif" 
+            width=50 border=0></TD>
+          <TD width="100%" bgColor=#cccccc><IMG height=1 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+            width=1></TD>
+          <TD width=50 rowSpan=99><IMG height=9 alt="" 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/nav_right.gif" 
+            width=350 border=0></TD>
+        <TR>
+          <TD bgColor=#ffcc00><IMG height=6 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+            width=1></TD></TR>
+        <TR>
+          <TD bgColor=#009933><IMG height=1 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+            width=1></TD></TR>
+        <TR>
+          <TD bgColor=#cccccc><IMG height=1 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+            width=1></TD></TR></TR></TBODY></TABLE><!--/End Stretchy Navigation-->
+      <P><!--End middle column--></P></TD>
+    <TD width=10 bgColor=#ffffff><IMG height=1 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=10 border=0></TD>
+    <TD width=1 bgColor=#999999><IMG height=1 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1 border=0></TD>
+    <TD width=10 bgColor=#ffffff><IMG height=1 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=10 border=0></TD>
+    <TD vAlign=top width=160><!--Right-hand column-->
+      <P><!--Ontology--><!--Ontology links-->
+      <TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=6><FONT face="Verdana, Geneva" 
+          size=-2>•</FONT></TD>
+          <TD vAlign=top align=left><FONT face="Arial, Helvetica" size=-1><A 
+            href="http://www.builder.com/Graphics/FlashPoint/"><B>Flash 
+            Point</B></A><BR></FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=6><FONT face="Verdana, Geneva" 
+          size=-2>•</FONT></TD>
+          <TD vAlign=top align=left><FONT face="Arial, Helvetica" size=-1><A 
+            href="http://buzz.builder.com/cgi-bin/WebX?127@@/!&amp;count=15&amp;skip=0&amp;wholesite=true&amp;keywords=Macromedia%20Flash&amp;"><B>Flash 
+            Discussions</B></A><BR></FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=6><FONT face="Verdana, Geneva" 
+          size=-2>•</FONT></TD>
+          <TD vAlign=top align=left><FONT face="Arial, Helvetica" size=-1><A 
+            href="http://www.help.com/cat/2/657/187/188/index.html"><B>Flash 
+            Help</B></A><BR></FONT></TD></TR></TBODY></TABLE><!--End Ontology links--><!--Ontology end-->
+      <P>
+      <DIV align=center><IMG height=9 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/CNET.002header.gif" 
+      width=120 border=0><BR><A target=_top 
+      href="http://www.builder.com/cgi-bin/acc_clickthru?clickid=000020a04f4403a200000000&amp;adt=002:00:100&amp;edt=CNET&amp;cat=1:3880:3883:&amp;site=CN"><IMG 
+      alt="Click Here!" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/neoplanet.win.window.gif" 
+      border=0></A> </DIV>
+      <P><!-- Compare Prices --><!--lowest prices box-->
+      <TABLE cellSpacing=0 cellPadding=5 width=150 bgColor=#ffffcc border=1>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Arial, Helvetica" size=-1><B>Find Lowest 
+            Prices</B><BR><IMG height=10 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/red_arrow.gif" 
+            width=9 border=0> <FONT face="Arial, Helvetica" size=-1><A 
+            href="http://www.shopper.com/cgi-bin/nph-find?a0=macromedia+flash">Macromedia 
+            Flash 4</A><BR></FONT></FONT></TD></TR></TBODY></TABLE><!--lowest prices box end-->
+      <P><!-- downloads -->
+      <TABLE cellSpacing=0 cellPadding=2 width="100%" bgColor=#ffffff 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top align=left width=150 bgColor=#009933 
+            colSpan=2><B><FONT face="Arial, Helvetica" color=#ffffff 
+            size=-1>&nbsp;Downloads<BR></FONT></B></TD></TR>
+        <TR>
+          <TD vAlign=top><A 
+            href="http://www.download.com/pc/software/0,332,0-35426-g,1000.html"><IMG 
+            height=15 alt="" 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/download.gif" 
+            width=15 border=0></A></TD>
+          <TD vAlign=top><B><FONT face=arial,helvetica size=-1><A 
+            href="http://www.download.com/pc/software/0,332,0-35426-g,1000.html">Flash 
+            4.0 demo for the PC</A></FONT></B><BR></TD></TR>
+        <TR>
+          <TD vAlign=top><A 
+            href="http://www.download.com/mac/software/0,332,0-20671-g,1000.html"><IMG 
+            height=15 alt="" 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/download.gif" 
+            width=15 border=0></A></TD>
+          <TD vAlign=top><B><FONT face=arial,helvetica size=-1><A 
+            href="http://www.download.com/mac/software/0,332,0-20671-g,1000.html">Flash 
+            4.0 demo for the Mac</A></FONT></B><BR></TD></TR>
+        <TR>
+          <TD vAlign=top><A 
+            href="http://www.download.com/pc/software/0,332,0-16303-g,1000.html"><IMG 
+            height=15 alt="" 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/download.gif" 
+            width=15 border=0></A></TD>
+          <TD vAlign=top><B><FONT face=arial,helvetica size=-1><A 
+            href="http://www.download.com/pc/software/0,332,0-16303-g,1000.html">Flash 
+            Player 4.0 for the PC</A></FONT></B><BR></TD></TR>
+        <TR>
+          <TD vAlign=top><A 
+            href="http://www.download.com/mac/software/0,332,0-16301-g,1000.html"><IMG 
+            height=15 alt="" 
+            src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/download.gif" 
+            width=15 border=0></A></TD>
+          <TD vAlign=top><B><FONT face=arial,helvetica size=-1><A 
+            href="http://www.download.com/mac/software/0,332,0-16301-g,1000.html">Flash 
+            Player 4.0 for the Mac</A></FONT></B><BR></TD></TR></TBODY></TABLE><!-- /Downloads --><!-- /End Compare Prices -->
+      <P><!-- More Resources links -->
+      <TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#009933><FONT face=Arial,Helvetica color=#ffffff 
+            size=-1><B>&nbsp; More Resources</B></FONT></TD></TR>
+        <TR>
+          <TD width=150 bgColor=#ffffff><FONT face=Arial,Helvetica size=-1><A 
+            href="http://www.builder.com/Reviews/071699/">Flash 4 
+            review</A><BR><FONT size=-2>In Web Building</FONT></FONT></TD></TR>
+        <TR>
+          <TD width=150 bgColor=#ffffff><FONT face=Arial,Helvetica size=-1><A 
+            href="http://www.builder.com/Graphics/RW/030399/">Readers Write: 
+            Extend Flash With URLs</A><BR><FONT size=-2>In Web 
+            Building</FONT></FONT></TD></TR>
+        <TR>
+          <TD width=150 bgColor=#ffffff><FONT face=Arial,Helvetica size=-1><A 
+            href="http://www.builder.com/Graphics/FlashTips/">Make a Splash With 
+            Flash</A><BR><FONT size=-2>In Web Building</FONT></FONT></TD></TR>
+        <TR>
+          <TD width=150 bgColor=#ffffff><FONT face=Arial,Helvetica size=-1><A 
+            href="http://www.cnet.com/Help/Software/Graphics/Flash/">Flash Help 
+            Center</A><BR><FONT size=-2>In Help.com</FONT></FONT></TD></TR>
+        <TR>
+          <TD width=150 bgColor=#ffffff><FONT face=Arial,Helvetica size=-1><A 
+            href="http://webreview.com/wr/pub/1999/07/02/feature/index.html">Flash 
+            4 Turns Up the Heat</A><BR><FONT size=-2>From Web 
+            Review</FONT></FONT></TD></TR></TBODY></TABLE><!-- /End More Resources --></P></TD></TR></TBODY></TABLE><!--End right-hand column--><BR 
+clear=all>
+<DIV align=center>
+<P><!-- NuggetID=1000 -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle width=*>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD colSpan=2>
+            <HR width="98%" SIZE=1>
+          </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica" size=-1><B>&nbsp;&nbsp;Great Deals 
+            at Computers4Sure</B></FONT></TD>
+          <TD align=right><FONT face="MS Sans Serif, Geneva, Helvetica" 
+            size=-2>&nbsp;&nbsp;Advertisement&nbsp;&nbsp;</FONT></TD></TD></TR>
+        <TR>
+          <TD align=middle colSpan=2><FONT face="Arial, Helvetica" 
+            size=-1><NOBR><A 
+            href="http://www.builder.com/cgi-bin/acc_clickthru?clickid=00003196cd5e8fde00000000&amp;adt=017:00:100&amp;edt=CNET&amp;cat=1:3880:3883:&amp;site=CN&amp;url=http%3a%2f%2fwww.computers4sure.com%2fproduct.asp%3fproductid%3d77169%26affid%3d5179">Hewlett 
+            Packard Deskjet 970CXI</A></NOBR>&nbsp;<SMALL>•</SMALL> <NOBR><A 
+            href="http://www.builder.com/cgi-bin/acc_clickthru?clickid=00003196cd5e8fde00000000&amp;adt=017:00:100&amp;edt=CNET&amp;cat=1:3880:3883:&amp;site=CN&amp;url=http%3a%2f%2fwww.computers4sure.com%2fproduct.asp%3fproductid%3d87387%26affid%3d5140">FujiFilm 
+            DLT IV tape cartridge 10pk</A></NOBR>&nbsp;<SMALL>•</SMALL> <NOBR><A 
+            href="http://www.builder.com/cgi-bin/acc_clickthru?clickid=00003196cd5e8fde00000000&amp;adt=017:00:100&amp;edt=CNET&amp;cat=1:3880:3883:&amp;site=CN&amp;url=http%3a%2f%2fwww.computers4sure.com%2fproduct.asp%3fproductid%3d42112%26affid%3d5141">IXLA's 
+            Web Easy</A></NOBR></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- End 1000 -->
+<TABLE cellSpacing=0 cellPadding=7 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ffffff><IMG height=1 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/bump.gif" 
+      width=1 border=0></TD></TR>
+  <TR>
+    <TD align=middle bgColor=#eeeeee><!-- banner space --><A 
+      href="http://www.builder.com/cgi-bin/acc_clickthru?clickid=00002f2fee95151800000000&amp;edition=CNET&amp;adt=001:00:100&amp;category=1:3880:3883:&amp;site=CN&amp;url=http%3A%2F%2Fclick%2Eaccendo%2Ecom%2Fiballs%2Fgo%2Fcnet%5Feportfolio%5Fep002%5F011600da%5F01%2Fdirect%2F01%2F%5BTIME%5FDATE%5FSTAMP%5D%3Fmisc%3D2000.01.28.18.44.17%3B"><IMG 
+      height=60 alt="" 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/fa_ep_time_468x60.gif" 
+      width=468 border=0><BR>
+      <CENTER><FONT face="Verdana, Arial, Helvetica" 
+size=-2></FONT></CENTER></A><!-- end banner --></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffcc00 border=0>
+  <TBODY>
+  <TR>
+    <TD height=70><A 
+      href="http://www.cnet.com/frontdoor/0-1.html?tag=st.bl.bl-ros.ft.1"><IMG 
+      height=55 
+      src="CNET Builder_com - Web Graphics - Ready, Set, ActionScript Tips! - 1-18-00_files/cnet-redball-small.gif" 
+      width=75 vspace=7 border=0></A></TD>
+    <TD vAlign=center width="100%"><FONT style="COLOR: #000000" 
+      face="Arial, Geneva, Helvetica" color=#000000 size=-1>&nbsp;<BR><B>CNET 
+      Services:</B> <A 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.ft.au&amp;destUrl=http%3A%2F%2Fauctions%2Ecnet%2Ecom%2F"><FONT 
+      color=#000000>Auctions</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.ft.bs&amp;destUrl=http%3A%2F%2Fsolutions%2Ecnet%2Ecom%2F"><FONT 
+      color=#000000>Business&nbsp;Solutions</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://shopper.cnet.com/shopping/0-1257.html?tag=st.bl.bl-ros.ft.1257"><FONT 
+      color=#000000>Check&nbsp;Latest&nbsp;Prices</FONT></A> <FONT 
+      size=-2>·</FONT> <A 
+      href="http://download.cnet.com/downloads/?tag=st.bl.bl-ros.ft.10000"><FONT 
+      color=#000000>Downloads</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.ft.ws_host&amp;destUrl=http%3A%2F%2Fwebhostlist.internetlist.com"><FONT 
+      color=#000000>Find&nbsp;a&nbsp;Web&nbsp;Host</FONT></A> <FONT 
+      size=-2>·</FONT> <A 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.ft.ws_isp&amp;destUrl=http%3A%2F%2Fwebisplist.internetlist.com"><FONT 
+      color=#000000>Find&nbsp;an&nbsp;ISP</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://home.cnet.com/subscription/0-16335.html?tag=st.bl.bl-ros.ft.16335"><FONT 
+      color=#000000>Free&nbsp;Newsletters</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://home.cnet.com/consumerelectronics/0-3622.html?tag=st.bl.bl-ros.ft.3622"><FONT 
+      color=#000000>Gadgets</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://www.gamecenter.com/?tag=st.bl.bl-ros.ft.gc"><FONT 
+      color=#000000>Games</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://computers.cnet.com/hardware/0-1016.html?tag=st.bl.bl-ros.ft.1016"><FONT 
+      color=#000000>Hardware</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.ft.hp&amp;destUrl=http%3A%2F%2Fwww%2Ehelp%2Ecom%2F"><FONT 
+      color=#000000>Help&nbsp;&amp;&nbsp;How-Tos</FONT></A> <FONT 
+      size=-2>·</FONT> <A 
+      href="http://computers.cnet.com/hardware/0-1017.html?tag=st.bl.bl-ros.ft.1017"><FONT 
+      color=#000000>Latest&nbsp;PCs</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://news.cnet.com/news/0-1002.html?tag=st.bl.bl-ros.ft.1002"><FONT 
+      color=#000000>News</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://computers.cnet.com/hardware/0-1016-7-1494092.html?tag=st.bl.bl-ros.ft.0-1016-7-1494092"><FONT 
+      color=#000000>Publish&nbsp;Your&nbsp;Opinion</FONT></A> <FONT 
+      size=-2>·</FONT> <A 
+      href="http://home.cnet.com/go/to?tag=ex.bl.bl-ros.ft.se&amp;destUrl=http%3A%2F%2Fwww%2Esearch%2Ecom%2F"><FONT 
+      color=#000000>Search</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://investor.cnet.com/?tag=st.bl.bl-ros.ft.ne_invidx"><FONT 
+      color=#000000>Stock&nbsp;Quotes</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://jobs.cnet.com/?tag=st.bl.bl-ros.ft.7067"><FONT 
+      color=#000000>Tech&nbsp;Jobs</FONT></A> <FONT size=-2>·</FONT> <A 
+      href="http://home.cnet.com/webbuilding/0-3880.html?tag=st.bl.bl-ros.ft.3880"><FONT 
+      color=#000000>Web&nbsp;Building</FONT></A> <BR>&nbsp;</FONT></TD>
+    <TD>&nbsp;&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#000000 border=0>
+  <TBODY>
+  <TR>
+    <TD noWrap align=left width="100%" height=25><FONT style="COLOR: #ffcc00" 
+      face="Geneva,MS Sans serif,Helvetica" color=#ffcc00 size=-2>&nbsp;&nbsp; 
+      <A 
+      href="http://home.cnet.com/aboutcnet/0-13616.html?tag=st.bl.bl-ros.ft.13616"><FONT 
+      color=#ffcc00><B>CNET Jobs</B></FONT></A> | <A 
+      href="http://www.builder.com/Corrections/?tag=st.bl.bl-ros.ft.corr"><FONT 
+      color=#ffcc00><B>Corrections</B></FONT></A> | <A 
+      href="http://home.cnet.com/aboutcnet/0-13618.html?tag=st.bl.bl-ros.ft.13618"><FONT 
+      color=#ffcc00><B>How to advertise</B></FONT></A> | <A 
+      href="http://www.cnet.com/Affiliates/?tag=st.cn.bl-ros.ft.cn_affil"><FONT 
+      color=#ffcc00><B>Join CNET's Affiliate Program</B></FONT></A> | <A 
+      href="http://home.cnet.com/cnetsupport/0-3945.html?tag=st.bl.bl-ros.ft.3945"><FONT 
+      color=#ffcc00><B>Support</B></FONT></A> </FONT></TD>
+    <TD noWrap align=right><FONT style="COLOR: #ffcc00" 
+      face="MS Sans serif,Geneva" size=-2>&nbsp;&nbsp; <A 
+      href="http://home.cnet.com/aboutcnet/0-13611.html?tag=st.bl.bl-ros.ft.13611"><FONT 
+      color=#ffcc00>About CNET</FONT></A>&nbsp;&nbsp;</FONT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD align=left><FONT face=Arial,Geneva,Helvetica size=-1><A 
+      href="http://www.builder.com/Graphics/ActionScript/ss04.html#top">Back to 
+      Top</A></FONT></TD>
+    <TD align=right><FONT face=Arial,Geneva,Helvetica size=-1><B><A 
+      href="http://home.cnet.com/aboutcnet/0-13616.html?tag=st.bl.bl-ros.ft.13616">Join 
+      CNET, we're hiring</A></B></FONT></TD></TR></TBODY></TABLE><BR><FONT 
+face="Geneva,MS Sans serif,Helvetica" size=-2><A 
+href="http://home.cnet.com/aboutcnet/0-13611-7-811029.html?tag=st.bl.bl-ros.ft.13611-7-811029">Copyright</A> 
+©1995-2000 CNET, Inc. All rights reserved. <A 
+href="http://home.cnet.com/aboutcnet/0-13611-7-811039.html?tag=st.bl.bl-ros.ft.13611-7-811039">Privacy 
+policy</A>.</FONT> </P></DIV></BODY></HTML>

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0068)http://www.macromedia.com/support/flash/ts/documents/frame_loops.htm -->
+<HTML><HEAD><TITLE>Macromedia - How can I loop over some frames a given number of times?</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Last-Modified content="Fri, 20 Aug 1999 23:57:03 GMT">
+<META http-equiv=Version content=1.0 name=DOCVERSION>
+<META content="Fri, 20 Aug 1999 23:57:03 GMT" name=LASTMODIFIED>
+<META content="Tips &amp; Tricks" name=AREA>
+<META content=Yes name=PUBLIC>
+<META content="John Dowdell" name=AUTHOR>
+<META content=1 name=IMPORTANCE>
+<META 
+content="repeat, loop, looping sequence, pause, repeat frames, control sequence, script, scripts, scripting, actionscript, variables" 
+name=KEYWORDS>
+<META content=All name=PLATFORM>
+<META content=Flash name=PRODUCT>
+<META content=4.0 name=VERFROM>
+<META content=99 name=VERTO>
+<META content="4.0 and above" name=VERSIONS>
+<META content="How can I loop over some frames a given number of times?" 
+name=DOCTITLE>
+<META content=14023 name=DOCID>
+<META content="Ready for review" name=STATUS>
+<META content="August 20, 1999" name=DATECREATED>
+<META content="August 20, 1999" name=DATEMODIFIED>
+<META content=TechNote name=KIND>
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR></HEAD>
+<BODY vLink=#660033 aLink=#000000 link=#333399 bgColor=#ffffff><!-- begin flash TechNotes top fragment -->
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=bottom noWrap><IMG height=17 src="frame_loops_files/pixel.gif" 
+      width=18 border=0><A target=_top href="http://www.macromedia.com/"><IMG 
+      height=12 alt=macromedia src="frame_loops_files/crumb_macromedia_blue.gif" 
+      width=99 border=0></A><IMG height=12 alt=: 
+      src="frame_loops_files/crumb_colon.gif" width=15 border=0><A target=_top 
+      href="http://www.macromedia.com/software/"><IMG height=12 alt=products 
+      src="frame_loops_files/crumb_products_blue.gif" width=69 border=0></A><IMG 
+      height=12 alt=: src="frame_loops_files/crumb_colon.gif" width=15 
+      border=0><A target=_top 
+      href="http://www.macromedia.com/software/flash/"><IMG height=12 alt=flash 
+      src="frame_loops_files/crumb_flash_blue.gif" width=40 border=0></A><IMG 
+      height=12 alt=: src="frame_loops_files/crumb_colon.gif" width=15 
+      border=0><A target=_top 
+      href="http://www.macromedia.com/support/flash/"><IMG height=12 alt=support 
+      src="frame_loops_files/crumb_support_blue.gif" width=61 border=0></A><IMG 
+      height=12 alt=: src="frame_loops_files/crumb_colon.gif" width=15 
+      border=0><A 
+      href="http://www.macromedia.com/support/flash/technotes.html"><IMG 
+      height=12 alt=technotes src="frame_loops_files/crumb_technotes_blue.gif" 
+      width=79 border=0></A></TD></TR></TBODY></TABLE><IMG height=30 
+src="frame_loops_files/pixel.gif" width=2 border=0>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="10%"><IMG height=60 alt="flash icon" 
+      src="frame_loops_files/flash_logo.gif" width=72 border=0> <IMG height=2 
+      src="frame_loops_files/pixel.gif" width=120 border=0> </TD>
+    <TD vAlign=top width="90%"><IMG height=34 alt="flash technotes" 
+      src="frame_loops_files/head_technotes.gif" width=134 border=0> 
+      <HR width="100%" noShade SIZE=1>
+<!-- at this point we are inside a table inside a table -->
+      <H3><FONT face="Arial, Helvetica, sans-serif" size=+1><B>How can I loop 
+      over some frames a given number of times?</B></FONT></H3>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Product: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Flash</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Platform: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>All</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Versions: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>4.0 and above</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>ID: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>14023</FONT> </TD></TR></TBODY></TABLE>
+      <P><!--mm-contents -->
+      <P>The ActionScript in Flash 4 makes it easy to count things. You can use 
+      a variable to count the number of times you pass through a frame. For 
+      instance, if you'd like to repeat frames 10 through 20 five times, then an 
+      action like the following on frame 20 can do the trick:</P><PRE>    Set Variable: "counter" = counter + 1
+    If (counter &lt; 5)
+      Go To and Play (10)
+    End If
+</PRE><!--mm-end-contents -->
+      <P>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD colSpan=2><FONT face="Arial, Helvetica, sans-serif" 
+            size=2><B>Keywords: </B></FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>repeat, loop, 
+            looping sequence, pause, repeat frames, control sequence, script, 
+            scripts, scripting, actionscript, variables</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Last 
+            updated: </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>August 
+            20, 1999</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Author: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>John 
+            Dowdell</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Area: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Tips 
+            &amp; Tricks</FONT> </TD></TR></TBODY></TABLE><!-- insert a little gap after the bottom table --><BR>&nbsp; 
+<!-- close the table row that the body is in --></P></TD></TR>
+  <TR>
+    <TD vAlign=bottom align=right width="10%"><A target=_top 
+      href="http://www.macromedia.com/buy/"><IMG height=21 alt=buy 
+      src="frame_loops_files/buy.gif" width=67 border=0></A><BR><A 
+      href="http://www.macromedia.com/support/search/powersearch.html"><IMG 
+      height=21 alt="power search" src="frame_loops_files/search.gif" width=90 
+      border=0></A><BR></TD>
+    <TD>
+      <CENTER>
+      <HR width="100%" noShade SIZE=1>
+      <BR><FONT face="Arial, Helvetica" size=-1>[<A target=_top 
+      href="http://www.macromedia.com/">home</A>] [<A target=_top 
+      href="http://www.macromedia.com/software/">products</A>] [<A target=_top 
+      href="http://www.macromedia.com/support/">support</A>] [<A target=_top 
+      href="http://www.macromedia.com/downloads/">downloads</A>] [<A target=_top 
+      href="http://www.macromedia.com/macromedia/">about us</A>] [<A 
+      target=mm_window 
+      href="http://www.macromedia.com/OUTGOING/http://www.shockwave.com/">shockwave.com</A>] 
+      [<A target=_top href="http://www.macromedia.com/help/">help</A>] <BR><FONT 
+      size=-2><A href="http://www.macromedia.com/help/copyright.html">Trademarks 
+      Copyright</A> ©1995-2000 Macromedia, Inc. All rights reserved. <A 
+      href="http://www.macromedia.com/help/privacy.html">Privacy policy</A>. 
+      </FONT><BR></FONT></CENTER></TD></TR></TBODY></TABLE><!-- whitespace required to workaround Nav 3.04 Win scrollbar bug --><BR></BODY></HTML>

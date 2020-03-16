@@ -1,0 +1,74 @@
+Movie Report
+------------
+
+Frame #    Frame Bytes    Total Bytes    Page
+-------    -----------    -----------    ---------------
+    1         15836          15836        Scene 1
+    2             2          15838          2
+    3             2          15840          3
+    4         18989          34829          4
+    5         14538          49367          5
+    6           875          50242          6
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Scene 1                         147           145
+
+Symbol                     Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+10's                              0           320
+1's                               0             0
+add time                          0             0
+again button                      0             0
+again?                            0             0
+anim- C                           0             0
+anim- ic                        750             0
+anim k                         2123             0
+anim- l                         320             0
+anim- start                    1283             0
+anim- to                        930             0
+are you sure?                     0            71
+blood                           241             0
+blue under click                223             0
+body                           1296             0
+body and head                     0             0
+body button                      98             0
+dead body                         0             0
+dead head                         0             0
+heads                          4024             0
+letter- C                       511             0
+lives                             0           144
+made by me                        0             0
+movement                          0             0
+no                               77            82
+play again                       93            50
+Quit                            125            88
+quit                              0           132
+resrt score                      66           114
+rnd heads                         0            55
+rnd movement                      0           177
+rnd x                             0            50
+rnd y                             0           401
+start button                    214            64
+text- you have blah blah...        0           105
+time                            186             0
+x                                 0             0
+y                                 0             0
+yes                             151            86
+
+Tweened Shapes: 4962 bytes
+
+Event sounds: 11KHz Stereo 8 kbps MP3
+
+Sound Name                 Bytes       Format
+-----------------------    --------    --------
+Hitgibs.wav                  6633        11KHz Mono 5 bit ADPCM
+Wooah!.wav                    910         5KHz Mono 2 bit ADPCM
+loselife.wav                 2579         5KHz Mono 2 bit ADPCM
+
+Font Name                  Bytes       Characters
+-----------------------    --------    -----------
+Arial Black Bold              953        123456789
+X-Files                      1132         adehmnorstvxy
+Party                        2566         0123456789:?ACENQRSUYaceiklorstuy
+Party Bold                   2739         .0123?GLPYabeghilmnoprsuvy

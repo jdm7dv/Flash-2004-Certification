@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0068)http://www.macromedia.com/support/flash/ts/documents/square_root.htm -->
+<HTML><HEAD><TITLE>Macromedia - Finding square roots in Flash</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Last-Modified content="Tue, 18 Jan 2000 19:25:23 GMT">
+<META http-equiv=Version content=1.0 name=DOCVERSION>
+<META content="Tue, 18 Jan 2000 19:25:23 GMT" name=LASTMODIFIED>
+<META content="Tips &amp; Tricks" name=AREA>
+<META content=Yes name=PUBLIC>
+<META content="Bentley Wolfe" name=AUTHOR>
+<META content=1 name=IMPORTANCE>
+<META 
+content="ActionScript, action, square root, trigonometry, trig, calculate, math formula, sine, cosine, tangent, division, divide" 
+name=KEYWORDS>
+<META content=All name=PLATFORM>
+<META content=Flash name=PRODUCT>
+<META content=4 name=VERFROM>
+<META content=99 name=VERTO>
+<META content="4 and above" name=VERSIONS>
+<META content="Finding square roots in Flash" name=DOCTITLE>
+<META content=14250 name=DOCID>
+<META content=Done! name=STATUS>
+<META content="January 18, 2000" name=DATECREATED>
+<META content="January 27, 2000" name=DATEMODIFIED>
+<META content=TechNote name=KIND>
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR></HEAD>
+<BODY vLink=#660033 aLink=#000000 link=#333399 bgColor=#ffffff><!-- begin flash TechNotes top fragment -->
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=bottom noWrap><IMG height=17 src="square_root_files/pixel.gif" 
+      width=18 border=0><A target=_top href="http://www.macromedia.com/"><IMG 
+      height=12 alt=macromedia src="square_root_files/crumb_macromedia_blue.gif" 
+      width=99 border=0></A><IMG height=12 alt=: 
+      src="square_root_files/crumb_colon.gif" width=15 border=0><A target=_top 
+      href="http://www.macromedia.com/software/"><IMG height=12 alt=products 
+      src="square_root_files/crumb_products_blue.gif" width=69 border=0></A><IMG 
+      height=12 alt=: src="square_root_files/crumb_colon.gif" width=15 
+      border=0><A target=_top 
+      href="http://www.macromedia.com/software/flash/"><IMG height=12 alt=flash 
+      src="square_root_files/crumb_flash_blue.gif" width=40 border=0></A><IMG 
+      height=12 alt=: src="square_root_files/crumb_colon.gif" width=15 
+      border=0><A target=_top 
+      href="http://www.macromedia.com/support/flash/"><IMG height=12 alt=support 
+      src="square_root_files/crumb_support_blue.gif" width=61 border=0></A><IMG 
+      height=12 alt=: src="square_root_files/crumb_colon.gif" width=15 
+      border=0><A 
+      href="http://www.macromedia.com/support/flash/technotes.html"><IMG 
+      height=12 alt=technotes src="square_root_files/crumb_technotes_blue.gif" 
+      width=79 border=0></A></TD></TR></TBODY></TABLE><IMG height=30 
+src="square_root_files/pixel.gif" width=2 border=0>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="10%"><IMG height=60 alt="flash icon" 
+      src="square_root_files/flash_logo.gif" width=72 border=0> <IMG height=2 
+      src="square_root_files/pixel.gif" width=120 border=0> </TD>
+    <TD vAlign=top width="90%"><IMG height=34 alt="flash technotes" 
+      src="square_root_files/head_technotes.gif" width=134 border=0> 
+      <HR width="100%" noShade SIZE=1>
+<!-- at this point we are inside a table inside a table -->
+      <H3><FONT face="Arial, Helvetica, sans-serif" size=+1><B>Finding square 
+      roots in Flash</B></FONT></H3>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Product: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Flash</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Platform: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>All</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Versions: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>4 and above</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>ID: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>14250</FONT> </TD></TR></TBODY></TABLE>
+      <P><!--mm-contents -->
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>Finding square 
+      roots</B></FONT><BR><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2>This TechNote discusses how to create an ActionScript that will 
+      find the square root of a number. </FONT>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>In the Flash 
+      movie below, the original value is entered into an editable text field by 
+      the user. Pressing the button will yield the square root of the entered 
+      number.</FONT> 
+      <P>
+      <TABLE width=300 border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width=300 
+            height=180><PARAM NAME="movie" VALUE="square_root/square_root_flash.swf"><PARAM NAME="quality" VALUE="high">
+                                    <embed 
+            src="square_root/square_root_flash.swf" quality=high 
+            pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+            type="application/x-shockwave-flash" width="300" height="180">       
+             </embed>       </OBJECT></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>To build 
+      the square root calculator:<BR></B></FONT>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><FONT face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">1</FONT> </B></FONT></TD>
+          <TD vAlign=top><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Create an editable text field. Select the text field's 
+            properties and give it the variable name "value". This will be the 
+            entry field for the original value.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top><FONT face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">2</FONT> </B></FONT></TD>
+          <TD vAlign=top><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Create an editable text field to hold the result. Select the 
+            text field's properties and give it the variable name "sqrt". This 
+            will be the display field for the square root result.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top><FONT face="Geneva, Arial, Helvetica, san-serif" 
+            size=2><B>3</B></FONT></TD>
+          <TD vAlign=top>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Double 
+            click the button instance to access the Instance Properties 
+            dialog.</FONT></P>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Select 
+            the Actions tab. Enter the following ActionScript code:</FONT> </P><PRE><FONT color=#333333>   On (Release)
+          Set Variable: "i" = "0" 
+          Set Variable: "x" = "1" 
+          Loop While (i &lt; 20) 
+            Set Variable: "x" = x-((x*x-<FONT color=#ff0000>value</FONT>)/(2*x)) 
+            Set Variable: "i" = i+1 
+            End Loop 
+          Set Variable: "<FONT color=#ff0000>sqrt</FONT>" = x 
+  End On </FONT></PRE>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" color=#666666 
+            size=2><B>Note: </B></FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>This script uses 
+            the variables 'value' and 'sqrt' from steps 1 and 2, which have been 
+            colorized for clarity. Be certain all of the "Value" fields in Set 
+            Variable actions are set to "Expression".</FONT></P></TR></TBODY></TABLE>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>Additional 
+      information<BR></B></FONT><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>For more detail on 
+      working with editable text fields, please refer to <A 
+      href="http://www.macromedia.com/support/flash/ts/documents/textfield_borders.htm">Using 
+      type blocks and text fields in Flash</A> (TechNote 14154). For other math 
+      functions in Flash try <A 
+      href="http://www.flashlite.net/source/f4/other/index.html">Branden's Trig 
+      Library</A> from <A 
+      href="http://www.flashlite.net/">Flashlite.net</A>.</FONT></P>
+      <P>&nbsp;</P><!--mm-end-contents -->
+      <P>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD colSpan=2><FONT face="Arial, Helvetica, sans-serif" 
+            size=2><B>Keywords: </B></FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>ActionScript, 
+            action, square root, trigonometry, trig, calculate, math formula, 
+            sine, cosine, tangent, division, divide</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Last 
+            updated: </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>January 
+            27, 2000</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Author: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Bentley 
+            Wolfe</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Area: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Tips 
+            &amp; Tricks</FONT> </TD></TR></TBODY></TABLE><!-- insert a little gap after the bottom table --><BR>&nbsp; 
+<!-- close the table row that the body is in --></P></TD></TR>
+  <TR>
+    <TD vAlign=bottom align=right width="10%"><A target=_top 
+      href="http://www.macromedia.com/buy/"><IMG height=21 alt=buy 
+      src="square_root_files/buy.gif" width=67 border=0></A><BR><A 
+      href="http://www.macromedia.com/support/search/powersearch.html"><IMG 
+      height=21 alt="power search" src="square_root_files/search.gif" width=90 
+      border=0></A><BR></TD>
+    <TD>
+      <CENTER>
+      <HR width="100%" noShade SIZE=1>
+      <BR><FONT face="Arial, Helvetica" size=-1>[<A target=_top 
+      href="http://www.macromedia.com/">home</A>] [<A target=_top 
+      href="http://www.macromedia.com/software/">products</A>] [<A target=_top 
+      href="http://www.macromedia.com/support/">support</A>] [<A target=_top 
+      href="http://www.macromedia.com/downloads/">downloads</A>] [<A target=_top 
+      href="http://www.macromedia.com/macromedia/">about us</A>] [<A 
+      target=mm_window 
+      href="http://www.macromedia.com/OUTGOING/http://www.shockwave.com/">shockwave.com</A>] 
+      [<A target=_top href="http://www.macromedia.com/help/">help</A>] <BR><FONT 
+      size=-2><A href="http://www.macromedia.com/help/copyright.html">Trademarks 
+      Copyright</A> ©1995-2000 Macromedia, Inc. All rights reserved. <A 
+      href="http://www.macromedia.com/help/privacy.html">Privacy policy</A>. 
+      </FONT><BR></FONT></CENTER></TD></TR></TBODY></TABLE><!-- whitespace required to workaround Nav 3.04 Win scrollbar bug --><BR></BODY></HTML>

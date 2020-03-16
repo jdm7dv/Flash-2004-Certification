@@ -1,0 +1,271 @@
+<PUBLIC:COMPONENT tagName="calendar" >
+<public:defaults viewLinkContent />
+<PUBLIC:PROPERTY NAME="color" />
+<PUBLIC:PROPERTY NAME="target" />
+<public:method name="changeHeadline" />
+
+<public:event name=onupdate id=rcID />
+<attach event="oncontentready" onevent="init()" />
+</public:component>
+<script language="javascript">
+if(element.src) {
+
+}
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+var big = 0;
+var params = 0;
+var total = 0;
+var the_label = '';
+d = new Date();
+var lock = 0;
+var event_color = new Array();
+var label = new Array();
+var href = new Array();
+var target = new Array();
+
+function route(command, args){
+    current = d.getMonth();
+    if (command == "changeMonth"){
+	d.setMonth(current + parseInt(args));
+    } else if (command == 'changeDate'){
+	d.setDate(parseInt(args));
+    }
+    changeDate();
+}
+
+function changeDate(args){
+    var trace = '';
+    if (!lock){
+	lock = 1;
+    day = d.getDate();
+    flash.SetVariable('today', day); 
+    month = getMonthName(d.getMonth());
+    year = d.getFullYear();
+    // get the first day of the month
+    var first = getFirstDay(d.getMonth(), year) + 1;
+    // get the last day of the month
+    var last = getLastDay(d.getMonth(),year);
+    // loop through and write them all out.
+    the_day = 1;
+    for (i=1; i < 38; i++){
+	if ((i >= first) && (the_day <= last)){
+	    flash.SetVariable('value_'+i, the_day);
+
+	    for(j in label){
+		eventdate = j.split('/');
+		if((parseInt(eventdate[0])-1) == parseInt(d.getMonth())){
+		    if(parseInt(eventdate[1]) == parseInt(the_day)){
+			if(parseInt(eventdate[2]) == parseInt(year)){
+			    flash.SetVariable('event_'+i, 1);
+			    flash.SetVariable('event_color_'+i, event_color[j]);
+			    flash.SetVariable('label_'+i, label[j]);
+			    flash.SetVariable('href_'+i, href[j]);
+			    flash.SetVariable('target_'+i, target[j]);
+			}
+		    }
+		}
+	    }
+	    //alert((d.getMonth()+1)+'/'+the_day+'/'+year);
+	    //if(subjects[(d.getMonth()+1)+'/'+the_day+'/'+year]){
+	    //alert('feh');
+	    //}
+	    the_day ++;
+	} else {
+	    flash.SetVariable('event_'+i, 0);
+	    flash.SetVariable('value_'+i, "");
+	}
+    // if there are one or more events on that day bold the date
+    }
+    flash.SetVariable('last', last);
+    // Set the header variable
+    flash.SetVariable('calendar_header', month+' '+year);
+    // Set the today_is variable
+    flash.SetVariable('today_is', month+' '+day+', '+year);
+    flash.SetVariable('current_today_is', month+' '+day+', '+year);
+    if(element.color){
+	flash.SetVariable('base_color', element.color);
+    }
+    flash.TGotoFrame('_level0', 1);
+    flash.TPlay('_level0');
+    lock = 0;
+    }    
+}
+
+function init(){
+    if(element.width){
+	flash_width = element.width;
+    } else {
+	flash_width = 500;
+    }
+    if(element.height){
+	flash_height = element.height;
+    } else {
+	flash_height = 440;
+    }
+    flash.width = flash_width;
+    flash.height = flash_height;
+
+    // send in the params
+    var e;
+    for (i=0; i < element.all.length; i++){
+        e = element.all[i];
+        e.index = i;
+
+        if (e.nodeType == 1){
+	    if (e.getAttribute('label') && e.getAttribute('color') && e.getAttribute('date')){
+		e.attachEvent("onpropertychange", setProperties);
+		setPropertiesDirect(e);
+		params++;
+	    }
+        }
+    }
+
+
+    // load up the csv file
+
+    // parse through csv
+
+    // set up a date object    
+    // get the date to start on
+    // if not set default to today
+    //startEvents();
+    changeDate();
+    flash.SetVariable('current_today_is', 'Today is '+month+' '+day+', '+year);
+    flash.SetVariable('today_is', 'Today is '+month+' '+day+', '+year);
+    //flash.SetVariable('value_'+i, parseInt(element.all[i].getAttribute('value')));
+    flash.style.display = "block";
+}
+
+function setProperties(eO) {
+  setPropertiesDirect(eO.srcElement);
+  flash.TGotoFrame('_level0', 1);
+  flash.TPlay('_level0');
+}
+
+function setPropertiesDirect(e) {
+  var i,event;
+  i = e.index;
+  event = e.getAttribute('date');
+  event_color[event] = e.getAttribute('color');
+  label[event] = e.getAttribute('label');
+  href[event] =  e.getAttribute('href');
+  target[event] =  e.getAttribute('target');
+}
+
+
+function getLastDay(month,year){
+    if (month == 0){
+	return 31;
+    } else if (month == 1){
+	if (year%4 != 0){
+	    return 28;
+	} else if  (year%400 == 0){
+	    return 29;
+	} else if (year%100 == 0){
+	    return 28;
+	} else {
+	    return 29;
+	}
+    } else if (month == 2){
+	return 31;
+    } else if (month == 3){
+	return 30; 
+    } else if (month == 4){
+ 	return 31;
+    } else if (month == 5){
+	return 30;
+    } else if (month == 6){
+	return 31;
+    } else if (month == 7){
+	return 31;
+    } else if (month == 8){
+	return 30;
+    }  else if (month == 9){
+	return 31;
+    } else if (month == 10){
+	return 30;
+    } else if (month == 11){
+	return 31;
+    } else {
+	return 0;
+    }
+}
+
+// Return the day of the week
+function getDayOfWeek(day){
+    if (day == 0){
+	return "Sunday";
+    } else if (day == 1){
+	return "Monday";
+    } else if (day == 2){
+	return "Tuesday";
+    } else if (day == 3){
+	return "Wednesday";
+    } else if (day == 4){
+	return "Thursday";
+    } else if (day == 5){
+	return "Friday";
+    } else if (day == 6){
+	return "Saturday";
+    } else {
+	return "";
+    }
+}
+
+function getMonthName(month){
+    if (month == 0) {
+	return "January";
+    } else if (month == 1){
+	return "February";
+    } else if (month == 2){
+	return "March";
+    } else if (month == 3){
+	return "April";
+    } else if (month == 4){
+	return "May";
+    } else if (month == 5){
+	return "June";
+    } else if (month == 6){
+	return "July";
+    } else if (month == 7){
+	return "August";
+    } else if (month == 8){
+	return "September";
+    } else if (month == 9){
+	return "October";
+    } else if (month == 10){
+	return "November";
+    } else if (month == 11){
+	return "December";
+    } else {
+	return "January";
+    }
+}
+
+function getFirstDay(month, year){
+    var first = new Date(year, month, 1);
+    return first.getDay();
+}
+
+</SCRIPT>
+<SCRIPT LANGUAGE="VBScript">
+<!-- 
+//  Catch FS Commands in IE, and pass them to the corresponding JavaScript function.
+
+Sub flash_FSCommand(ByVal command, ByVal args)
+    call route(command, args)
+end sub
+
+//-->
+</SCRIPT>
+
+<BODY style="width:100%; height:100%">
+
+<object id="flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="10" height="40" style="display: none">
+<param name="movie" value="calendar.swf">
+<param name="quality" value="high">
+<PARAM NAME="wmode" VALUE="transparent">
+</object>
+
+</BODY>

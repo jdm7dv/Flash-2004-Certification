@@ -1,0 +1,16 @@
+Scripting for movie load check:
+
+Load Movie ("child.swf", "/holder")
+
+
+
+If ((holder/:movieloaded=false) and (GetProperty ("/holder", _framesloaded) = GetProperty ("/holder", _totalframes)))
+      Set Variable: "movieloaded" = true
+      Go to and Play ("full_load")
+End If
+
+
+If (movieloaded = true)
+      Get URL ("print:#bmax", window="/holder")
+End If
+Set Property ("/holder", Visibility) = false

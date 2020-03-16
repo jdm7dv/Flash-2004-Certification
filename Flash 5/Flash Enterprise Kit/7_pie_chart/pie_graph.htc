@@ -1,0 +1,67 @@
+<PUBLIC:COMPONENT tagName="piechart" >
+<public:defaults viewLinkContent />
+<PUBLIC:PROPERTY NAME="label" />
+<PUBLIC:PROPERTY NAME="width" />
+<PUBLIC:PROPERTY NAME="height" />
+
+<attach event="oncontentready" onevent="init()" />
+</public:component>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+function init(){
+    if(element.width){
+	graph_width = element.width;
+    } else {
+	graph_width = 500;
+    }
+    if(element.height){
+	graph_height = element.height;
+    } else {
+	graph_height = 440;
+    }
+    var params = 0;
+    var rotation = 0;
+    var total = 0;
+    var the_label = '';
+    graph.width = graph_width;
+    graph.height = graph_height;
+    if(element.label){
+	the_label = element.label;
+    }
+    // send in the params
+    for (i=0; i < element.all.length; i++){
+	if (element.all[i].nodeType == 1){
+	    if (element.all[i].getAttribute('value') && element.all[i].getAttribute('color')){
+		graph.SetVariable('value_'+i, element.all[i].getAttribute('value'));
+		total += parseInt(element.all[i].getAttribute('value'));
+		graph.SetVariable('color_'+i, element.all[i].getAttribute('color'));
+		graph.SetVariable('label_'+i, element.all[i].getAttribute('label'));
+		if(i > 0){
+		    rotation += parseInt(element.all[i - 1].getAttribute('value'));
+		    var deg_rot = parseInt(360 * (rotation/100));
+		    graph.SetVariable('rotation_'+i, deg_rot);
+		}
+		params ++;
+	    }
+	}
+    }
+    graph.SetVariable('params', params);
+    if (total > 101) {
+	the_label = "Total must be <= 100%";
+    }
+    graph.SetVariable('label', the_label);
+    graph.style.display = "block";
+}
+
+</SCRIPT>
+
+<BODY style="width:100%; height:100%">
+
+<object id="graph" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="550" height="440" style="display: none">
+<param name="movie" value="pie_graph.swf">
+<param name="quality" value="high">
+<PARAM NAME="wmode" VALUE="transparent">
+</object>
+
+</BODY>

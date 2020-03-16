@@ -1,0 +1,124 @@
+<PUBLIC:COMPONENT tagName="bargraph" >
+<public:defaults viewLinkContent />
+<PUBLIC:PROPERTY NAME="label" />
+<PUBLIC:PROPERTY NAME="width" />
+<PUBLIC:PROPERTY NAME="height" />
+
+<attach event="oncontentready" onevent="init()" />
+</public:component>
+
+<SCRIPT LANGUAGE="JavaScript">
+var big = 0;
+var params = 0;
+var total = 0;
+var the_label = '';
+
+function init(){
+    if(element.width){
+	graph_width = element.width;
+    } else {
+	graph_width = 500;
+    }
+    if(element.height){
+	graph_height = element.height;
+    } else {
+	graph_height = 440;
+    }
+    graph.width = graph_width;
+    graph.height = graph_height;
+    if(element.label){
+	the_label = element.label;
+    }
+    // find all variables for a sense of scale
+    for (i=0; i < element.all.length; i++){
+	if (element.all[i].nodeType == 1){
+	    if (element.all[i].getAttribute('value')){
+		if(parseInt(element.all[i].getAttribute('value')) > big){
+		    big = parseInt(element.all[i].getAttribute('value'));
+		}
+	    }
+	}
+    }
+		
+    // send in the params
+    var e;
+    for (i=0; i < element.all.length; i++){
+        e = element.all[i];
+        e.index = i;
+
+        if (e.nodeType == 1){
+	    if (e.getAttribute('value') && e.getAttribute('color')){
+		e.attachEvent("onpropertychange", setProperties);
+		setPropertiesDirect(e);
+		params++;
+	    }
+        }
+    }
+
+    /*
+        for (i=0; i < element.all.length; i++){
+	if (element.all[i].nodeType == 1){
+	    if (element.all[i].getAttribute('value') && element.all[i].getAttribute('color')){
+		graph.SetVariable('value_'+i, parseInt(element.all[i].getAttribute('value')));
+		graph.SetVariable('color_'+i, element.all[i].getAttribute('color'));
+		graph.SetVariable('label_'+i, element.all[i].getAttribute('label'));
+		params ++;
+	    }
+	}
+    }
+    */
+    // setting the ruler variables
+
+    step = big / 8;
+    ruler = big;
+    graph.SetVariable('ruler_0', parseInt(big));
+    for (k=1;k<9;k++){
+	ruler -= step;
+	graph.SetVariable('ruler_'+k, parseInt(ruler));
+    }
+    graph.SetVariable('ruler_9', 0);
+    graph.SetVariable('params', params);
+    graph.SetVariable('big', big);
+    graph.SetVariable('label', the_label);
+    graph.style.display = "block";
+}
+
+function setProperties(eO) {
+  setPropertiesDirect(eO.srcElement);
+    step = big / 8;
+    ruler = big;
+    graph.SetVariable('ruler_0', parseInt(big));
+    for (k=1;k<9;k++){
+	ruler -= step;
+	graph.SetVariable('ruler_'+k, parseInt(ruler));
+    }
+    graph.SetVariable('ruler_9', 0);
+    graph.SetVariable('params', params);
+    graph.SetVariable('big', big);
+    graph.SetVariable('label', the_label);
+}
+
+function setPropertiesDirect(e) {
+  var i;
+  i = e.index;
+  if (parseInt(e.getAttribute('value')) > big) big = parseInt(e.getAttribute('value'));
+  graph.SetVariable('value_'+i, parseInt(e.getAttribute('value')));
+  graph.SetVariable('color_'+i, e.getAttribute('color'));
+  graph.SetVariable('label_'+i, e.getAttribute('label'));
+
+  graph.TGotoFrame('_level0/graph', 1);
+  graph.TPlay('_level0/graph');
+}
+
+
+</SCRIPT>
+
+<BODY style="width:100%; height:100%">
+
+<object id="graph" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="550" height="440" style="display: none">
+<param name="movie" value="bar_graph.swf">
+<param name="quality" value="high">
+<PARAM NAME="wmode" VALUE="transparent">
+</object>
+
+</BODY>

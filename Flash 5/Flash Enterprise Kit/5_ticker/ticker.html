@@ -1,0 +1,30 @@
+<HTML xmlns:MMflash>
+<?IMPORT namespace="MMflash" implementation="ticker.htc">
+<head>
+<title>News Ticker Behavior</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+<body bgcolor="#FFFFFF">
+<p>This is an example of the &lt;MMflash:newsHeadlines&gt; tag. It takes two arguments. A speed and a source. The source can be any XML file that is in the <a href="http://www.isyndicate.com/">iSyndicate</a> XML format.</p>
+<p><font face="Courier New, Courier, mono" size="2">&lt;<font color="#FF0000">MMflash</font>:<font color="#FFFFFF">newsHeadlines</font> <font color="#009900">src</font>=&quot;<font color="#6600CC">news.xml</font>&quot; 
+              <font color="#009900">speed</font>=&quot;<font color="#6600CC">2</font>&quot; <font color="#009900">target</font>=&quot;<font color="#6600CC">contentFrame</font>&quot;/&gt;</font></p>
+<p>It can only load xml files from the same TLD unfortunatly. Try setting the src to entertainment.xml or technology.xml and the headlines will change.</p>
+<p>The speed attribute determines how many pixels per frame it will scroll.</p>
+<p>The target determines the window target that the links will open into.</p>
+<p>Width and height attributes set the width and height.
+<p> You can change headlines by calling the changeHeadlines() method. Change <a href="#" onClick="myhead.changeHeadline('entertainment.xml'); return false">it to the entertainment xml file</a>.
+	        
+      
+<p>
+	The colors can be set and modified interactively by setting the properties "<a href="#" onClick="myhead.changeColor('black'); return false">color</a>", "<a href="#" onClick="myhead.changeActive('blue'); return false">active</a>" and "<a href="#" onClick="myhead.changeHover('yellow'); return false">hover</a>".
+	        
+      
+<p>
+	The target can be changed with the <a href="#" onClick="myhead.changeTarget('_blank'); return false">changeTarget()</a> method.
+    
+<p><mmflash:ticker id="myhead" src="technology.xml" width="600" height="40" speed="2" target="news" color="green" hover="red" active="orange" /></p>
+</body>
+</html>
+
+

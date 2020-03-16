@@ -1,0 +1,43 @@
+<HTML xmlns:MMflash>
+<?IMPORT namespace="MMflash" implementation="bar_graph.htc">
+<html>
+<head>
+<title>Charts and graphs</title>
+<style>
+body {font-family: sans-serif}
+</style>
+
+<script language="javascript">
+
+function changeUp() {
+	sna.all[0].value = 90;
+}
+
+function changeDown() {
+	sna.all[0].value = 40;
+}
+
+</script>
+</head>
+<body>
+<MMflash:bargraph id="sna" width="400" height="400" label="Bar Chart">
+   <param value="40" color="red" label="computers" />
+   <param value="40" color="green" label="lights"/>
+   <param value="56" color="blue" label="phones"/>
+   <param value="13" color="black" label="monitors"/>
+   <param value="14" color="yellow" label="chairs"/>
+   <param value="12" color="red" label="pens" />
+   <param value="20" color="green" label="palm piots"/>
+   <param value="99" color="blue" label="speakers"/>
+   <param value="1" color="black" label="headphones"/>
+   <param value="31" color="yellow" label="laptops"/>
+   <param value="78" color="red" label="books" />
+   <param value="43" color="green" label="cds"/>
+   <param value="20" color="blue" label="scanners"/>
+   <param value="87" color="black" label="digital cameras"/>
+   <param value="3" color="yellow" label="widgets"/>
+</MMflash:bargraph>
+<input type="button" onClick="changeUp()" value="Increase Computers to 90">
+<input type="button" onClick="changeDown()" value="Reset Computers to 40">
+</body>
+</html>

@@ -1,0 +1,18 @@
+FlashBible Tutorial
+Drop Target
+
+See the latest details of this and other Flash Tutorials:
+http://www.FlashBible.com/Members/Drag/DropTarget.htm
+
+Basic:
+dropTraget-Basic.FLA
+
+Advanced:
+dropTraget-DL.FLA
+
+Graphics by Dorian Nisinson
+Composed by John Croteau
+
+www.FlashBible.com
+Copyright 1999
+Flash Central

@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.flashzone.com/articles/askaramis/120799.html -->
+<HTML><HEAD><TITLE>FlashZone! - Gettin' Dynamic with ASP</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type><LINK 
+href="FlashZone! - Gettin' Dynamic with ASP_files/style.css" rel=stylesheet 
+type=text/css>
+<META content="MSHTML 5.00.2722.1300" name=GENERATOR></HEAD>
+<BODY aLink=#0099ff bgColor=#ffffff leftMargin=0 link=#0066cc text=#000000 
+topMargin=0 vLink=#0066cc marginwidth="0" marginheight="0"><!-- Top Navigation Bar -->
+<TABLE border=0 cellPadding=3 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR bgColor=#000000>
+    <TD><SPAN class=menubar><A class=menulink 
+      href="http://www.flashzone.com/index.html">FlashZone</A> | <A 
+      class=menulink href="http://www.flashzone.com/flas/index.html">Flash 
+      Movies</A> | <A class=menulink 
+      href="http://www.flashzone.com/board/">Community</A> | <A class=menulink 
+      href="http://www.flashzone.com/tutorials/index.html">Tutorials</A> | <A 
+      class=menulink 
+      href="http://www.flashzone.com/articles/index.html">Articles</A> | <A 
+      class=menulink 
+      href="http://www.flashzone.com/resources/index.html">Resources</A> | <A 
+      class=menulink 
+      href="http://www.flashzone.com/store/index.html">Store</A></SPAN></TD></TR></TBODY></TABLE><!-- FlashZone Header and Newsletter Signup Form -->
+<TABLE 
+background="FlashZone! - Gettin' Dynamic with ASP_files/header_background.gif" 
+border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD><IMG 
+    src="FlashZone! - Gettin' Dynamic with ASP_files/header_logo.gif"></TD>
+    <TD align=right vAlign=top>
+      <FORM action=/cgi-bin/ml-sub-request.cgi method=post name=""><IMG height=7 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" 
+      width=50><BR><INPUT name=listtarget type=hidden value=fzexpress> <INPUT 
+      name=list_request type=hidden value=subscribe> <INPUT name=acktitle 
+      type=hidden value=Thanks!> <INPUT name=acktext type=hidden 
+      value="Thanks for subscribing to FlashZone Express. Use the back button on your browser to return to FlashZone."> 
+      <INPUT class=formtext maxLength=72 name=user_email 
+      value="FlashZone Newsletter"> <BR><INPUT class=formbutton name=submit type=submit value="Sign Up!"> 
+      </FORM></TD>
+    <TD width=3><IMG height=50 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" 
+  width=3></TD></TR></TBODY></TABLE><!-- Flycast Ad Rotator -->
+<TABLE bgColor=#ffffff border=0 cellPadding=3 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=middle>
+      <SCRIPT language=JavaScript>
+	<!-- 
+	now = new Date();
+	my_random = now.getTime() % 1000; 
+	document.write("<!-- Copyright (C) 1998 Flycast Communications Corporation. All Rights Reserved -->"); 
+	document.write("<iframe src='http://adex3.flycast.com/server/socket/127.0.0.1:2800/iframe/FlashZone/FlashZone/" + my_random + "' scrolling='no' marginwidth=0 marginheight=0 frameborder=0 vspace=0 hspace=0 width=468 height=60>"); 
+	document.write("<a target=_top href='http://adex3.flycast.com/server/socket/127.0.0.1:2800/click/FlashZone/FlashZone/" + my_random + "'>"); 
+	document.write("<img src='http://adex3.flycast.com/server/socket/127.0.0.1:2800/img/FlashZone/FlashZone/" + my_random + "' border=0 width=468 height=60></a>"); 
+	document.write("</iframe>"); 
+	//-->
+	</SCRIPT>
+      <NOSCRIPT><IFRAME frameBorder=0 height=60 marginHeight=0 marginWidth=0 
+      scrolling=no src="FlashZone! - Gettin' Dynamic with ASP_files/710.html" 
+      width=468><a target=_top href="http://adex3.flycast.com/server/socket/127.0.0.1:2800/click/FlashZone/FlashZone/123"><img src="/http://adex3.flycast.com/server/socket/127.0.0.1:2800/img/FlashZone/FlashZone/123" border=0 width=468 height=60></a></iframe></IFRAME></NOSCRIPT></TD></TR></TBODY></TABLE><!-- Titles and Article Body-->
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR bgColor=#ffffff>
+    <TD><IMG height=15 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" width=50></TD></TR>
+  <TR bgColor=#000000>
+    <TD><IMG height=4 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" width=50></TD></TR>
+  <TR bgColor=#cccccc>
+    <TD>
+      <TABLE border=0 cellPadding=8 cellSpacing=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <P><A href="http://www.flashzone.com/index.html">FlashZone</A>: <A 
+            href="http://www.flashzone.com/articles/index.html">Articles</A>: <A 
+            href="http://www.flashzone.com/articles/askaramis/index.html">Ask 
+            Aramis</A>: <B>Gettin' Dynamic with 
+    ASP</B></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=15 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD width="100%">
+      <P><IMG height=100 hspace=0 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/askaramis.gif" 
+      width=150></P>
+      <P><SPAN class=head1><FONT face="Verdana, Arial, Helvetica, sans-serif" 
+      size=3><B>Ask Aramis </B></FONT><FONT 
+      face="Verdana, Arial, Helvetica, sans-serif"></FONT></SPAN><FONT 
+      face="Verdana, Arial, Helvetica, sans-serif"><BR><FONT size=2>[ <A 
+      href="http://www.flashzone.com/articles/askaramis/index.html">Current</A> 
+      ] [ <A 
+      href="http://www.flashzone.com/articles/askaramis/archive.html">Archive</A> 
+      ] </FONT></FONT></P>
+      <H2><FONT face="Verdana, Arial, Helvetica, sans-serif"><SPAN 
+      class=maintitle><B>Gettin' Dynamic with ASP<I></I></B></SPAN></FONT></H2>
+      <P>July 12, 1999.</P>
+      <P><FONT face="Verdana, Arial, Helvetica, sans-serif" size=2>Whoa! The 
+      hubbub is finally over... Flash 4 is here and everyone's scrambling to be 
+      the first on the block with draggable whatsamadoovies and editable 
+      thingamejigs.</FONT><FONT face="Verdana, Arial, Helvetica, sans-serif" 
+      size=2> That's great - but if you ask me the most exciting new possibility 
+      in the Flash realm is client/server applications and dynamic data 
+      access.</FONT><FONT face="Verdana, Arial, Helvetica, sans-serif" size=2> 
+      </FONT></P>
+      <HR SIZE=1>
+
+      <BLOCKQUOTE>
+        <P><FONT face="Courier New, Courier, mono" size=2>"Dear 
+        Aramis,</FONT></P>
+        <P><FONT face="Courier New, Courier, mono" size=2>Is there a way to 
+        incorporate ASP data access with Flash? If not are there other ways to 
+        do data access within flash? Thanks.</FONT></P>
+        <P><FONT face="Courier New, Courier, mono" size=2>- 
+      Andy"</FONT></P></BLOCKQUOTE>
+      <HR noShade SIZE=1>
+
+      <P><FONT face="Verdana, Arial, Helvetica, sans-serif" size=2>Hi 
+      Andy,</FONT></P>
+      <P><FONT face="Verdana, Arial, Helvetica, sans-serif" size=2>ASP, or 
+      Active Server Pages, is just one technology you can use to supply Flash 
+      with dynamic data. Also in the HTML preprocessor family are PHP and 
+      ColdFusion. Then there's CGI scripts, commonly written in Perl, or static 
+      text files, and of course Macromedia Generator - but that's a slightly 
+      different kettle of fish.</FONT></P>
+      <P><FONT face="Verdana, Arial, Helvetica, sans-serif" size=2>So how the 
+      heck can this happen?</FONT></P>
+      <H3><FONT face="Verdana, Arial, Helvetica, sans-serif" size=4><B>The 
+      Magical Loading Variable</B></FONT></H3>
+      <P>Those hipster briefs at Macromedia have done us all a big favor and 
+      added an excellent new option to the Load Movie action called Load 
+      Variables. If you're completely in the dark about Flash 4 variables, check 
+      out our <A 
+      href="http://www.flashzone.com/actionscript/storedata.html">tutorial</A> 
+      as a primer. 
+      <P>In a nutshell, variables are a big deal when it comes to building Flash 
+      applications. You can use variables to store everything from a person's 
+      name or telephone number, to True/False data and other cryptic stuff. By 
+      getting variable data from an outside source, an online database for 
+      example, you can either directly display the info in a text field, or 
+      manipulate it further using inbuilt ActionScript functions. 
+      <H3><FONT face="Verdana, Arial, Helvetica, sans-serif" size=4><B>Tell Me 
+      More...</B></FONT> </H3>
+      <P><FONT face="Verdana, Arial, Helvetica, sans-serif" size=2>Always trying 
+      to take my own advice, I decided to consult the mystical Help files and 
+      see what they had to say on the subject of obtaining data from remote 
+      files. Here's the gospel according to the big Macs:</FONT> 
+      <P>"Use the Load Variables statement, which is one of the parameters of 
+      Load Movie, to read data from a text file or text generated by a CGI 
+      script, and set the values for variables in a movie or movie clip. For 
+      example, if a user submits an order form, you might want a confirmation 
+      screen to display an order number gathered from a file on a remote server. 
+
+      <P>With Load Variables, the text at the URL must be in the standard MIME 
+      format application/x-www-urlformencoded (a standard format used by CGI 
+      scripts). Any number of variables can be specified. For example, this 
+      phrase defines several variables: 
+      <P>company=Macromedia&amp;address=600+Townsend&amp;city=San+Francisco&amp;zip=94103 
+
+      <UL>
+        <LI>URL specifies an absolute or relative URL for the remote 
+        file.<BR><BR>
+        <LI>Location specifies a level or target to receive the variables. In 
+        the Flash Player, movie files are assigned a number according to the 
+        order in which they were loaded. The movie that was loaded first is 
+        loaded at the bottom level, level 0. The movie in level 0 sets the frame 
+        rate, background color, and frame size for all other loaded movies. 
+        Movies are then stacked in higher numbered levels above the movie in 
+        level 0.<BR><BR>
+        <LI>Variables determines whether to use GET or POST to pass variables, 
+        or to pass no variables at all. This can be used to send variables to a 
+        CGI script that generates a SWF file as its CGI output. The GET method 
+        appends the variables to the end of the URL, and is used when a small 
+        number of variables are involved. The POST method sends the variables in 
+        a separate header, and is capable of sending much longer strings. See 
+        Setting and identifying variables. </LI></UL>
+      <P>If you specify either GET or POST with the Load Variables statement, 
+      Flash sends the variables to<BR>the web server, and then interprets the 
+      server's response to update the variables in the movie. 
+      <P>Use the File &gt; Publish Preview option to test the loading of 
+      variables. (An active network connection must exist for this to work.)" 
+      <H3><FONT face="Verdana, Arial, Helvetica, sans-serif" size=4><B>Err, say 
+      that again?</B></FONT> </H3>
+      <P>Help files are wonderful, they tell you everything you need to know in 
+      a way that requires a variety of illicit substances to understand. Here's 
+      the highlights in Aramis-speak...</P>
+      <P><B>Figure out your script's URL<BR></B>Hopefully this should be a 
+      no-brainer. Let's say you have an ASP file that loads data from your SQL 
+      database and returns a set of results, the URL in your Load Variables 
+      action would look something like 
+      http://www.mycompany.com/thatscript.asp</P>
+      <P><B>Wanna send the script some stuff? Sure thing...</B><BR>Obviously 
+      this whole loading data thing works both ways. If you want to get some 
+      info from the database, you'll need to tell it what you're looking for. 
+      Flash just takes all the variables currently available in your movie and 
+      passes them along in a big lump. All you have to decide is whether to send 
+      using GET or POST methods... and that depends on what method your page is 
+      looking for.</P>
+      <P>For instance in ASP, Request.Form("variablename") deals with variables 
+      sent using POST and Request.QueryString("variablename") extracts data sent 
+      using the GET method.</P>
+      <P>My advice is try to use POST where possible because GET is restricted 
+      to about 250 characters, no good for beefy data.</P>
+      <P><B>Have your script pump out the right stuff<BR></B>Flash can only 
+      understand data encoded in the standard MIME format 
+      "application/x-www-urlformencoded"<B> -</B> but that's not as mysterious 
+      as it sounds. In ASP, its as simple as using the Response.Write and 
+      URLEncode function to make sure everything's kosher.</P>
+      <P>The main concept to grasp here is that instead of pumping out HTML code 
+      as you'd normally want to, your script just creates a big long string of 
+      name/value pairs in a format like -</P>
+      <P>company=Macromedia&amp;address=600+Townsend&amp;city=San+Francisco&amp;zip=94103</P>
+      <P><B>Stick it all in the correct location</B><BR>Once you've loaded in 
+      all this data, its gotta go somewhere right? If you've used the Load Movie 
+      action before you'll be familiar with the concept of Levels. Basically the 
+      idea here is that if you want to keep different values of the same name 
+      separated (to prevent overwrites) you can load external data into a 
+      particular Layer. Then when you want to retrieve it later you just append 
+      "_layer<I>X</I>" to the front of your variable identifier, where <I>X</I> 
+      is the desired Layer number.</P>
+      <H3><FONT face="Verdana, Arial, Helvetica, sans-serif" size=4><B>Good 
+      Guineas! That's pretty cool.</B></FONT></H3>
+      <P>Sure is! And it's easy peasy so don't be getting all confused and stuff 
+      :-) Happy Flashing and have a great week.</P>
+      <P><FONT face="Verdana, Arial, Helvetica, sans-serif" size=2>Aramis</FONT> 
+      </P></TD>
+    <TD bgColor=#000000 width=1><IMG height=150 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" width=1></TD>
+    <TD width=125>
+      <P><B>Click to Buy!</B></P>
+      <P><A 
+      href="http://service.bfast.com/bfast/click/ius?siteid=5332342&amp;bfpage=navworks_navpacks" 
+      target=_blank><IMG alt="NavWorks NavPacks &amp; Interface Foundry" 
+      border=0 height=125 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/nw_125_1.gif" 
+      width=125></A> 
+      <P><A 
+      href="http://service.bfast.com/bfast/click/ius?siteid=5332342&amp;bfpage=flash" 
+      target=_blank><IMG alt="Macromedia Flash" border=0 height=125 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/flash125.gif" 
+      width=125></A> 
+      <P><B>Tech News...</B></P>
+      <SCRIPT language=JavaScript>
+<!-- hide from old browsers
+var siteID = 7139554
+//-->
+</SCRIPT>
+
+      <TABLE border=0 cellPadding=3 cellSpacing=0 width=120>
+        <TBODY>
+        <TR>
+          <TD align=left bgColor=#ffcc00 height=50 vAlign=center width=125><A 
+            href="http://service.bfast.com/bfast/click/mid1476905?siteid=7139554&amp;bfpage=more_news" 
+            target=_top><IMG alt="CNET News and Investing" border=0 height=50 
+            src="FlashZone! - Gettin' Dynamic with ASP_files/synd-headline-120.gif" 
+            width=120></A></TD></TR>
+        <TR>
+          <TD align=middle bgColor=#006633 height=20 vAlign=center 
+            width=125><FONT color=#ffffff face="Arial, Helvetica" 
+            size=-1><B>Recent Headlines</B></FONT> </TD></TR>
+        <TR>
+          <TD align=left bgColor=#ffffcc height=* vAlign=top width=120>
+            <SCRIPT language=JavaScript1.1 
+            src="FlashZone! - Gettin' Dynamic with ASP_files/1,162,befreejs,00.html">
+</SCRIPT>
+
+            <TABLE>
+              <TBODY>
+              <TR vAlign=top>
+                <TD colSpan=3><FONT face="Verdana, Arial, Helvetica" 
+                  size=-2><A 
+                  href="http://service.bfast.com/bfast/click/mid1476905?siteid=7139554&amp;bfpage=more_news" 
+                  target=_top>More CNET News</A> 
+        </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><NOSCRIPT>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><IMG border=0 height=1 
+            src="FlashZone! - Gettin' Dynamic with ASP_files/mid1476905.gif" 
+            width=1 NOSAVE> <A 
+            href="http://service.bfast.com/bfast/click/mid1476905?siteid=1477287&amp;bfpage=more_news" 
+            target=_top><IMG alt="120X60 Logo" border=0 height=60 
+            src="FlashZone! - Gettin' Dynamic with ASP_files/sh-synd-120x60.gif" 
+            width=120></A> </TD></TR></TBODY></TABLE></NOSCRIPT></TD></TR></TBODY></TABLE><!-- FlashZone Stuff and FlashZone Network -->
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR bgColor=#ffffff>
+    <TD><IMG height=15 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" width=50></TD></TR>
+  <TR bgColor=#000000>
+    <TD><IMG height=4 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" width=50></TD></TR>
+  <TR bgColor=#cccccc>
+    <TD>
+      <TABLE border=0 cellPadding=8 cellSpacing=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <P><B>FlashZone 
+Stuff</B></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=15 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD width="100%">
+      <H3>Who are we?</H3>
+      <P>FlashZone is sponsored by Fusion Inc, and supported by a group of 
+      talented individuals from around the Flash community. Our mission is to 
+      provide the best in Flash-related resources, news and entertainment so 
+      that you can do more, learn more, and most importantly play more. We 
+      welcome reader contributions, suggestions and requests, so if you have 
+      something to share, please don't hestitate to get in touch.</P>
+      <H3>Contacting Us</H3>
+      <UL>
+        <LI>Story ideas and suggestions - <A 
+        href="mailto:editor@flashzone.com">editor@flashzone.com</A> 
+        <LI>Bugs, broken links or general mayhem - <A 
+        href="mailto:webmaster@flashzone.com">webmaster@flashzone.com</A> 
+        <LI>FLA submissions - <A 
+        href="mailto:flas@flashzone.com">flas@flashzone.com</A> 
+        <LI>Request a tutorial - <A 
+        href="mailto:tutorials@flashzone.com">tutorials@flashzone.com</A> 
+        <LI>Become a volunteer staff member - <A 
+        href="mailto:zoneguides@flashzone.com">zoneguides@flashzone.com</A> 
+        <LI>Tell us what you think of FZ - <A 
+        href="mailto:staff@flashzone.com">staff@flashzone.com</A> </LI></UL>
+      <H3>Become a FlashZone Sponsor</H3>
+      <UL>
+        <LI>To place banner ads on our site, visit our <A 
+        href="http://apps.flycast.com/webkit/main.cgi?1832112">Flycast Media 
+        Kit</A> 
+        <LI>To donate prizes for the monthly FlashChallenge.com/FlashZone 
+        giveaway, email <A 
+        href="mailto:editor@flashzone.com">editor@flashzone.com</A> </LI></UL></TD>
+    <TD bgColor=#000000 width=1><IMG height=150 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" width=1></TD>
+    <TD width=125>
+      <P><B>FlashZone Network </B></P>
+      <P><A href="http://www.flashchallenge.com/">The Flash Challenge</A><BR><A 
+      href="http://www.shockfusion.com/">Shockfusion.com</A> <BR><A 
+      href="http://www.actionscript.com/">ActionScript.com</A><BR><A 
+      href="http://qfi.flashzone.com/">Quintus Flash Index<BR></A><A 
+      href="http://navworks.i-us.com/">NavWorks</A><BR><A 
+      href="http://www.flashgen.com/">FlashGen.com</A><BR><A 
+      href="http://www.openswf.org/">OpenSWF.org<BR></A><A 
+      href="http://pixelman.flashzone.com/">Pixelman </A>
+      <P><B>Other Resources</B> 
+      <P><A href="http://www.turtleshell.com/asm">The Flash Guide</A><BR><A 
+      href="http://www.virtual-fx.net/">Virtual F/X</A><BR><A 
+      href="http://www.flash.com/">Macromedia</A><BR><A 
+      href="http://www.moock.org/">Colin Moock</A> <BR><A 
+      href="http://www.enetserve.com/tutorials">ENS Flash Academy</A><BR><A 
+      href="http://www.flasher.net/flashpad.html">FlashPad</A> <BR><A 
+      href="http://www.flashplanet.com/">FlashPlanet.com </A><BR>
+      <P><IMG height=1 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/spot.gif" width=125> 
+    </P></TD></TR></TBODY></TABLE><!-- Footer and i-us Affiliate Ad Tracking -->
+<TABLE background="FlashZone! - Gettin' Dynamic with ASP_files/footer_tile.gif" 
+border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR background="/images/footer_background.gif">
+    <TD 
+    background="FlashZone! - Gettin' Dynamic with ASP_files/footer_background.gif"><IMG 
+      border=0 height=1 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/ius.gif" width=1 nosave> 
+      <IMG border=0 height=1 
+      src="E:\Tutor\Flash Tutor\asp\FlashZone! - Gettin' Dynamic with ASP_files\ius(1).gif" 
+      width=1 nosave> </TD>
+    <TD align=right 
+    background="FlashZone! - Gettin' Dynamic with ASP_files/footer_background.gif"><IMG 
+      src="FlashZone! - Gettin' Dynamic with ASP_files/footer_logo.gif"></TD></TR></TBODY></TABLE></BODY></HTML>

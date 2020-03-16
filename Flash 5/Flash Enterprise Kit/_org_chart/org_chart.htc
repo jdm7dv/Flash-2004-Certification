@@ -1,0 +1,290 @@
+<PUBLIC:COMPONENT tagName="org_chart" >
+<PUBLIC:DEFAULTS viewLinkContent />
+<PUBLIC:PROPERTY name="label" />
+<PUBLIC:PROPERTY name="width" />
+<PUBLIC:PROPERTY name="height" />
+<ATTACH event="oncontentready" onevent="init()" />
+</PUBLIC:COMPONENT>
+
+<SCRIPT LANGUAGE="JavaScript">
+var rootNode = null;			// the root node of the organizational tree
+var cols = new Array();			// tracks column usage when creating the tree
+var MAX_ROWS = 4;				// the max number of rows for display...excess rows will be ignored
+var MAX_COLS = 8;				// the max number of columns for display...excess columns will be ignored
+var addCount = 1000;			// the starting id for additional nodes
+
+
+// builds the initial chart
+function init() {
+	// set chart metrics
+	if(element.width) { 
+		chart.width = element.width;
+	}
+	if(element.height) { 
+		chart.height = element.height;
+	}
+	if(element.label) {
+		chart.SetVariable('label',element.label);	
+	}
+	chart.TcallLabel('/', 'init');
+	buildTree();
+	buildChart();
+}
+	
+// builds the initial node tree 
+function buildTree() {
+	// build our node tree
+	var e;
+	var id, job, person, parent;
+	var parentNode = null;
+	var filter = /;/g;	// reg expression filter out semi-colons
+	
+	for(var i=0; i < element.all.length; i++) {
+		id, job, person, parent = null;
+		e = element.all[i];
+		if(e.getAttribute("id")) {
+			id = e.getAttribute("id").replace(filter,"");
+		}	
+		if(e.getAttribute("job")) {
+			job = e.getAttribute("job").replace(filter, "");
+		}	
+		if(e.getAttribute("person")) {
+			person = e.getAttribute("person").replace(filter, "");
+		}
+		if(e.getAttribute("parent")) {
+			parent = e.getAttribute("parent").replace(filter, "");
+		}		
+					
+		 if(validParams(id, job, person, parent, i)) {
+			// create the node
+			theNode = new Node(id, job, person, parent);
+		
+			// if this is the first node then set it as root
+			if(i == 0) {
+				rootNode = theNode;
+			}
+
+			if(parent) {
+				// if this node has a parent (i.e. is not the root node) then add it to the parent's list
+				parentNode = findNode(parent, rootNode);
+					
+				// if we actually found the parent then add this node to it
+				if(parentNode) {
+					parentNode.addChild(theNode);
+				} else {
+				// otherwise error
+					alert("Employee with ID " + theNode.id + " was ignored.  Parent ID was invalid.\r\nSubsequent dependencies on the ignored ID will also be invalid.");
+				}
+			}
+		}
+	}
+}
+
+function validParams(id, job, person, parent, i) {
+	// check for invalid params
+	if(!id || !job || !person || (!parent && (i != 0))) {
+		alert("id, job, person, and parent must be specified.  Parameter was ignored.\r\nSubsequent dependencies on the ignored parameter will also be invalid.");
+		return false;
+	} else if((i == 0) && parent) {
+		alert("Fatal error.  First parameter must not have a parent set.  It is the top of the organizational tree.");
+		return false;
+	} else if((id < 1) || (id > 1000)) {
+		alert("Invalid ID: " + id + " ID's must be less than 1000.  This id has been ignored.\r\nSubsequent dependencies on the ignored ID will also be invalid.");
+		return false;
+	}	
+	
+	// if none found...
+	return true;
+}
+
+// builds the chart based on the node tree
+function buildChart() {
+	// clear our row array
+	for(var i=0;i < MAX_ROWS;i++) {
+		cols[i] = 0;
+	}
+	
+	// traverse the tree and pass the records to flash in a flash friendly way
+	processTree(rootNode, 0);
+		
+	// show the chart
+	chart.TcallLabel('/','show');
+	chart.style.display = "block";
+}
+
+// Constructor for Nodes
+function Node(id, job, person, parent) {
+	// attributes
+	this.id = id;
+	this.job = job;
+	this.person = person;
+	this.parent = parent;
+	this.children = new Array();
+	
+	// methods
+	this.addChild = addChild;
+	
+	return this;
+}
+
+// adds a child Node to an existing node
+function addChild(node) {
+	this.children[this.children.length] = new Node(node.id, node.job, node.person, node.parent);
+}
+
+// searches for a node matching "id" and searching recursively from node "node" down
+function findNode(id, node) {
+	var foundNode = null;
+
+	// if this node matches the node we're looking for then return this node
+	if(id == node.id) {
+		foundNode = node;
+	} else {
+	// otherwise search it's children
+		for(var i=0;i<node.children.length;i++) {
+			foundNode = findNode(id, node.children[i]);
+			// if we found it then stop searching 
+			if(foundNode) {
+				break;
+			}
+		}
+	}
+	
+	return foundNode;
+}
+
+// searches for a node matching "id" and searching recursively from node "node" down and removes it
+function removeNode(id, node) {
+	var foundChild = false;
+	
+	// if this node matches the node we're looking for then return this node
+	if(id == node.id) {
+		foundChild = true;
+	} else {
+	// otherwise search it's children
+		for(var i=0;i<node.children.length;i++) {
+			foundChild = removeNode(id, node.children[i]);
+			// if we found it then remove the node 
+			if(foundChild) {
+				var swapNode = node.children[node.children.length-1];
+				node.children[node.children.length-1] = node.children[i];
+				node.children[i] = swapNode;
+				node.children.pop();
+				// we've dealt with the node
+				foundChild = false;
+				break;
+			}
+		}
+	}
+	
+	return foundChild;
+}
+
+// traverses the tree recursively starting from node "node" with a depth of "row" and a latereral parent position of "lateral"
+// sends the details of each node to flash for display
+function processTree(node, row) {
+	// only process this row if allowed by MAX_ROWS
+	if(row < MAX_ROWS) {
+		var record;
+		
+		// process the current node
+		record = "";
+		record += node.person;
+		record += ";";
+		record += node.job;
+		record += ";";
+		record += row;
+		record += ";";
+		// leave blank for root node
+		if(row > 0) {
+			record += cols[row-1];
+		}
+	
+		// send the node info to flash if not limited by MAX_COLS
+		if(cols[row] < MAX_COLS) { 
+			chart.SetVariable('newRecord', record);
+			chart.TcallLabel('/', 'addRecord');
+		} 
+	
+		// process any children of the node 
+		if(node.children.length > 0) { 
+			row++;
+			for(var i=0;i<node.children.length;i++) {
+				processTree(node.children[i], row);
+			}
+			row--;
+		} else {
+		// if there are no children then add the node to our drop down box of nodes which can be destroyed if visible
+ 			if(cols[row] < MAX_COLS) { 
+				document.chartform.removeBox.options[document.chartform.removeBox.length] = new Option(node.person, node.id, false, true);
+			}
+		}
+		// add the node to the list of nodes that can take subordinates
+  		document.chartform.addBox.options[document.chartform.addBox.length] = new Option(node.person, node.id, false, true);
+		
+		cols[row]++;
+	}
+}
+
+function removeEmployee() {
+	// find the node that was selected
+	removeNode(document.chartform.removeBox.options[document.chartform.removeBox.selectedIndex].value, rootNode);
+
+	// repopulate chart and boxes
+	clearBoxes();	
+	chart.TcallLabel('/', 'destroy');
+	buildChart();
+}
+
+function addEmployee() {
+	// add the node
+	var node = findNode(document.chartform.addBox.options[document.chartform.addBox.selectedIndex].value, rootNode);
+	var addNode = new Node(addCount++, document.chartform.job.value, document.chartform.person.value, node.id);
+	node.addChild(addNode);
+
+
+	// repopulate chart and boxes
+	document.chartform.job.value = "";
+	document.chartform.person.value = "";
+	clearBoxes();
+	chart.TcallLabel('/', 'destroy');
+	buildChart();	
+}
+
+// clears the boxes for removing and adding employees
+function clearBoxes() {
+	var length = null;
+	
+	// clear our current remove employees option box
+	length = document.chartform.removeBox.length;
+	for(var i=length-1; i>=0; i--) {
+		document.chartform.removeBox.options[i] = null;		
+	}
+	
+	// clear our current add employees option box
+	length = document.chartform.addBox.length;
+	for(var i=length-1; i>=0; i--) {
+		document.chartform.addBox.options[i] = null;		
+	}
+}
+</SCRIPT>
+
+<BODY style="width:100%; height:100%">
+
+<OBJECT id="chart" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0"
+width="550" height="400" style="display: none">
+<PARAM name="movie" value="org_chart.swf">
+<PARAM name="quality" value="high">
+<PARAM name="wmode" value="transparent">
+</OBJECT>
+<DIV align="center"><FORM name="chartform">
+<INPUT type="button" name="remove" value="Remove" onClick="removeEmployee()">
+<SELECT name="removeBox">
+</SELECT>
+<BR><BR>
+<INPUT type="button" name="add" value="Add" onClick="addEmployee()">&nbsp;Title:&nbsp;<INPUT type="text" name="job">&nbsp;Name:&nbsp;<INPUT type="text" name="person">&nbsp;To:
+<SELECT name="addBox">
+</SELECT>
+</FORM></DIV>
+</BODY>

@@ -1,0 +1,206 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Digital clock</title>
+<script language="JavaScript" fptype="dynamicanimation">
+
+
+
+<!--
+temp  = '<SCRIPT LANGUAGE="VBScript"\> \n'
+temp += '<!--\n'
+temp += 'Sub panneau_FSCommand(ByVal cmd, ByVal arg) \n'
+temp += 'call panneau_DoFSCommand(cmd, arg) \n'
+temp += 'end sub \n'
+temp += '-->\n'
+temp += '</SCRIPT\> \n'
+document.write(temp);
+var Min="";
+var Heu="";
+var nbpas=0;
+var nblig=0;
+//        01234567890123
+var lig10="    WELCOME   ";
+var lig20="TO THE FLASH 3";
+var lig30=" SOURCE FREE  ";
+var lig40="IF YOU WILL:O)";
+
+var lig11="THE JAVASCRIPT";
+var lig21="AND FLASH 3   ";
+var lig31=" GIVING MORE  ";
+var lig41="   CREATIVITY ";
+
+var lig12="AND ALWAYS FOR";
+var lig22="    FREE      ";
+var lig32="      ON THE  ";
+var lig42="BERTO SITE !!!";
+
+
+var timerID=0;
+function panneau_DoFSCommand(cmd, arg)  
+{
+  var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+  var map = InternetExplorer ? panneau : document.embeds[0];
+  if (cmd=="what_you_will")
+    {
+// do her what you will ;o)
+    }
+}
+
+
+function demarre()
+{
+  whattime();
+  TimerID = setTimeout("demarre()",500);
+}
+
+function whattime()
+{
+  var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+  var map = InternetExplorer ? nav : document.embeds[0];
+
+  jour     = new Date();
+  Heures   = jour.getHours();
+  Minutes  = jour.getMinutes();
+  Secondes = jour.getSeconds();
+  if(Heu!=Heures)
+  {
+    Heu=Heures;
+    var unites = Heu % 10
+    var dizaines = Math.floor(Heu / 10)
+    map.TGotoFrame("_flash0/hd",dizaines);
+    map.TGotoFrame("_flash0/hu",unites);
+  }
+  if(Min!=Minutes)
+  {
+    Min=Minutes;
+    var unites = Min % 10
+    var dizaines = Math.floor(Min / 10)
+    map.TGotoFrame("_flash0/md",dizaines);
+    map.TGotoFrame("_flash0/mu",unites);
+  }
+    var unites = Secondes % 10
+    var dizaines = Math.floor(Secondes / 10)
+    map.TGotoFrame("_flash0/sd",dizaines);
+    map.TGotoFrame("_flash0/su",unites);
+    nbpas++;
+    if (nbpas>10)
+    {
+       map.TGotoLabel("_flash0/bong","bruit");
+       if(InternetExplorer)
+       {
+          map.Tplay("bong");
+       }
+       nbpas=0;
+       for(y=1;y<5;y++)
+       {
+          nomvar="lig"+y+nblig;
+          for(x=0;x<eval(nomvar).length;x++)
+          {
+            j=eval(nomvar).charAt(x);
+            nom="_flash0/r"+y+x
+            if(j==" ")
+            {
+               map.TGotoLabel(nom,"bl");
+            }
+            else
+            {
+               map.TGotoLabel(nom,j);
+            }
+            if(InternetExplorer)
+            {
+               map.Tplay(nom);
+            }
+         }
+       }
+       nblig++;
+       if(nblig>2)
+       {
+          nblig=0;
+       }
+    }
+}
+
+</script>
+
+  <script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v1.2
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<body onload="demarre()" bgcolor = "#000000" background="">
+<h2 align="left"><b>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+
+// Handle all the the FSCommand messages in a FutureSplash movie
+function nav_DoFSCommand(command, args) {
+  var navObj = InternetExplorer ? nav : document.nav;
+  // Place your code here...
+}
+// Hook for Internet Explorer 
+if (navigator.userAgent && navigator.userAgent.indexOf("MSIE")>=0 && (navigator.userAgent.indexOf("Windows 95")>=0 || navigator.userAgent.indexOf("Windows NT")>=0)) {
+	document.write('<SCRIPT LANGUAGE=VBScript\> \n');
+	document.write('on error resume next \n');
+	document.write('Sub nav_FSCommand(ByVal command, ByVal args)\n');
+	document.write('  call nav_DoFSCommand(command, args)\n');
+	document.write('end sub\n');
+	document.write('</SCRIPT\> \n');
+}
+//-->
+</SCRIPT>
+<!-- Aftershock nav.swf 3=100 4=100 2=1 18 19 38 40 26 -->
+<!-- URL's used in the movie-->
+<A HREF=http://www.macromedia.com/></A> <A HREF=../html/info.htm></A> <A HREF=../html/main2.htm></A> <A HREF=../html/download.htm></A> <A HREF=../html/links.htm></A> <A HREF=../flashers/html/gallery.htm></A> <A HREF=../berto/html/berto.htm></A> <A HREF=../html/contact.htm></A> 
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=3,0,0,0"
+ ID=nav WIDTH=100% HEIGHT=100%>
+  <PARAM NAME=movie VALUE="../mov/clock.swf"> 
+  <PARAM NAME=loop VALUE=false> 
+  <PARAM NAME=quality VALUE=autohigh> 
+  <PARAM NAME=menu VALUE=false> 
+  <PARAM NAME=bgcolor VALUE=#000000> 
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function checkForShockwave()
+{
+	navigator.plugins.refresh();
+	if ( navigator.plugins["Shockwave Flash"] ){ 
+		parent.location.reload();
+	} else {
+		setTimeout( "checkForShockwave()", 1000 );
+	}
+}
+var ShockMode = 0;
+if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] && navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin) {
+	if (navigator.plugins && navigator.plugins["Shockwave Flash"])
+		ShockMode = 1;
+}
+if (!ShockMode && navigator.appName && navigator.appName.indexOf("Netscape") != - 1 && navigator.appVersion.indexOf("4.") != - 1
+&& navigator.javaEnabled() && netscape.softupdate.Trigger.UpdateEnabled() && document.cookie.indexOf("StartedShockwaveInstall") == -1) {
+	var jarPath = new String("");
+	if (navigator.platform.indexOf("Win32") >= 0 )
+		jarPath = "http://download.macromedia.com/pub/shockwave/jars/english/silentflash32.jar"
+	else if (navigator.platform.indexOf("Win16") >= 0 )
+		jarPath = "http://download.macromedia.com/pub/shockwave/jars/english/silentflash16.jar"
+	else if (navigator.platform.indexOf("MacPPC") >= 0 )
+		jarPath = "http://download.macromedia.com/pub/shockwave/jars/english/silentflashppc.jar"
+	if (jarPath.length) {
+		netscape.softupdate.Trigger.StartSoftwareUpdate (jarPath, netscape.softupdate.Trigger.FORCE_MODE);
+		document.cookie='StartedShockwaveInstall;path=/;'
+		setTimeout("checkForShockwave()", 1000);
+	}
+}
+//-->
+</SCRIPT><EMBED SRC="../mov/clock.swf"
+ NAME=nav swLiveConnect=TRUE WIDTH=100% HEIGHT=100%
+ LOOP=false QUALITY=autohigh MENU=false BGCOLOR=#000000
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+</EMBED></OBJECT><!-- EndAftershock nav.swf --> </b> </h2>
+</body></html>

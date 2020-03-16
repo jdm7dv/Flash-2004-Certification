@@ -1,0 +1,32 @@
+the guide dk is made up of 14 .fla's and one .swf
+the .fla's include...
+alert
+ambient1
+ambient2
+ambient3
+ambient4
+ambient5
+attention
+entrance
+exit
+greeting
+minimize
+response
+restore 
+static
+
+the only .swf is the testingtool.
+
+you have 47 or less frames to put each animation.
+once you have finished a few, make sure the swfs
+are in the same directory and use the testing tool
+to test the animations...
+be careful not to delete any actions or your guide 
+wont work.  once you are done with all the animations, 
+place them in a directory accessable via the internet.  
+Type the path to that directory in the GuidePath field 
+of the preferences menu and you should be ready to go.
+
+for any questions you have (other than qustions about the source code)
+
+sdk@shockfusion.com

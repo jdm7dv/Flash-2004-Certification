@@ -1,0 +1,908 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.flashkit.com/board/showthread.php?threadid=21260 -->
+<HTML><HEAD><TITLE>Flash Kit Community - Simple XML example</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="Flash Kit Community - Simple XML example_files/styles.css" type=text/css 
+rel=stylesheet>
+<SCRIPT language=javascript>
+<!--
+function aimwindow(aimid) {
+window.open("member.php?action=aimmessage&aim="+aimid,"_blank","toolbar=no,location=no,menubar=no,scrollbars=no,width=175,height=275,resizeable=yes,status=no")
+// -->
+}
+</SCRIPT>
+
+<META content="MSHTML 5.50.4134.600" name=GENERATOR></HEAD>
+<BODY id=all text=#000000 bgColor=#ffffff leftMargin=0 topMargin=0 rightMargin=0 
+marginwidth="0" marginheight="0"><!-- Header --><A name=top></A>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#000099>
+    <TD vAlign=top align=left width=232><MAP name=logo><AREA shape=RECT 
+        target=_blank alt=internet.com coords=0,0,89,14 
+        href="http://www.internet.com/"><AREA shape=POLY alt=home 
+        coords=90,0,90,15,0,15,0,60,232,60,232,0 
+        href="http://www.flashkit.com/index.shtml"></MAP><IMG height=60 
+      src="Flash Kit Community - Simple XML example_files/nav_logo.gif" 
+      width=232 useMap=#logo border=0> </TD>
+    <TD vAlign=center align=left width="100%">
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#0089cd colSpan=6><IMG height=1 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1 border=0></TD></TR>
+        <TR>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/index.shtml">Home</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/movies/index.shtml">Movies</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/tutorials/index.shtml">Tutorials</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/submissions/index.shtml">Submissions</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/resources/index.shtml">Sound 
+          FX</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/resources/index.shtml">Sound 
+            Loops</A></B></TD></TR>
+        <TR></TR>
+        <TR>
+          <TD bgColor=#0089cd colSpan=6><IMG height=1 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1 border=0></TD></TR>
+        <TR>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/board/index.php">Board</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/sites/index.shtml">Featured</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/links/index.shtml">Links</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/board/forumdisplay.php?forumid=1">News</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/reviews/index.shtml">Reviews</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/jobs/index.shtml">Job 
+        Center</A></B></TD></TR>
+        <TR>
+          <TD bgColor=#0089cd colSpan=6><IMG height=1 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1 border=0></TD></TR>
+        <TR>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/arcade/setup.shtml">Games!</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/fonts/index.shtml">Fonts</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/guestbook/index.shtml">Guestbook</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/board/forumdisplay.php?forumid=11">The 
+            Lounge</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/chat/index.shtml">Chat</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="mailto:webmaster@flashkit.com">Feedback</A></B></TD></TR>
+        <TR>
+          <TD bgColor=#0089cd colSpan=6><IMG height=1 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1 border=0></TD></TR>
+        <TR>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/about.shtml">About FK</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/cgi-bin/ifolio/imageFolio.cgi">Gallery</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/search/sitemap/index.shtml">Site 
+            Map</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/search/index.shtml">Site 
+          Search</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/textfx/start.shtml">TextFX</A></B></TD>
+          <TD class=nav noWrap>&nbsp;» <A class=nav target=_top 
+            href="http://www.flashkit.com/cgi-bin/myfk/favourites.cgi">myFK</A></B></TD>
+          <TD></TD></TR>
+        <TR>
+          <TD bgColor=#0089cd colSpan=6><IMG height=1 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1 border=0></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD align=left colSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff><IMG height=1 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1 border=0></TD></TR>
+        <TR>
+          <TD align=left bgColor=#ff8300>
+            <OBJECT id=title 
+            codeBase=http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width=600 
+            height=26><PARAM NAME="movie" VALUE="/flash/title.swf?playtopic=Community"><PARAM NAME="quality" VALUE="high"><PARAM NAME="scale" VALUE="exactfit"><PARAM NAME="salign" VALUE="L"><PARAM NAME="bgcolor" VALUE="#FF8300">
+            			 			   			  			  			 <EMBED 
+            src="/flash/title.swf?playtopic=Community" quality=high 
+            scale=exactfit salign=L bgcolor=#FF8300 WIDTH=600 HEIGHT=26 
+            swLiveConnect=true			 TYPE="application/x-shockwave-flash" 
+            PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+            			</OBJECT></TD></TR>
+        <TR>
+          <TD bgColor=#ffffff><IMG height=1 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1 border=0></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#000099>
+    <TD colSpan=2><IMG height=2 
+      src="Flash Kit Community - Simple XML example_files/blank.gif" width=1 
+      border=0></TD></TR></TBODY></TABLE><!-- End Header -->
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left><A 
+      href="http://www.flashkit.com/board/index.php"><IMG 
+      src="Flash Kit Community - Simple XML example_files/bbtitle.gif" 
+      border=0></A></TD>
+    <TD vAlign=center noWrap align=middle><FONT 
+      face="Verdana, Arial, Helvetica" size=2><B><IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><A 
+      href="http://www.flashkit.com/board/index.php">Home</A> | <IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><A 
+      href="http://www.flashkit.com/board/member.php?action=editprofile">Profile</A> 
+      | <IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><A 
+      href="http://www.flashkit.com/board/member.php?action=signup">Register</A> 
+      | <IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><A target=_blank 
+      href="http://www.flashkit.com/board/index.php?action=faq">FAQ</A> | <IMG 
+      height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><A 
+      href="http://www.flashkit.com/board/search.php">Search</A></FONT></B> 
+      <BR><FONT face="Verdana, Arial, Helvetica" size=1>Check out our hilarious 
+      Community <A target=_top 
+      href="http://www.flashkit.com/board/warriors/index.shtml"><B>Stereotypes!</B></A> 
+      </B></FONT><BR><FONT face=verdana,arial,helvetica size=1><IMG 
+      src="Flash Kit Community - Simple XML example_files/sendtofriend.gif" 
+      border=0> <A 
+      href="http://www.flashkit.com/board/sendtofriend.php?threadid=21260">Email 
+      This Page to Someone!</A></FONT> </TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%"></TD></TR></TBODY></TABLE>
+<TABLE cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT face="verdana, arial, helvetica" size=2><B><IMG 
+      src="Flash Kit Community - Simple XML example_files/homefolderopen.gif" 
+      align=center border=0><A 
+      href="http://www.flashkit.com/board/index.php">Flash Kit 
+      Community</A><BR><IMG 
+      src="Flash Kit Community - Simple XML example_files/homefolderlink.gif" 
+      align=center border=0> <IMG 
+      src="Flash Kit Community - Simple XML example_files/homefolderopen.gif" 
+      align=center border=0> <A 
+      href="http://www.flashkit.com/board/forumdisplay.php?forumid=30">Flash 5 
+      Actionscript</A> <BR><IMG 
+      src="Flash Kit Community - Simple XML example_files/homefolderblank.gif" 
+      align=center border=0> <IMG 
+      src="Flash Kit Community - Simple XML example_files/homefolderlink.gif" 
+      align=center border=0> <IMG 
+      src="Flash Kit Community - Simple XML example_files/homefolderopen.gif" 
+      align=center border=0> Simple XML example</B> <BR><IMG height=8 
+      src="Flash Kit Community - Simple XML example_files/blank.gif" width=2 
+      border=0><BR><A 
+      href="http://www.flashkit.com/board/newthread.php?action=newthread&amp;forumid=30"><IMG 
+      alt="Post New Thread" 
+      src="Flash Kit Community - Simple XML example_files/newthread.gif" 
+      border=0></A> <A 
+      href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;threadid=21260"><IMG 
+      alt="Post A Reply" 
+      src="Flash Kit Community - Simple XML example_files/reply.gif" 
+      border=0></A> </FONT></TD></FONT>
+    <TD vAlign=bottom noWrap align=right><FONT face=verdana,arial,helvetica 
+      size=1><A 
+      href="http://www.flashkit.com/board/showthread.php?threadid=21207">&lt; 
+      Last Thread</A> &nbsp; &nbsp; <A 
+      href="http://www.flashkit.com/board/showthread.php?threadid=21613">Next 
+      Thread &gt;</A> </FONT></TD></TR></TBODY></TABLE><A name=posttop>
+<TABLE cellSpacing=1 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#3184bd>
+    <TD vAlign=center noWrap width=175><FONT class=thtcolor 
+      face=verdana,arial,helvetica color=#ffffff size=1><B>Author</B></FONT> </TD>
+    <TD vAlign=center width="100%">
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=center width="100%"><FONT class=thtcolor 
+            face=verdana,arial,helvetica color=#ffffff size=1><B>Thread 
+            &nbsp;&nbsp; </B></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#ffd03b>
+    <TD vAlign=top noWrap width=175>
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A name=post96687></A><FONT 
+            face="verdana, arial, helvetica" size=2><B>4eyed</B></FONT><BR><FONT 
+            face=verdana,arial,helvetica size=1>New Member</FONT><BR><BR><FONT 
+            face=verdana,arial,helvetica size=1>Registered: Aug 2000<BR>Posts: 
+            3</FONT> </TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="100%">
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><FONT face=verdana,arial,helvetica 
+            size=1><B></B></FONT>
+            <P><FONT face="verdana, arial, helvetica" size=2>I was just playing 
+            around with Flash 5 and wanted to see if I could load in an XML doc. 
+            I'm getting stuck right at the begining. Here is my script... 
+            <BR><BR>doc = new XML("text.xml"); <BR>if (doc.loaded){ 
+            <BR>gotoAndStop(4); <BR>}else{ <BR>gotoAndStop(5); <BR>}; 
+            <BR><BR>here is text.xml located in the same directory as the swf. 
+            <BR><BR>[?xml version="1.0"?] <BR>[email] <BR>[to]Eric[/to] 
+            <BR>[from]Joe[/from] <BR>[heading]This is a test[/heading] 
+            <BR>[body]I hope this works.[/body] <BR>[/email] <BR>Just replace 
+            the [] with &lt;&gt; <BR>thanks. <BR>[Edited by 4eyed on 08-31-2000 
+            at 09:22 AM]</FONT></P></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#ffd03b>
+    <TD vAlign=center noWrap width=175 height=16><IMG 
+      src="Flash Kit Community - Simple XML example_files/posticon.gif" 
+      border=0> <FONT face=verdana,arial,helvetica size=1>08-31-2000 09:15 
+      AM</FONT> </TD>
+    <TD vAlign=center width="100%" height=16>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align="left valign=" middle?><FONT face=verdana,arial,helvetica 
+            size=1><B><A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=getinfo&amp;userid=18963">Profile</A> 
+            | <A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=mailform&amp;userid=18963">Email</A> 
+            | <A target=_blank href="http://www.4eyed.com/">Homepage</A> | <A 
+            href="http://www.flashkit.com/board/search.php?action=simplesearch&amp;exactname=yes&amp;searchuser=4eyed">Posts 
+            by User</A> | <A 
+            href="http://www.flashkit.com/board/editpost.php?action=editpost&amp;postid=96687">Edit/Delete</A> 
+            | <A 
+            href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;postid=96687">Reply 
+            w/Quote</A> </FONT></B></TD>
+          <TD vAlign=center noWrap align=right><FONT 
+            face=verdana,arial,helvetica size=1>IP: <A 
+            href="http://www.flashkit.com/board/postings.php?action=getip&amp;postid=96687">Logged</A></FONT> 
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#ffdb5a>
+    <TD vAlign=top noWrap width=175>
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A name=post97608></A><FONT 
+            face="verdana, arial, helvetica" 
+            size=2><B>jon_C56</B></FONT><BR><FONT face=verdana,arial,helvetica 
+            size=1>New Member</FONT><BR><BR><FONT face=verdana,arial,helvetica 
+            size=1>Registered: Aug 2000<BR>Posts: 1</FONT> 
+    </TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="100%">
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><FONT face=verdana,arial,helvetica 
+            size=1><B></B></FONT>
+            <P><FONT face="verdana, arial, helvetica" size=2>try this: <BR>if 
+            (doc.loaded == TRUE) <BR>{ <BR>do something.... <BR>} <BR>else { 
+            <BR>do something.... <BR>}</FONT></P></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#ffdb5a>
+    <TD vAlign=center noWrap width=175 height=16><IMG 
+      src="Flash Kit Community - Simple XML example_files/posticon.gif" 
+      border=0> <FONT face=verdana,arial,helvetica size=1>08-31-2000 09:50 
+      PM</FONT> </TD>
+    <TD vAlign=center width="100%" height=16>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align="left valign=" middle?><FONT face=verdana,arial,helvetica 
+            size=1><B><A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=getinfo&amp;userid=24007">Profile</A> 
+            | <A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=mailform&amp;userid=24007">Email</A> 
+            | <A target=_blank href="http://www.originv.com/">Homepage</A> | <A 
+            href="http://www.flashkit.com/board/search.php?action=simplesearch&amp;exactname=yes&amp;searchuser=jon_C56">Posts 
+            by User</A> | <A 
+            href="http://www.flashkit.com/board/editpost.php?action=editpost&amp;postid=97608">Edit/Delete</A> 
+            | <A 
+            href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;postid=97608">Reply 
+            w/Quote</A> </FONT></B></TD>
+          <TD vAlign=center noWrap align=right><FONT 
+            face=verdana,arial,helvetica size=1>IP: <A 
+            href="http://www.flashkit.com/board/postings.php?action=getip&amp;postid=97608">Logged</A></FONT> 
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#ffd03b>
+    <TD vAlign=top noWrap width=175>
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A name=post97646></A><FONT 
+            face="verdana, arial, helvetica" size=2><B>nmain</B></FONT><BR><FONT 
+            face=verdana,arial,helvetica size=1>New Member</FONT><BR><BR><FONT 
+            face=verdana,arial,helvetica size=1>Registered: Jul 2000<BR>Posts: 
+            7</FONT> </TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="100%">
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><FONT face=verdana,arial,helvetica 
+            size=1><B></B></FONT>
+            <P><FONT face="verdana, arial, helvetica" size=2>Loading an XML file 
+            is asynchronous and takes time - certainly longer than the time from 
+            one action script command to another. <BR><BR>The correct way to 
+            detect when the xml is loaded is to create your own "onLoad" 
+            callback function and register it with the XML object. Then when the 
+            XML file has been loaded and parsed your function will get called. 
+            Depending on where the XML file is coming from that could be 
+            anywhere from a few millisecs to a minute or two. <BR><BR>If you 
+            must test the "loaded" property then do it in a loop (with a timeout 
+            count) to allow time for the XML to be 
+        loaded.</FONT></P></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#ffd03b>
+    <TD vAlign=center noWrap width=175 height=16><IMG 
+      src="Flash Kit Community - Simple XML example_files/posticon.gif" 
+      border=0> <FONT face=verdana,arial,helvetica size=1>08-31-2000 10:33 
+      PM</FONT> </TD>
+    <TD vAlign=center width="100%" height=16>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align="left valign=" middle?><FONT face=verdana,arial,helvetica 
+            size=1><B><A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=getinfo&amp;userid=9345">Profile</A> 
+            | | <A target=_blank 
+            href="http://www.anotherbigidea.com/javaswf/javaswf.html">Homepage</A> 
+            | <A 
+            href="http://www.flashkit.com/board/search.php?action=simplesearch&amp;exactname=yes&amp;searchuser=nmain">Posts 
+            by User</A> | <A 
+            href="http://www.flashkit.com/board/editpost.php?action=editpost&amp;postid=97646">Edit/Delete</A> 
+            | <A 
+            href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;postid=97646">Reply 
+            w/Quote</A> </FONT></B></TD>
+          <TD vAlign=center noWrap align=right><FONT 
+            face=verdana,arial,helvetica size=1>IP: <A 
+            href="http://www.flashkit.com/board/postings.php?action=getip&amp;postid=97646">Logged</A></FONT> 
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#ffdb5a>
+    <TD vAlign=top noWrap width=175>
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A name=post97914></A><FONT 
+            face="verdana, arial, helvetica" 
+            size=2><B>Triadis</B></FONT><BR><FONT face=verdana,arial,helvetica 
+            size=1>Moderator</FONT><BR><BR><FONT face=verdana,arial,helvetica 
+            size=1>Registered: Mar 2000<BR>Posts: 167</FONT> 
+    </TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="100%">
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><FONT face=verdana,arial,helvetica 
+            size=1><B></B></FONT>
+            <P><FONT face="verdana, arial, helvetica" size=2>Try this: 
+            <BR><BR>stop (); <BR>myxml = new XML(); 
+            <BR>myxml.load("http://www.yourservername/text.xml"); <BR>if 
+            (myxml.loaded) { <BR>play (); <BR>} <BR><BR>This works for me. Make 
+            sure you don't put an equal sign between the myxml.loaded and the 
+            URL. <BR><BR><BR><BR>__________________<BR>- 
+        Alex</FONT></P></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#ffdb5a>
+    <TD vAlign=center noWrap width=175 height=16><IMG 
+      src="Flash Kit Community - Simple XML example_files/posticon.gif" 
+      border=0> <FONT face=verdana,arial,helvetica size=1>09-01-2000 04:20 
+      AM</FONT> </TD>
+    <TD vAlign=center width="100%" height=16>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align="left valign=" middle?><FONT face=verdana,arial,helvetica 
+            size=1><B><A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=getinfo&amp;userid=384">Profile</A> 
+            | <A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=mailform&amp;userid=384">Email</A> 
+            | <A target=_blank href="http://www.triadis.net/">Homepage</A> | <A 
+            href="http://www.flashkit.com/board/search.php?action=simplesearch&amp;exactname=yes&amp;searchuser=Triadis">Posts 
+            by User</A> | <A 
+            href="http://www.flashkit.com/board/editpost.php?action=editpost&amp;postid=97914">Edit/Delete</A> 
+            | <A 
+            href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;postid=97914">Reply 
+            w/Quote</A> </FONT></B></TD>
+          <TD vAlign=center noWrap align=right><FONT 
+            face=verdana,arial,helvetica size=1>IP: <A 
+            href="http://www.flashkit.com/board/postings.php?action=getip&amp;postid=97914">Logged</A></FONT> 
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#ffd03b>
+    <TD vAlign=top noWrap width=175>
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A name=post97927></A><FONT 
+            face="verdana, arial, helvetica" 
+            size=2><B>Triadis</B></FONT><BR><FONT face=verdana,arial,helvetica 
+            size=1>Moderator</FONT><BR><BR><FONT face=verdana,arial,helvetica 
+            size=1>Registered: Mar 2000<BR>Posts: 167</FONT> 
+    </TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="100%">
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><FONT face=verdana,arial,helvetica 
+            size=1><B></B></FONT>
+            <P><FONT face="verdana, arial, helvetica" size=2>Hang on. Somethings 
+            not working now............ <BR><BR><BR>__________________<BR>- 
+            Alex</FONT></P></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#ffd03b>
+    <TD vAlign=center noWrap width=175 height=16><IMG 
+      src="Flash Kit Community - Simple XML example_files/posticon.gif" 
+      border=0> <FONT face=verdana,arial,helvetica size=1>09-01-2000 04:36 
+      AM</FONT> </TD>
+    <TD vAlign=center width="100%" height=16>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align="left valign=" middle?><FONT face=verdana,arial,helvetica 
+            size=1><B><A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=getinfo&amp;userid=384">Profile</A> 
+            | <A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=mailform&amp;userid=384">Email</A> 
+            | <A target=_blank href="http://www.triadis.net/">Homepage</A> | <A 
+            href="http://www.flashkit.com/board/search.php?action=simplesearch&amp;exactname=yes&amp;searchuser=Triadis">Posts 
+            by User</A> | <A 
+            href="http://www.flashkit.com/board/editpost.php?action=editpost&amp;postid=97927">Edit/Delete</A> 
+            | <A 
+            href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;postid=97927">Reply 
+            w/Quote</A> </FONT></B></TD>
+          <TD vAlign=center noWrap align=right><FONT 
+            face=verdana,arial,helvetica size=1>IP: <A 
+            href="http://www.flashkit.com/board/postings.php?action=getip&amp;postid=97927">Logged</A></FONT> 
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#ffdb5a>
+    <TD vAlign=top noWrap width=175>
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A name=post98078></A><FONT 
+            face="verdana, arial, helvetica" size=2><B>4eyed</B></FONT><BR><FONT 
+            face=verdana,arial,helvetica size=1>New Member</FONT><BR><BR><FONT 
+            face=verdana,arial,helvetica size=1>Registered: Aug 2000<BR>Posts: 
+            3</FONT> </TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="100%">
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><FONT face=verdana,arial,helvetica size=1><B>I got 
+            it to wrok</B></FONT> 
+            <P><FONT face="verdana, arial, helvetica" size=2>Thanks for all your 
+            replies. Here is what i used to get it to work. The key is the 
+            xml.onLoad event. That gets fired after the xml doc is loaded. You 
+            overload the onload event with your own. I have this in the first 
+            frame of my movie. <BR><BR>doc = new XML(); <BR>doc.onLoad = 
+            myOnLoad; <BR>doc.load("text.xml"); <BR>function myOnLoad(success) { 
+            <BR>if (success) { <BR>_root.gotoAndStop("loaded"); <BR>} else { 
+            <BR>_root.gotoAndStop("notloaded"); <BR>} <BR>} 
+            <BR>stop();</FONT></P></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#ffdb5a>
+    <TD vAlign=center noWrap width=175 height=16><IMG 
+      src="Flash Kit Community - Simple XML example_files/posticon.gif" 
+      border=0> <FONT face=verdana,arial,helvetica size=1>09-01-2000 09:16 
+      AM</FONT> </TD>
+    <TD vAlign=center width="100%" height=16>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align="left valign=" middle?><FONT face=verdana,arial,helvetica 
+            size=1><B><A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=getinfo&amp;userid=18963">Profile</A> 
+            | <A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=mailform&amp;userid=18963">Email</A> 
+            | <A target=_blank href="http://www.4eyed.com/">Homepage</A> | <A 
+            href="http://www.flashkit.com/board/search.php?action=simplesearch&amp;exactname=yes&amp;searchuser=4eyed">Posts 
+            by User</A> | <A 
+            href="http://www.flashkit.com/board/editpost.php?action=editpost&amp;postid=98078">Edit/Delete</A> 
+            | <A 
+            href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;postid=98078">Reply 
+            w/Quote</A> </FONT></B></TD>
+          <TD vAlign=center noWrap align=right><FONT 
+            face=verdana,arial,helvetica size=1>IP: <A 
+            href="http://www.flashkit.com/board/postings.php?action=getip&amp;postid=98078">Logged</A></FONT> 
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=4 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#ffd03b>
+    <TD vAlign=top noWrap width=175>
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><A name=post98115></A><FONT 
+            face="verdana, arial, helvetica" size=2><B>4eyed</B></FONT><BR><FONT 
+            face=verdana,arial,helvetica size=1>New Member</FONT><BR><BR><FONT 
+            face=verdana,arial,helvetica size=1>Registered: Aug 2000<BR>Posts: 
+            3</FONT> </TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="100%">
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="100%"><FONT face=verdana,arial,helvetica size=1><B>Also 
+            add this</B></FONT> 
+            <P><FONT face="verdana, arial, helvetica" size=2>The onload event 
+            doesn't tell you if the xml doc was sucessfully parsed so you need 
+            to modify the myOnload function to <BR><BR>function 
+            myOnLoad(success) { <BR>if (success and doc.status == 0) { 
+            <BR>_root.gotoAndStop("loaded"); <BR>} else { <BR>trace(doc.status); 
+            <BR>_root.gotoAndStop("notloaded"); <BR>} <BR>} <BR><BR>there is a 
+            list of status codes in the Flash5 Documentation 
+        <BR></FONT></P></TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#ffd03b>
+    <TD vAlign=center noWrap width=175 height=16><IMG 
+      src="Flash Kit Community - Simple XML example_files/posticon.gif" 
+      border=0> <FONT face=verdana,arial,helvetica size=1>09-01-2000 10:00 
+      AM</FONT> </TD>
+    <TD vAlign=center width="100%" height=16>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align="left valign=" middle?><FONT face=verdana,arial,helvetica 
+            size=1><B><A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=getinfo&amp;userid=18963">Profile</A> 
+            | <A target=_blank 
+            href="http://www.flashkit.com/board/member.php?action=mailform&amp;userid=18963">Email</A> 
+            | <A target=_blank href="http://www.4eyed.com/">Homepage</A> | <A 
+            href="http://www.flashkit.com/board/search.php?action=simplesearch&amp;exactname=yes&amp;searchuser=4eyed">Posts 
+            by User</A> | <A 
+            href="http://www.flashkit.com/board/editpost.php?action=editpost&amp;postid=98115">Edit/Delete</A> 
+            | <A 
+            href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;postid=98115">Reply 
+            w/Quote</A> </FONT></B></TD>
+          <TD vAlign=center noWrap align=right><FONT 
+            face=verdana,arial,helvetica size=1>IP: <A 
+            href="http://www.flashkit.com/board/postings.php?action=getip&amp;postid=98115">Logged</A></FONT> 
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><TR bgcolor="#3184BD"><TD 
+colspan="2" width="100%" valign="middle">
+<TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#3184bd>
+    <TD vAlign=center width="100%"><FONT face=verdana,arial,helvetica 
+      color=#ffffff size=1><B>All times are ET (US) &nbsp;&nbsp; 
+  </B></FONT></TD></TR></TBODY></TABLE></TABLE>
+<TABLE cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="100%"><A 
+      href="http://www.flashkit.com/board/newthread.php?action=newthread&amp;forumid=30"><IMG 
+      alt="Post New Thread" 
+      src="Flash Kit Community - Simple XML example_files/newthread.gif" 
+      border=0></A> <A 
+      href="http://www.flashkit.com/board/newreply.php?action=newreply&amp;threadid=21260"><IMG 
+      alt="Post A Reply" 
+      src="Flash Kit Community - Simple XML example_files/reply.gif" 
+      border=0></A> <BR><FONT face="verdana, arial, helvetica" size=2>
+      <FORM action=forumdisplay.php method=get><B>Forum Jump: </B><SELECT 
+      name=forumid> <OPTION value="">Please select one:</OPTION> <OPTION 
+        value=""></OPTION><OPTION value=cat1>Category: Flash Kit</OPTION><OPTION 
+        value="">--------------------</OPTION><OPTION 
+        value=1>News</OPTION><OPTION value=10>Competitions</OPTION><OPTION 
+        value=11>Coffee Lounge</OPTION><OPTION value=""></OPTION><OPTION 
+        value=cat3>Category: Reviews</OPTION><OPTION 
+        value="">--------------------</OPTION><OPTION value=9>Site 
+        Check</OPTION><OPTION value=18>Cool Sites</OPTION><OPTION 
+        value=""></OPTION><OPTION value=cat2>Category: Help</OPTION><OPTION 
+        value="">--------------------</OPTION><OPTION value=26>Flash 5 General 
+        Help</OPTION><OPTION value=29>Newbies</OPTION><OPTION value=30 
+        selected>Flash 5 Actionscript</OPTION><OPTION value=2>General 
+        Help</OPTION><OPTION value=3>Actionscript</OPTION><OPTION 
+        value=4>Scripting &amp; Backend</OPTION><OPTION 
+        value=5>Games</OPTION><OPTION value=6>Sounds and Music</OPTION><OPTION 
+        value=15>Standalone &amp; Applications</OPTION><OPTION 
+        value=16>3D</OPTION><OPTION value=21>Live Motion</OPTION><OPTION 
+        value=""></OPTION><OPTION value=cat8>Category: Design &amp; 
+        Animation</OPTION><OPTION value="">--------------------</OPTION><OPTION 
+        value=25>Art &amp; Anime</OPTION><OPTION value=14>Design</OPTION><OPTION 
+        value=""></OPTION><OPTION value=cat5>Category: Support</OPTION><OPTION 
+        value="">--------------------</OPTION><OPTION value=22>Swift 
+        Generator</OPTION><OPTION value=23>OpenSWF</OPTION><OPTION 
+        value=24>Koolmoves</OPTION><OPTION value=27>Generator</OPTION><OPTION 
+        value=17>Swish</OPTION><OPTION value=20>Swift 3D</OPTION><OPTION 
+        value=28>FLASHtyper</OPTION><OPTION value=""></OPTION><OPTION 
+        value=cat4>Category: Jobs</OPTION><OPTION 
+        value="">--------------------</OPTION><OPTION value=12>Job 
+        Vacancies</OPTION><OPTION value=13>For Hire</OPTION><OPTION 
+        value=""></OPTION><OPTION value=cat7>Category: Flash Kit 
+        Team</OPTION><OPTION value="">--------------------</OPTION><OPTION 
+        value=19>Team News</OPTION></SELECT> <INPUT type=hidden name=daysprune> <INPUT type=submit value=Go></FORM></FONT></TD>
+    <TD vAlign=top noWrap align=right><FONT face=verdana,arial,helvetica 
+      size=1><A 
+      href="http://www.flashkit.com/board/showthread.php?threadid=21207">&lt; 
+      Last Thread</A> &nbsp; &nbsp; <A 
+      href="http://www.flashkit.com/board/showthread.php?threadid=21613">Next 
+      Thread &gt;</A> </FONT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <P><FONT face=verdana,arial,helvetica size=1><B>Forum Rules:</B><BR><B>Who 
+      Can Read The Forum?</B> Any registered user or guest.<BR><B>Who Can Post 
+      New Topics?</B> Any registered user.<BR><B>Who Can Post Replies?</B> Any 
+      registered user.<BR><B>Changes:</B> Messages can be edited by their 
+      author. Messages can be deleted by their author.<BR><B>Posts:</B> HTML 
+      code is On. <A target=_blank 
+      href="http://www.flashkit.com/board/index.php?action=showsmilies">Smilies</A> 
+      are On. <A target=_blank 
+      href="http://www.flashkit.com/board/index.php?action=bbcode">vB code</A> 
+      is On. [IMG] code is On.</FONT></P></TD>
+    <TD noWrap>
+      <P><FONT face=verdana,arial,helvetica size=1><B>Admin Options:</B><BR><A 
+      href="http://www.flashkit.com/board/postings.php?action=openclosethread&amp;threadid=21260">Open 
+      / Close Thread</A><BR><A 
+      href="http://www.flashkit.com/board/postings.php?action=move&amp;threadid=21260">Move 
+      Thread</A><BR><A 
+      href="http://www.flashkit.com/board/postings.php?action=deletethread&amp;threadid=21260">Delete 
+      Thread</A><BR><A 
+      href="http://www.flashkit.com/board/postings.php?action=editthread&amp;threadid=21260">Edit 
+      Thread</A></FONT></P></TD></TR></TBODY></TABLE><!-- Do not remove this copyright notice -->
+<P align=center><FONT face=verdana,arial,helvetica size=1>Powered by: vBulletin 
+Version 1.1.3<BR>Copyright © Jelsoft Enterprises Limited 2000.<BR><!-- Do not remove this copyright notice -->
+<P>
+<CENTER><!-- 468x60 ad tag--><IFRAME marginWidth=0 marginHeight=0 
+src="Flash Kit Community - Simple XML example_files/site=internetcom&amp;PagePos=20&amp;size=468x60&amp;channel=webdev&amp;content_site=www.flashkit.htm" 
+frameBorder=0 width=468 scrolling=no height=60 
+BORDERCOLOR="#000000">
+     <SCRIPT LANGUAGE="JavaScript1.1" SRC="http://netadsrv.iworld.com/js.ng/site=internetcom&PagePos=20&size=468x60&channel=webdev&content_site=www.flashkit.com&feature=other&Params.richmedia=yes"> 
+     </SCRIPT>
+     <NOSCRIPT>
+     <A HREF="http://netadsrv.iworld.com/click.ng/site=internetcom&PagePos=20&size=468x60&channel=webdev&content_site=www.flashkit.com&feature=other&Params.richmedia=yes"> 
+     <IMG SRC=http://netadsrv.iworld.com/image.ng/site=internetcom&PagePos=20&size=468x60&channel=webdev&content_site=www.flashkit.com&feature=other&Params.richmedia=yes"> 
+     </A> 
+     </NOSCRIPT> 
+     </IFRAME><!-- /468x60 ad tag --></CENTER>
+<P><!-- Footer -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center bgColor=#000000 
+border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=1 cellPadding=3 width="100%" align=center border=0>
+        <TBODY>
+        <TR bgColor=#ffdb5a>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=center><FONT face="Verdana, Arial, Helvetica" 
+                  color=#000000 size=2><B>^ <A 
+                  href="http://www.flashkit.com/board/showthread.php?threadid=21260#top">Page 
+                  Top</A> </FONT></B></TD>
+                <TD vAlign=center align=right><FONT 
+                  face="Verdana, Arial, Helvetica" color=#000000 size=1><B>
+                  <SCRIPT language=JavaScript 
+                  src="Flash Kit Community - Simple XML example_files/title.js"></SCRIPT>
+                  </B></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<SCRIPT language=Javascript>
+<!--
+			function jump( f ){
+				var bindex = f.selectedIndex;
+				if (f.options[bindex].value != ""){
+					var lNodeID = f.options[bindex].value;
+					window.open(lNodeID,"flashkit","toolbar=1,location=1,directories=1,status=1,menubar=1,scrollbars=1,resizeable=1,width=750,height=550");
+					}
+				}
+//-->
+</SCRIPT>
+
+<TABLE cellSpacing=10 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR bgColor=#ffffff>
+    <TD vAlign=top width="25%"><A target=_blank 
+      href="http://www.burlee.com/"><IMG height=58 alt="" hspace=5 
+      src="Flash Kit Community - Simple XML example_files/burlee_logo_70c.gif" 
+      width=70 align=right vspace=5 border=0></A> <FONT 
+      face="Verdana, Arial, Helvetica" color=#000000 size=2><IMG height=1 
+      src="Flash Kit Community - Simple XML example_files/blank.gif" 
+      width=160><BR><IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><B>About&nbsp;Flashkit</B> <BR></FONT><FONT 
+      face="Verdana, Arial, Helvetica" color=#000000 size=1><B><A target=_top 
+      href="http://www.flashkit.com/about.shtml">About Flash 
+      kit</A></B><BR><B><A target=_top 
+      href="http://www.flashkit.com/contributors.shtml">Flash Kit 
+      Team</A></B><BR><B><A target=_top 
+      href="http://www.flashkit.com/awards.shtml">Site Awards</A></B><BR>
+      <P><FONT face="Verdana, Arial, Helvetica" color=#000000 size=2><IMG 
+      height=1 src="Flash Kit Community - Simple XML example_files/blank.gif" 
+      width=160><BR><IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><B>Contribute!</B><BR></FONT><FONT 
+      face="Verdana, Arial, Helvetica" color=#000000 size=1><B><A 
+      href="mailto:webmaster@flashkit.com">Webmaster</A></B> - Feedback, 
+      info<BR><B><A href="mailto:webmaster@flashkit.com">Support</A></B> - Site 
+      Problems<BR><B><A href="mailto:adsales@internet.com">Advertising</A></B> - 
+      Advertise here<BR><B><A 
+      href="http://www.flashkit.com/submissions/index.shtml">Submissions</A></B> 
+      - Movies, Sounds<BR><B><A target=_top 
+      href="http://www.flashkit.com/board/index.php">Flash Help</A></B> - Use 
+      our help board<BR>
+      <UL></UL></FONT></FONT></TD>
+    <TD width=1 rowSpan=4>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#000000><IMG height=150 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="25%"><FONT face="Verdana, Arial, Helvetica" 
+      color=#000000 size=2><IMG height=1 
+      src="Flash Kit Community - Simple XML example_files/blank.gif" 
+      width=160><BR><IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><B>Link To Flash Kit!</B>
+      <P><IMG height=31 alt="flash kit" hspace=10 
+      src="Flash Kit Community - Simple XML example_files/fk_logosm.gif" 
+      width=88 border=0> 
+      <P><FONT face="Verdana, Arial, Helvetica" color=#000000 size=1>Copy the 
+      image above Or download<BR><B><A 
+      href="http://www.flashkit.com/graphics/logos_shared/fk_logosm.fla">fla 
+      version</A></B><BR><B><A 
+      href="http://www.flashkit.com/graphics/logos_shared/FKeps_whitebg.zip">eps 
+      black text</A></B><BR><B><A 
+      href="http://www.flashkit.com/graphics/logos_shared/FKeps_darkbg.zip">eps 
+      white text</A></B><BR></FONT></P></FONT></TD>
+    <TD width=1 rowSpan=4>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#000000><IMG height=150 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1></TD></TR></TBODY></TABLE></TD>
+    <FORM name=list>
+    <TD vAlign=top width="25%"><FONT face="Verdana, Arial, Helvetica" 
+      color=#000000 size=2><IMG height=1 
+      src="Flash Kit Community - Simple XML example_files/blank.gif" 
+      width=160><BR><IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><B>Flash Resources</B>
+      <P><SELECT onchange=jump(this); name=jumplist> <OPTION value="" 
+        selected>---- Flash Links ----</OPTION> <OPTION 
+        value=http://www.virtual-fx.net>Virtual F/X</OPTION> <OPTION 
+        value=http://www.flashwave.co.uk>~Flashwave</OPTION> <OPTION 
+        value=http://www.flashzone.com>Flashzone</OPTION> <OPTION 
+        value=http://www.shockfusion.com>ShockFusion</OPTION> <OPTION 
+        value=http://www.flashplanet.com>Flash Planet</OPTION> <OPTION 
+        value=http://www.were-here.com>Were Here</OPTION> <OPTION 
+        value=http://www.macromedia.com>Macromedia</OPTION> <OPTION 
+        value=http://www.moock.org>Colin Moock</OPTION> <OPTION 
+        value=http://www.cyber-college.de>Cybercollege</OPTION> <OPTION 
+        value=http://www.coolhomepages.com>Cool Home Pages</OPTION> <OPTION 
+        value=http://www.ryanosure.com/flashcom>Flashcom</OPTION> <OPTION 
+        value=http://www.thelinkz.com>thelinkz.com</OPTION> <OPTION 
+        value=http://www.i-us.com>i/us</OPTION></SELECT> 
+      <P><A target=_top 
+      href="http://www.flashkit.com/cgi-bin/links/add.cgi"><B>Submit a 
+      Link!</B></A> 
+      <P></FONT><FONT face="Verdana, Arial, Helvetica" color=#000000 size=1>© 
+      2000 internet.com Corp. <BR>All Rights Reserved. <BR><A target=_blank 
+      href="http://www.internet.com/corporate/legal.html">Legal Notices</A>, <A 
+      target=_blank 
+      href="http://www.internet.com/corporate/legal.html">Reprints</A> 
+      </FONT></P></TD>
+    <TD width=1 rowSpan=4>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#000000><IMG height=150 
+            src="Flash Kit Community - Simple XML example_files/blank.gif" 
+            width=1></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width="25%"><FONT face="Verdana, Arial, Helvetica" 
+      color=#000000 size=2><IMG height=1 
+      src="Flash Kit Community - Simple XML example_files/blank.gif" 
+      width=160><BR><IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/board_arrow.gif" 
+      width=17 align=center border=0><B>internet.com</B> </FONT>
+      <P><IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/internet.gif" width=85 
+      vspace=4 border=0><BR><SELECT onchange=jump(this); name=internet> 
+        <OPTION value="" selected>---- Channels ----</OPTION> <OPTION 
+        value=http://www.internet.com/sections/news.html>Internet News</OPTION> 
+        <OPTION value=http://www.internet.com/sections/stocks.html>Internet 
+        Stocks/VC</OPTION> <OPTION 
+        value=http://www.internet.com/sections/it.html>Internet 
+        Technology</OPTION> <OPTION 
+        value=http://www.internet.com/sections/win.html>Windows Internet 
+        Tech.</OPTION> <OPTION 
+        value=http://www.internet.com/sections/linux.html>Linux/Open 
+        Source</OPTION> <OPTION 
+        value=http://www.internet.com/sections/webdev.html>Web 
+        Developer</OPTION> <OPTION 
+        value=http://www.internet.com/sections/marketing.html>E-Commerce/Marketing</OPTION> 
+        <OPTION value=http://www.internet.com/sections/isp.html>ISP 
+        Resources</OPTION> <OPTION 
+        value=http://www.internet.com/sections/downloads.html>Downloads</OPTION> 
+        <OPTION value=http://www.internet.com/sections/resources.html>Internet 
+        Resources</OPTION> <OPTION 
+        value=http://www.internet.com/sections/lists.html>Internet 
+        Lists</OPTION> <OPTION 
+        value=http://www.internet.com/sections/international.html>International</OPTION> 
+        <OPTION value=http://search.internet.com>Search internet.com</OPTION> 
+        <OPTION value=http://www.internet.com/mediakit/>Advertising 
+        Info</OPTION> <OPTION value=http://www.internet.com/corporate/>Corporate 
+        Info</OPTION> <OPTION value=http://events.internet.com>Internet Trade 
+        Shows</OPTION></SELECT> 
+      <P><IMG height=13 
+      src="Flash Kit Community - Simple XML example_files/internetcommerce.gif" 
+      width=120 vspace=4 border=0><BR><SELECT onchange=jump(this); 
+      name=internetcommerce> <OPTION value="" selected>---- Channels 
+        ----</OPTION> <OPTION 
+        value=http://www.internet.com/partners/index.html>Be a Commerce 
+        Partner</OPTION> <OPTION value=http://software.internet.com/>Software 
+        Store</OPTION> <OPTION 
+        value=http://www.nowonder.com/enter/doorway/INTERNETCOM1>Computer 
+        Help</OPTION> <OPTION 
+        value=http://ru.domainbank.net/refer.cfm?refer=iw1000>Register 
+        Domains</OPTION> <OPTION value=http://jobs.internet.com/>Internet 
+        Jobs</OPTION> <OPTION 
+        value=http://www.mapquest.com/cgi-bin/ia_find?link=/b2b/b2b_homepage>Map 
+        Your Website</OPTION> <OPTION 
+        value=http://www.internet.com/postmaster.html>Rent E-mail Lists</OPTION> 
+        <OPTION 
+        value=http://www.fatbrain.com/home.html?from=YEJ244>Bookstore</OPTION> 
+        <OPTION value=http://www.newsbureau.com>Press Release dist.</OPTION> 
+        <OPTION value=http://www.allnetresearch.com/>Internet Research</OPTION> 
+        <OPTION value=http://www.internet.comvc.com/>Venture Capital</OPTION> 
+        <OPTION value=http://www.newslinx.com/4linxinfo.html>Web 
+        Publishing</OPTION> <OPTION value=http://www.planet-intra.com/>Build 
+        Your Intranet</OPTION> <OPTION 
+        value=http://www.exp.com/Affiliates?token=internet.com-u-c&amp;cat_id=7>Ask 
+        an Expert</OPTION> <OPTION 
+        value=http://www.cyveillance.com/link/internet.asp>Get e-Biz 
+        Intell.</OPTION> <OPTION 
+        value=http://www.screamingmedia.net/alliance/internet.html>Content for 
+        Websites</OPTION> <OPTION 
+        value=http://2000.411now.net/partners/reseller_pgs/transition.htm>Income 
+        for Small Biz</OPTION> <OPTION value=http://www.iraves.com/>Address 
+        Verification</OPTION> <OPTION 
+        value=http://promo.nexchange.com/1457.asp>Build Sticky eStores</OPTION> 
+        <OPTION value=http://www.directcoupons.com/advertise.html>Advertise a 
+        Coupon</OPTION> <OPTION value=http://www.epromos.com>Promotional 
+        Products</OPTION> <OPTION value=http://www.internetact.com>Accept Credit 
+        Cards</OPTION> <OPTION 
+        value=http://www.netzip.com/products/Info_Demon.html>Download 
+        Solutions</OPTION> <OPTION 
+        value=http://www.dxstorm.com/dxsites2/dxshop/internet.mhtml?code=a19991124-ic3&amp;id=1172>Create 
+        a Web Store</OPTION> <OPTION value=http://www.fax4free.com>fax &amp; 
+        vmail for free</OPTION> <OPTION 
+        value=http://www.telekomnet.com/>Hardware Store</OPTION> <OPTION 
+        value=http://www.redgorilla.com/internetcom/index.html>Track Time &amp; 
+        Expenses</OPTION> <OPTION value=http://www.netsanity.com>News to Your 
+        Desktop</OPTION> <OPTION value=http://www.mondus.com>Small Biz 
+        Purchasing</OPTION> <OPTION 
+        value=http://www.b2bexplorer.com/index_internet.html>B2B 
+        Directory/Search</OPTION> <OPTION 
+        value=http://www.internet.workexchange.com/>Freelancers</OPTION></SELECT> 
+      <BR></FONT></P></TD></TR></TBODY></TABLE><!-- End Footer --></P>
+<DIV id=counter 
+style="Z-INDEX: 2; LEFT: 0px; VISIBILITY: hidden; WIDTH: 0px; POSITION: absolute; TOP: 0px; HEIGHT: 0px"><!-- BEGIN WEBSIDESTORY CODE v5 --><!-- COPYRIGHT 1998-1999 WEBSIDESTORY, INC. ALL RIGHTS RESERVED.  U.S. PATENT PENDING. --><A 
+href="http://rd1.hitbox.com/rd?acct=WQ591017O3AAWREN0&amp;p=s"><IMG height=62 
+alt="Click Here!" src="Flash Kit Community - Simple XML example_files/in0.gif" 
+width=88 border=0></A> 
+<!-- END WEBSIDESTORY CODE  --></DIV></FORM></FONT></BODY></HTML>

@@ -1,0 +1,203 @@
+<PUBLIC:COMPONENT tagName="vert_menu" >
+<PUBLIC:DEFAULTS viewLinkContent />
+<PUBLIC:PROPERTY name="width" />
+<PUBLIC:PROPERTY name="height" />
+<ATTACH event="oncontentready" onevent="init()" />
+</PUBLIC:COMPONENT>
+
+<SCRIPT LANGUAGE="JavaScript">
+var menus;
+
+function init() {
+	// set VertMenu metrics
+	if(element.width) { 
+		VertMenu.width = element.width;
+	}
+	if(element.height) { 
+		VertMenu.height = element.height;
+	}
+	VertMenu.TcallLabel('/', 'init');
+  menus = parseVars();
+  populate();
+}
+
+function parseVars() {
+  var menuArray = new Array();
+  var ptmp, stmp;
+  var id, label, parent, url;
+
+	for(var i=0; i < element.all.length; i++) {
+		ptmp, stmp, id, label, parent, url = null;
+		e = element.all[i];
+		if(e.getAttribute("id")) {
+			parent = -1;
+		}	
+		if(e.getAttribute("label")) {
+			label = e.getAttribute("label");
+		}	
+		if(e.getAttribute("parent")) {
+			parent = e.getAttribute("parent");
+		}	
+		if(e.getAttribute("url")) {
+			url = e.getAttribute("url");
+		}
+
+    // if it's a parent, make parent node, else make child node
+    if (parent == -1) {
+      ptmp = new ParentMenuItem(label);
+      menuArray.push(ptmp);
+    } else {
+      stmp = new SubMenuItem(label, url);
+      if (menuArray[parent] != null) {
+        menuArray[parent].addSub(stmp);
+      } else {
+        alert("invalid menu call");
+      }
+    }
+  }
+
+  return menuArray;
+}
+
+function populate() {
+  // first the parent
+  for (var i=0; i<menus.length; i++) {
+    // add record to flash
+    addRecord(-1, menus[i].label, "");
+    // add this to the delete'able list
+    document.actionsForm.deleteItem.options[document.actionsForm.deleteItem.length] = new Option(menus[i].label, "-1,"+i, false, true);
+    document.actionsForm.addItemParent.options[document.actionsForm.addItemParent.length] = new Option(menus[i].label, i, false, true);
+
+    // now get it's children and populate it!
+    for (var j=0; j<menus[i].subs.length; j++) {
+      addRecord(i, menus[i].subs[j].label, menus[i].subs[j].url);
+      document.actionsForm.deleteItem.options[document.actionsForm.deleteItem.length] = new Option(menus[i].subs[j].label, i+","+j, false, true);
+    }
+  }
+
+  // actually draw the flash
+	VertMenu.TcallLabel('/', 'show');
+  VertMenu.style.display = "block";
+}
+
+function addRecord(parent, label, url) {
+    // prep vars to send to flash
+    record = "";
+    record += parent;
+    record += ";";
+    record += label;
+    record += ";";
+    record += url;
+    // send the vars info to flash
+    VertMenu.SetVariable('newRecord', record);
+    VertMenu.TcallLabel('/', 'addRecord');
+}
+
+// constructor for Parent Menu Items object
+function ParentMenuItem(label) {
+  // properties
+  this.label = label;
+  this.subs = new Array();
+
+  // methods
+  this.addSub = addSub;
+}
+
+// addSub method for ParentMenuItem object
+function addSub(sub) {
+  this.subs.push(sub);
+}
+
+// constructor for Sub Menu Items
+function SubMenuItem(label, url) {
+  // properties
+  this.label = label;
+  this.url = url;
+
+  // methods
+}
+
+function redrawMenu() {
+  VertMenu.TcallLabel('/', 'destroy');
+	VertMenu.TcallLabel('/', 'init');
+  populate();
+}
+
+function deleteMenuItem() {
+  var toDelete = document.actionsForm.deleteItem.options[document.actionsForm.deleteItem.selectedIndex].value;
+  var toDeleteArray = toDelete.split(",");
+  var tmp;
+  
+  // if the first element is -1, then it's a parent we have to delete, else it's a child
+  if (toDeleteArray[0] == -1) {
+    for (var i=0; i<menus[toDeleteArray[1]].subs.length; i++) {
+      menus[toDeleteArray[1]].subs.pop();
+    }
+    menus[toDeleteArray[1]] = menus[menus.length - 1];
+    menus.pop();
+  } else {
+    menus[toDeleteArray[0]].subs[toDeleteArray[1]] = menus[toDeleteArray[0]].subs[menus[toDeleteArray[0]].subs.length - 1];
+    menus[toDeleteArray[0]].subs.pop();
+  }
+  clearBoxes();
+  redrawMenu();
+}
+
+function addMenuItem() {
+  var toAdd = document.actionsForm.addItemParent.options[document.actionsForm.addItemParent.selectedIndex].value;
+  var label = document.actionsForm.addItemLabel.value;
+  var url = document.actionsForm.addItemURL.value;
+  var ptmp, stmp;
+
+  if (toAdd == -1) {
+    if (label == "") {
+      alert("Label can't be blank");
+    } else {
+      ptmp = new ParentMenuItem(label);
+      menus.push(ptmp);
+    }
+  } else {
+    if (url == "") {
+      alert("URL can't be blank");
+    } else if (label == "") {
+      alert("Label can't be blank");
+    } else {
+      stmp = new SubMenuItem(label, url);
+      menus[toAdd].addSub(stmp);
+    }
+  }
+
+  clearBoxes();
+  redrawMenu();
+}
+
+function clearBoxes() {
+  var length = null;
+  length = document.actionsForm.deleteItem.length;
+  for(var i=length-1; i>=0; i--) {
+    document.actionsForm.deleteItem.options[i] = null;
+  }
+
+  length = null;
+  length = document.actionsForm.addItemParent.length;
+  for(var j=length-1; j>0; j--) {
+    document.actionsForm.addItemParent.options[j] = null;
+  }
+}
+
+
+</SCRIPT>
+
+<BODY style="width:100%; height:100%">
+<OBJECT id="VertMenu" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" style="display: none">
+<PARAM name="movie" value="vert_menu.swf">
+<PARAM name="quality" value="high">
+<PARAM name="wmode" value="transparent">
+</OBJECT>
+<div>
+<input type="button" value="redraw" onClick="redrawMenu();"><br>
+<form name="actionsForm">
+<select name="deleteItem"></select> <input type="button" value="Delete Menu Item" onClick="deleteMenuItem();"><br>
+Label:<input name="addItemLabel" type="text"> URL:<input name="addItemURL" type="text"> Parent:<select name="addItemParent"><option value="-1">New Parent Menu</option></select> <input type="button" value="Add Menu Item" onClick="addMenuItem();"><br>
+</div>
+</BODY>

@@ -1,0 +1,116 @@
+<PUBLIC:COMPONENT tagName="ticker" >
+<public:defaults viewLinkContent />
+<PUBLIC:PROPERTY NAME="src" />
+<PUBLIC:PROPERTY NAME="speed" />
+<PUBLIC:PROPERTY NAME="target" />
+<PUBLIC:PROPERTY NAME="color" />
+<PUBLIC:PROPERTY NAME="active" />
+<PUBLIC:PROPERTY NAME="hover" />
+<public:method name="changeHeadline" />
+<public:method name="changeColor" />
+<public:method name="changeActive" />
+<public:method name="changeHover" />
+<public:method name="changeTarget" />
+
+<public:event name=onupdate id=rcID />
+<attach event="oncontentready" onevent="init()" />
+</public:component>
+<script language="javascript">
+if(element.src) {
+    document.writeln('<XML ID="currentHeadlines" SRC="'+element.src+'"></XML>');
+}
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+var links = new Array();
+var color, hover, active, theTarget;
+
+
+if(element.color){
+    color = element.color;
+}
+if(element.hover){
+    hover = element.hover;
+}
+if(element.active){
+    active = element.hover;
+}
+if (element.target){
+    theTarget = element.target;
+}
+
+
+function init(){
+    // set up the standard size variables
+    if(element.width){
+	flash_width = element.width;
+    } else {
+	flash_width = 500;
+    }
+    if(element.height){
+	flash_height = element.height;
+    } else {
+	flash_height = 440;
+    }
+    ticker.width = flash_width;
+    ticker.height = flash_height;
+
+    var sna = new Array();
+	for(i=0; i < currentHeadlines.XMLDocument.documentElement.childNodes.length; i++){
+	    for(j=0; j<currentHeadlines.XMLDocument.documentElement.childNodes.item(i).childNodes.length; j++){
+		sna[sna.length] = currentHeadlines.XMLDocument.documentElement.childNodes.item(i).childNodes.item(j).text;
+		links[links.length] = currentHeadlines.XMLDocument.documentElement.childNodes.item(i).childNodes.item(j).getAttribute('href');
+	    }
+	}
+	var the_string = 'the_length='+sna.length+'&';
+	ticker.SetVariable('the_length', sna.length);
+	ticker.SetVariable('the_speed', element.speed);
+	var theTarget = '';
+	ticker.SetVariable('the_target', theTarget);
+	for(n=0;n<sna.length;n++){
+	    ticker.SetVariable('the_headline_'+n, sna[n]);
+	    ticker.SetVariable('the_link_'+n, links[n]);
+	}
+	ticker.SetVariable('color', color);
+	ticker.SetVariable('hover', hover);
+	ticker.SetVariable('active', active);
+	ticker.TGotoFrame('_level0', 1);
+	ticker.TPlay('_level0');
+	ticker.style.display = 'block';
+}
+
+function changeHeadline(source) {
+     currentHeadlines.outerHTML = '<XML ID="currentHeadlines" SRC="'+source+'"></XML>';
+     init();
+}
+
+function changeColor(newcolor){
+    color = newcolor;
+    init();
+}
+
+function changeActive(newcolor){
+    active = newcolor;
+    init();
+}
+
+function changeHover(newcolor){
+    hover = newcolor;
+    init();
+}
+
+function changeTarget(newtarget){
+    theTarget = newtarget;
+    init();
+}
+
+</SCRIPT>
+
+<BODY style="width:100%; height:100%">
+
+<object id="ticker" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="225" height="275" style="display: none">
+    <PARAM NAME="wmode" VALUE="transparent">
+    <param name=movie value="ticker.swf">
+    <param name=quality value=high>
+</object>
+
+</BODY>

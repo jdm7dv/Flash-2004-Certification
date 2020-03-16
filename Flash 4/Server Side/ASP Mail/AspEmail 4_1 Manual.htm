@@ -1,0 +1,542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0034)http://www.aspemail.com/Manual.htm -->
+<HTML><HEAD><TITLE>AspEmail 4.1 Manual</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR>
+<META content="Persits Software, Inc." name=Author></HEAD>
+<BODY>
+<BLOCKQUOTE><B><FONT face=Arial,Helvetica><FONT size=+2>AspEmail 4.2 
+  Manual</FONT></FONT></B> 
+  <P><B><FONT face=Arial,Helvetica>Copyright (c) 1999 <A 
+  href="http://www.persits.com/">Persits Software, Inc.</A></FONT></B> 
+  <BR><B><FONT face=Arial,Helvetica>All Rights 
+Reserved</FONT></B></P></BLOCKQUOTE>
+<P><BR><B><FONT face=Arial,Helvetica><FONT color=#006600>What is AspEmail 
+4.2</FONT></FONT></B> 
+<BLOCKQUOTE>AspEmail 4.2 is an active server component for sending email 
+  messages using an external SMTP server in an ASP or VB environment. AspEmail 
+  4.2 supports multiple recipients, multiple CC, multiple Bcc, multiple file 
+  attachments, HTML format, embedded images, and non-US ASCII character sets. 
+  AspEmail 4.2 is free except for the image embedding functionality, 
+  Quoted-Printable encoding support and message queuing described below. 
+  <P>A free copy of AspEmail can be downloaded from <A 
+  href="http://www.aspemail.com/download.html">www.aspemail.com/download.html</A>.</P></BLOCKQUOTE><B><FONT 
+face=Arial,Helvetica><FONT color=#006600>What's New in Version 
+4.2</FONT></FONT></B> 
+<BLOCKQUOTE>
+  <UL>
+    <LI><FONT color=#000000>Deferred processing support added to message queuing 
+    via the new <B>Timestamp</B> property.</FONT> 
+    <LI><FONT color=#000000>Secure mail functionality optimized for Microsoft 
+    Outlook 2000.</FONT> </LI></UL></BLOCKQUOTE><B><FONT face=Arial,Helvetica><FONT 
+color=#006600>System Requirements</FONT></FONT></B> 
+<BLOCKQUOTE><U>General Requirements</U> 
+  <BLOCKQUOTE>Windows 95/98 or Windows NT 4.0+, and <BR>An external SMTP 
+    server.</BLOCKQUOTE><U>Specific Requirements</U> 
+  <BLOCKQUOTE>Internet Information Server 3.0 + and Active Server Pages, or 
+    <BR>Personal Web Server (any version) and Active Server Pages, or <BR>Visual 
+    Basic, Visual C++, or any other development environment supporting COM 
+    components.</BLOCKQUOTE></BLOCKQUOTE>
+<P><BR><B><FONT face=Arial,Helvetica><FONT color=#006600>Getting 
+Started</FONT></FONT></B> 
+<BLOCKQUOTE>To register AspEmail on your system, execute the following command 
+  at your MS DOS or Start/Run prompt: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>C:\&gt;regsvr32 
+  c:\AspEmailDir\AspEmail.dll</FONT></FONT></B> 
+  <P>AspEmail is shipped with an evaluation version of the <B><A 
+  href="http://www.aspupload.com/">AspUpload</A></B> component from <A 
+  href="http://www.persits.com/">Persits Software, Inc.</A> which can be used to 
+  upload file attachments to the server as discussed below. Register 
+  <B>AspUpload</B> by executing the following command: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>C:\&gt;regsvr32 
+  c:\AspEmailDir\AspUpload.dll</FONT></FONT></B></P></BLOCKQUOTE>
+<BLOCKQUOTE>AspUpload is not needed to run AspEmail. However, the sample ASP 
+  application <B>SendMail</B> shipped with AspEmail makes use of it to 
+  demonstrate the attachment functionality of AspEmail, so it is a good idea to 
+  register it too, unless it has already been registered on your system. For 
+  more information on the AspUpload component, visit <A 
+  href="http://www.aspupload.com/">http://www.aspupload.com/</A>.</BLOCKQUOTE>
+<P><BR><B><FONT face=Arial,Helvetica><FONT color=#006600>Using 
+AspEmail</FONT></FONT></B> 
+<BLOCKQUOTE>To use AspEmail in an ASP environment, you must create an instance 
+  of the AspEmail object in your ASP script as follows: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>&lt;%</FONT></FONT></B> 
+  <BR><B><FONT face="Courier New,Courier"><FONT size=-1>...</FONT></FONT></B> 
+  <BR><B><FONT face="Courier New,Courier"><FONT size=-1>Set Mail = 
+  Server.CreateObject("Persits.MailSender")</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>...</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>%&gt;</FONT></FONT></B> 
+  <P>To use AspEmail in a VB environment, open a VB project, go to 
+  Project/References... and check the box next to <B>Persits Software AspEmail 
+  4.2</B>. Declare an AspEmail object variable as follows: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Dim Mail As 
+  MailSender</FONT></FONT></B> 
+  <P>Create an instance of the AspEmail object as follows: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Set Mail = New 
+  MailSender</FONT></FONT></B> 
+  <P>To send email messages, AspEmail "talks" to an SMTP server. You must 
+  specify the SMTP host address and, optionally, port number as follows: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.Host = 
+  "smtp.mycompany.com"</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>Mail.Port = 25 ' Optional. Port is 25 
+  by default</FONT></FONT></B> 
+  <P>You must also specify the sender's email address and, optionally, name as 
+  follows: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.From = 
+  "sales@mycompany.com"</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>Mail.FromName = "Sales Department" ' 
+  Optional</FONT></FONT></B> 
+  <P>To add the message recipients, CCs, BCCs, and Reply-To's, use the 
+  AddAddress, AddCC, AddBcc and AddReplyTo methods, respectively. These methods 
+  accept two parameters: the email address and, optionally, name. Notice that 
+  you must not use an '=' sign to pass values to the methods. For example, 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.AddAddress 
+  "jsmith@company1.com", "John Smith"</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>Mail.AddCC "bjohnson@company2.com" ' 
+  Name is optional</FONT></FONT></B> 
+  <P>Use the <B>Subject</B> and <B>Body</B> properties to specify the message 
+  subject and body text, respectively. A body can be in a text or HTML format. 
+  In the latter case, you must also set the <B>IsHTML</B> property to True. For 
+  example, 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.Subject = "Sales 
+  Receipt"</FONT></FONT></B> <BR><B><FONT face="Courier New,Courier"><FONT 
+  size=-1>Mail.Body = "Dear John:" &amp; chr(13) &amp; chr(10) &amp; "Thank you 
+  for your business. Here is your receipt."</FONT></FONT></B> 
+  <P>or 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.Subject = "Sales 
+  Receipt"</FONT></FONT></B> <BR><B><FONT face="Courier New,Courier"><FONT 
+  size=-1>Mail.Body = "&lt;HTML&gt;&lt;BODY BGCOLOR=#0000FF&gt;Dear 
+  John:....&lt;/BODY&gt;&lt;/HTML&gt;"</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>Mail.IsHTML = True</FONT></FONT></B> 
+  <P>To send a file attachment with the message, use the AddAttachment method. 
+  It accepts the full path to the file being attached. Call this method as many 
+  times as you have attachments. Notice that you must not use the '=' sign to 
+  pass a value to the method: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.AddAttachment 
+  "c:\dir\receipt.doc"</FONT></FONT></B> 
+  <P>To send a message, call the Send method. The method throws exceptions in 
+  case of an error. You may choose to handle them by using the On Error Resume 
+  Next statement, as follows: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>On Error Resume 
+  Next</FONT></FONT></B> <BR><B><FONT face="Courier New,Courier"><FONT 
+  size=-1>Mail.Send</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>If Err &lt;&gt; 0 
+  Then</FONT></FONT></B> <BR><B><FONT face="Courier New,Courier"><FONT 
+  size=-1>&nbsp;&nbsp;&nbsp; Response.Write "An error occurred: " &amp; 
+  Err.Description</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>End 
+If</FONT></FONT></B></P></BLOCKQUOTE>
+<P><BR><B><FONT face=Arial,Helvetica><FONT color=#006600>S/MIME-based Encryption 
+and Digital Signature Support</FONT></FONT></B> 
+<BLOCKQUOTE><FONT color=#000000>Starting with <B>Build 4.0.0.3</B>, AspEmail 
+  is capable of generating encrypted and/or signed mail in the industry-standard 
+  S/MIME format. To send secure mail, AspEmail must be used in conjunction with 
+  the <B>AspEncrypt</B> cryptographic component from Persits Software, Inc. For 
+  more information on how to send secure mail using the AspEmail and AspEncrypt 
+  components, and to download your free trial copy of AspEncrypt, visit the web 
+  site <B><A 
+  href="http://www.aspencrypt.com/">http://www.aspencrypt.com/</A></B>.</FONT></BLOCKQUOTE><B><FONT 
+face=Arial,Helvetica><FONT color=#006600>Premium Feature: Support for Message 
+Queuing</FONT></FONT></B> 
+<BLOCKQUOTE><B><FONT color=#cc0000>AspEmail is free when you use basic 
+  functionality described above. AspEmail also offers premium features that 
+  require a registration key after a 30-day evaluation period. To purchase a 
+  key, visit <A 
+  href="http://www.aspemail.com/">http://www.aspemail.com/</A>.</FONT></B> 
+  <P><FONT color=#000000>AspEmail 4.2 has a new method, <B>SendToQueue</B>, 
+  which does not attempt to send a message directly to the SMTP server. Instead, 
+  the message is placed in a queue from where it is later retrieved and sent out 
+  by the <B>EmailAgent</B> NT service, a background process. Your mail-sending 
+  ASP script no longer has to wait until a message is sent, which means a better 
+  client-response time. The EmailAgent service itself is free and can be 
+  downloaded from <A 
+  href="http://www.aspemail.com/download.html">www.aspemail.com/download.html</A>. 
+  The SendToQueue is a premium feature and requires a registration key after a 
+  30-day evaluation period. To learn how to use AspEmail and EmailAgent, see the 
+  <B>EmailAgent manual</B> at the AspEmail.com web 
+site.</FONT></P></BLOCKQUOTE><B><FONT face=Arial,Helvetica><FONT 
+color=#006600>Premium Feature: Sending Messages with Embedded Images and 
+Sounds</FONT></FONT></B> 
+<BLOCKQUOTE>AspEmail can send email messages with embedded images. The 
+  following example uses the file margin.gif (included with the component) as 
+  the background image for a message: 
+  <P>... <BR><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.Body = 
+  "&lt;HTML&gt;&lt;BODY 
+  BACKGROUND=""cid:My-Background-Image""&gt;...&lt;/BODY&gt;&lt;/HTML&gt;"</FONT></FONT></B> 
+  <BR><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.AddEmbeddedImage 
+  "c:\aspemaildir\margin.gif", "My-Background-Image"</FONT></FONT></B> 
+  <P>The method AddEmbeddedImage takes two parameters: the full path to an image 
+  file and a Content ID which is simply a string without spaces which your body 
+  HTML references as follows: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>"cid:&lt;Content 
+  ID&gt;"</FONT></FONT></B> 
+  <P>In the example above we use the Content ID "My-Background-Image" which is 
+  referenced by the <FONT face="Courier New,Courier"><FONT 
+  size=-1>BACKGROUND</FONT></FONT> attribute of a <FONT 
+  face="Courier New,Courier"><FONT size=-1>&lt;BODY&gt;</FONT></FONT> tag. We 
+  can use the same technique to embed an image inside the message body using an 
+  <FONT face="Courier New,Courier"><FONT size=-1>&lt;IMG&gt;</FONT></FONT> tag: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.Body = 
+  "&lt;HTML&gt;....&lt;IMG 
+  SRC=""cid:My-Company-Logo""&gt;...&lt;/HTML&gt;"</FONT></FONT></B> 
+  <BR><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.AddEmbeddedImage 
+  "c:\aspemaildir\logo.gif", "My-Company-Logo"</FONT></FONT></B> 
+  <P>In a similar manner, you can embed a sound file in your message using the 
+  &lt;BGSOUND&gt; tag, for example: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.Body = 
+  "&lt;HTML&gt;&lt;BGSOUND=""cid:My-Sound""&gt;&lt;/BGSOUND&gt;...&lt;/HTML&gt;"</FONT></FONT></B> 
+  <BR><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.AddEmbeddedImage 
+  "c:\winnt\media\ringin.wav", "My-Sound"</FONT></FONT></B> 
+  <P>Note: <B><FONT color=#ff0000>Content-IDs are case-sensitive</FONT>.</B> 
+  Make sure the values specified by "<B>cid:..."</B> and <B>AddEmbeddedImage</B> 
+  fully match. 
+  <P>To make your script more readable, you may choose to place your message 
+  body in a separate file and import it into the <B>Body</B> property using the 
+  method <B>AppendBodyFromFile</B> which accepts the full path to a text ot HTML 
+  file containing the message body. For example, your HTML file may look like 
+  this: <BR>&nbsp; 
+  <TABLE cellSpacing=0 cols=1 width="84%" bgColor=#ffffcc border=1>
+    <TBODY>
+    <TR>
+      <TD><B><FONT face="Courier New,Courier"><FONT size=-1>&lt;!-- File 
+        messagebody.html--&gt;</FONT></FONT></B> <BR><B><FONT 
+        face="Courier New,Courier"><FONT size=-1>&lt;HTML&gt;</FONT></FONT></B> 
+        <BR><B><FONT face="Courier New,Courier"><FONT 
+        size=-1>&lt;HEAD&gt;</FONT></FONT></B> <BR><B><FONT 
+        face="Courier New,Courier"><FONT size=-1>&lt;STYLE&gt;BODY 
+        {</FONT></FONT></B> <BR><B><FONT face="Courier New,Courier"><FONT 
+        size=-1>&nbsp;COLOR: #427d64; FONT-FAMILY: "Arial"; FONT-SIZE: 12pt; 
+        MARGIN-LEFT: 8em</FONT></FONT></B> <BR><B><FONT 
+        face="Courier New,Courier"><FONT size=-1>}</FONT></FONT></B> 
+        <BR><B><FONT face="Courier New,Courier"><FONT 
+        size=-1>&lt;/STYLE&gt;</FONT></FONT></B> <BR><B><FONT 
+        face="Courier New,Courier"><FONT size=-1>&lt;/HEAD&gt;</FONT></FONT></B> 
+
+        <P><B><FONT face="Courier New,Courier"><FONT size=-1>&lt;BODY 
+        BACKGROUND="cid:My-Background-Image"&gt;</FONT></FONT></B> <BR><B><FONT 
+        face="Courier New,Courier"><FONT size=-1>&lt;H2&gt;Thank you for 
+        Shopping At Our Online Store!&lt;/H2&gt;</FONT></FONT></B> 
+        <P><B><FONT face="Courier New,Courier"><FONT 
+        size=-1>....</FONT></FONT></B> 
+        <P><B><FONT face="Courier New,Courier"><FONT 
+        size=-1>&lt;/BODY&gt;</FONT></FONT></B> <BR><B><FONT 
+        face="Courier New,Courier"><FONT 
+        size=-1>&lt;/HTML&gt;</FONT></FONT></B></P></TD></TR></TBODY></TABLE>
+  <P>To use this file as a message body, use the following code: 
+  <P><B><FONT face="Courier New,Courier"><FONT size=-1>Mail.AppendBodyFromFile 
+  "c:\aspemaildir\messagebody.html"</FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT size=-1>Mail.AddEmbeddedImage 
+  "c:\aspemaildir\margin.gif", "My-Background-Image"</FONT></FONT></B> 
+  <P>The <B>AppendBodyFromFile</B> method can be used instead of, or in 
+  conjunction with, the <B>Body</B> property.</P></BLOCKQUOTE><B><FONT 
+face=Arial,Helvetica><FONT color=#006600>Premium Feature: Support for Alphabets 
+Other Than US-ASCII</FONT></FONT></B> 
+<BLOCKQUOTE><FONT color=#000000>AspEmail is capable of sending messages in 
+  alphabets other than US-ASCII by supporting the "Quoted-Printable" format. 
+  This format is described in RFC-2045. The idea of the format is that 
+  characters less than 33 and greater than 126 are represented by an "=" 
+  followed by a two digit hexadecimal representation of the character's value. 
+  For example, the decimal value 12 (US-ASCII form feed) is represented by 
+  "=0C", and the decimal value 61 (US-ASCII "=") can be represented by 
+  "=3D".</FONT> 
+  <P><FONT color=#000000>AspEmail encodes the message body in the 
+  Quoted-Printable format automatically if the <B>ContentTransferEncoding</B> 
+  property is set to <B>"quoted-printable"</B>. You may also set the 
+  <B>CharSet</B> property to the appropriate character set.</FONT> 
+  <P><FONT color=#000000>The following code snippet sends a message in Russian 
+  in the KOI8 standard from a text file (not shown here):</FONT> <BR><FONT 
+  color=#000000>...</FONT> <BR><B><FONT face="Courier New,Courier"><FONT 
+  color=#000000><FONT size=-1>Mail.ContentTransferEncoding = 
+  "quoted-printable"</FONT></FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT color=#000000><FONT size=-1>Mail.Charset = 
+  "koi8-r"</FONT></FONT></FONT></B> <BR><B><FONT 
+  face="Courier New,Courier"><FONT color=#000000><FONT 
+  size=-1>Mail.AppendBodyFromFile "c:\russiandoc.txt"</FONT></FONT></FONT></B> 
+  <BR><B><FONT face="Courier New,Courier"><FONT color=#000000><FONT 
+  size=-1>Mail.Send</FONT></FONT></FONT></B></P></BLOCKQUOTE>
+<P><BR><B><FONT face=Arial,Helvetica><FONT color=#006600>Sample ASP 
+Application</FONT></FONT></B> 
+<BLOCKQUOTE><FONT color=#000000>AspEmail is shipped with a sample ASP 
+  application that allows you to create and send email messages with attachments 
+  over the Web. The application consists of the following files:</FONT> 
+  <P><B><FONT color=#000000>global.asa (collection object creation)</FONT></B> 
+  <BR><B><FONT color=#000000>SendMail.asp (main Email interface page)</FONT></B> 
+  <BR><B><FONT color=#000000>Attachments.asp (attachment handling 
+  page)</FONT></B> <BR><B><FONT color=#000000>UploadScript.asp (upload script 
+  which uses AspUpload).</FONT></B> 
+  <P><FONT color=#000000>To upload file attachments from a client machine to the 
+  server where the script is running, the application uses a trial version of 
+  AspUpload, a powerful file upload component from Persits Software. The file 
+  AspUpload.dll is shipped with AspEmail and must be registered on your system 
+  for the sample application to function. For complete documentation on the 
+  AspUpload component, or to purchase AspUpload, visit <A 
+  href="http://www.aspupload.com/">http://www.aspupload.com/</A>.</FONT></P></BLOCKQUOTE><B><FONT 
+face=Arial,Helvetica><FONT color=#006600>Object Reference</FONT></FONT></B> 
+<BLOCKQUOTE><B>AspEmail Properties</B> 
+  <TABLE cellSpacing=0 cols=2 cellPadding=2 width="93%" border=1>
+    <TBODY>
+    <TR vAlign=top bgColor=#ffcccc>
+      <TD><B><FONT face=Arial,Helvetica><FONT size=-1>Property and 
+        Type</FONT></FONT></B></TD>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>Comments</FONT></FONT></B></TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>Host</B> As 
+        String</FONT></FONT></TD>
+      <TD>Required. The internet address of a SMTP host to be used to send 
+        messages.</TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>Port</B> As 
+        Integer</FONT></FONT></TD>
+      <TD>The SMTP port number. 25 by default.</TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>From</B> As 
+        String</FONT></FONT></TD>
+      <TD>Required. The sender's email address.</TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>FromName</B> As 
+        String</FONT></FONT></TD>
+      <TD>The sender's name.</TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>Subject</B> As 
+        String</FONT></FONT></TD>
+      <TD>Message subject.</TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>Body</B> As 
+        String</FONT></FONT></TD>
+      <TD>Message body. Can be in a text or HTML format. In the latter case, 
+        the IsHTML property must be set to True.</TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>IsHTML</B> As 
+        Boolean</FONT></FONT></TD>
+      <TD>False by default. If set to True, AspEmail will set the Content-Type 
+        of the message body to text/html.&nbsp;</TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>Priority</B> As 
+        Integer</FONT></FONT></TD>
+      <TD>Message priority. Valid values are 1 (high), 3 (normal) and 5 (low). 
+        0 by default which means priority is not specified.</TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>Helo</B> As 
+        String</FONT></FONT></TD>
+      <TD>"AspEmail" by default. This string is sent with the <B>HELO</B> 
+        command when an SMTP session begins. Used by an SMTP client to identify 
+        its domain name to the SMTP server.</TD></TR>
+    <TR vAlign=top>
+      <TD noWrap><FONT face=Arial,Helvetica><FONT 
+        size=-1><B>ContentTransferEncoding</B> As String</FONT></FONT></TD>
+      <TD><B>"7bit"</B> by default. Specifies the 
+        <B>Content-Transfer-Encoding</B> MIME header for the message body. Other 
+        valid values include "8bit" and "quoted-printable". If you set this 
+        property to "quoted-printable" AspEmail will automatically convert the 
+        message body to the Quoted-Printable format as specified in 
+        RFC-2045.&nbsp; <B><FONT color=#006600>This is a premium 
+        feature.</FONT></B></TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>CharSet</B> As 
+        String</FONT></FONT></TD>
+      <TD>"ISO-8859-1" by default. Specifies the charset component of the 
+        <B>Content-Type</B> MIME header. <B><FONT color=#006600>This is a 
+        premium feature.</FONT></B></TD></TR>
+    <TR vAlign=top>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1><B>Timestamp</B>&nbsp; As 
+        Date</FONT></FONT></TD>
+      <TD>Used for deferred message processing. Specifies when the message is 
+        to be sent out by EmailAgent. This property is only used with the 
+        <I>SendToQueue</I> method and ignored by the <I>Send</I> method. For 
+        more information, see the EmailAgent manual at <A 
+        href="http://www.aspemail.com/">http://www.aspemail.com/</A>, section 
+        "Deferred Message Processing."</TD></TR>
+    <TR vAlign=top>
+      <TD vAlign=top><FONT face=Arial,Helvetica><FONT size=-1><B>Expires</B> 
+        As Date (read-only)</FONT></FONT></TD>
+      <TD>Returns the expiration date of the component's premium features. 
+        Returns 9/9/9999 if a valid registration key is installed. Returns 0 
+        (displayed as "12:00 AM") if expiration value in the registry is corrupt 
+        or missing.</TD></TR></TBODY></TABLE></BLOCKQUOTE>
+<BLOCKQUOTE><B>AspEmail Methods</B> 
+  <TABLE cellSpacing=0 cols=3 cellPadding=2 width="89%" border=1>
+    <TBODY>
+    <TR bgColor=#ccffff>
+      <TD><B><FONT face=Arial,Helvetica><FONT size=-1>Method 
+        Name</FONT></FONT></B></TD>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>Arguments</FONT></FONT></B></TD>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>Comments</FONT></FONT></B></TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>AddAddress</FONT></FONT></B></TD>
+      <TD noWrap><B>Email</B> As String <BR>Optional <B>Name</B> = ""</TD>
+      <TD>Adds an email address and optionally the corresponding full name to 
+        the letter's <B>To:</B> list.&nbsp;</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+      size=-1>AddCC</FONT></FONT></B></TD>
+      <TD noWrap><B>Email</B> As String <BR>Optional <B>Name</B> = ""</TD>
+      <TD>Adds an email address and optionally the corresponding full name to 
+        the letter's <B>Cc:</B> list.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+      size=-1>AddBcc</FONT></FONT></B></TD>
+      <TD noWrap><B>Email</B> As String <BR>Optional <B>Name</B> = ""</TD>
+      <TD>Adds an email address and optionally the corresponding full name to 
+        the letter's <B>Bcc:</B> list.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>AddReplyTo</FONT></FONT></B></TD>
+      <TD noWrap><B>Email</B> As String <BR>Optional <B>Name</B> = ""</TD>
+      <TD>Adds an email address and optionally the corresponding full name to 
+        the letter's <B>Reply-To:</B> list.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>AddAttachment</FONT></FONT></B></TD>
+      <TD noWrap><B>Path</B> As String</TD>
+      <TD>Adds a file to the list of file attachments to be sent with the 
+        message.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>AddEmbededImage</FONT></FONT></B></TD>
+      <TD noWrap><B>Path</B> As String <BR><B>ContentID</B> As String</TD>
+      <TD>Adds an image file to the list of images embedded in the message 
+        body. <B>ContentID</B> is a string without spaces, such as "My-Image", 
+        which will be referenced by the body HTML in the following way: 
+        <P><FONT face="Courier New,Courier"><FONT size=-1>&lt;IMG 
+        SRC="cid:My-Image"&gt;</FONT></FONT> 
+        <P>or 
+        <P><FONT face="Courier New,Courier"><FONT size=-1>&lt;BODY 
+        BACKGROUND="cid:My-Image"&gt;</FONT></FONT> 
+        <P><B><FONT color=#006600>This is a premium 
+feature.</FONT></B></P></TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>AppendBodyFromFile</FONT></FONT></B></TD>
+      <TD noWrap><B>Path</B> As String</TD>
+      <TD>Appends the Body property from a text or HTML file specified by 
+        <B>Path</B>. <B><FONT color=#006600>This is a premium 
+      feature.</FONT></B></TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+size=-1>Send</FONT></FONT></B></TD>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1>N/A</FONT></FONT></TD>
+      <TD>Sends the message. Throws exceptions in case of an error. See the 
+        section Error Codes below for the list of error codes.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>SendToQueue</FONT></FONT></B></TD>
+      <TD>Optional <B>Path</B> = ""</TD>
+      <TD>Sends a message to the message queue and returns immediately. 
+        Requires the <I>EmailAgent</I> service to be running. <B>Path</B> 
+        specifies the path to a message queue where the message is to be posted. 
+        If <B>Path</B> is omitted, EmailAgent's Message Queue Path configuration 
+        parameter in the registry will be used. For more information on 
+        EmailAgent, and to download a free copy, visit <A 
+        href="http://www.aspemail.com/">http://www.aspemail.com/</A>. <B><FONT 
+        color=#006600>This is a premium feature.</FONT></B></TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>SendEncrypted</FONT></FONT></B></TD>
+      <TD><B>Msg</B> As CryptoMessage</TD>
+      <TD>Sends an encrypted message. <B>Msg</B> is an object creatable by the 
+        AspEncrypt component. See <A 
+        href="http://www.aspencrypt.com/task_mail.html">AspEncrypt Web site</A> 
+        for more information.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>SendSigned</FONT></FONT></B></TD>
+      <TD><B>Msg</B> As CryptoMessage</TD>
+      <TD>Sends a digitally signed message. See <A 
+        href="http://www.aspencrypt.com/task_mail.html">AspEncrypt Web site</A> 
+        for more information.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>SendSignedAndEncrypted</FONT></FONT></B></TD>
+      <TD><B>Msg1</B> AspCryptoMessage, <B>Msg2</B> As CryptoMessage</TD>
+      <TD>Sends a message which is first digitally signed and then encrypted. 
+        See <A href="http://www.aspencrypt.com/task_mail.html">AspEncrypt Web 
+        site</A> for more information.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+      size=-1>Reset</FONT></FONT></B></TD>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1>N/A</FONT></FONT></TD>
+      <TD>Clears all address and attachment lists so that a new message can be 
+        sent.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>ResetAll</FONT></FONT></B></TD>
+      <TD><FONT face=Arial,Helvetica><FONT size=-1>N/A</FONT></FONT></TD>
+      <TD>Same as <B>Reset</B> plus resets all properties to their respective 
+        default values.</TD></TR>
+    <TR vAlign=top>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>LogonUser</FONT></FONT></B></TD>
+      <TD><B>Domain</B> As String; <BR><B>UserID</B> As String; 
+        <BR><B>Password</B> As String.</TD>
+      <TD>Impersonates the specified user account. If <B>Domain</B> is empty 
+        the local computer will be used to validate the <B>UserID/Password</B>. 
+        The caller must have the "Act as Part of the Operating System" 
+        privilege, otherwise the error "Privilege is not held by client" error 
+        will be thrown. 
+        <P>This method is useful when using the <B>SendToQueue</B> method if the 
+        message queue is located on another machine and the current user 
+        account's credentials are insufficient to place a message in a remote 
+        queue.</P></TD></TR>
+    <TR>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>RevertToSelf</FONT></FONT></B></TD>
+      <TD>N/A</TD>
+      <TD>Ends impersonatio begun by 
+<B>LogonUser</B>.</TD></TR></TBODY></TABLE></BLOCKQUOTE><B><FONT 
+face=Arial,Helvetica><FONT color=#006600>Error Codes</FONT></FONT></B> 
+<BLOCKQUOTE>&nbsp; 
+  <TABLE cellSpacing=0 cols=2 cellPadding=2 width="87%" border=1>
+    <TBODY>
+    <TR bgColor=#ff6666>
+      <TD><B><FONT face=Arial,Helvetica><FONT size=-1>Error 
+        Code</FONT></FONT></B></TD>
+      <TD><B><FONT face=Arial,Helvetica><FONT 
+        size=-1>Description</FONT></FONT></B></TD></TR>
+    <TR>
+      <TD>1</TD>
+      <TD>Winsock initialization failed.</TD></TR>
+    <TR>
+      <TD>2</TD>
+      <TD>gethostbyname failed.</TD></TR>
+    <TR>
+      <TD>3</TD>
+      <TD>Socket creation failed.</TD></TR>
+    <TR>
+      <TD>4</TD>
+      <TD>Connection failed.</TD></TR>
+    <TR>
+      <TD>5</TD>
+      <TD>Sending data failed.</TD></TR>
+    <TR>
+      <TD>6</TD>
+      <TD>Error returned from SMTP server</TD></TR>
+    <TR>
+      <TD>7</TD>
+      <TD>Opening file failed.</TD></TR>
+    <TR>
+      <TD>8</TD>
+      <TD>Not enough memory.</TD></TR>
+    <TR>
+      <TD>9</TD>
+      <TD>Reading from file failed.</TD></TR>
+    <TR>
+      <TD>10</TD>
+      <TD>Host not specified</TD></TR>
+    <TR>
+      <TD>11</TD>
+      <TD>ContentID may not be empty (generated by AddEmbededImage)</TD></TR>
+    <TR>
+      <TD>12</TD>
+      <TD>ContetnID must be unique (generated by AddEmbeddedImage)</TD></TR>
+    <TR>
+      <TD>13</TD>
+      <TD>Invalid Priority value (generated by put_Priority)</TD></TR>
+    <TR vAlign=top>
+      <TD>14</TD>
+      <TD>Component is expired or invalid registration key (generated by 
+        premium methods and properties only)</TD></TR></TBODY></TABLE></BLOCKQUOTE>
+<BLOCKQUOTE><!-- Insert HTML here --></BLOCKQUOTE></BODY></HTML>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.virtual-fx.net/perpetual_counter.htm -->
+<HTML><HEAD><TITLE>Continuous Game Action</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2722.2800" name=GENERATOR>
+<META 
+content="Flash tutorial explode exploding text effects virtual fx web training" 
+name=description></HEAD>
+<BODY aLink=#00ffff bgColor=#ffffff link=#3778ff text=#000000 topMargin=0 
+vLink=#3778ff><!--webbot bot="Include" U-Include="nav_top.htm" TAG="BODY" startspan -->
+<FORM method=get target=main>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=left vAlign=top width=227><MAP name=FPMap0><AREA 
+        coords=41,19,153,42 href="http://www.virtual-fx.net/" shape=RECT 
+        target=_top><AREA coords=28,42,165,62 href="http://www.flashaddict.com/" 
+        shape=RECT target=_top></MAP><IMG border=0 height=117 
+      src="logo.gif" useMap=#FPMap0 width=227></TD>
+    <TD vAlign=center>
+      <P align=center><A 
+      href="http://www.virtual-fx.net/cgi-bin/redirect.exe/unique_identifier" 
+      target=_blank><IMG border=0 
+      src="screenweaver_nov.gif"><BR></A></TD></TR></TBODY></TABLE></FORM><!--webbot bot="Include" endspan i-checksum="48790" -->
+<P align=center><STRONG><EM><FONT face=Arial size=6>Continuous Game Action<BR></FONT></EM></STRONG>
+<FONT face=Arial size=2><B>Peter Hughes, <A 
+href="http://www.arete-designs.com/">Arete Designs</A></B></FONT></P>
+<HR>
+<P><FONT face=Arial size=2>Several Flash Samples, including Fighter and Pan Zoom,
+give hints on moving objects around on the Stage. But objects in these samples come to
+a dead stop when you quit pressing the buttons. Sometimes you want your spacecraft to keep 
+right on going!</FONT><BR>&nbsp;<BR>
+<FONT face=Arial size=2>In this tutorial, you will make a simple 'game' with 
+a circle that you move back and forth with buttons. Each button press will nudge 
+the circle, to give it a little more speed in the direction you choose. When you 
+quit nudging, the circle will continue to move at a constant speed.</FONT><BR>&nbsp;<BR>
+<UL>
+  <LI><FONT face=Arial size=2><EM><STRONG><A 
+  href="http://www.virtual-fx.net/zippedtuts/game_action.zip">DOWNLOAD THE 
+  .FLA</A></STRONG></EM> </FONT>
+  <LI><STRONG><FONT face=Arial size=2>SKILL 
+  LEVEL:&nbsp;INTERMEDIATE</FONT></STRONG> 
+  <LI><FONT face=Arial size=2>Make objects on the stage and turn them into button and movie clip symbols</FONT> 
+  <LI><FONT face=Arial size=2>Use the ActionScript editor</FONT> </LI></UL>
+<P>&nbsp;
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+ ID=gameaction WIDTH=300 HEIGHT=200>
+ <PARAM NAME=movie VALUE="gameaction.swf"> 
+ <PARAM NAME=quality VALUE=high> 
+ <PARAM NAME=bgcolor VALUE=#FFFFFF> 
+ <EMBED src="gameaction.swf" quality=high bgcolor=#FFFFFF  WIDTH=300 HEIGHT=200 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+</P>
+<P><FONT face=Arial size=2>
+The circle is actually a Movie Clip with an Instance Name, that allows you to 
+tell it what to do. This circle has a 'speed' variable you will create, and the 
+buttons add to or subtract from this speed. The frame containing the circle plays 
+again and again. On each play, the circle moves to a new position. The new 
+position is merely its old position plus its current speed.</FONT></P>
+<P>&nbsp;</P>
+<TABLE border=0 cellPadding=2 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#c0c0c0 width="100%"><FONT face=Arial 
+      size=2><STRONG>TUTORIAL</STRONG></FONT></TD></TR></TBODY></TABLE>
+<P><STRONG><FONT color=#ff0000 face=Arial size=3><U>Part 1 - 
+Symbols</U></FONT></STRONG></P>
+<P><FONT face=Arial size=2>In Frame One of your timeline, place a circle on the 
+Stage. Make it a Movie Clip symbol. In its Instance Properties > Definition tab, 
+give it an instance name of Circle. This will allow you to tell the "/Circle" 
+target to move around.</FONT></P>
+<P><FONT face=Arial size=2>Make a left button and a right button.
+</FONT></P>
+<P>&nbsp;</P>
+<P><B><U><FONT color=#ff0000 face=Arial size=3>Part 2 - 
+Button Actions</FONT></U></B></P>
+<P><FONT face=Arial size=2>The circle starts out with no speed. Each press of a 
+button should increase its speed to the left or to the right.<BR>&nbsp;<BR>
+Add an On Mouse Event action to the left button:<BR> 
+On (Press)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Set Variable: "speed" = speed - 0.1<BR>
+End On<BR></FONT></P>
+<P><FONT face=Arial size=2>Subtracting from the speed will move the circle faster 
+to the left, or at least slow down motion to the right.</FONT></P>
+<IMG SRC="leftbutton.gif" WIDTH=507 HEIGHT=122 BORDER=0 ALT=""><BR>&nbsp;<BR>
+<P><FONT face=Arial size=2>Add an On Mouse Event action to the right button:<BR> 
+On (Press)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Set Variable: "speed" = speed + 0.1<BR>
+End On</FONT></P>
+<P>&nbsp;</P>
+<P><B><U><FONT color=#ff0000 face=Arial size=3>Part 3 - 
+Frame Actions</FONT></U></B></P>
+<P><FONT face=Arial size=2>Add a keyframe at Frame 2 of your timeline. Give the 
+frame an action: Go to and Play(1). This will make your movie constantly cycle 
+back to Frame 1 and perform your circle-moving commands.
+</FONT></P>
+<P><FONT face=Arial size=2>Now, add the actions to Frame 1 that will make the 
+circle respond to its speed. You will add this speed to the old position of 
+the circle, and make this its new position. Since in this example the circle 
+moves only to the left or to the right, position on the X axis is all 
+we care about.
+</FONT></P>
+<P><FONT face=Arial size=2>Add an action to Frame 1:<BR>
+Set Variable: "circle_x" = GetProperty("/Circle",_x)<BR>
+This gets the current position of the circle. Store this position 
+in circle_x so you can play with it. The tricky part in all of these steps is 
+to make sure quote marks are correct. Everything on the right hand side of the 
+equal sign is set to an Expression using the radio buttons in the Action Script editor.
+</FONT></P>
+<P><FONT face=Arial size=2>Add a second action to Frame 1:<BR>
+Set Property ("/Circle", X Position) = circle_x + speed</FONT></P>
+<IMG SRC="frame1.gif" WIDTH=476 HEIGHT=179 BORDER=0 ALT="">
+<P><FONT face=Arial size=2>This adds the circle's speed to its current position, 
+and will make the ball move a little on this play of the frame.</FONT></P>
+<P><FONT face=Arial size=2><B>Now you are ready to give it a try!</B></FONT></P>
+<P>&nbsp;</P>
+<HR>
+<P><B><U><FONT color=#ff0000 face=Arial 
+size=3>Troubleshooting</FONT></U></B></P>
+<P><FONT face=Arial size=2>Chances are, you start the movie and click
+the buttons, and nothing happens. Here are some points to check.</FONT> </P>
+<P><FONT face=Arial size=2>A -&nbsp; Most likely one of your actions is still a
+String Literal on the right hand side of the equal sign. Make sure these are
+all set to Expression.</FONT></P>
+<P><FONT face=Arial size=2>B -&nbsp; Perhaps button actions were put in the
+button symbol itself with the up, over, down, hit frames. Edit only the Actions 
+tab in the Instance Properties window.</FONT></P>
+<P>&nbsp;</P>
+<P><STRONG><FONT color=#ff0000 face=Arial size=3><U>Notes and Other 
+Tweaking</U></FONT></STRONG></P>
+<P><FONT face=Arial size=2><EM>Continuous Action Buttons</EM> - In this example,
+one button click gives you one nudge. The Continuous Action Button tutorial elsewhere on 
+this site will show you how to keep the rockets burning hard for as long you hold 
+the buttons down.</FONT></P>
+<P><FONT face=Arial size=2><EM>Variable watch</EM> - The .fla shows how you can look 
+at your variables as the movie plays - this will be important as you add to your 
+game and it starts to not work!</FONT></P>
+<P><FONT face=Arial size=2><EM>Initializing variables</EM> -  You will also want to 
+add another frame in front of the game, to set variables to their starting values. 
+Good luck and enjoy!</FONT></P>
+<P>&nbsp;</P>
+<P><FONT face=Arial size=1><STRONG><EM>© 2000 Peter Hughes<BR></EM></STRONG><A 
+href="http://www.arete-designs.com/">www.arete-designs.com<BR></A>Last Updated <!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%m/%d/%y" startspan
+-->01/23/00<!--webbot bot="Timestamp" endspan i-checksum="12310"
+--> </FONT></P></BODY></HTML>

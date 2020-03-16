@@ -1,0 +1,434 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0074)http://www.macromedia.com/support/flash/ts/documents/random_movie_clip.htm -->
+<HTML><HEAD><TITLE>Macromedia - How to Duplicate a Movie Clip in Random Locations</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Last-Modified content="Wed, 30 Jun 1999 00:02:05 GMT">
+<META http-equiv=Version content=1.0 name=DOCVERSION>
+<META content="Wed, 30 Jun 1999 00:02:05 GMT" name=LASTMODIFIED>
+<META content="Tips &amp; Tricks" name=AREA>
+<META content=Yes name=PUBLIC>
+<META content="Will Veatch" name=AUTHOR>
+<META content=2 name=IMPORTANCE>
+<META 
+content="movie clip, random, set property, set variable, loop, duplicate movie clip, interactivity, advanced interactivity, actions, action scripting, scripting" 
+name=KEYWORDS>
+<META content=All name=PLATFORM>
+<META content=Flash name=PRODUCT>
+<META content=4 name=VERFROM>
+<META content=99 name=VERTO>
+<META content="4 and above" name=VERSIONS>
+<META content="How to Duplicate a Movie Clip in Random Locations" name=DOCTITLE>
+<META content=13940 name=DOCID>
+<META content=Done! name=STATUS>
+<META content="June 29, 1999" name=DATECREATED>
+<META content="July 19, 1999" name=DATEMODIFIED>
+<META content=TechNote name=KIND>
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR></HEAD>
+<BODY vLink=#660033 aLink=#000000 link=#333399 bgColor=#ffffff><!-- begin flash TechNotes top fragment -->
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=bottom noWrap><IMG height=17 
+      src="random_movie_clip_files/pixel.gif" width=18 border=0><A target=_top 
+      href="http://www.macromedia.com/"><IMG height=12 alt=macromedia 
+      src="random_movie_clip_files/crumb_macromedia_blue.gif" width=99 
+      border=0></A><IMG height=12 alt=: 
+      src="random_movie_clip_files/crumb_colon.gif" width=15 border=0><A 
+      target=_top href="http://www.macromedia.com/software/"><IMG height=12 
+      alt=products src="random_movie_clip_files/crumb_products_blue.gif" 
+      width=69 border=0></A><IMG height=12 alt=: 
+      src="random_movie_clip_files/crumb_colon.gif" width=15 border=0><A 
+      target=_top href="http://www.macromedia.com/software/flash/"><IMG 
+      height=12 alt=flash src="random_movie_clip_files/crumb_flash_blue.gif" 
+      width=40 border=0></A><IMG height=12 alt=: 
+      src="random_movie_clip_files/crumb_colon.gif" width=15 border=0><A 
+      target=_top href="http://www.macromedia.com/support/flash/"><IMG height=12 
+      alt=support src="random_movie_clip_files/crumb_support_blue.gif" width=61 
+      border=0></A><IMG height=12 alt=: 
+      src="random_movie_clip_files/crumb_colon.gif" width=15 border=0><A 
+      href="http://www.macromedia.com/support/flash/technotes.html"><IMG 
+      height=12 alt=technotes 
+      src="random_movie_clip_files/crumb_technotes_blue.gif" width=79 
+      border=0></A></TD></TR></TBODY></TABLE><IMG height=30 
+src="random_movie_clip_files/pixel.gif" width=2 border=0>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="10%"><IMG height=60 alt="flash icon" 
+      src="random_movie_clip_files/flash_logo.gif" width=72 border=0> <IMG 
+      height=2 src="random_movie_clip_files/pixel.gif" width=120 border=0> </TD>
+    <TD vAlign=top width="90%"><IMG height=34 alt="flash technotes" 
+      src="random_movie_clip_files/head_technotes.gif" width=134 border=0> 
+      <HR width="100%" noShade SIZE=1>
+<!-- at this point we are inside a table inside a table -->
+      <H3><FONT face="Arial, Helvetica, sans-serif" size=+1><B>How to Duplicate 
+      a Movie Clip in Random Locations</B></FONT></H3>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Product: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Flash</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Platform: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>All</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Versions: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>4 and above</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>ID: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>13940</FONT> </TD></TR></TBODY></TABLE>
+      <P><!--mm-contents --><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2>To place Movie Clips in random positions on the screen, you will 
+      use the Duplicate Movie Clip, Set Variable and Set Property statements, 
+      and the Random function, all of which are new to Flash 4. This tutorial 
+      assumes that you have read the "Creating Interactivity" section of the 
+      Flash Help which can be found in either the print manual or the HTML Help. 
+      </FONT></P>
+      <P>
+      <P>
+      <OBJECT 
+      codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#4,0,7,0 
+      classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width=350 height=350><PARAM NAME="SRC" VALUE="random_movie_clip/random_movie_clip.swf"><PARAM NAME="QUALITY" VALUE="high">
+                  <embed src="random_movie_clip/random_movie_clip.swf" 
+      pluginspage="http://www.macromedia.com/shockwave/download/" 
+      type="application/x-shockwave-flash" width="350" height="350" 
+      quality="high">    </embed>   </OBJECT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>There are at 
+      least two ways to create this effect: You can have the clips appear when 
+      the viewer hits a Button, or they can appear when a certain frame in the 
+      movie is reached–especially in a loop. We'll go through both of 
+      these.</FONT></P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2><B>First, a primer on the statements we'll use:</B></FONT> 
+      <TABLE cellPadding=4 width="80%">
+        <TBODY>
+        <TR>
+          <TD vAlign=top width="4%"><IMG height=10 alt=">" 
+            src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+          <TD vAlign=top width="96%"><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Duplicate 
+            Movie Clip</B> creates a Movie Clip identical to one you specify. 
+            You must specify the target path of the original (<A target=_blank 
+            href="http://www.macromedia.com/support/flash/ts/documents/tell_target.htm">How 
+            To Use Tell Target</A>), an instance name for the new duplicate, and 
+            a layer depth for the new duplicate.</FONT> </TD></TR>
+        <TR>
+          <TD vAlign=top width="4%" height=33><IMG height=10 alt=">" 
+            src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+          <TD vAlign=top width="96%" height=33>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Set 
+            Variable </B>assigns a value to a variable, whether the variable is 
+            new or preexisting. You must specify the name and value of the 
+            variable.</FONT> </P></TD></TR>
+        <TR>
+          <TD vAlign=top width="4%" height=29><IMG height=10 alt=">" 
+            src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+          <TD vAlign=top width="96%" height=29>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Set 
+            Property</B> can be used to change certain properties of a Movie 
+            Clip instance, such as X position, Y position, Visibility or Alpha 
+            value. You must specify the name of the property to be changed, the 
+            target path of the Movie Clip instance whose property is to be 
+            changed, and a new value for the property.</FONT> </P></TD></TR>
+        <TR>
+          <TD vAlign=top width="4%" height=29><IMG height=10 alt=">" 
+            src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+          <TD vAlign=top width="96%" height=29>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2><B>Random</B> is a function that generates a random number 
+            between 0 and one less than the number you specify. For example, 
+            </FONT><FONT color=#666666><CODE>Random (10) </CODE></FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>generates the 
+            number 0, 9, or something in between.</FONT> 
+</P></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>To place 
+      Movie Clips in random positions on the stage when the user clicks a 
+      Button, follow these steps:</B></FONT></P>
+      <TABLE cellPadding=4 width="80%">
+        <TBODY>
+        <TR>
+          <TD vAlign=top width="4%"><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">1</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top width="96%">
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Place 
+            your Button and Movie Clip on the stage, and give the clip an 
+            instance name by selecting the Movie Clip and choosing 
+            Modify&gt;Instance. In this example, the spinning flower is named 
+            </FONT><CODE><FONT color=#666666>spinny</FONT></CODE>.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width="4%"><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">2</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top width="96%">
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Double-click on the Button to bring up the Instance 
+            Properties dialog box.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width="4%"><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">3</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top width="96%"><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Select the 
+            Actions tab. </FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width="4%"><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">4</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top width="96%"><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>From the plus 
+            menu, select Duplicate/Remove Movie Clip. Fill in the dialog boxes 
+            as follows</FONT>: 
+            <TABLE cellPadding=4 width=400>
+              <TBODY>
+              <TR>
+                <TD vAlign=top width=15><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" 
+                  size=2><B>Action:</B> Duplicate Movie Clip</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top width=15 height=29><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361 height=29>
+                  <P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+                  size=2><B>Target: </B></FONT><CODE><FONT 
+                  color=#666666>/spinny</FONT> </CODE><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2>(Or your 
+                  Movie Clip instance's name). If you wish, you can use the 
+                  Target Editor to choose the target visually. The tab to the 
+                  right of the box should be set to "String Literal."</FONT> 
+                </P></TD></TR>
+              <TR>
+                <TD vAlign=top width=15><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2><B>New 
+                  Name:</B> A generic Movie Clip name, such as</FONT> 
+                  <CODE><FONT color=#666666>"MC"</FONT></CODE><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2>, 
+                  concatenated with a variable using an ampersand. For example, 
+                  </FONT><CODE><FONT color=#666666>"MC" &amp; var 
+                  </FONT></CODE><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2>See <A 
+                  href="http://www.macromedia.com/support/flash/ts/documents/random_movie_clip.htm#Product">finished 
+                  product</A>. The tab should be set to 
+              "Expression."</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top width=15 height=29><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361 height=29>
+                  <P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+                  size=2><B>Depth:</B> A variable name, in the example the 
+                  variable is named</FONT> <CODE><FONT color=#666666 
+                  size=3>var</FONT></CODE><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2>. The 
+                  variable for "New Name" and "Depth" should be the same. This 
+                  way we only need one variable in one Set Variable statement. 
+                  The tab should be set to "Expression."</FONT> 
+              </P></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD vAlign=top width="4%"><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B>5 </B></FONT></TD>
+          <TD vAlign=top width="96%"><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>From the plus 
+            menu, select Set Property. Fill in the dialog boxes as 
+            follows:</FONT> 
+            <TABLE cellPadding=4 width=400>
+              <TBODY>
+              <TR>
+                <TD vAlign=top width=15><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Set:</B> 
+                  X Position</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top width=15 height=29><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361 height=29>
+                  <P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+                  size=2><B>Target:</B> This is the same name you specified in 
+                  "New Name" above. The tab should be set to "Expression," just 
+                  as with "New Name." </FONT></P></TD></TR>
+              <TR>
+                <TD vAlign=top width=15 height=29><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361 height=29>
+                  <P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+                  size=2><B>Value:</B> </FONT><CODE><FONT 
+                  color=#666666>Random(350)</FONT></CODE><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2>. Thus, the 
+                  X Position of the duplicate Clip is set to a random integer 
+                  between 0 and 349. Random is a function, so the tab must be 
+                  set to "Expression."</FONT> </P></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD vAlign=top width="4%"><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B>6 </B></FONT></TD>
+          <TD vAlign=top width="96%"><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Repeat step 5 for 
+            the new Y Position.</FONT> </TD></TR>
+        <TR>
+          <TD vAlign=top width="4%"><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B>7 </B></FONT></TD>
+          <TD vAlign=top width="96%"><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>From the plus 
+            menu, select Set Variable and fill in the dialog boxes as 
+            follows:</FONT> 
+            <TABLE cellPadding=4 width=400>
+              <TBODY>
+              <TR>
+                <TD vAlign=top width=15><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" 
+                  size=2><B>Variable:</B> </FONT><CODE><FONT 
+                  color=#666666>var</FONT></CODE> <FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2>(Or a 
+                  variable name of your choice, as long as it is the same as the 
+                  one you put in "Depth," and put on the end of the name you 
+                  wrote in "New Name" in "Duplicate Movie" above.)</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top width=15 height=29><IMG height=10 alt=">" 
+                  src="random_movie_clip_files/tri.gif" width=14 vspace=2></TD>
+                <TD vAlign=top width=361 height=29>
+                  <P><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+                  size=2><B>Value:</B> </FONT><CODE><FONT color=#666666>var + 
+                  1</FONT></CODE><FONT 
+                  face="Geneva, Arial, Helvetica, sans-serif" size=2>. This 
+                  increments the var variable so that the next time the Button 
+                  is clicked, the next Movie Clip has a different name and is 
+                  placed in a different layer.</FONT> 
+        </P></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD vAlign=top width="4%"><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B>8 </B></FONT></TD>
+          <TD vAlign=top width="96%"><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Click OK.</FONT> 
+          </TD></TR></TBODY></TABLE>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B><A 
+      name=Product></A>Finished Product</B></FONT><BR><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>After you've done the 
+      steps above, the action script in the Button's Instance Properties box 
+      should look like this:</FONT></P><PRE>On (Release)
+   Duplicate Movie Clip ("/spinny", "MC"&amp;var, var)
+   Set Property ("MC"&amp;var, X Position) = random(350)
+   Set Property ("MC"&amp;var, Y Position) = random(350) 
+   Set Variable: "var" = var+1
+End On </PRE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" color=#666666 
+      size=2><B>Note: </B></FONT><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>You can add as many 
+      </FONT><FONT size=3><CODE>Set Property</CODE></FONT> <FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>statements as you like. 
+      In the Flower example shown above, I also included the 
+      statement:</FONT></P><PRE>   Set Property ("MC"&amp;var, Alpha) = Random(91)+10</PRE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>to set the 
+      Alpha property of each new Movie Clip to a value between 10 and 100. 
+      </FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Placing 
+      Movie Clips when the Movie reaches a certain frame</B></FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Simply follow 
+      the same instructions as above, but place the actions in the Frame 
+      Properties box by double-clicking a keyframe where the action should 
+      occur. Also, the script does not need the </FONT><CODE>On 
+      (Release)</CODE><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2> 
+      and </FONT><CODE>End On</CODE><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2> actions when placed in 
+      a frame.</FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" color=#666666 
+      size=2><B>Note:</B></FONT> <FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>To create a "Clear" 
+      Button that removes all the duplicate Movie Clips from the stage, use the 
+      Loop action. The action script on the "Clear" button looks like 
+      this:</FONT></P><PRE>On (Release)
+   Loop While (count &lt;= var) 
+     Remove Movie Clip ("MC" &amp; count) 
+     Set Variable: "count" = count + 1 
+   End Loop 
+   Set Variable: "var" = "0" 
+   Set Variable: "count" = "0" 
+End On </PRE>
+      <P><FONT face="Arial, Helvetica, sans-serif" 
+      size=3><B>Q/A</B></FONT><BR><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>Why does the name of 
+      the duplicate clip have to be that expression, instead of something 
+      friendly?</FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>The 
+      expression</FONT> <CODE><FONT color=#666666>"MC"&amp;var 
+      </FONT></CODE><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2>evaluates as "The literal letters MC, concatenated (stuck together 
+      with) the value of the variable var." By naming the duplicate clip this 
+      way, the Button will keep creating new duplicates with new names (MC1, 
+      MC2, etc.) as long as the viewer keeps clicking the Button.</FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Why does the 
+      duplicate's level have to be set as </FONT><CODE><FONT 
+      color=#666666>var</FONT></CODE><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>? </FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Since the 
+      value of var increments with each Button click, this ensures that each 
+      clip is put on its own layer. If the depth were set as a number, each clip 
+      would replace the previous one, since they would both occupy the same 
+      layer. Try it and see.</FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Why was 350 
+      chosen as the range for Random?</FONT></P>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>It didn't have 
+      to be, but since the Set Property statement defines X and Y position in 
+      pixels, and this Flash Player Movie is 350 pixels high and 350 pixels 
+      wide, this range ensured that the clips would be placed on the 
+      screen.</FONT></P>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>Additional 
+      information</B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2>.<BR></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2>For additional information about advanced interactivity in Flash, 
+      please refer to <A target=_blank 
+      href="http://www.macromedia.com/support/flash/ts/documents/tell_target.htm">How 
+      To Use Tell Target</A> (TechNote 13479).</FONT></P><!--mm-end-contents -->
+      <P>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD colSpan=2><FONT face="Arial, Helvetica, sans-serif" 
+            size=2><B>Keywords: </B></FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>movie clip, 
+            random, set property, set variable, loop, duplicate movie clip, 
+            interactivity, advanced interactivity, actions, action scripting, 
+            scripting</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Last 
+            updated: </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>July 
+            19, 1999</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Author: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Will 
+            Veatch</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Area: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Tips 
+            &amp; Tricks</FONT> </TD></TR></TBODY></TABLE><!-- insert a little gap after the bottom table --><BR>&nbsp; 
+<!-- close the table row that the body is in --></P></TD></TR>
+  <TR>
+    <TD vAlign=bottom align=right width="10%"><A target=_top 
+      href="http://www.macromedia.com/buy/"><IMG height=21 alt=buy 
+      src="random_movie_clip_files/buy.gif" width=67 border=0></A><BR><A 
+      href="http://www.macromedia.com/support/search/powersearch.html"><IMG 
+      height=21 alt="power search" src="random_movie_clip_files/search.gif" 
+      width=90 border=0></A><BR></TD>
+    <TD>
+      <CENTER>
+      <HR width="100%" noShade SIZE=1>
+      <BR><FONT face="Arial, Helvetica" size=-1>[<A target=_top 
+      href="http://www.macromedia.com/">home</A>] [<A target=_top 
+      href="http://www.macromedia.com/software/">products</A>] [<A target=_top 
+      href="http://www.macromedia.com/support/">support</A>] [<A target=_top 
+      href="http://www.macromedia.com/downloads/">downloads</A>] [<A target=_top 
+      href="http://www.macromedia.com/macromedia/">about us</A>] [<A 
+      target=mm_window 
+      href="http://www.macromedia.com/OUTGOING/http://www.shockwave.com/">shockwave.com</A>] 
+      [<A target=_top href="http://www.macromedia.com/help/">help</A>] <BR><FONT 
+      size=-2><A href="http://www.macromedia.com/help/copyright.html">Trademarks 
+      Copyright</A> ©1995-2000 Macromedia, Inc. All rights reserved. <A 
+      href="http://www.macromedia.com/help/privacy.html">Privacy policy</A>. 
+      </FONT><BR></FONT></CENTER></TD></TR></TBODY></TABLE><!-- whitespace required to workaround Nav 3.04 Win scrollbar bug --><BR></BODY></HTML>

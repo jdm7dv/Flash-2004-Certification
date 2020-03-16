@@ -1,0 +1,48 @@
+Movie Report
+------------
+
+Frame #    Frame Bytes    Total Bytes    Page
+-------    -----------    -----------    ---------------
+    1          3167           3167        Scene 1
+    2            15           3182          2
+    3         43226          46408          3
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Scene 1                        1347             0
+
+Symbol                     Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+1 pair to go                   1076             0
+2 pairs to go                  1064             0
+3 pairs to go                  1144             0
+4 pairs to go                  1339             0
+5 pairs to go                  1170             0
+6 pairs to go                  1183             0
+ace                             746             0
+balls2                            0             0
+balls3                            0             0
+balls4                            0             0
+balls5                            0             0
+balls6                            0             0
+balls7                            0             0
+balls8                         2628             0
+card back                       311             0
+get it going                      0             0
+get the fla but                 872             0
+get the fla mov                   0            94
+got mac but                     543             0
+got win but                     341             0
+jack                            455             0
+king                            455             0
+main mov                          0             0
+nines                           334             0
+play again                     2093             0
+preloader movie                   0           341
+queen                           486             0
+tens                            379             0
+
+Font Name                  Bytes       Characters
+-----------------------    --------    -----------
+Frutiger 67BoldCn            1376         05efiklmpstu
+Insignia                     2649         .46ADGILNOaefhiklmoprstwy

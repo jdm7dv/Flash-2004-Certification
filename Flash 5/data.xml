@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<datapacket>
+	<row act="10" custId="0" date="05/12/2002" billable="true" duration="3" id="1" notes="Here is note(1)" projId="1" rate="45.50" servId="0"/>
+	<row act="9" custId="0" date="05/13/2002" billable="true" duration="8.25" id="2" notes="Here is note(2)" projId="1" rate="45.50" servId="1"/>
+	<row act="8" custId="0" date="05/14/2002" billable="false" duration="7.75" id="3" notes="Here is note(3)" projId="1" rate="45.50" servId="1"/>
+	<row act="7" custId="0" date="05/15/2002" billable="false" duration="6.5" id="4" notes="Here is note(4)" projId="1" rate="45.50" servId="2"/>
+	<row act="6" custId="0" date="05/16/2002" billable="false" duration="5.5" id="5" notes="Here is note(5)" projId="1" rate="45.50" servId="2"/>
+</datapacket>

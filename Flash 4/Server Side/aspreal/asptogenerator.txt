@@ -1,0 +1,116 @@
+<% 
+
+'*****************************************************
+'****************ASP Form to Flash
+'*******Author: Lightwave Internet Development
+'*****************************************************
+
+
+
+'Set variable to pass to generator if form posts to itself
+
+If Request.ServerVariables("REQUEST_METHOD") = "POST" Then
+
+			     
+	       tom = Request.Form("tom")
+		  from = Request.Form("from")
+	   message = Request.Form("message")
+	
+			   
+
+
+End If
+
+ %>
+
+<html>
+<head>
+	<title>ASP Form To Generator</title>
+</head>
+
+<body>
+
+
+<% 'form posts to itself %>
+<form action="christmas.asp" method="POST">
+
+
+
+
+To<input type="Text" name="tom" size="20">
+<br>
+From<input type="Text" name="from" size="20">
+<br>
+Welcome Message<input type="Text" name="message" size="40">
+<br>
+<input type="Submit" name="submit" value="Create my card">
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+<% 'use the asp output tags to add the variables to your .swt file name string %>
+
+
+<!-- Aftershock christmas.swt 3=550 4=500 -->
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=3,0,0,0"
+ ID=christmas WIDTH=550 HEIGHT=500>
+  <PARAM NAME=movie VALUE="christmas.swt?var1=<%= message %>&var2=<%= from %>&var3=<%= tom %>"> 
+  <PARAM NAME=quality VALUE=high> 
+  <PARAM NAME=bgcolor VALUE=#FFFFFF> 
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+var ShockMode = 0;
+if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] && navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin) {
+	if (navigator.plugins && navigator.plugins["Shockwave Flash"])
+		ShockMode = 1;
+}
+if ( ShockMode ) {
+	document.write('<EMBED SRC="christmas.swt?var1=<%= message %>&var2=<%= from %>&var3=<%= tom %>"');
+	document.write(' swLiveConnect=FALSE WIDTH=550 HEIGHT=500');
+	document.write(' QUALITY=autohigh BGCOLOR=#FFFFFF');
+	document.write(' TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">');
+	document.write('</EMBED>');
+} else if (!(navigator.appName && navigator.appName.indexOf("Netscape")>=0 && navigator.appVersion.indexOf("2.")>=0)){
+	document.write('<IMG SRC="christmas.gif" WIDTH=550 HEIGHT=500 BORDER=0>');
+}
+//-->
+</SCRIPT><NOEMBED><IMG SRC="christmas.gif" WIDTH=550 HEIGHT=500 BORDER=0></NOEMBED><NOSCRIPT><IMG SRC="christmas.gif" WIDTH=550 HEIGHT=500 BORDER=0></NOSCRIPT></OBJECT><!-- EndAftershock christmas.swt -->
+
+
+
+
+
+
+
+
+
+<% 'code for gif image
+   'specify the image as .swt?type=gif
+   'use the asp output tags to add the variables to your .swt file name string
+%>
+<IMG SRC="christmas.swt?type=gif&var1=<%= message %>&var2=<%= from %>&var3=<%= tom %>" BORDER=0>
+	
+
+	
+</form>
+
+
+
+
+</body>
+</html>
+
+
+
+

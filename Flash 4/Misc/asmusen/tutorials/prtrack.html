@@ -1,0 +1,79 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#000099" vlink="#0066FF" alink="#000099">
+<p><font face="Arial, Helvetica, sans-serif" size="2"> <font size="4"><b>Using 
+  "Track as Menu"</b></font></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><a href="prtrack.html" target="window">printable 
+  version</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><img src="fla.gif" width="20" height="20" align="top"> 
+  Downloadable <a href="motion.zip" target=""></a><a href="target.zip" target=""></a><a href="track.zip" target="">FLA</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Track as menu allows you 
+  to create popup menus or dropdown menus. In this section, we will create a dropdown 
+  menu.</font><font face="Arial, Helvetica, sans-serif" size="2"> (This will also 
+  make you use Tell Target).</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> </font><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 
+  1.</b> Create a button by pressing F8. This button, will be the button you click 
+  to access the menu. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 2.</b> Create a 
+  movie clip.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> <b>Step 3.</b> Edit the 
+  movie clip, and create two keyframes. The first labelled "empty", the second 
+  labelled "full". </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 4.</b> Create the 
+  buttons you want to drop down when you click the menu button. This could be 
+  a quick access menu, containing a button for every place of your site. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 5.</b> Back to the 
+  movie clip. Let the "empty" keyframe remain empty. Now place all of the buttons 
+  which you want to drop down (the quick access buttons you just made) in the 
+  "full" keyframe. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 6.</b> Click properties 
+  for each of the buttons you inserted, and in the definition tab, select "Track 
+  as Menu Item". Remember also, to assign actions to your buttons. </font></p>
+<p><img src="track.gif" width="306" height="212"></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 7.</b> Now go to 
+  your main movie, and insert the movie clip into your scene. Click properties 
+  for this movie clip, and name the instance "menu". </font></p>
+<p><img src="instance.gif" width="202" height="165"></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 8.</b> Click properties 
+  for your menu button, and select actions. Add a "Tell Target" command that looks 
+  like this:</font></p>
+<p><tt>On (Release)<br>
+  Begin Tell Target [/menu]<br>
+  Goto and Stop [full]<br>
+  End Tell Target<br>
+  End On</tt></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> This will make your menu 
+  appear when you click the menu button. We would though, also like the menu to 
+  disappear when you remove your mouse... So now comes the tricky part. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 9.</b> Create a 
+  button by pressing F8. Name it "Hit Area". Edit it, and fill only the "Hit" 
+  area with a large colored square. </font></p>
+<p><img src="hitarea.gif" width="284" height="290"></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 10.</b> Go back 
+  to the movie editing window, and insert this button into a seperate layer. The 
+  layer must be below the layer in which you have your buttons, so drag it to 
+  the button. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 11.</b> As you can 
+  see, the button will become a transparent blue. This indicates that you have 
+  placed a button with only the hitarea on the scene. To make it work best, place 
+  the blue area, where you know the menu will not be visible, and also keep it 
+  away from the menu button. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 12.</b> Click properties 
+  for this blue area, and give it the following Tell Target command:</font></p>
+<p><tt>On (Roll Over)<br>
+  Begin Tell Target [/menu]<br>
+  Goto and Stop [empty]<br>
+  end Tell Target<br>
+  End On</tt></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> This will make the Drop 
+  Down menu disappear as soon as you put your mouse over the blue area, which 
+  will be transparent in your browser. This means, that the menu will disappear 
+  as soon as the mouse leaves the menu button.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> And boys and girls, there 
+  you have it. </font> </p>
+</body>
+</html>

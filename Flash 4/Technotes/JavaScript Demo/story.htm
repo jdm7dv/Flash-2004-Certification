@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+ <TITLE>Scripted Surf Trip</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<p> 
+  <SCRIPT LANGUAGE="JavaScript">
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+function stuff(s)
+{
+	document.msgForm.message.value = s;
+}
+</SCRIPT>
+</p>
+<div align="center"></div>
+<table border="1" width="100%">
+  <tr> 
+    <th> Flying bird movie commands</th>
+    <th> Looping airplane movie commands</th>
+  </tr>
+  <tr valign="top"> 
+    <td height="134"><a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TStopPlay("_flash0/bird")'>Stop 
+      Bird</a> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TPlay("_flash0/bird")'><br>
+      Start Bird</a><br>
+      <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoFrame("_flash0/bird", 1)'>Bird 
+      1</a><br><a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoFrame("_flash0/bird", 3)'>
+      Bird 3</a><br>
+      <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoFrame("_flash0/bird", m.TCurrentFrame("_flash0/bird")+1)'> 
+      Forward one frame</a> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoFrame("_flash0/bird", m.TCurrentFrame("_flash0/bird")-1)'> 
+      Backward one frame</a></td>
+    <td height="134"> 
+      <p> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.LoadMovie(1, "loop.swf")'>Load 
+        Loop</a> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.LoadMovie(1, "")'>Clear 
+        Loop</a><br>
+        <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TPlay("_flash1")'>Start 
+        Loop</a> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TStopPlay("_flash1")'> 
+        Stop Loop</a><br>
+        <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoLabel("_flash1", "part 1")'>Part 
+        1</a> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoLabel("_flash1", "part 2")'> 
+        Part 2</a> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoLabel("_flash1", "part 3")'> 
+        Part 3</a> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoLabel("_flash1", "part 4")'>Part 
+        4</a><br>
+        <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoFrame("_flash1", m.TCurrentFrame("_flash1")+1)'> 
+        Forward one frame</a> <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; m.TGotoFrame("_flash1", m.TCurrentFrame("_flash1")-1)'> 
+        Backward one frame</a><BR>
+        <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; stuff(m.TCurrentLabel("_flash1"))'>Display 
+        Current Label</a><br>
+        <a href='javascript:var m = InternetExplorer ? parent.fw_map.map : parent.fw_map.document.embeds[0]; stuff(m.TCurrentFrame("_flash1"))'>Display 
+        Current Frame</a>
+      <FORM NAME="msgForm">
+ Message 
+ <INPUT NAME="message" TYPE="text" SIZE="30" VALUE="">
+</FORM>
+    </td>
+  </tr>
+</table>
+
+<p>This set of movies is designed to show off the use of FSCommands and Javascript 
+  to control Shockwave Flash SWFs. It uses three different SWFs -</p>
+<ol>
+  <li><b>TOUR.SWF</b> (the map of Hawaii including the flying bird movie clip)</li>
+  <li><b>MAP.SWF</b> (controls for displaying each island and navigating around 
+    the map)</li>
+  <li><b>LOOP.SWF</b> (the flying airplane that loops around the screen).</li>
+</ol>
+<p>The commands listed in the table above control how the two SWFs are run and 
+  displayed. The first set of commands control the independent &quot;flying bird&quot; 
+  movie clip within <b>TOUR.SWF</b>. The second set of commands control the loading, 
+  display and control of the flying airplane in <b>LOOP.SWF</b>.</p>
+<p>The buttons shown in the movie <b>MAP.SWF</b> send FSCommands to control the 
+  display of the <b>TOUR.SWF</b> movie. The Javascript which responds to the FSCommands 
+  is located in the HTML file <b>CONTROLS.HTM</b>. Clicking on each button will 
+  display a different portion of the SWF. Use the control diamond to move around 
+  and zoom in and out of the SWF. </p>
+<p><b><i>Note:</i></b> When using Netscape it is wise to use something like <code>parent.fw_map.document.embeds[0]</code> instead of <code>parent.fw_map.document.map</code> (where <code>fw_map</code> is an HTML file containing a Shockwave Flash SWF. The movie itself is an embedded object (index 0) with an embed name tag of "map". The syntax <code>parent.fw_map.document.map</code> is not always defined under Netscape, whereas <code>parent.fw_map.document.embeds[0]</code> seems to be always defined. </p>
+</BODY>
+</HTML>

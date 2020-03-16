@@ -1,0 +1,319 @@
+<PUBLIC:COMPONENT tagName="site_map" >
+<PUBLIC:DEFAULTS viewLinkContent />
+<PUBLIC:PROPERTY name="label" />
+<PUBLIC:PROPERTY name="width" />
+<PUBLIC:PROPERTY name="height" />
+<ATTACH event="oncontentready" onevent="init()" />
+</PUBLIC:COMPONENT>
+
+<SCRIPT LANGUAGE="JavaScript">
+var rootNode = null;			// the root node of the organizational tree
+var rows = new Array();			// tracks column usage when creating the tree
+var rowcol = new Array();		// array for storing 2-dimensional chart info
+var MAX_COLS = 8;				// the max number of columns for display...excess rows will be ignored
+var MAX_ROWS = 6;				// the max number of rows for display...excess columns will be ignored
+var addCount = 1000;			// the starting id for additional nodes
+
+
+// builds the initial map
+function init() {
+	// set map metrics
+	if(element.width) { 
+		sitemap.width = element.width;
+	}
+	if(element.height) { 
+		sitemap.height = element.height;
+	}
+	if(element.label) {
+		sitemap.SetVariable('label',element.label);	
+	}
+	sitemap.TcallLabel('/', 'init');
+	
+	// init rowcol array
+	for(var i=0;i < MAX_ROWS;i++) {
+		rowcol[i] = new Array();
+		for(var j=0;j < MAX_COLS;j++) {
+			rowcol[i].pop(null);
+		}
+	}
+	
+	buildTree();
+	buildMap();
+}
+	
+// builds the initial node tree 
+function buildTree() {
+	// build our node tree
+	var e;
+	var id, url, title, parent;
+	var parentNode = null;
+	var filter = /;/g;	// reg expression filter out semi-colons
+	
+	// loop through all of the parameters 
+	for(var i=0; i < element.all.length; i++) {
+		id, url, title, parent = null;
+		e = element.all[i];
+		if(e.getAttribute("id")) {
+			id = e.getAttribute("id").replace(filter,"");
+		}	
+		if(e.getAttribute("url")) {
+			url = e.getAttribute("url").replace(filter, "");
+		}	
+		if(e.getAttribute("title")) {
+			title = e.getAttribute("title").replace(filter, "");
+		}
+		if(e.getAttribute("parent")) {
+			parent = e.getAttribute("parent").replace(filter, "");
+		}		
+					
+		 if(validParams(id, url, title, parent, i)) {
+			// create the node
+			theNode = new Node(id, url, title, parent);
+		
+			// if this is the first node then set it as root
+			if(i == 0) {
+				rootNode = theNode;
+			}
+
+			if(parent) {
+				// if this node has a parent (i.e. is not the root node) then add it to the parent's list
+				parentNode = findNode(parent, rootNode);
+					
+				// if we actually found the parent then add this node to it
+				if(parentNode) {
+					parentNode.addChild(theNode);
+				} else {
+				// otherwise error
+					alert("Title with ID " + theNode.id + " was ignored.  Parent ID was invalid.\r\nSubsequent dependencies on the ignored ID will also be invalid.");
+				}
+			}
+		}
+	}
+}
+
+function validParams(id, url, title, parent, i) {
+	// check for invalid params
+	if(!id || !url || !title || (!parent && (i != 0))) {
+		alert("id, url, title, and parent must be specified.  Parameter was ignored.\r\nSubsequent dependencies on the ignored parameter will also be invalid.");
+		return false;
+	} else if((i == 0) && parent) {
+		alert("Fatal error.  First parameter must not have a parent set.  It is the top of the organizational tree.");
+		return false;
+	} else if((id < 1) || (id > 1000)) {
+		alert("Invalid ID: " + id + " ID's must be less than 1000.  This id has been ignored.\r\nSubsequent dependencies on the ignored ID will also be invalid.");
+		return false;
+	}	
+	
+	// if none found...
+	return true;
+}
+
+// builds the map based on the node tree
+function buildMap() {
+	// clear our col array
+	for(var i=0;i < MAX_COLS;i++) {
+		rows[i] = 0;
+	}
+	
+	// clear our rowcol array 
+	for(var i=0; i < MAX_ROWS;i++) {
+		for(var j=0; j < MAX_COLS;j++) {
+			rowcol[i][j] = null;
+		}
+	}
+	
+	// traverse the tree and pass the records to flash in a flash friendly way
+	processTree(rootNode, 0);
+	// let flash know
+	sendToFlash();
+		
+	// show the map
+	sitemap.TcallLabel('/','show');
+	sitemap.style.display = "block";
+}
+
+// Constructor for Nodes
+function Node(id, url, title, parent) {
+	// attributes
+	this.id = id;
+	this.url = url;
+	this.title = title;
+	this.parent = parent;
+	this.children = new Array();
+	
+	// methods
+	this.addChild = addChild;
+	
+	return this;
+}
+
+// adds a child Node to an existing node
+function addChild(node) {
+	this.children[this.children.length] = new Node(node.id, node.url, node.title, node.parent);
+}
+
+// searches for a node matching "id" and searching recursively (using Pre-Order Left to Right Traversal) from node "node" down
+function findNode(id, node) {
+	var foundNode = null;
+
+	// if this node matches the node we're looking for then return this node
+	if(id == node.id) {
+		foundNode = node;
+	} else {
+	// otherwise search it's children
+		for(var i=0;i<node.children.length;i++) {
+			foundNode = findNode(id, node.children[i]);
+			// if we found it then stop searching 
+			if(foundNode) {
+				break;
+			}
+		}
+	}
+	
+	return foundNode;
+}
+
+// searches for a node matching "id" and searching recursively (using Pre-Order Left to Right Traversal) from node "node" down and removes it
+function removeNode(id, node) {
+	var foundChild = false;
+	
+	// if this node matches the node we're looking for then return this node
+	if(id == node.id) {
+		foundChild = true;
+	} else {
+	// otherwise search it's children
+		for(var i=0;i<node.children.length;i++) {
+			foundChild = removeNode(id, node.children[i]);
+			// if we found it then remove the node
+			if(foundChild) {
+				node.children[i] = node.children[node.children.length-1];;
+				node.children.pop();
+				// we've dealt with the node
+				foundChild = false;
+				break;
+			}
+		}
+	}
+	
+	return foundChild;
+}
+
+// traverses the tree recursively (using Pre-Order Left to Right Traversal) starting from node "node" with a depth of "col" and a latereral parent position of "lateral"
+// sends the details of each node to flash for display
+function processTree(node, col) {
+	// only process this col if allowed by MAX_COLS
+	if(col < MAX_COLS) {
+		var record;
+		
+		// process the current node
+		record = "";
+		record += node.title;
+		record += ";";
+		record += node.url;
+		record += ";";
+		record += col;
+		record += ";";
+		// leave blank for root node
+		if(col > 0) {
+			record += rows[col-1];
+		}
+	
+		// flash requires rows in breadth order so first store in a row/column array
+		if(rows[col] < MAX_ROWS) { 
+			rowcol[rows[col]][col] = record;
+		} 
+	
+		// process any children of the node 
+		if(node.children.length > 0) { 
+			col++;
+			for(var i=0;i<node.children.length;i++) {
+				processTree(node.children[i], col);
+			}
+			col--;
+		} else {
+		// if there are no children then add the node to our drop down box of nodes which can be destroyed if visible
+ 			if(rows[col] < MAX_ROWS) { 
+				document.mapform.removeBox.options[document.mapform.removeBox.length] = new Option(node.title, node.id, false, true);
+			}
+		}
+		// add the node to the list of nodes that can take subordinates
+  		document.mapform.addBox.options[document.mapform.addBox.length] = new Option(node.title, node.id, false, true);
+		
+		rows[col]++;
+	}
+}
+
+// send the data to flash
+function sendToFlash() {
+	for(var i=0; i < MAX_ROWS;i++) {
+		for(var j=0; j < MAX_COLS;j++) {
+			if(rowcol[i][j] != null) {
+				sitemap.SetVariable('newRecord', rowcol[i][j]);
+				sitemap.TcallLabel('/', 'addRecord');				
+			}
+		}
+	}
+}
+
+function removeTitle() {
+	// find the node that was selected
+	removeNode(document.mapform.removeBox.options[document.mapform.removeBox.selectedIndex].value, rootNode);
+
+	// repopulate map and boxes
+	clearBoxes();	
+	sitemap.TcallLabel('/', 'destroy');
+	buildMap();
+}
+
+function addTitle() {
+	// add the node
+	var node = findNode(document.mapform.addBox.options[document.mapform.addBox.selectedIndex].value, rootNode);
+	var addNode = new Node(addCount++, document.mapform.url.value, document.mapform.title.value, node.id);
+	node.addChild(addNode);
+
+
+	// repopulate map and boxes
+	document.mapform.url.value = "";
+	document.mapform.title.value = "";
+	clearBoxes();
+	sitemap.TcallLabel('/', 'destroy');
+	buildMap();	
+}
+
+// clears the boxes for removing and adding titles
+function clearBoxes() {
+	var length = null;
+	
+	// clear our current remove titles option box
+	length = document.mapform.removeBox.length;
+	for(var i=length-1; i>=0; i--) {
+		document.mapform.removeBox.options[i] = null;		
+	}
+	
+	// clear our current add titles option box
+	length = document.mapform.addBox.length;
+	for(var i=length-1; i>=0; i--) {
+		document.mapform.addBox.options[i] = null;		
+	}
+}
+</SCRIPT>
+
+<BODY style="width:100%; height:100%">
+
+<OBJECT id="sitemap" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0"
+width="550" height="400" style="display: none">
+<PARAM name="movie" value="site_map.swf">
+<PARAM name="quality" value="high">
+<PARAM name="wmode" value="transparent">
+</OBJECT>
+<DIV align="center"><FORM name="mapform">
+<INPUT type="button" name="remove" value="Remove" onClick="removeTitle()">
+<SELECT name="removeBox">
+</SELECT>
+<BR><BR>
+<INPUT type="button" name="add" value="Add" onClick="addTitle()">&nbsp;URL:&nbsp;<INPUT type="text" name="url">&nbsp;Title:&nbsp;<INPUT type="text" name="title">&nbsp;To:
+<SELECT name="addBox">
+</SELECT>
+</FORM></DIV>
+</BODY>

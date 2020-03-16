@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<TITLE>Shockwave</TITLE>
+</HEAD>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+temp  = '<SCRIPT LANGUAGE="VBScript"\> \n'
+temp += '<!--\n'
+temp += 'Sub mm_FSCommand(ByVal cmd, ByVal arg) \n'
+temp += 'call mm_DoFSCommand(cmd, arg) \n'
+temp += 'end sub \n'
+temp += 'Sub init() \n'
+temp += 'call init() \n'
+temp += 'end sub \n'
+temp += 'Sub newRound() \n'
+temp += 'call newRound() \n'
+temp += 'end sub \n'
+temp += 'Sub lose() \n'
+temp += 'call lose() \n'
+temp += 'end sub \n'
+temp += '-->\n'
+temp += '</SCRIPT\> \n'
+document.write(temp);
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+var randm= new Array(4);
+var input= new Array(4);
+var counter=0;
+var round=0;
+
+
+function mm_DoFSCommand(cmd, arg) {
+  var map = InternetExplorer ? mm : document.embeds[0];
+  var temp=0;
+    if (cmd=="button")
+    {
+		temp=parseInt(arg);																															
+		input[counter]=temp;
+	   	map.TGotoFrame("_flash0/r" + round + "s" + counter,temp*10);
+		map.TPlay("_flash0/r" + round + "s" + counter);
+		++counter;
+		if (counter==4){
+			newRoundID=setTimeout("newRound()",650);
+		}				
+    }
+	if (cmd=="new"){
+		init();
+	}  
+ }
+ 
+function newRound()
+{
+  var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+  var map = InternetExplorer ? mm : document.embeds[0];
+  var cpos=0;
+  var ccol=0;
+  var test=0;
+  var checkeda= new Array(4);
+  var checkedb= new Array(4);
+	for (q=0;q<4;++q){
+		checkeda[q]=0;
+		checkedb[q]=0;
+		if (randm[q]!=input[q]){
+			++test;
+		}
+	}
+	if (test==0){ 
+		map.GotoFrame(60);
+		map.Play();
+	}else{
+		if (round==9){
+			map.GotoFrame(100);	
+			map.Play();
+			loseID = setTimeout("lose()",3000);																					
+		}
+	}	
+	for (j=0;j<4;++j){
+		if (input[j]==randm[j]){
+			++cpos;
+			checkeda[j]=1;
+			checkedb[j]=1;
+		}
+	}
+	for (i=0;i<4;++i){
+		for (h=0;h<4;++h){
+			if ((input[i]==randm[h])&&(checkeda[i]==0)&&(checkedb[h]==0)){
+				++ccol;
+				checkeda[i]=1;
+				checkedb[h]=1;
+				h=5;
+			}
+		}
+	}
+	map.TGotoFrame("_flash0/r" + round + "h1", (cpos+1)*10);
+	map.TPlay("_flash0/r" +round+"h1");
+	map.TGotoFrame("_flash0/r" + round + "h2", (ccol+1)*10);
+	map.TPlay("_flash0/r" +round+"h2");
+	counter=0;
+	++round;
+}		
+
+function lose(){
+  	var map = InternetExplorer ? mm : document.embeds[0];	
+	map.TGotoFrame("_flash0/l1", (randm[0]*10));
+	map.TPlay("_flash0/l1");
+	map.TGotoFrame("_flash0/l2", (randm[1]*10));
+	map.TPlay("_flash0/l2");
+	map.TGotoFrame("_flash0/l3", (randm[2]*10));
+	map.TPlay("_flash0/l3");
+	map.TGotoFrame("_flash0/l4", (randm[3]*10));
+	map.TPlay("_flash0/l4");
+}
+
+function init(){
+	round=0;
+	counter=0;
+	randm[0]=Math.round(Math.random()*5)+1;
+	randm[1]=Math.round(Math.random()*5)+1;
+	randm[2]=Math.round(Math.random()*5)+1;
+	randm[3]=Math.round(Math.random()*5)+1;
+}
+//-->
+</SCRIPT>
+<BODY bgcolor="#000000" onload="init()">
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=3,0,0,0"
+ ID=mm WIDTH=100% HEIGHT=100%>
+  <PARAM NAME=movie VALUE="mm.swf"> 
+  <PARAM NAME=loop VALUE=false> 
+  <PARAM NAME=quality VALUE=high> 
+  <PARAM NAME=menu VALUE=false> 
+  <PARAM NAME=bgcolor VALUE=#000000> 
+	<EMBED SRC="mm.swf" NAME=mm swLiveConnect=TRUE WIDTH=100% HEIGHT=100%
+ 		LOOP=false QUALITY=high MENU=false BGCOLOR=#000000 TYPE="application/x-shockwave-flash"
+		PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+	</EMBED>
+</OBJECT>
+</BODY>
+</HTML>

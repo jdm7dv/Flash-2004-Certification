@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>background-music Across Scenes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h1>A Background-Music Toggle for Multiscene Movies</h1>
+<p>by Bill Tagliaferro<br>
+  [<a href="backmusic.zip">Download Source</a>]</p>
+<p>This tutorial shows how to build a background-music on/off toggle that will work across multiple scenes.  
+The approach used here is to have the background-music load into a LEVEL above the rest on the movie.  
+The music toggle movie is basically the "Music On/Off Simplified" found at <a  href="http://www.enetserve.com/tutorials" target="_blank">www.enetserve.com/tutorials</a>.</p>
+<p >
+	<OBJECT ID="mainmovie" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+    	codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=3,0,0,0"
+      width="320" height="240"> 
+     		<PARAM name="Movie" value="mainmovie.swf">
+     		<PARAM NAME="BGColor" VALUE="#000000">
+     		<PARAM NAME="Quality" VALUE="High">
+     		<PARAM NAME="SCALE" value="exactfit">
+     		<PARAM NAME="Loop" VALUE="False">
+     		<PARAM NAME="Play" VALUE="True">
+	<EMBED SRC="mainmovie.swf"
+		swLiveConnect="false"
+		name="mainmovie"
+		LOOP=false 
+		WIDTH=320
+		HEIGHT=240
+		QUALITY=high 
+		BGCOLOR=#000000
+		TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+	</EMBED>
+	</object>
+
+</p>
+
+<p>This tutorial requiree intermediate or advanced  Flash knowledge and background.</p>
+<ul>
+  <li>No previous tutorials are required.</li>
+  <li>Download the <a href="backmusic.zip">source</a> files and have them unzipped for review during this tutorial.</li>
+</ul>
+<hr>
+<h2>Step-by-step</h2>
+<h3>Overview:</h3>
+<p >This technique requires two separate movies: 1) the main movie, and 2) a movie that has the same dimensions as the main movie and contains the background-music and its toggle button(s).
+		The steps can be summarized as follows.</p>
+<ol>
+  <li>Make the main movie with multiple scenes (two in this case).</li><br>
+  <li>Make the background-music movie.</li><br>
+  <li>Add the actions to the main movie to load the background-music movie.</li><br>
+</ol>
+<hr>
+<ol type=1>
+<i><b><li>Making your main movie.</b></i><br>
+<p >In this tutorial the main movie will have two scenes and a single button that takes the viewer back and forth between scene 1 and 2 (KISS).</p>
+	<ol type=i>
+	<li>Start Flash and set the movie properties that you wish for the main movie. <b>Modify | Movie</b>  and set the size, frame rate, background color, etc.
+	<li>You can make scene 1 anything you wish as long as it has:
+	<ol type=a>
+		<li>a stop action in the last keyframe of the movie, and
+		<li>a button to get the viewer from scene 1 to scene 2.
+	</ol>
+	<li>Add another scene with <b>Insert | Scene</b>.  You will then notice the scene tabs on the right side of the Flash window.  You can double click on these to give them a name that is more descriptive of the scene.  In this tutorial they are just named Scene 1 and Scene 2 (default).
+	<li>Again, you can make this scene anything you like with the same restrictions as scene 1.
+	</ol>
+<br><br>
+<i><b><li>Making your background-music movie.</b></i><br>
+<p >The background-music movie is the exact same size as the main movie with three keyframes.  It will hold the background-music and the On/Off toggle button.  The only real challenge here is to place the button in the correct location.  You can think of it as a transparent overlay with the button on it.  You will see everything through this level.</p>
+	<ol type=i>
+	<li>Make the second movie, the background-music, with the same movie properites as the main movie.  If you are comfortable working on two movie at the same time you can go to <b>File | New</b>.  This tutorial assumes that you have closed Flash after you have finished the main movie.
+	<li>Insert two additional keyframes for a total of 3 keyframes. <b>Insert | Keyframe</b> or <b>F6</b>.
+	<li>Import your background-music. <b>File | Import</b> or <b>CTRL R</b>
+	<li>Move to keyframe 2.  This will be your "ON" frame and will show your "OFF" button.
+	<li>Now you will need an ON button and an OFF button.  To start with just grab one from the Library ( <b>Libraries | Buttons</b> )and use words with it, or on it.  
+	<li>Position the  ON button so that it will "Overlay" in the correct position when loaded over the main movie.
+		<ul><li>Trick: with both movies open, place your button in the main movie where it should go.  Select it and do <b>CRTL X</b> to remove it.  Now switch to the background movie.  Then do a <b>CTRL+SHIFT V</b> to place it in the exact same location as it was in the main movie.</ul>
+	<li>Move to keyframe 3.  This will be your "OFF" frame and will show your "ON" button.
+	<li>Position the  OFF button so that it will "Overlay" in the correct position when loaded over the main movie.
+	<li>Now it's time to assign actions, labels, and your background sound to the three keyframes.
+		<ol type=a>
+		<li>Keyframe 3, the "OFF" frame.<img src="bkm_sound2.jpg" align="right" width="300" height="168" border="0"><br>
+			Double click on keyframe 3 ( or select <b>Modify | Frame</b> ) to bring up the Frame Properties window. You will use 3 of the tabs, Label, Sound, and Action.  They occur in that order.<br><br>
+			Click on the Label tab and give it the name "MusicStop", then click on the sound tab and select your sound loop with the Sync set to "Stop" and the Loops set to "0".  Finally, click on the Action tab and select the "Stop" action.
+			<br><br clear="all">
+		<li>Keyframe 2, the "ON" frame.<img src="bkm_sound1.jpg" align="right" width="300" height="168" border="0">
+
+			Now double click on keyframe 2 ( or select <b>Modify | Frame</b> )<br><br>
+			Click on the Label tab and give it the name "MusicStart", then click on the sound tab and select your sound loop with the Sync set to "Start" and the Loops set to "9999" (or whatever). Then once again, click on the Action tab and select the "Stop" action.
+		<br><br>
+		<li>Keyframe 1, the "INIT" frame.
+			Now double click on keyframe 1 ( or select <b>Modify | Frame</b> )<br><br>
+			Click on the Label tab and give it the name "Init".  Then click on the Action tab and select the "Stop" action.<br><br>
+			This frame will hold the background-music in a stop state, with no button showing, until you Initialize it from your main movie.  If you want
+			your background-music to start as soon as it is loaded eliminate the stop action in this frame (See source).
+		<br><br>
+		<li><b>CHECK POINT</b><br>At this point your background sound movie should have the following:<br>
+				<img src="bkm_timeline.jpg" align="right" width="205" height="111" border="0">
+
+			<ul>
+			<li>Only three frames, each of which being a key frame,
+			<li>an "OFF" button in keyframe 2 (which is your "ON" frame),
+			<li>an "ON" button in keyframe 3 (which is your "OFF" frame),
+			<li>and keyframe 1 may or may not have a stop action depending on you choice of initialization.
+			</ul><br><br>
+		</ol>
+	<li>Save this movie (<b>File | Save </b>) and export it (<b>File | Export </b>).  Remember the name because you will need it for the main movie.
+	</ol>
+<br><br>
+<i><b><li>Adding the "Load Movie" action to your main movie.</b></i><br>
+	<p >The assumption here is that you already have a movie that you now want to add background-music to.  The key thing to remember is that your background-music movie
+			may take some time to load if the file size is large.  If you try to initialize the music before it has loaded nothing will happen, ever!  There are two solutions to this problem:
+			<ol type=1>
+				<li>Assuming that the main movie is much larger than the backgoud-music movie, use a preloade for your main movie and initialize the music after the main movie is loaded  with the method used in this tutorial.
+				<li>Change keyframe 1 ("Init") of the backgroud-music movie.  Eliminate the "Stop" action and let it go directly to StartMusic.
+			</ol>
+	This tutorial will use the first method and the example (source) uses the second.</p>
+		<ol type=i>
+		<li>Start Flash and open your main movie (<b> File | Open</b>).
+		<li>Double click on the first keyframe of your main movie or select <b>Modify | Frame</b> to open the Frame Properties window.
+		<li>Click on the action tab and choose </b>Load Movie</b>.
+		<li>In the URL window type the name of your background-music movie, in our case it is "backmusic.swf".
+		<li>In the Level # window type a number above any other levels you may have used and click OK.  I used 10.
+		<li>Now pick a point on your timeline (far enough along to insure that the background-music is loaded) where you want the music to start and insert a keyframe <b>F6 or Insert | Keyframe</b>.
+		<li>Double click on this keyframe and assign a tell target action with a target of <b>_levelN/</b> where N=the level number you assigned.  In this case it would be <b>_level10/</b>
+		<li>Then for the action of the tell target choose <b>GoTo | Label | StartMusic</b>.
+		<li>Resave your file and export and you are done.
+		<br><br>If you have used method 2 for your sound initialization then skip steps vi - viii.
+		</ol>
+</ol>
+<hr>
+<h2>Need More Help?</h2>
+<p>[<a href="backmusic.zip">Download Source</a>]<br>Don't forget to get the source files and look them over.</p>
+<hr>
+<h2>Troubleshooting</h2>
+<p>If you have carefully followed these directions and you still can't get it to work it may be a loading time problem.  You can't tell the background-music  movie to GoTo the Label StartMusic until it has loaded.  
+	If you do, nothing will happen.  Try the alternative method of not using a stop action in keyframe 1 of your music movie.  Also, if your background-music movie is large you should include a preloader.</p>
+</body>
+</html>

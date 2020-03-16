@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#003535" text="#FFFFFF" link="#00CC66" vlink="#00CC66" alink="#00CC66">
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4">Creating 
+  Fullscreen movies</font></b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> <img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"><font face="Arial, Helvetica, sans-serif" size="2"></font></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><a href="prfull.html" target="window">printable 
+  version</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Are you annoyed by those 
+  pesky frames? Having problems removing that margin? Well then, this is where 
+  you would wan't to look.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Making a page margin 
+  of 0: </b> </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">All browsers:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Make a HTML file containing 
+  the following frameset:</font></p>
+<p> <tt>&lt;frameset rows=&quot;100%,*&quot; border=&quot;0&quot; frameborder=&quot;0&quot; 
+  framespacing =&quot;0&quot;&gt;<br>
+  &lt;frame src=&quot;flash.html&quot; marginwidht=&quot;0&quot; marginheight=&quot;0&quot; 
+  noresize scrolling=&quot;no&quot;&gt;<br>
+  &lt;frame src=&quot;blank.html&quot; noresize scrolling=&quot;no&quot;&gt;<br>
+  &lt;/frameset&gt; <br>
+  &lt;noframes&gt;&lt;/noframes&gt;</tt></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">This will make a frameset, 
+  where the &quot;flash.html&quot; is the movie which you want to show with a 
+  margin of 0, and blank.html is an empty HTML file.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">4.0 browsers:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Netscape 4 and Explorer 
+  4 has another way of making a margin of 0.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Simply insert this code 
+  in the &lt;body&gt; tag of your HTML document:</font></p>
+<p><tt>&lt;body marginwidht=&quot;0&quot; marginheight=&quot;0&quot; leftmargin=&quot;0&quot; 
+  topmargin=&quot;0&quot; rightmargin=&quot;0&quot; bottommargin=&quot;0&quot;&gt;</tt></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Making the Flash movie 
+  stretch to fill the browser window:</b> You should definetely use Aftershock 
+  to do this. Read my <a href="aftersh.html">Using Aftershock Utility</a> topic 
+  for more info. When in Aftershock, specify the size to be: Width = 100%, Height 
+  = 100%. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Flash Movie size:<br>
+  </b></font><font face="Arial, Helvetica, sans-serif" size="2">You also need 
+  to set the width and height of flash movies, so here's a list:</font></p>
+<table width="50%" border="1" cellspacing="0">
+  <tr>
+    <td><font face="Arial, Helvetica, sans-serif" size="2">640x480 maximized</font></td>
+    <td><font face="Arial, Helvetica, sans-serif" size="2">600x300</font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial, Helvetica, sans-serif" size="2">800x600 maximized</font></td>
+    <td><font face="Arial, Helvetica, sans-serif" size="2">760x420</font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial, Helvetica, sans-serif" size="2">1024x768 maximized</font></td>
+    <td><font face="Arial, Helvetica, sans-serif" size="2">955x600</font></td>
+  </tr>
+</table>
+<p><font face="Arial, Helvetica, sans-serif" size="2">This should do the trick!</font></p>
+</body>
+</html>

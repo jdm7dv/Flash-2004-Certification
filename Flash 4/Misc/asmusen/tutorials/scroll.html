@@ -1,0 +1,44 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#003535" text="#FFFFFF" link="#00CC66" vlink="#00CC66" alink="#00CC66">
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4">Making 
+  Scrollable Text</font></b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"> <img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><a href="prscroll.html" target="window">printable 
+  version</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><img src="fla.gif" width="20" height="20" align="top"> 
+  Downloadable <a href="scroll.zip" target="">FLA</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Ever wanted to make text 
+  you could scroll in Flash? Well, it's possible! The way forward is not obvious, 
+  but very easy when you understand.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"></font><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 
+  1.</b> Write the text you want to be able to scroll.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 2.</b> Select the 
+  text and press F8 and make it a movie clip.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 3.</b> Make two 
+  keyframes in the movie clip, one keyframe where the top of the text is far down. 
+  The other keyframe the top of the text is far up. </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 4.</b> Apply Motion 
+  Tweening between these frames.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 5.</b> Go to the 
+  normal Scene Editor by pressing CTRL + E. Name the movie clip &quot;scrolltext&quot; 
+  by selecting properties for the clip.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 6.</b> Now make 
+  two buttons. One for scroll up, one for scroll down.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 7.</b> Give the 
+  Scrolll UP button this action:</font></p>
+<p><tt>Begin Tell Target [scrolltext]<br>
+  Goto and Stop [next frame]<br>
+  End Tell Target</tt></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 8.</b> Give the 
+  Scrolll DOWN button this action:</font></p>
+<p><tt>Begin Tell Target [scrolltext]<br>
+  Goto and Stop [previous frame]<br>
+  End Tell Target</tt></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">That should do the trick!</font></p>
+</body>
+</html>

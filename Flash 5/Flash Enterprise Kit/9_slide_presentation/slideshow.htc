@@ -1,0 +1,184 @@
+<PUBLIC:COMPONENT tagName="slideshow">
+<public:defaults viewLinkContent />
+<PUBLIC:PROPERTY NAME="color" />
+<PUBLIC:PROPERTY NAME="buttoncolor" />
+<PUBLIC:PROPERTY NAME="barcolor" />
+<PUBLIC:PROPERTY NAME="bulletcolor" />
+<PUBLIC:PROPERTY NAME="href" />
+<PUBLIC:PROPERTY NAME="target" />
+<PUBLIC:PROPERTY NAME="width" />
+<PUBLIC:PROPERTY NAME="height" />
+<PUBLIC:PROPERTY NAME="page" />
+
+<public:method name="changeHeadline" />
+
+<public:event name=onupdate id=rcID />
+<attach event="oncontentready" onevent="init()" />
+</public:component>
+
+<SCRIPT LANGUAGE="JavaScript">
+// set up the global variables
+var text = new Array();
+var text_color = new Array();
+var bulletcolor = new Array();
+var href = new Array();
+var page_target = new Array();
+
+var params = 0;
+var current_page = 1;
+var total_pages = 0;
+
+
+function route(command, args){
+    if (command == "next"){
+	current_page = parseInt(current_page) + parseInt(args);
+	if (current_page < 1){
+	    current_page = total_pages;
+	} else if (current_page > total_pages){
+	    current_page = 1;
+	}
+    } 
+    params = 0;
+    init();
+    flash.TGotoFrame('_level0', 1);
+    flash.TPlay('_level0');
+}
+
+function init(){
+    // set up the standard size variables
+    if(element.width){
+	flash_width = element.width;
+    } else {
+	flash_width = 500;
+    }
+    if(element.height){
+	flash_height = element.height;
+    } else {
+	flash_height = 440;
+    }
+    flash.width = flash_width;
+    flash.height = flash_height;
+    // send in the params
+    var e;
+    for (i=0; i < element.all.length; i++){
+        e = element.all[i];
+        e.index = i;
+        if (e.nodeType == 1){
+	    e.attachEvent("onpropertychange", setProperties);
+	    setPropertiesDirect(e);
+        }
+    }
+    sendIn();
+    flash.style.display = "block";
+}
+
+function sendIn(){
+    // send in the vars
+    for(j in text){
+	if (parseInt(j) == current_page){
+	    for(k in text[j]){
+		flash.SetVariable('text_'+params, text[j][k]);		
+		//alert(j +' = '+text[j][k]);
+		flash.SetVariable('color_'+params, text_color[j][k]);		
+		flash.SetVariable('bulletcolor_'+params, bulletcolor[j][k]);		
+		flash.SetVariable('href_'+params, href[j][k]);		
+		flash.SetVariable('target_'+params, page_target[j][k]);		
+		params++;
+	    }
+	}
+    }
+    //alert(params);
+    flash.SetVariable('params', params);
+    //set up the global flash attributes
+    if(element.barcolor){
+	flash.SetVariable('barcolor', element.barcolor);
+    }
+    if(element.buttoncolor){
+	flash.SetVariable('buttoncolor', element.buttoncolor);
+    }
+    if(element.mouseovercolor){
+	flash.SetVariable('mouseovercolor', element.mouseovercolor);
+    }
+    if(element.page){
+	flash.SetVariable('page', element.page);
+    }
+    if(element.title){
+	flash.SetVariable('title', element.title);
+    }
+    flash.SetVariable('total_pages', total_pages);
+    flash.SetVariable('current_page', current_page);
+
+    // make it visible
+    flash.TGotoFrame('_level0', 1);
+    flash.TPlay('_level0');
+}
+
+function setProperties(eO) {
+  setPropertiesDirect(eO.srcElement);
+  sendIn();
+}
+
+function setPropertiesDirect(e) {
+  var i,event;
+  i = e.index;
+  // loop through all the pages
+  // get each attribute of the page tag
+  // put it all into a series of arrays that can be sorted by page #
+
+  // must have page and text
+  if((e.getAttribute('page')) && (e.getAttribute('text'))){
+      if(!text[e.getAttribute('page')]){
+	  text[e.getAttribute('page')] = new Array();
+	  text_color[e.getAttribute('page')] = new Array();
+	  bulletcolor[e.getAttribute('page')] = new Array();
+	  href[e.getAttribute('page')] = new Array();
+	  page_target[e.getAttribute('page')] = new Array();
+      }
+      text[e.getAttribute('page')][i] = e.getAttribute('text');
+      if (e.getAttribute('bulletcolor')){
+	  bulletcolor[e.getAttribute('page')][i] = e.getAttribute('bulletcolor');
+      } else {
+	  bulletcolor[e.getAttribute('page')][i] = '';
+      }
+      if (e.getAttribute('href')){
+	  href[e.getAttribute('page')][i] = e.getAttribute('href');
+      } else {
+	  href[e.getAttribute('page')][i] = ' ';
+      }
+      if (e.getAttribute('color')){
+	  text_color[e.getAttribute('page')][i] = e.getAttribute('color');
+      } else {
+	  text_color[e.getAttribute('page')][i] = '';
+      }
+      if (e.getAttribute('target')){
+	  page_target[e.getAttribute('page')][i] = e.getAttribute('target');
+      } else {
+	  page_target[e.getAttribute('page')][i] = "_self";
+      }
+      if(e.getAttribute('page') > total_pages){
+	  total_pages = e.getAttribute('page');
+      }
+  }
+  // page.getAttribute('target');
+}
+
+</SCRIPT>
+<SCRIPT LANGUAGE="VBScript">
+<!-- 
+//  Catch FS Commands in IE, and pass them to the corresponding JavaScript function.
+
+Sub flash_FSCommand(ByVal command, ByVal args)
+    call route(command, args)
+end sub
+
+//-->
+</SCRIPT>
+
+<BODY style="width:100%; height:100%">
+<object id="flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="10" height="40" style="display: block">
+<param name="movie" value="slideshow.swf">
+<param name="quality" value="high">
+<PARAM NAME="wmode" VALUE="transparent">
+</object>
+
+</BODY>

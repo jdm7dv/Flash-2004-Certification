@@ -1,0 +1,281 @@
+<html>
+
+<head>
+<title>Advanced Track as Menu</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="description"
+content="Flash tutorial explode exploding text effects virtual fx web training">
+</head>
+
+<body bgcolor="#FFFFEC" topmargin="0">
+
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="20%" valign="top" align="left"><font face="Arial" size="2"><a href="index.htm"
+    target="_top"><img src="tutimages/home.gif" alt="Go to Home Page" border="0" WIDTH="99"
+    HEIGHT="24"></a></font></td>
+    <td width="80%" valign="top" align="center"><em><strong><font face="Arial" size="6">Difficult
+    Track As Menu<br>
+    </font><font face="Arial" size="2">Patrick Rey, <a href="http://www.flashaddict.com">Flash
+    Addict</a></font></strong></em></td>
+  </tr>
+</table>
+
+<hr>
+
+<p>&nbsp; 
+
+<ul>
+  <li><em><font face="Arial" size="2"><strong>DOWNLOAD THE .FLA (send your .FLA file with the
+    tutorial)</strong></font></em></li>
+  <li><font face="Arial" size="2"><strong>SKILL LEVEL: Advanced (Very time consuming)</strong></font></li>
+  <li><font face="Arial" size="2"><strong>Requirements</strong></font></li>
+  <li><font face="Arial" size="2"><strong>Comfortable working with Movie Clips, graphics and
+    buttons - you will use all 3 to varying degrees</strong></font></li>
+  <li><font face="Arial" size="2"><strong>Comfortable working in multiple layers and across
+    frames</strong></font></li>
+  <li><font face="Arial" size="2"><strong>Comfortable assigning and tracking Tell Target
+    commands</strong></font></li>
+  <li><font face="Arial" size="2"><strong>Labeling instances and Adding instances to frames</strong></font></li>
+  <li><font face="Arial" size="2"><strong>Lots of </strong>patience</font></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="100%" bgcolor="#C0C0C0"><big><font face="Arial"><strong>TUTORIAL</strong></font></big></td>
+  </tr>
+</table>
+
+<p><font face="Arial" size="2">Screenshot of the Frames you will create in this tutorial:<br>
+</font></p>
+
+<p><img src="tam2_timeline.gif" width="327" height="145"
+alt="tam2_timeline.gif (15477 bytes)"></p>
+
+<p>This effect occurs in multiple layers but 1 frame</p>
+
+<p>&nbsp;</p>
+
+<p>This tutorial is a dissection, of the FLA <em>&quot;Menus-Track As Menu.fla&quot;</em>
+that comes with Flash 3 and 4 and is located in samples folder. I will illustrate the
+concept - it will not be nearly as detailed as the Macromedia file though.</p>
+
+<p><em>Note </em>- This is an example of a &quot;track as menu&quot; - not the &quot;track
+as menu&quot; command</p>
+
+<p>This Menu system runs off of 2 primary movies - a Nested Menu and an Indicator Box. It
+also has several buttons and graphics in between.</p>
+
+<p>&nbsp;</p>
+
+<p><strong><font color="#FF0000">Stage 0 - Buttons</font></strong></p>
+
+<p>Start by making 2 buttons</p>
+
+<p>The 1st button has one static state - up&nbsp; - don't worry about the hit, over and
+down states</p>
+
+<p>The 2nd button can have all 4 states in different colors</p>
+
+<p>Make both button shapes - like a rectangle or a square - something that can be
+connected easily</p>
+
+<p>Use NO text in either button - you will see why later - you are going to recycle the
+2nd button 4 times</p>
+
+<p>&nbsp;</p>
+
+<p>Now you are ready to move on</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><strong>Stage 1 - Part 1 - Movie Clip 1 of 2 - Main Menu</strong></font></p>
+
+<p>Lets start with the primary movie - the main menu</p>
+
+<p>Make a new movie clip - call it Nested Menu</p>
+
+<p><img src="tam2_menu-timeline.gif" width="315" height="177"
+alt="tam2_menu-timeline.gif (15819 bytes)"></p>
+
+<p>Make 4 layers</p>
+
+<p>Label them Actions, Buttons, Text, and Roll Off</p>
+
+<p>In the Actions layer - insert a Stop action in keyframe 1, Insert a keyframe at 15 and
+label it <em>up. </em>Assign another stop action in this frame.</p>
+
+<p>&nbsp;</p>
+
+<p><em>Make Buttons you current layer</em></p>
+
+<p>This is where you layout the buttons</p>
+
+<p>In keyframe 1 insert the 1st button (alone)</p>
+
+<p>Assign it the following action - On mouse event - release - Go To and Stop - Label
+&quot;up&quot;<br>
+(See screenshot below)</p>
+
+<p><img src="tam_action1.gif" width="901" height="439" alt="tam_action1.gif (97500 bytes)"></p>
+
+<p>&nbsp;</p>
+
+<p>Insert a keyframe (F6) at 15 - layout the 2nd buttons next to the 1st button in an
+upside-down L shape (See screenshot below)</p>
+
+<p><img src="lpattern.gif" width="325" height="197" alt="lpattern.gif (5682 bytes)"></p>
+
+<p>Green = 1st button<br>
+Red = 2nd button (recycled 4 times)</p>
+
+<p><em>Important note</em> - make sure each button is touching, slightly overlapping</p>
+
+<p>&nbsp;</p>
+
+<p><em>Make Text your current layer</em></p>
+
+<p>Use the text tool to label each button</p>
+
+<p>Insert blank keyframe (F7) at 15</p>
+
+<p>&nbsp;</p>
+
+<p><em>Make Roll Off your current layer</em></p>
+
+<p>OK - I lied - you have to make 1 more button</p>
+
+<p>Draw a giant square in the hit state - ALL other states are blank and empty<br>
+This is the invisible button :)</p>
+
+<p>Place the invisible button over the upside-down L set of buttons in keyframe 15 of this
+layer<br>
+(Scale it to cover the L if necessary)</p>
+
+<p>Assign the invisible button the following action - On Roll Over -&nbsp; Go To and Stop
+- Frame 1 <br>
+(See screenshot below)</p>
+
+<p><img src="tam_shield.gif" width="905" height="436" alt="tam_shield.gif (75676 bytes)"></p>
+
+<p>(Note - because of the Roll Over command -&nbsp; this is why you want all buttons to be
+touching. By doing so - on mouseover the menu will collapse)</p>
+
+<p>&nbsp;</p>
+
+<p>That's it for this movie for now</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><strong>Stage 1- Part 2 - Movie Clip 2 of 2 - The Indicator Box</strong></font></p>
+
+<p>Make another movie clip - call it Indicator</p>
+
+<p>Because of the labels and frame actions - the more items you have to track, the longer
+it will take to setup</p>
+
+<p>Start by making 2 layers - layer 1 - actions, layer 2 - numbers</p>
+
+<p><em>Make the actions layer your current layer</em></p>
+
+<p>This is where you label frames for the Tell target actions.</p>
+
+<p>Start by inserting keyframes (F6) at 1, 5, 10, 15 and 20</p>
+
+<p>Label each keyframe as follows keyframe 1 = 0, keyframe 5 = 1, keyframe 10 =2, keyframe
+15 = 3, keyframe 20 = 4 (The extra frame is only to show label 4)</p>
+
+<p>(See screenshot below)</p>
+
+<p><img src="tam2_labels.gif" width="362" height="128" alt="tam2_labels.gif (15065 bytes)"></p>
+
+<p>&nbsp;</p>
+
+<p><em>Now make the numbers layer you current layer</em></p>
+
+<p>These are the frames that advance upon command</p>
+
+<p>In keyframe 1 draw a box with some text</p>
+
+<p>Insert keyframes at 5, 10, 15 and 20</p>
+
+<p>At keyframes 5, 10, 15 and 20 - insert a graphic or text - for this example use numbers
+1 to 4</p>
+
+<p>Label 0 = Nothing<br>
+Label 1 = 1<br>
+Label 2 = 2<br>
+Label 3 = 3<br>
+Label 4 = 4</p>
+
+<p>Last - place a <em>stop action</em> in the first keyframe of this layer</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><strong>Stage 2 - Layout and Actions</strong></font></p>
+
+<p>Now that you have the 2 main elements constructed - lets get back to the stage</p>
+
+<p>Make 3 layers - name them as follows</p>
+
+<p>1) Actions<br>
+2) Menu<br>
+3) Indicator box </p>
+
+<p>Place the 2 movies on the stages keeping in mind each movie will have its own layer.</p>
+
+<p>Double click on the Indicator box and assign it the Instance name <em>box</em></p>
+
+<p>Back to the Library (Control L) - In the Movie Clip -&nbsp; Nested Menu - In keyframe
+15 of the buttons layer. Double click on the each individual button and assign the
+following actions - Begin Tell Target (Target is /box), Go To and Stop, (label), End Tell
+Target</p>
+
+<p>Remember the corresponding labels for each button</p>
+
+<p>Label 1 = 1<br>
+Label 2 = 2<br>
+Label 3 = 3<br>
+Label 4 = 4</p>
+
+<p>(See screenshot below)</p>
+
+<p><img src="tam_targets.gif" width="906" height="437" alt="tam_targets.gif (98825 bytes)"></p>
+
+<p>&nbsp;</p>
+
+<p>Test movie</p>
+
+<p>That's it</p>
+
+<p>&nbsp;</p>
+
+<p><strong><font color="#FF0000">Troubleshooting</font></strong></p>
+
+<p>The indicator box plays through - Make sure there is a stop action in the first frame
+of the movie clip</p>
+
+<p>Buttons don't track - make sure the movie clip has an instance name assigned to it and
+that the labels match the Tell target AND that labels are spelled right in the movie clip
+as well as the Tell Target sequence</p>
+
+<p>Menu doesn't retract - make sure the roll off button has the proper action assigned to
+it</p>
+
+<p>&nbsp;</p>
+
+<p><strong><font color="#FF0000">Customization</font></strong></p>
+
+<p>You can add menu items as you like - but that just means you have that many more Tell
+Target actions to assign.</p>
+
+<p>&nbsp;</p>
+
+<p><strong><em><font size="2">&nbsp;</font></em></strong></p>
+
+<p><font size="2"><strong><em>© 1999 Patrick J. Rey<br>
+</em></strong><a href="http://www.flashaddict.com">www.flashaddict.com</a></font></p>
+</body>
+</html>

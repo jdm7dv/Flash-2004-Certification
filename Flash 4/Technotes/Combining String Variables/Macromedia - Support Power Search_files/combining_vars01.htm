@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0073)http://www.macromedia.com/support/flash/ts/documents/combining_vars01.htm -->
+<HTML><HEAD><TITLE>Macromedia - Combining string variables in Flash</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Last-Modified content="Mon, 24 Jan 2000 18:02:37 GMT">
+<META http-equiv=Version content=1.0 name=DOCVERSION>
+<META content="Mon, 24 Jan 2000 18:02:37 GMT" name=LASTMODIFIED>
+<META content="Tips &amp; Tricks" name=AREA>
+<META content=Yes name=PUBLIC>
+<META content="Bentley Wolfe" name=AUTHOR>
+<META content=1 name=IMPORTANCE>
+<META 
+content="ActionScript, string, concatenation, concatenate, combine, vars, variables, integers, field, &amp;" 
+name=KEYWORDS>
+<META content=All name=PLATFORM>
+<META content=Flash name=PRODUCT>
+<META content=4 name=VERFROM>
+<META content=99 name=VERTO>
+<META content="4 and above" name=VERSIONS>
+<META content="Combining string variables in Flash" name=DOCTITLE>
+<META content=14261 name=DOCID>
+<META content=Done! name=STATUS>
+<META content="January 24, 2000" name=DATECREATED>
+<META content="January 26, 2000" name=DATEMODIFIED>
+<META content=TechNote name=KIND>
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR></HEAD>
+<BODY vLink=#660033 aLink=#000000 link=#333399 bgColor=#ffffff><!-- begin flash TechNotes top fragment -->
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=bottom noWrap><IMG height=17 
+      src="combining_vars01_files/pixel.gif" width=18 border=0><A target=_top 
+      href="http://www.macromedia.com/"><IMG height=12 alt=macromedia 
+      src="combining_vars01_files/crumb_macromedia_blue.gif" width=99 
+      border=0></A><IMG height=12 alt=: 
+      src="combining_vars01_files/crumb_colon.gif" width=15 border=0><A 
+      target=_top href="http://www.macromedia.com/software/"><IMG height=12 
+      alt=products src="combining_vars01_files/crumb_products_blue.gif" width=69 
+      border=0></A><IMG height=12 alt=: 
+      src="combining_vars01_files/crumb_colon.gif" width=15 border=0><A 
+      target=_top href="http://www.macromedia.com/software/flash/"><IMG 
+      height=12 alt=flash src="combining_vars01_files/crumb_flash_blue.gif" 
+      width=40 border=0></A><IMG height=12 alt=: 
+      src="combining_vars01_files/crumb_colon.gif" width=15 border=0><A 
+      target=_top href="http://www.macromedia.com/support/flash/"><IMG height=12 
+      alt=support src="combining_vars01_files/crumb_support_blue.gif" width=61 
+      border=0></A><IMG height=12 alt=: 
+      src="combining_vars01_files/crumb_colon.gif" width=15 border=0><A 
+      href="http://www.macromedia.com/support/flash/technotes.html"><IMG 
+      height=12 alt=technotes 
+      src="combining_vars01_files/crumb_technotes_blue.gif" width=79 
+      border=0></A></TD></TR></TBODY></TABLE><IMG height=30 
+src="combining_vars01_files/pixel.gif" width=2 border=0>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="10%"><IMG height=60 alt="flash icon" 
+      src="combining_vars01_files/flash_logo.gif" width=72 border=0> <IMG 
+      height=2 src="combining_vars01_files/pixel.gif" width=120 border=0> </TD>
+    <TD vAlign=top width="90%"><IMG height=34 alt="flash technotes" 
+      src="combining_vars01_files/head_technotes.gif" width=134 border=0> 
+      <HR width="100%" noShade SIZE=1>
+<!-- at this point we are inside a table inside a table -->
+      <H3><FONT face="Arial, Helvetica, sans-serif" size=+1><B>Combining string 
+      variables in Flash</B></FONT></H3>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Product: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Flash</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Platform: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>All</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Versions: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>4 and above</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>ID: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>14261</FONT> </TD></TR></TBODY></TABLE>
+      <P><!--mm-contents -->
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Combining 
+      multiple string variables together in a programming language is commonly 
+      called "concatenation". This is the process of taking two text strings 
+      held in two different variables and combining them into a unique new 
+      string. </FONT>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>What is a 
+      string?</B></FONT> <BR><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2>A string in Flash is a series of alphanumeric characters held in a 
+      text field or a variable. Strings can be created in multiple ways:</FONT> 
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=9><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">1</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top width=369>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Using 
+            Editable Text Fields:</B></FONT><BR><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>If an editable 
+            text field has a variable name in Text Field Properties then the 
+            characters inside the field can be accessed as a string.<BR><IMG 
+            height=67 src="combining_vars01_files/textfieldprops.gif" width=284> 
+            </FONT></P>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>See the 
+            Flash example at the end of this TechNote for an example of string 
+            concatenation using editable text fields.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=9><FONT face="Geneva, Arial, Helvetica" 
+            size=2><B><FONT face="Geneva, Arial, Helvetica, san-serif">2</FONT> 
+            </B></FONT></TD>
+          <TD vAlign=top width=369>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Using 
+            ActionScript:</B><BR>String variables can be created with 
+            ActionScript without requiring a text field or any user 
+            input.<BR></FONT></P>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>For 
+            example, this illustration shows a keyframe script setting a 
+            variable named "geographic_location" with the value "Indianapolis". 
+            In this script, "Indianapolis" is a string.</FONT></P>
+            <P><IMG height=253 src="combining_vars01_files/setvariable_text.gif" 
+            width=367></P>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Notice 
+            how the "abc" button is set to "String Literal". This tells Flash to 
+            treat this value exactly as entered.</FONT></P></TD></TR></TBODY></TABLE>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>When is a string 
+      not a string?</B></FONT><BR><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" size=2>When it's an 
+      expression. </FONT>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>In most 
+      programming languages, a value must be "typed" before you can use it. This 
+      means the value must be declared to be a string or an integer number or 
+      other value.</FONT> 
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Because 
+      ActionScript is not a "typed" language, this is not necessary in Flash. 
+      Setting the "ABC" button to "Expression" will tell Flash to treat the 
+      value as a number, or to perform an evaluation of the content of the 
+      value. </FONT>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>For 
+      example:<BR>10 + 13 as a string literal will give the value "10 + 
+      13".<BR>10 + 13 as an expression will return the value "23"</FONT>. 
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>In more 
+      complicated ActionScripts, Flash may interpret a value incorrectly. If an 
+      integer is entered when Flash expects a string value then Flash assigns 
+      the value "TRUE" to the integer. </FONT>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>If a string is 
+      entered where Flash is expecting an integer value, Flash assigns a value 
+      equal to the number of characters in the string. So if the entry field was 
+      expecting an integer and the user entered "ABC" Flash would use the 
+      integer value of "3". However, if Flash is unable to convert the string to 
+      a number, it will assign an integer value of zero. For example, "ABC + 3" 
+      cannot be interpreted as a number, so it would be evaluated as 
+      zero.</FONT> 
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>If Flash sees 
+      a string in ActionScript where it's expecting an integer, it assumes the 
+      string is a reference to a variable name, and will look for the value of 
+      that variable. If this string is not a declared variable in the movie, it 
+      has no value. </FONT>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>Putting it all 
+      together</B></FONT><BR><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2>The key to concatenation is understanding the use of the '&amp;' or 
+      ampersand character in ActionScript.</FONT> 
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>The ampersand 
+      is used in ActionScript to combine two strings, or combine a string with 
+      the value of an expression or a variable. </FONT>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>The following 
+      movie combines three strings which can be entered by the user. The 
+      variable names are "first", "last" and "age".</FONT> <BR><BR>
+      <TABLE width=400 border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width=400 
+            height=300><PARAM NAME="movie" VALUE="combining_vars/combining_vars.swf"><PARAM NAME="quality" VALUE="high">
+                                    <embed 
+            src="combining_vars/combining_vars.swf" quality=high 
+            pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+            type="application/x-shockwave-flash" width="400" height="300">       
+             </embed>       </OBJECT></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>The 
+      ActionScript attached to the "show combined result" button is shown in 
+      this image.</FONT> 
+      <P>
+      <TABLE width=198 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=152 src="combining_vars01_files/basic_action.gif" 
+            width=198></TD></TR></TBODY></TABLE>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>What does it 
+      do?<BR></B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2>The ActionScript expression in the "Value" field is explained 
+      below:</FONT></P>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=21><FONT 
+            face="Geneva, Arial,&#10;Helvetica, san-serif"><B>1 </B></FONT></TD>
+          <TD vAlign=top width=355>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Finds 
+            the value of the variable 'first'. Because this value is in an 
+            editable text field, Flash interprets it as a 
+        string.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=21><FONT 
+            face="Geneva, Arial, Helvetica,&#10;san-serif" 
+            size=2><B>2</B></FONT> </TD>
+          <TD vAlign=top width=355>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Uses the 
+            '&amp;' concatenation operator to add more information after the 
+            value returned by the "first" variable. </FONT></P>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Adding 
+            the " " (which can be read as QUOTE SPACE QUOTE) after the ampersand 
+            adds an empty space. In ActionScript, any items between quotes will 
+            be treated as a string. In this case, the string is just a single 
+            space character.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=21><FONT 
+            face="Geneva, Arial, Helvetica,&#10;san-serif" 
+            size=2><B>3</B></FONT> </TD>
+          <TD vAlign=top width=355><FONT 
+            face="Geneva, Arial, Helvetica,&#10;sans-serif" size=2>Repeats the 
+            process for the 'last' variable.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=21><FONT 
+            face="Geneva, Arial, Helvetica,&#10;san-serif" 
+            size=2><B>4</B></FONT> </TD>
+          <TD vAlign=top width=355><FONT 
+            face="Geneva, Arial, Helvetica,&#10;sans-serif" size=2>Adds a comma 
+            and an empty space after the value of the 'last' string, then adds 
+            the value of the 'age' variable.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=21><FONT 
+            face="Geneva, Arial, Helvetica,&#10;san-serif" 
+            size=2><B>5</B></FONT> </TD>
+          <TD vAlign=top width=355><FONT 
+            face="Geneva, Arial, Helvetica,&#10;sans-serif" size=2>Displays the 
+            final string result in the "Result" 
+field.</FONT></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>For more 
+      in-depth use of variables please refer to <A 
+      href="http://www.macromedia.com/support/flash/ts/documents/eval.htm">How 
+      to use Eval in an array</A> (TechNote 14219).</FONT> 
+      <P>&nbsp;</P><!--mm-end-contents -->
+      <P>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD colSpan=2><FONT face="Arial, Helvetica, sans-serif" 
+            size=2><B>Keywords: </B></FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>ActionScript, 
+            string, concatenation, concatenate, combine, vars, variables, 
+            integers, field, &amp;</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Last 
+            updated: </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>January 
+            26, 2000</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Author: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Bentley 
+            Wolfe</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Area: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Tips 
+            &amp; Tricks</FONT> </TD></TR></TBODY></TABLE><!-- insert a little gap after the bottom table --><BR>&nbsp; 
+<!-- close the table row that the body is in --></P></TD></TR>
+  <TR>
+    <TD vAlign=bottom align=right width="10%"><A target=_top 
+      href="http://www.macromedia.com/buy/"><IMG height=21 alt=buy 
+      src="combining_vars01_files/buy.gif" width=67 border=0></A><BR><A 
+      href="http://www.macromedia.com/support/search/powersearch.html"><IMG 
+      height=21 alt="power search" src="combining_vars01_files/search.gif" 
+      width=90 border=0></A><BR></TD>
+    <TD>
+      <CENTER>
+      <HR width="100%" noShade SIZE=1>
+      <BR><FONT face="Arial, Helvetica" size=-1>[<A target=_top 
+      href="http://www.macromedia.com/">home</A>] [<A target=_top 
+      href="http://www.macromedia.com/software/">products</A>] [<A target=_top 
+      href="http://www.macromedia.com/support/">support</A>] [<A target=_top 
+      href="http://www.macromedia.com/downloads/">downloads</A>] [<A target=_top 
+      href="http://www.macromedia.com/macromedia/">about us</A>] [<A 
+      target=mm_window 
+      href="http://www.macromedia.com/OUTGOING/http://www.shockwave.com/">shockwave.com</A>] 
+      [<A target=_top href="http://www.macromedia.com/help/">help</A>] <BR><FONT 
+      size=-2><A href="http://www.macromedia.com/help/copyright.html">Trademarks 
+      Copyright</A> ©1995-2000 Macromedia, Inc. All rights reserved. <A 
+      href="http://www.macromedia.com/help/privacy.html">Privacy policy</A>. 
+      </FONT><BR></FONT></CENTER></TD></TR></TBODY></TABLE><!-- whitespace required to workaround Nav 3.04 Win scrollbar bug --><BR></BODY></HTML>

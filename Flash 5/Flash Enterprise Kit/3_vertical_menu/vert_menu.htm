@@ -1,0 +1,51 @@
+<HTML XMLNS:iceinc>
+<?IMPORT namespace="iceinc" implementation="vert_menu.htc">
+<HTML>
+<HEAD>
+<TITLE>Vertical Menu</TITLE>
+<STYLE>
+	body {font-family: sans-serif}
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<!--
+  for each param (= menu item), there are some attributes required depending on
+  the menu type:
+
+    label  : label of the menu item
+    url    : url action to go to when clicked
+    id     : if this is a parent, then put the id number here (must be unique)
+             starting from zero, otherwise, you don't need this field
+    parent : if this menu item, goes under a root menu, put the id of the
+             parent menu here
+
+    (eg:
+      parent menu would look like:
+        <param label="Parent Menu" id="0">
+      its sub menus would look like:
+        <param label="Sub Menu 1" parent="0" url="http://www.flash.com">
+        <param label="Sub Menu 2" parent="0" url="http://www.microsoft.com">
+      and the next parent would look like:
+        <param label="Parent Menu 2" id="1">
+      and its sub menus would look like:
+        <param label="Sub Menu 1" parent="1" url="http://www.iceinc.com">
+      and so on ...
+
+      NB: Please note the numbering of id attribute of the parent menus,
+      the first one starts at 0 and increments up by 1! and so on ...
+    )
+-->
+<iceinc:vert_menu id="VertMenu" width="500" height="300">
+	<param label="Geek Stuff" id="0">
+	<param label="SlashDot" parent="0" url="http://slashdot.org">
+	<param label="FreshMeat" parent="0" url="http://freshmeat.net">
+	<param label="ThinkGeek" parent="0" url="http://www.thinkgeek.com">
+	<param label="Flash Stuff" id="1">
+	<param label="Macromedia Flash!" parent="1" url="http://www.flash.com">
+	<param label="Moock.org" parent="1" url="http://www.moock.org">
+	<param label="IE stuff" id="2">
+	<param label="Microsoft" parent="2" url="http://www.microsoft.com">
+	<param label="IE Home" parent="2" url="http://www.microsoft.com/ie">
+</iceinc:vert_menu>
+</BODY>
+</HTML>

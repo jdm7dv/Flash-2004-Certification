@@ -1,0 +1,39 @@
+Movie Report
+------------
+
+Frame #    Frame Bytes    Total Bytes    Page
+-------    -----------    -----------    ---------------
+    1         12394          12394        loading
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+loading                          50          1885
+
+Symbol                     Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+!                                 0             0
+r                                 0             0
+s                                 0             0
+t                                 0             0
+c                                 0             0
+loading dragOBJ                   0             0
+n                                 0            31
+o                                 0            31
+w                                 0            31
+l                                 0            31
+A                                 0            31
+D                                 0            31
+i                                 0            31
+g                                 0            31
+dummy                             0             0
+period                            0            93
+2                                 0            31
+0                                 0            31
+K                                 0            31
+
+Font Name                  Bytes       Characters
+-----------------------    --------    -----------
+Century Gothic Bold Italic    779        .02ADGIKLNOW
+Arial Italic                 1538         19abdefghilorstvy
+Arial Bold Italic            2937         !"'*,./:@FGMNOTUYabcdefghijklmnoprstuvwy
+Arial Bold                   2569         "&'.01:>DHOXY_abcdefgijklmnoprstuvwxy

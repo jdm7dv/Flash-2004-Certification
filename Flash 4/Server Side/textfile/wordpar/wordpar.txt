@@ -1,0 +1,1 @@
+wordpar=This+is+a+test+case+of+Flash+4's+ability+to+read+text+files+from+a+remote+system+and+display+it+in+a+text+box.

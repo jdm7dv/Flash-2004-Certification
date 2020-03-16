@@ -1,0 +1,75 @@
+Set Variable: "rebound" = 8
+Set Variable: "incr" = 100
+Set Variable: "grav" = 0.92
+Set Variable: "lim" = 1
+Set Variable: "incrx" = 3
+Set Variable: "incry" = incrx
+Set Variable: "gravx" = 0.45
+Set Variable: "gravy" = gravx
+Set Variable: "i" = 1
+FS Command ("showmenu", "false")
+Set Variable: "max" = 25
+Loop While (i < Max +1)
+Duplicate Movie Clip ("ball0", "ball" & i , (max + 1) - i)
+Set Variable: "is" = i * 10 
+Set Property ("ball" & i, X Position) = Random( 600)
+Set Property ("ball" & i, Y Position) = Random( 600)
+Set Property ("ball" & i, X Scale) = i * 10
+Set Property ("ball" & i, Y Scale) = i * 10
+Set Variable: "xs" = (400 - (i*20)) * 2 + 20
+Set Property ("ball" & i & "/tw/root1", X Scale) = xs
+Set Property ("ball" & i & "/tw/root1", Y Scale) = xs
+Set Property ("ball" & i & "/tw/root2", X Scale) = 0
+Set Property ("ball" & i & "/tw/root2", Y Scale) = 0
+Set Property ("ball" & i & "/tw/root3", X Scale) = 0
+Set Property ("ball" & i & "/tw/root3", Y Scale) = 0
+Set Property ("ball" & i, Alpha) = 150 - ((i/Max) * 100) 
+Set Property ("ball" & i, Alpha) = 100
+If (i > 20)
+Begin Tell Target ("ball" & i & "/tw/")
+Go to and Stop ("tail")
+End Tell Target
+End If
+Set Variable: "i" = i + 1
+End Loop
+Set Property ("ball0", Visibility) = 0
+Call ("setfins")
+Go to and Play ("begin")
+
+-----Part Two------
+
+If (xdir < lim and xdir > -lim)
+Set Variable: "xdir " = xdir * rebound
+End If
+If (ydir < lim and ydir > -lim)
+Set Variable: "ydir " = ydir* rebound
+End If
+Set Variable: "xb" = GetProperty("ball" & 0, _x)
+Set Variable: "yb" = GetProperty("ball" & 0, _y)
+Set Variable: "xm" = GetProperty("tracker", _x)
+Set Variable: "ym" = GetProperty("tracker", _y)
+Set Variable: "xdist" = xm - xb
+Set Variable: "ydist" = ym - yb
+Set Property ("ball" & 0, X Position) = xb+ xdir
+Set Property ("ball" & 0, Y Position) = yb + ydir
+Set Variable: "xdir" = xdist/incr + xdir * grav
+Set Variable: "ydir" = ydist/incr + ydir * grav
+Set Variable: "i" = 1
+Loop While (i < Max+1)
+Set Variable: "distx" = eval("distx" & i)
+Set Variable: "disty" = eval("disty" & i)
+Set Variable: "x1" = GetProperty("ball" & i, _x)
+Set Variable: "y1" = GetProperty("ball" & i, _y)
+Set Variable: "x2" = GetProperty("ball" & (i-1), _x)
+Set Variable: "y2" = GetProperty("ball" & (i-1), _y)
+Set Variable: "distx" = (x2 - x1)/incrx + (distx * gravx)
+Set Variable: "disty" = (y2 - y1)/incry + (disty * gravy)
+Set Property ("ball" & i, X Position) = x1+ distx
+Set Property ("ball" & i, Y Position) = y1+ disty
+Set Variable: "distx" & i = distx
+Set Variable: "disty" & i = disty
+Set Variable: "i" = i + 1
+End Loop
+
+
+ 

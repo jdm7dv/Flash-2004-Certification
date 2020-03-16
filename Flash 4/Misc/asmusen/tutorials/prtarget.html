@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#000099" vlink="#0066FF" alink="#000099">
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4">Using 
+  Tell Target</font></b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><a href="prtarget.html" target="window">printable 
+  version</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><img src="fla.gif" width="20" height="20" align="top"> 
+  Downloadable <a href="motion.zip" target=""></a><a href="target.zip" target="">FLA</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Tell target is probably 
+  the most advanced and useful feature in Flash. Also one of the most tricky to 
+  learn though... What it does, is that it sends information to the timeline inside 
+  a movieclip. This enables you to e.g. create a movie clip, which you can start 
+  and stop using seperate buttons.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">This tutorial will help 
+  you create a music loop which you can stop from your main movie.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 1.</b> Create a 
+  movie clip containing the music loop (labelled &quot;music&quot;), and a blank 
+  frame (labelled &quot;blank&quot;).</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 2.</b> From the 
+  library, drag this symbol into your main movie, and place it.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 3.</b> Click properties 
+  for this movie clip, and in the definition tab, fill the &quot;Instance name&qUnt; 
+  dialog with &quot;music&quot;.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 4.</b> Make an on 
+  and an off for the music, and place them where you wan't them.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 5.</b> Click properties 
+  for the on button, and give it the action &quot;Tell Target&quot;:</font></p>
+<p><tt>On(Release)<br>
+  Begin Tell Target [/music]<br>
+  Goto and Play [music]<br>
+  End Tell Target<br>
+  End on</tt></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Now your on button will 
+  tell the music movie clip, to go and play where you labelled it &quot;music&quot;. 
+  This will start the music.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 6.</b> Repeat the 
+  process for the off button:</font></p>
+<p><tt>On(Release)<br>
+  Begin Tell Target [/music]<br>
+  Goto and Stop [blank]<br>
+  End Tell Target<br>
+  End on</tt></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">This will make your off 
+  button tell your music movie clip to go and stop where you labelled a blank 
+  frame &quot;blank&quot;. So it stops the music.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Voila. That's it.</font></p>
+</body>
+</html>

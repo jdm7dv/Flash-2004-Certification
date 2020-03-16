@@ -1,0 +1,174 @@
+A {
+	COLOR: #0000aa; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #0000aa; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #dd0000; TEXT-DECORATION: underline
+}
+A.nav {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.nav:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.nav:hover {
+	COLOR: #ffc400; TEXT-DECORATION: underline
+}
+A.nav:active {
+	COLOR: #ffc400; TEXT-DECORATION: underline
+}
+A.links {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.links:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.links:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.links:active {
+	COLOR: #dd0000; TEXT-DECORATION: underline
+}
+A.sidebar {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+A.sidebar:visited {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+A.sidebar:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A.announce {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A.announce:visited {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A.announce:hover {
+	COLOR: #ffc400; TEXT-DECORATION: underline
+}
+.header {
+	BORDER-RIGHT: 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: 1px solid; PADDING-LEFT: 3px; FONT-WEIGHT: bold; FONT-SIZE: 13px; PADDING-BOTTOM: 3px; BORDER-LEFT: 1px solid; COLOR: #000000; PADDING-TOP: 3px; BORDER-BOTTOM: 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffdb5a
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 20px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #0000dd; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.pnorm {
+	FONT: bold 13px Verdana, Arial,Helvetica,Sans Serif; COLOR: #000000; BACKGROUND-COLOR: #f4ca00
+}
+.pover {
+	FONT: bold 13px Verdana, Arial,Helvetica,Sans Serif; COLOR: #ffffff; BACKGROUND-COLOR: #f4ca00
+}
+.fkheader {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #339966
+}
+.iviewleft1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Verdana,Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #33ff99; TEXT-ALIGN: left
+}
+.iviewleft2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Verdana,Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #33cc66; TEXT-ALIGN: left
+}
+.iviewright1 {
+	FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Verdana,Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #33ff99
+}
+.iviewright2 {
+	FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Verdana,Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #33cc66
+}
+DIV.main {
+	MARGIN-LEFT: 30px
+}
+.text {
+	FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.txt_sidebar {
+	FONT-SIZE: 12px; LINE-HEIGHT: 12pt; FONT-FAMILY: MS Sans Serif,News Gothic MT,arial,helvetica
+}
+DIV.notes {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 12px; BORDER-LEFT-COLOR: #000000; BACKGROUND: #eeeeee; BORDER-BOTTOM-COLOR: #000000; PADDING-BOTTOM: 10px; MARGIN-LEFT: 40px; BORDER-TOP-COLOR: #000000; MARGIN-RIGHT: 40px; PADDING-TOP: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BORDER-RIGHT-COLOR: #000000
+}
+DIV.code {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 12px; BACKGROUND: #ffffff; PADDING-BOTTOM: 10px; MARGIN-LEFT: 40px; COLOR: #3366cc; MARGIN-RIGHT: 40px; PADDING-TOP: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.smalltext {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.link {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.descript {
+	FONT-SIZE: 13px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TD.home {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TD.nav {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #0089cd; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+DIV.margin {
+	MARGIN-LEFT: 60px
+}
+DIV.next {
+	BORDER-RIGHT: 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 13px; PADDING-BOTTOM: 2px; BORDER-LEFT: 1px solid; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffdb5a
+}
+UL {
+	FONT-SIZE: 12px; BACKGROUND: #ffffff; MARGIN-LEFT: 60px; COLOR: #000000; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif; LIST-STYLE-TYPE: disc
+}
+SUP.new {
+	FONT-SIZE: 12px; COLOR: #ff0000; FONT-FAMILY: "arial", "helvetica", sans-serif
+}
+SUP.pop {
+	FONT-SIZE: 12px; BACKGROUND: #ffc400; COLOR: #000000; FONT-FAMILY: "arial", "helvetica", sans-serif
+}
+SMALL.date {
+	FONT-SIZE: 10px; BACKGROUND: #ffffff; COLOR: #666666; FONT-FAMILY: "arial", "helvetica", sans-serif
+}
+SMALL.numlinks {
+	FONT-SIZE: 10px; BACKGROUND: #ffffff; COLOR: #666666; FONT-FAMILY: "arial", "geneva", sans-serif
+}
+STRONG.search {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}
+SMALL.more {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}
+STRONG.error {
+	FONT-WEIGHT: bold; BACKGROUND: #ffffff; COLOR: #ff0000; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}
+STRONG.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}
+TD.catlist {
+	FONT-SIZE: 12px; BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}
+PRE {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 12px; BACKGROUND: #ffffff; PADDING-BOTTOM: 10px; MARGIN-LEFT: 40px; COLOR: #3366cc; MARGIN-RIGHT: 40px; PADDING-TOP: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.code {
+	FONT-SIZE: 12px; BACKGROUND: #ffffff; COLOR: #3366cc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+SMALL.update {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; BACKGROUND: #ffffff; COLOR: #999999; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}
+P.grandtotal {
+	FONT-SIZE: 10px; BACKGROUND: #ffffff; MARGIN-LEFT: 60px; COLOR: #000000; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}
+TD.myfk {
+	FONT-SIZE: 10px; BACKGROUND: #fff599; COLOR: #000000; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}
+UL.font {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; MARGIN-LEFT: 10px; FONT-FAMILY: "verdana", "arial", "geneva", sans-serif
+}

@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>ad_banner</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<p><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+ ID=ad_banner WIDTH=468 HEIGHT=60>
+    <PARAM NAME=movie VALUE="ad_banner.swf">
+    <PARAM NAME=loop VALUE=false>
+    <PARAM NAME=menu VALUE=false>
+    <PARAM NAME=quality VALUE=high>
+    <PARAM NAME=bgcolor VALUE=#FFFFFF>
+    <EMBED src="ad_banner.swf" loop=false menu=false quality=high bgcolor=#FFFFFF  WIDTH=468 HEIGHT=60 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+    </EMBED> 
+  </OBJECT> </p>
+<table width="468" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td> 
+      <p><font face="Arial, Helvetica, sans-serif"><b><font color="#0066CC">Printable 
+        Ad Banner Example</font></b><br>
+        <i>Jeremy Clark, Michael Richards</i><br>
+        <i>01.04.2000</i></font></p>
+      <p><font face="Arial, Helvetica, sans-serif"> <u><font color="#666666"><b>Overview:</b></font></u> 
+        <br>
+        <font size="-1">This sample movie demonstrates what can be achieved with 
+        the new printing features in Flash Player. This example </font><font face="Arial, Helvetica, sans-serif"><font size="-1">of 
+        a </font><font face="Arial, Helvetica, sans-serif"><font size="-1">Flash-based 
+        advertising banner</font></font> <font size="-1">could appear on any rich 
+        media advertising service today</font></font><font size="-1">. The subject 
+        of the banner is Macromedia Flash 4 </font><font face="Arial, Helvetica, sans-serif"><font size="-1">and 
+        offers additional value to the viewer beyond traditional banner ads. This 
+        banner is not only extremely small, a mere 12.1k, but is capable of printing 
+        a 2-page product sheet without requiring the initial download of artwork, 
+        or forcing the viewer to view the document before printing. The</font></font><font size="-1"> 
+        two-page product sheet about Macromedia Flash 4 was designed in Macromedia 
+        FreeHand 8 then directly exported to .SWF.</font></font></p>
+      <p><font face="Arial, Helvetica, sans-serif"> <u><font color="#666666"><b>How 
+        this movie works:</b></font></u><br>
+        <font size="-1"> After the ad finishes animating, a button appears and 
+        the movie stops. When this button is pressed, there is an ActionScript 
+        attached to the print button which detects the version of the Flash Player 
+        to make sure the player supports printing.This is done through a reserved 
+        variable called <b>$version</b> and is specific to Flash Player version 
+        4 (see below for additional information). The ActionScript in the print 
+        button checks for the minor version number 20 or above (Flash Player version 
+        4,0,20 and above supports printing). As long as the viewers installed 
+        version of Flash Player supports printing, the script then tells an invisible 
+        movieclip, "/print_clip" (contained in the "print_clip" layer just outside 
+        the movie clip on the workspace), to play. By default, this movieclip 
+        is stopped on frame one. Once it is instructed to play, the second frame 
+        loads the external techsheet Flash movie, "tech_sheet.swf," into an invisible 
+        movieclip called "/print_clip/tech_sheet." The movieclip then loops between 
+        frames 3 and 4 until the movie has fully loaded. Since the tech_sheet.swf 
+        file is over 150k in size, we must make sure it is loaded before attempting 
+        to print it. If the movie is not loaded completely, it will not print 
+        appropriately. We test to see if the movie has loaded by comparing the 
+        number of frames loaded to the actual number of frames in the movie we 
+        are attempting to load. This is done by testing a variable called &quot;movieloaded&quot; 
+        and if the _framesloaded property of the loaded movie. The &quot;movieloaded&quot; 
+        variable is initially set to FALSE and is not set to TRUE until the condition 
+        of _totalframes to _framesloaded is satisfied. For specific ActionScript 
+        syntax for this detection, see frame 3 of movieclip &quot;print_clip&quot;. 
+        Once the techsheet is loaded, the movieclip will go to label "print" where 
+        the print Action is executed. The print command consists of the "GetURL" 
+        Action with "print:" in the URL field and "tech_sheet" in the Window field. 
+        "print:" will tell Flash Player to print, and "tech_sheet" is the target 
+        instance name of the movieclip to print. When the button is pressed, if 
+        the viewer's Flash Player version number is not 20 or above, it will tell 
+        the "/print_clip" movieclip to go to and play "no_print" which gives a 
+        message indicating that they need the newest player, and a few seconds 
+        later will be automatically redirected to the Macromedia Download Center 
+        to obtain the latest version.</font></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="-1"> Lastly, the tech_sheet.fla 
+        file contains the tech sheet artwork exported from FreeHand. The first 
+        two frames contain the first and second pages. Both frames have the "#p" 
+        label designating printability. The third frame contains a solid black 
+        box. This designates the printing area of the document. The "#b" label 
+        in this frame specifies the print areas of the movie. <b>NOTE</b>: FreeHand 
+        exports the movie at the page size of the document, including all margins. 
+        Using this technique to setup the print area ensures that final output 
+        remains as close to the originally intended size as possible.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><u><font color="#666666"><b>About 
+        the $version reserved variable:</b></font></u><br>
+        <font size="-1"> The <b>$version</b> reserved variable was introduced 
+        in the initial version of Flash Player 4. This variable allows developers 
+        to detect what iteration of the Flash Player 4 a viewer has installed, 
+        then can execute the appropriate action such as redirect to the Macromedia 
+        Download Center, display an appropriate warning message, or automatically 
+        change the content or functionality being viewed. <b>NOTE: </b>This variable 
+        is only active in the main timeline of a Flash movie. If accessing this 
+        variable from a nested movie, use the traditional conventions for referencing 
+        named objects from the main timeline by using &quot;/:&quot; This variable 
+        is especially important as the new printing capabilities were not introduced 
+        until Flash Player 4.0.20 for Macintosh and Flash Player 4.0.25 for Windows 
+        and allows developers to design the appropriate detection mechanism in 
+        their content. The format of the text string returned when requesting 
+        the $version is as follows:</font></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="-1"><b>PLA 4,0,25,0</b></font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="-1"><b>PLA</b> represents 
+        the platform the viewer is running. Return values with either be MAC for 
+        Macintosh, WIN for Windows or UNIX for Linux, IRIS and Solaris versions 
+        of Flash Player.</font></p>
+      <p><font face="Arial, Helvetica, sans-serif" size="-1"><b>4</b> represents 
+        the major version of Flash Player running.<br>
+        <b>0</b> currently represents nothing<br>
+        <b>25</b> represents the minor version number of Flash Player running<br>
+        <b>0</b> currently represents nothing</font></p>
+      </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

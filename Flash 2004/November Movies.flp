@@ -1,0 +1,6 @@
+﻿<flash_project name="November Movies" version="1">
+    <project_folder name="Polygon Movie" expanded="true">
+        <project_file path="./Polygon Movie/Polygons.FH11" filetype="FH11" />
+        <project_file path="./Polygon Movie/Polygons.fla" filetype="fla" profile="" />
+    </project_folder>
+</flash_project>

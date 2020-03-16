@@ -1,0 +1,35 @@
+Thanks Jessica and Byron for your responses!My project is a trivia game. I have 100 movie clip questions which I am calling randomly. I would like to avoid the same question coming up twice in a 60 second
+round of play. thanks again Julie
+
+[This message has been edited by Julie (edited 01-23-2000).]
+
+ 
+ 
+wooozle
+Member
+Total posts: 198  01-23-2000 10:17 AM   Who?   URL   Mail   Quote   Edit   IP  
+
+--------------------------------------------------------------------------------
+I don't know how your movies are structured, but here is the basic logic:
+SetVariables:
+MovieCheck1 = 0, MovieCheck2 = 0, MovieCheck3 = 0, etc. until MovieCheck 100.
+
+When a movie is loaded, set the corresponding MovieCheck# = 1. For example, question 5 was called, so MovieCheck5 = 1.
+
+ChooseMovie = Random(100)+1
+Loop While(Eval("MovieCheck" & ChooseMovie) = 1)
+ChooseMovie = Random(100)+1
+EndLoop
+
+Then, Load Movie ("MovieCheck" & ChooseMovie)
+
+
+What's Happening? - All the MovieCheck# variables are set to 0 at the beginning. This lets you know that none of the movies have been chosen. 
+
+Everytime you choose a movie, you set its corresponding MovieCheck# to "1", which means that it's been used. When you randomly choose another movie, the loop will continue until you choose a movie whose MovieCheck# is still "0".
+
+-Sam
+
+
+ 
+ 

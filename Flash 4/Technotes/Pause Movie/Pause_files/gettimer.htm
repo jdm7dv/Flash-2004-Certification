@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0065)http://www.macromedia.com/support/flash/ts/documents/gettimer.htm -->
+<HTML><HEAD><TITLE>Macromedia - How to use GetTimer to pause a movie</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=Last-Modified content="Tue, 21 Dec 1999 23:09:40 GMT">
+<META http-equiv=Version content=1.0 name=DOCVERSION>
+<META content="Tue, 21 Dec 1999 23:09:40 GMT" name=LASTMODIFIED>
+<META content="Tips &amp; Tricks" name=AREA>
+<META content=Yes name=PUBLIC>
+<META content="Matt Wobensmith" name=AUTHOR>
+<META content=1 name=IMPORTANCE>
+<META 
+content="gettimer, time, ActionScript, advanced, pause, stop, wait, timeout, kiosk, countdown" 
+name=KEYWORDS>
+<META content=All name=PLATFORM>
+<META content=Flash name=PRODUCT>
+<META content=4 name=VERFROM>
+<META content=99 name=VERTO>
+<META content="4 and above" name=VERSIONS>
+<META content="How to use GetTimer to pause a movie" name=DOCTITLE>
+<META content=14207 name=DOCID>
+<META content=Done! name=STATUS>
+<META content="December 21, 1999" name=DATECREATED>
+<META content="December 24, 1999" name=DATEMODIFIED>
+<META content=TechNote name=KIND>
+<META content="MSHTML 5.50.3825.1300" name=GENERATOR></HEAD>
+<BODY vLink=#660033 aLink=#000000 link=#333399 bgColor=#ffffff><!-- begin flash TechNotes top fragment -->
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=bottom noWrap><IMG height=17 src="gettimer_files/pixel.gif" 
+      width=18 border=0><A target=_top href="http://www.macromedia.com/"><IMG 
+      height=12 alt=macromedia src="gettimer_files/crumb_macromedia_blue.gif" 
+      width=99 border=0></A><IMG height=12 alt=: 
+      src="gettimer_files/crumb_colon.gif" width=15 border=0><A target=_top 
+      href="http://www.macromedia.com/software/"><IMG height=12 alt=products 
+      src="gettimer_files/crumb_products_blue.gif" width=69 border=0></A><IMG 
+      height=12 alt=: src="gettimer_files/crumb_colon.gif" width=15 border=0><A 
+      target=_top href="http://www.macromedia.com/software/flash/"><IMG 
+      height=12 alt=flash src="gettimer_files/crumb_flash_blue.gif" width=40 
+      border=0></A><IMG height=12 alt=: src="gettimer_files/crumb_colon.gif" 
+      width=15 border=0><A target=_top 
+      href="http://www.macromedia.com/support/flash/"><IMG height=12 alt=support 
+      src="gettimer_files/crumb_support_blue.gif" width=61 border=0></A><IMG 
+      height=12 alt=: src="gettimer_files/crumb_colon.gif" width=15 border=0><A 
+      href="http://www.macromedia.com/support/flash/technotes.html"><IMG 
+      height=12 alt=technotes src="gettimer_files/crumb_technotes_blue.gif" 
+      width=79 border=0></A></TD></TR></TBODY></TABLE><IMG height=30 
+src="gettimer_files/pixel.gif" width=2 border=0>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="10%"><IMG height=60 alt="flash icon" 
+      src="gettimer_files/flash_logo.gif" width=72 border=0> <IMG height=2 
+      src="gettimer_files/pixel.gif" width=120 border=0> </TD>
+    <TD vAlign=top width="90%"><IMG height=34 alt="flash technotes" 
+      src="gettimer_files/head_technotes.gif" width=134 border=0> 
+      <HR width="100%" noShade SIZE=1>
+<!-- at this point we are inside a table inside a table -->
+      <H3><FONT face="Arial, Helvetica, sans-serif" size=+1><B>How to use 
+      GetTimer to pause a movie</B></FONT></H3>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Product: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>Flash</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Platform: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>All</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Versions: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>4 and above</FONT> </TD>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>ID: 
+            </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>14207</FONT> </TD></TR></TBODY></TABLE>
+      <P><!--mm-contents --><FONT face="Arial, Helvetica, sans-serif" 
+      size=3><B>Use GetTimer to measure time <FONT size=4><BR></FONT></B><FONT 
+      size=4><FONT face="Geneva, Arial, Helvetica" size=2>GetTimer is a function 
+      in Flash that can be used to check how long the Flash movie has been 
+      playing, in milliseconds. Flash's internal time begins counting when the 
+      movie begins playing, and increases as long as the movie is playing. The 
+      timer cannot be reset while the movie is running. However, using variables 
+      and scripting, </FONT><FONT face="Arial, Helvetica, sans-serif" 
+      size=3><FONT size=4><FONT face="Geneva, Arial, Helvetica" size=2>the 
+      GetTimer function makes it possible to synch </FONT></FONT><FONT 
+      face="Geneva, Arial, Helvetica" size=2></FONT></FONT><FONT 
+      face="Geneva, Arial, Helvetica" size=2>actions to a specific measure of 
+      time. </FONT></FONT><FONT face="Geneva, Arial, Helvetica" 
+      size=2><BR><BR>The example below provides steps that will create a new 
+      document with a movie clip that serves as a "timer". The movie clip 
+      controls the main timeline, when the specified time has elapsed. To use 
+      this technique in an existing movie, apply the logic from this example, 
+      integrating the components into the existing project. <BR><BR>Scripting 
+      can be confusing for beginners, so it is recommended that users study the 
+      available </FONT><FONT face="Arial, Helvetica, sans-serif" size=3><FONT 
+      face="Geneva, Arial, Helvetica" size=2>documentation on</FONT></FONT> 
+      <FONT face="Geneva, Arial, Helvetica" size=2>Flash actions and 
+      expressions. Detailed information can be found in the Flash manual, as 
+      well as online at the <A 
+      href="http://www.macromedia.com/support/flash/">Flash support center</A>. 
+      Information on using GetTimer is also available on page 199 of the Flash 4 
+      manual. <BR></FONT></FONT>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>This 
+      tutorial will construct a pause mechanism using:</B></FONT> 
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=15 height=21><IMG height=10 alt=">" 
+            src="gettimer_files/tri.gif" width=14 vspace=2></TD>
+          <TD vAlign=top width=361 height=21><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>Frame actions 
+            using <FONT color=#666666>Set Variable</FONT> and the <FONT 
+            color=#666666>If</FONT> statement.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=15 height=18><IMG height=10 alt=">" 
+            src="gettimer_files/tri.gif" width=14 vspace=2></TD>
+          <TD vAlign=top width=361 height=18>
+            <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>A movie 
+            clip that acts as a timer.</FONT> </P></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Prepare the 
+      main movie:<BR><BR></B></FONT><FONT 
+      face="Geneva, Arial, Helvetica, sans-serif" color=#666666 size=2><B>Note: 
+      </B></FONT><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>This 
+      is the beginning of a new movie. It would be helpful to put something on 
+      the stage for illustrative purposes, to show that the movie is playing. 
+      Adding text to the stage that says "this is our movie" is 
+      sufficient.</FONT> <FONT face="Geneva, Arial, Helvetica, sans-serif" 
+      size=2><B><BR><BR></B></FONT>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=26 height=" "><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">1</FONT> </B></FONT></TD>
+          <TD vAlign=top width=353 height=" ">
+            <P><FONT face="Geneva, Arial, Helvetica" size=2>In a new document, 
+            add four blank frames to the timeline so that it has a grand total 
+            of five frames. </FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=26 height=" "><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">2</FONT> </B></FONT></TD>
+          <TD vAlign=top width=353 height=" ">
+            <P><FONT face="Geneva, Arial, Helvetica" size=2>In the fifth frame, 
+            add a keyframe and assign it the action <FONT 
+            color=#666666>Stop</FONT>.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=26 height=" "><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">3</FONT> </B></FONT></TD>
+          <TD vAlign=top width=353 height=" "><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>After this action 
+            has been assigned, assign the action <FONT color=#666666>Set 
+            Variable</FONT>. In the Variable field, type <FONT 
+            color=#666666>stoppedtime</FONT><FONT color=#000000>.</FONT> In the 
+            Value field, type <FONT color=#666666>GetTimer</FONT> and set this 
+            field to "Expression".</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=26 height=" "><FONT 
+            face="Geneva, Arial, Helvetica" size=2></FONT></TD>
+          <TD vAlign=top width=353 height=" "><FONT 
+            face="Geneva, Arial, Helvetica" color=#666666 
+            size=2>Note:</FONT><FONT face="Geneva, Arial, Helvetica" size=2> All 
+            variables in this TechNote (except for <FONT 
+            color=#666666>GetTimer</FONT>) can be renamed at the user's 
+            discretion. For the purposes of this tutorial, they have been given 
+            names that are intuitive and relate to their function in this 
+            example. <BR><BR>When asked to type in the name of a variable, do 
+            not type in the periods or punctuation used to end sentences in this 
+            TechNote.</FONT></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE width=550 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=417 src="gettimer_files/stopped.gif" 
+        width=550></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=26 height=44><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B><FONT 
+            face="Geneva, Arial, Helvetica, san-serif">4</FONT> </B></FONT></TD>
+          <TD vAlign=top width=353 height=44>
+            <P><FONT face="Geneva, Arial, Helvetica" size=2>Select the fifth 
+            frame of the movie. Choose the text tool from the toolbar and create 
+            some text on the stage to alert the user when the movie is stopped. 
+            </FONT></P></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><B>Make a 
+      movie clip that counts time:</B></FONT> </P>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=18 height=32><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>5</B></FONT></TD>
+          <TD vAlign=top width=361 height=32><FONT 
+            face="Geneva, Arial, Helvetica" size=2>From the menu, choose Insert 
+            &gt; New Symbol and create a movie clip. <BR>Name it "timer 
+            clip".</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=18 height=35><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>6</B></FONT></TD>
+          <TD vAlign=top width=361 height=35><FONT 
+            face="Geneva, Arial, Helvetica" size=2>In the first frame of the 
+            movie clip ("timer clip"), add the action <FONT color=#666666>Set 
+            Variable</FONT>. The Variable name should be <FONT 
+            color=#666666>stoppedtime</FONT> and the Value should be <FONT 
+            color=#666666>..:stoppedtime</FONT><FONT color=#000000>.</FONT> Set 
+            the Value field to "Expression".</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=18 height=48><FONT size=2></FONT></TD>
+          <TD vAlign=top width=361 height=48><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" color=#666666 
+            size=2></FONT><FONT face="Geneva, Arial, Helvetica" size=2>This 
+            allows us to check the value of the this variable from the main 
+            timeline. Since variables in Flash only exist in their own timeline, 
+            we're creating another variable with the same name that will exist 
+            inside this movie clip only. <BR><BR>While the name "stoppedtime" is 
+            the same, this is referring to two different variables - one in the 
+            main timeline and one in the current timeline, which is a movie 
+            clip. The additional punctuation "..:" is a way to refer to the 
+            variable in the main timeline.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=18 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>7</B></FONT></TD>
+          <TD vAlign=top width=361 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2>In this same menu, add 
+            another <FONT color=#666666>Set Variable</FONT> action. The Variable 
+            name should be <FONT color=#666666>pausetime</FONT>, and its Value 
+            should be the amount of time, in milliseconds, that the movie should 
+            pause for. For this example, we've chosen 10000 milliseconds, or ten 
+            seconds.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=18 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>8</B></FONT></TD>
+          <TD vAlign=top width=361 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2>In this same menu, add the 
+            <FONT color=#666666>If</FONT> action. In the Condition field, write 
+            the following: <BR><BR><FONT 
+            color=#666666>GetTimer&gt;=pausetime+stoppedtime</FONT></FONT><FONT 
+            face="Geneva, Arial, Helvetica" color=#999999 size=2> </FONT><FONT 
+            face="Geneva, Arial, Helvetica" size=2><BR><BR>This is comparing 
+            <FONT color=#666666>GetTimer</FONT> (the current amount of time the 
+            movie has been running) with a figure that represents the desired 
+            time to elapse before the movie is to play again. </FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=18 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>9</B></FONT></TD>
+          <TD vAlign=top width=361 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2>Additionally, in this menu, 
+            add the action <FONT color=#666666>Tell Target</FONT>. For the 
+            Target, enter a forward slash ("/") to indicate the main timeline. 
+            Add another action to be inserted between the Tell Target statements 
+            - <FONT color=#666666>Play</FONT>.</FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=18 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>10</B></FONT></TD>
+          <TD vAlign=top width=361 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2>The final action to add to 
+            this frame is another<FONT color=#666666> Set Variable</FONT> 
+            action. The name of the variable should be <FONT 
+            color=#666666>counter</FONT>. In the Value field, type this 
+            information exactly: <BR><BR><FONT 
+            color=#666666>Int(((pausetime+stoppedtime)-GetTimer)/1000) 
+            </FONT><BR><BR>Set this field to "Expression". This creates a number 
+            that will be equal to the paused time remaining. It will act as a 
+            "countdown". The figure is being divided by 1000 to get a number in 
+            seconds, and the <FONT color=#666666>Int</FONT> function is being 
+            used to round this figure to the nearest 
+        integer.</FONT></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica" size=2><B>Your actions should 
+      look like this: </B></FONT></P>
+      <TABLE width=550 border=0>
+        <TBODY>
+        <TR>
+          <TD><FONT face="Geneva, Arial, Helvetica" size=2><B><IMG height=417 
+            src="gettimer_files/timerclip.gif" 
+        width=550></B></FONT></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE height=131 cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=26 height=22><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>11 </B></FONT></TD>
+          <TD vAlign=top width=353 height=22><FONT 
+            face="Geneva, Arial, Helvetica" size=2>Click OK to close the Frame 
+            Properties dialog box. </FONT></TD></TR>
+        <TR>
+          <TD vAlign=top width=26 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>12</B></FONT></TD>
+          <TD vAlign=top width=353 height=48>
+            <P><FONT face="Geneva, Arial, Helvetica" size=2>Add one blank frame 
+            (not a keyframe) to the timeline, to give this movie clip a total of 
+            two frames. <BR><BR><FONT color=#666666>Note:</FONT> This movie clip 
+            must have at least two frames to allow it to loop and repeat the 
+            actions in the first frame. It won't work without this 
+            step.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=26 height=22><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>13 </B></FONT></TD>
+          <TD vAlign=top width=353 height=22>
+            <P><FONT face="Geneva, Arial, Helvetica" size=2>Choose the text tool 
+            on the tool bar, and select the text field modifier button on the 
+            bottom of the tool bar. On the stage inside this symbol, add a text 
+            field.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=26 height=52><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>14 </B></FONT></TD>
+          <TD vAlign=top width=353 height=52><FONT 
+            face="Geneva, Arial, Helvetica" size=2>Once the text field has been 
+            created, choose Modify &gt; Text Field from the menu. Assign this 
+            text field the variable name <FONT color=#666666>counter</FONT>. 
+            Click OK when this is done. This will allow the variable <FONT 
+            color=#666666>counter</FONT> to appear in this text field as the 
+            movie clip plays.</FONT></TD></TR></TBODY></TABLE>
+      <P><FONT face="Geneva, Arial, Helvetica" size=2><B>Return to the main 
+      timeline: </B></FONT></P>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=26 height=35><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>15 </B></FONT></TD>
+          <TD vAlign=top width=353 height=35>
+            <P><FONT face="Geneva, Arial, Helvetica" size=2>Exit this movie clip 
+            and return to the main timeline. In frame 5 of the main timeline, 
+            drag a copy of the timer clip symbol from the library. 
+        </FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=26 height=48><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>16 </B></FONT></TD>
+          <TD vAlign=top width=353 height=48>
+            <P><FONT face="Geneva, Arial, Helvetica" size=2>Add a new keyframe 
+            to the timeline in the sixth frame. Delete the timer clip from the 
+            stage. Change the text from the previous frame to indicate the movie 
+            is now playing.</FONT></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=26 height=18><FONT 
+            face="Geneva, Arial, Helvetica" size=2><B>17 </B></FONT></TD>
+          <TD vAlign=top width=353 height=18><FONT 
+            face="Geneva, Arial, Helvetica" size=2>Add a <FONT 
+            color=#666666>Stop</FONT> action to the sixth frame to conclude this 
+            example.</FONT></TD></TR></TBODY></TABLE><BR><FONT 
+      face="Geneva, Arial, Helvetica" size=2><B><BR>Try this 
+      sample<BR></B></FONT>
+      <TABLE cellPadding=4 width=400>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=26 height=213><FONT 
+            face="Geneva, Arial, Helvetica" size=2>
+            <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#3,0,0,0 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width=395 
+            height=200><PARAM NAME="SRC" VALUE="gettimer/pause.swf">
+                            <embed src="gettimer/pause.swf" 
+            pluginspage="http://www.macromedia.com/shockwave/download/" 
+            type="application/x-shockwave-flash" width="395" height="200">       
+             </embed>       </OBJECT></FONT></TD></TR></TBODY></TABLE><BR>
+      <P><FONT face="Arial, Helvetica, sans-serif" size=3><B>Additional 
+      information<BR></B></FONT><FONT face="Geneva, Arial, Helvetica" size=2>For 
+      more information on scripting and variables, see <A 
+      href="http://www.macromedia.com/support/flash/ts/documents/varpath.htm">How 
+      to target variables in a Flash movie</A> (TechNote 14087).</FONT></P>
+      <P>&nbsp;</P><!--mm-end-contents -->
+      <P>
+      <TABLE cellSpacing=1 cellPadding=5 border=1>
+        <TBODY>
+        <TR>
+          <TD colSpan=2><FONT face="Arial, Helvetica, sans-serif" 
+            size=2><B>Keywords: </B></FONT><FONT 
+            face="Geneva, Arial, Helvetica, sans-serif" size=2>gettimer, time, 
+            ActionScript, advanced, pause, stop, wait, timeout, kiosk, 
+            countdown</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Last 
+            updated: </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" 
+            size=2>December 24, 1999</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Author: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Matt 
+            Wobensmith</FONT> </TD></TR>
+        <TR>
+          <TD><FONT face="Arial, Helvetica, sans-serif" size=2><B>Area: 
+            </B></FONT></TD>
+          <TD><FONT face="Geneva, Arial, Helvetica, sans-serif" size=2>Tips 
+            &amp; Tricks</FONT> </TD></TR></TBODY></TABLE><!-- insert a little gap after the bottom table --><BR>&nbsp; 
+<!-- close the table row that the body is in --></P></TD></TR>
+  <TR>
+    <TD vAlign=bottom align=right width="10%"><A target=_top 
+      href="http://www.macromedia.com/buy/"><IMG height=21 alt=buy 
+      src="gettimer_files/buy.gif" width=67 border=0></A><BR><A 
+      href="http://www.macromedia.com/support/search/powersearch.html"><IMG 
+      height=21 alt="power search" src="gettimer_files/search.gif" width=90 
+      border=0></A><BR></TD>
+    <TD>
+      <CENTER>
+      <HR width="100%" noShade SIZE=1>
+      <BR><FONT face="Arial, Helvetica" size=-1>[<A target=_top 
+      href="http://www.macromedia.com/">home</A>] [<A target=_top 
+      href="http://www.macromedia.com/software/">products</A>] [<A target=_top 
+      href="http://www.macromedia.com/support/">support</A>] [<A target=_top 
+      href="http://www.macromedia.com/downloads/">downloads</A>] [<A target=_top 
+      href="http://www.macromedia.com/macromedia/">about us</A>] [<A 
+      target=mm_window 
+      href="http://www.macromedia.com/OUTGOING/http://www.shockwave.com/">shockwave.com</A>] 
+      [<A target=_top href="http://www.macromedia.com/help/">help</A>] <BR><FONT 
+      size=-2><A href="http://www.macromedia.com/help/copyright.html">Trademarks 
+      Copyright</A> ©1995-2000 Macromedia, Inc. All rights reserved. <A 
+      href="http://www.macromedia.com/help/privacy.html">Privacy policy</A>. 
+      </FONT><BR></FONT></CENTER></TD></TR></TBODY></TABLE><!-- whitespace required to workaround Nav 3.04 Win scrollbar bug --><BR></BODY></HTML>

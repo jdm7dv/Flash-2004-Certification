@@ -1,0 +1,28 @@
+<HTML xmlns:MMflash>
+<?IMPORT namespace="MMflash" implementation="calendar.htc">
+<html>
+<head>
+<title>Charts and graphs</title>
+<style>
+body {font-family: sans-serif}
+</style>
+
+<script>
+
+</script>
+</head>
+<body>
+
+<p><a href="#" onclick="sna.all[4].value = 10">change</a>
+</p>
+<p>The calendar tags takes a width, height and color attribute. The tag is a container that contains a series of event tags that correspond to events on dates in the calendar. The event tag takes these attributes: date, color, href, target, and label. HREF and TARGET correspond to the anchor tag in function. COLOR indicates the color of the day on the calendar determined by the DATE attribute. Label is the message printed out at the bottom of the calendar.
+</p>
+<MMflash:calendar id="sna" width="201" height="400" color="red">
+   <event date="6/23/2000" color="yellow" href="http://www.captaincursor.com/" target="_blank" label="Taylor posts to his weblog" />
+   <event date="6/1/2000" color="red" href="http://www.captaincursor.com/" target="_blank" label="Taylor posts to his weblog" />
+   <event date="6/15/2000" color="blue" href="http://www.captaincursor.com/" target="_blank" label="Taylor posts to his weblog" />
+   <event date="6/20/2000" color="green" href="http://www.captaincursor.com/" target="_blank" label="Taylor posts to his weblog" />
+</MMflash:calendar>
+
+</body>
+</html>

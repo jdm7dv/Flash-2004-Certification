@@ -1,0 +1,25 @@
+<HTML XMLNS:MMflash>
+<?IMPORT namespace="MMflash" implementation="org_chart.htc">
+<HTML>
+<HEAD>
+<TITLE>Org Chart</TITLE>
+<STYLE>
+	body {font-family: sans-serif}
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<MMflash:org_chart id="Interpol8OrgChart" width="100%" height="375" label="Organizational Structure">
+	<PARAM id="1" job="President" person="Daniella Bouchard">
+	<PARAM id="2" job="VP, Sales" person="Sheena Horning" parent="1">
+	<PARAM id="3" job="VP, Production" person="Shamir Nataraj" parent="1">
+	<PARAM id="4" job="Executive Assistant" person="David Smith" parent="1">
+	<PARAM id="5" job="Manager, Sales" person="Jessica Porter" parent="2">
+	<PARAM id="6" job="Manager, Production" person="Mary Apostolides" parent="3">
+	<PARAM id="7" job="Salesperson" person="Jeff Brown" parent="5">
+	<PARAM id="8" job="Salesperson" person="Wendy Schaffer" parent="5">
+	<PARAM id="9" job="Salesperson" person="Inez Kim" parent="5">
+	<PARAM id="10" job="Programmer" person="Shelley Sutherland" parent="6">
+	<PARAM id="11" job="Programmer" person="Mike Passov" parent="6">
+</MMflash:org_chart>
+</BODY>
+</HTML>

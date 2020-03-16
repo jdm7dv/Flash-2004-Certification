@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.enetserve.com/tutorials/detecttemplate.html -->
+<HTML><HEAD><TITLE>Clocks Tutorial Page</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2014.210" name=GENERATOR></HEAD>
+<BODY bgColor=#000000 link=#ffff00 text=#ffff00 vLink=#ff8040>
+<FORM action="" method=get><BR><BR>
+<H3 align=left>Flash Detection for Netscape and MS Internet Explorer</H3>Change 
+the following:<BR>
+<LI>yourshocked.html - This will be the URL of your flash site. 
+<LI>yournonshocked.html - This will be the URL of your non Flash site. <BR><TEXTAREA cols=90 name=HTMLArea rows=20 wrap=VIRTUAL>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;&lt;/TITLE&gt;
+&lt;SCRIPT LANGUAGE="JavaScript"&gt;
+&lt;!-- Hide this script from old browsers
+if ((navigator.appName == "Microsoft Internet Explorer" &amp;&amp;
+    navigator.appVersion.indexOf("Mac") == -1 &amp;&amp; 
+    navigator.appVersion.indexOf("3.1") == -1) ||
+    (navigator.plugins &amp;&amp; navigator.plugins["Shockwave Flash"]) || 
+	navigator.plugins["Shockwave Flash 2.0"]){
+//Load a pre-defined HTML page with Shockwave in it into the browser window.
+	window.location='yourshocked.html';
+	}
+else {
+	//Load a pre-defined HTML page without Shockwave into the browser window.
+	window.location='yournonshocked.html';
+	}
+// --&gt;
+&lt;/SCRIPT&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+		</TEXTAREA>
+<P></P>
+<P></FORM></P></LI></BODY></HTML>

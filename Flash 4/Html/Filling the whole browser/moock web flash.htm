@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.moock.org/webdesign/flash/fillthewindow.html -->
+<HTML><HEAD><TITLE>moock>> web>> flash</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="macromedia, flash, javascript, fscommand" name=keywords>
+<SCRIPT language=JavaScript>
+
+function preventframing() {
+	if (self.parent.frames.length != 0)
+	self.parent.location="http://www.moock.org/webdesign/flash/";
+}
+
+
+
+<!--
+// first, check if the image property exists
+        if (document.images) {            
+// next, preload the rollover state of the image, and assign it an 'on' name
+            uparrow1on = new Image();      
+            uparrow1on.src = "../../images/icon-uparrow-hilite.gif"; 
+// then, preload the off state of the image, and assign it an 'off' name
+            uparrow1off = new Image(); 
+            uparrow1off.src = "../../images/icon-uparrow.gif";
+         }
+// this function changes images to the rollover state (assigned above)
+// it's called by the ONMOUSEOVER attribute of the HREF element
+function rollon(imgName) {
+        if (document.images) {
+            document[imgName].src = eval(imgName + "on.src");
+        }
+}
+// this function changes images to the off state (assigned above)
+// it's called by the ONMOUSEOUT attribute of the HREF element
+function rolloff(imgName) {
+        if (document.images) {
+            document[imgName].src = eval(imgName + "off.src");
+        }
+}
+// -->
+</SCRIPT>
+
+<META content="MSHTML 5.00.2919.6307" name=GENERATOR></HEAD>
+<BODY bgColor=#999966 link=#ffffff onload=preventframing() vLink=#333333>
+<TABLE border=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=right bgColor=#663300 vAlign=bottom><FONT color=#999966 
+      face=Verdana,arial,helvetica><B>MACROMEDIA FLASH</B></FONT>&nbsp;&nbsp;<A 
+      href="http://www.moock.org/webdesign/flash/index.html" 
+      onmouseout="rolloff('uparrow1')" onmouseover="rollon('uparrow1')"><IMG 
+      alt="back to" border=0 height=13 name=uparrow1 
+      src="moock web flash_files/icon-uparrow.gif" width=13></A></TD></TR>
+  <TR>
+    <TD align=right bgColor=#996600><FONT color=#330000 
+      face=Verdana,Arial,Helvetica size=-1><B>FILLING THE WHOLE BROWSER 
+      WINDOW</B></FONT>&nbsp;&nbsp;<IMG border=0 height=13 
+      src="moock web flash_files/icon-uparrow-placeholder.gif" 
+  width=13></TD></TR></TBODY></TABLE>
+<P><BR></P>
+<TABLE border=0 cellSpacing=5>
+  <TBODY>
+  <TR>
+    <TD colSpan=3 height=15><B><FONT color=#ffffff 
+      face=Verdana,arial,helvetica size=+1>filling the whole browser window with 
+      a flash movie</FONT></B></TD></TR>
+  <TR>
+    <TD></TD>
+    <TD colSpan=2><FONT face=arial,helvetica size=-1><FONT 
+      size=+1><B>problem:</B></FONT> flash movies don't fill the entire viewing 
+      space of the browser window. movies have an undesired gutter between the 
+      flash movie and the edges of the browser, as seen in figure 1, below.<BR>
+      <P align=center>figure 1: gutter (shown in white) around a flash 
+      movie.<BR><IMG alt="Screenshot: Gutter Around flash Movie" border=0 
+      src="moock web flash_files/flash-gutter1.gif"></P>
+      <P><BR><BR><FONT size=+1><B>solutions:</B></FONT> if you want to get rid 
+      of the gutter shown above, you have two options that work in most 
+      browsers. 
+      <DL>
+        <DT><B>solution one: single-frame frameset</B> 
+        <DD>with the correct attributes set in a frameset, the content of pages 
+        in frames can stretch to within 1 or 2 pixels (depending on the browser) 
+        of the edge of the browser window. flash movies embedded in pages which 
+        reside in framesets will stretch nearly to the edge of the browser 
+        window. here's what the above flash movie looks like when it is in a 
+        frameset:<BR>
+        <P align=center>figure 2: minimal gutter around a framed flash 
+        movie.<BR><IMG 
+        alt="Screenshot: Minimal Gutter Around a Framed flash Movie" border=0 
+        src="moock web flash_files/flash-gutter2.gif"></P>
+        <P>here's how to do it:<BR>step 1)<BR>make the page in which your movie 
+        will be embedded. when embedding the movie, set the width, height, and 
+        scale for the desired effect<EM></EM>. there are a few options:</P>
+        <OL>
+          <LI><FONT color=#333333 face="Courier New">HEIGHT="100%" WIDTH="100%" 
+          SCALE="EXACTFIT"</FONT><BR>this combination forces every edge of your 
+          movie to the edge of the browser, and distorts your movie to fit the 
+          aspect ratio (proportion of height to width) of the browser. 
+          <LI><FONT color=#333333 face="Courier New">HEIGHT="100%" WIDTH="100%" 
+          SCALE="SHOWALL"</FONT><BR>this combination fits the width or height of 
+          your movie to the smaller of either the width or height of the 
+          browser. your movie will not be cropped or skewed to fit the browser 
+          window, but there will be borders on either the top and bottom or 
+          right and left of your movie. 
+          <LI><FONT color=#333333 face="Courier New">HEIGHT="100%" WIDTH="100%" 
+          SCALE="NOBORDER"</FONT><BR>this combination adjusts either the height 
+          or width of your movie to the larger of either the width or height of 
+          the browser. when the dimensions of your movie do not match the 
+          dimensions of the browser, your movie will be cropped on either the 
+          top and bottom or on both sides. </LI></OL>
+        <P>your embedded movie code will look something like this:</P><PRE><FONT size=-1>
+&lt;OBJECT
+	CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+	WIDTH="100%"
+	HEIGHT="100%"
+	CODEBASE="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"&gt;
+	&lt;PARAM NAME="MOVIE" VALUE="moviename.swf"&gt;
+	&lt;PARAM NAME="PLAY" VALUE="true"&gt;
+	&lt;PARAM NAME="LOOP" VALUE="false"&gt;
+	&lt;PARAM NAME="QUALITY" VALUE="high"&gt;
+	&lt;PARAM NAME="SCALE" VALUE="showall"&gt;
+
+	&lt;EMBED
+	SRC="yourmovie.swf"
+	WIDTH="100%"
+	HEIGHT="100%"
+	PLAY="true" 
+	LOOP="false"
+	QUALITY="high"
+	SCALE="showall" 
+	PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=Shockwaveflash"&gt;
+	&lt;/EMBED&gt;
+&lt;/OBJECT&gt;
+</FONT>
+</PRE>
+        <P>step 2) <BR>make the single frame frameset. actually, it's a two 
+        frame frameset, but you only use one of the frames for displaying your 
+        page. the first frame is set to 100% of the browser area, and the second 
+        frame is set to "*" (meaning whatever is left, which is nothing). set 
+        the <FONT color=#333333 face="Courier New">SRC</FONT> of the first frame 
+        to your movie page, and the <FONT color=#333333 
+        face="Courier New">SRC</FONT> of the second page to an empty HTML page 
+        with a matching <FONT color=#333333 face="Courier New">BGCOLOR</FONT>. 
+        then you'll need to specify the right attributes on the frameset and the 
+        frames so the contents of your movie frame extend to the edges of the 
+        browser. <BR>here's the code with the correct settings: <PRE><FONT size=-1>
+&lt;HTML&gt;
+
+	&lt;HEAD&gt;
+	&lt;TITLE&gt;your flash movie title&lt;/TITLE&gt;
+	&lt;/HEAD&gt;
+	
+	&lt;FRAMESET ROWS="100%,*" FRAMESPACING="0" FRAMEBORDER="NO" BORDER="0"&gt;
+		&lt;FRAME NAME="top" SRC="yourmovie.html" FRAMEBORDER="0" BORDER="0"
+		MARGINWIDTH="0" MARGINHEIGHT="0" SCROLLING="NO"&gt;
+
+		&lt;FRAME NAME="hidden" SRC="empty.html" FRAMEBORDER="0" BORDER="0"
+		MARGINWIDTH="0" MARGINHEIGHT="0" SCROLLING="NO"&gt;
+	&lt;/FRAMESET&gt;
+
+&lt;/HTML&gt;
+</FONT>
+</PRE>
+        <P><B><I>notes</I>:</B> <BR>1) as an attribute of <FONT color=#333333 
+        face="Courier New">&lt;FRAMESET&gt;, FRAMEBORDER</FONT> is either true 
+        or false, but as an attribute of <FONT color=#333333 
+        face="Courier New">&lt;FRAME&gt;, FRAMEBORDER</FONT> is a pixel value 
+        for setting the width of the space between the browser edge and the page 
+        content. <BR>2) on <FONT color=#333333 
+        face="Courier New">&lt;FRAMESET&gt;, BORDER</FONT> refers to the amount 
+        of pixels between frames, while on <FONT color=#333333 
+        face="Courier New">&lt;FRAME&gt;, BORDER</FONT> is simply a now-obsolete 
+        version of <FONT color=#333333 face="Courier New">FRAMEBORDER</FONT>. 
+        <BR>3) the <FONT color=#333333 face="Courier New">SCROLLING</FONT> 
+        attribute <I>must</I> be set to <FONT color=#333333 
+        face="Courier New">NO</FONT> otherwise, if the content is not larger 
+        than the browser window, a gap will appear on the right and bottom of 
+        the frame where the scrollbars would normally appear. 
+        <P>STEP 3)<BR>to remove the most possible amount of gutter in ie4 and 
+        netscape4, you can optionally set the margin values on the movie page 
+        (<FONT color=#333333 face="Courier New">yourmovie.html</FONT>). 
+        netscape4+ uses <FONT color=#333333 
+        face="Courier New">MARGINHEIGHT</FONT> and <FONT color=#333333 
+        face="Courier New">MARGINWIDTH</FONT>, while IE4+ uses <FONT 
+        color=#333333 face="Courier New">TOPMARGIN, BOTTOMMARGIN, LEFTMARGIN, 
+        RIGHTMARGIN</FONT>. To accomodate both browsers, use: <BR><FONT 
+        color=#333333 face="Courier New">&lt;BODY MARGINWIDTH="0" 
+        MARGINHEIGHT="0" LEFTMARGIN="0" RIGHTMARGIN="0" TOPMARGIN="0" 
+        BOTTOMMARGIN="0"&gt;</FONT> 
+        <P><B><I>so why doesn't it work in IE 4.5 on mac?</I></B> <BR>in ie 4.5 
+        on mac flash movies that are placed on an html page using the standard 
+        (and correct) object/embed nesting are pushed down from the top of the 
+        page. i have not heard a definitive explanation of why from either 
+        macromedia or microsoft. the only possible workaround to the problem is 
+        to remove the object tag altogether, using only the embed to place the 
+        flash movie on the page. while this approach does remove the gap, it may 
+        cause problems for windows versions of ie. in a discussion of whether or 
+        not the workaround is advisable, john dowdell of macromedia tech support 
+        stated: <BR><BR><I>"It would be bad. IE/Win32 uses ActiveX Controls much 
+        more frequently than it uses Netscape plugins. Most people using 
+        IE/Win32 browsers have the flash ActiveX Control. If a page does not 
+        have an OBJECT tag then to my knowledge those browsers will not intuit 
+        that they should use a particular ActiveX Control to render that EMBED 
+        content. <BR><BR>Rephrased, I'd definitely expect that accommodating the 
+        IE4.5/Mac audience by removing the OBJECT tag would inconvenience the 
+        IE/Win32 audience, which has a *significant* installed base on most 
+        sites."</I> <BR><BR>the only option, then, would be to create a special 
+        page just for mac ie users which is only displayed if the user is 
+        running ie 4.5 on mac (use a javascript to detect that). my 
+        recommendation is actually just to leave the gap in ie 4.5/mac because 
+        they're a relatively small percentage of normal web traffic. </P>
+        <DT><BR><B>solution two: link directly to the flash movie (.swf)</B> 
+        <DD>instead of embedding the flash movie in an html page, you can link 
+        directly to it and let the browser display it inline. so, if you have a 
+        page "home.html" that links to your movie page "mymovie.html" and 
+        "mymovie.html" contains your movie "mymovie.swf", you would simply 
+        change the link on "home.html" from <FONT color=#333333 
+        face="Courier New">&lt;A HREF="mymovie.html"&gt;view my 
+        movie&lt;/A&gt;</FONT> to <FONT color=#333333 face="Courier New">&lt;A 
+        HREF="mymovie.swf"&gt;view my movie&lt;/A&gt;</FONT>. this method is 
+        easier to implement than the frames method, but should be used only 
+        after flash has been successfully detected, as the browser has no access 
+        to any of the html instructions that normally tell it where to get the 
+        plugin if the plugin is not present. 
+        <P>if you use this method it's also important to remember to set the 
+        QUALITY of your movie to "high" from inside your movie using the "Toggle 
+        High Quality" action (flash 3+ only). on your first keyframe, select 
+        frame properties, then click the actions tab, and add a "Toggle High 
+        Quality" action (shown 
+below).<BR></FONT></P></DD></DL></TD></TR></TBODY></TABLE>
+<P align=center><IMG alt="Screenshot: Toggle High Quality" 
+src="moock web flash_files/flash-togglequality.gif"></P><FONT 
+face=arial,helvetica>
+<DL>
+  <DT><FONT size=+1><B>revision history</B></FONT> 
+  <DD>?? ??, 1998: posted. 
+  <DD>august 12, 1999: added information about ie 4.5 on mac. 
+  <DD>october 08, 1999: reworded solution two to make it more clear. also fixed 
+  a typo. 
+  <DD>october 22, 1999: fixed another typo. </DD></DL></FONT></BODY></HTML>

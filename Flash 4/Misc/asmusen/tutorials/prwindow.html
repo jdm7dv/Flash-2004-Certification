@@ -1,0 +1,34 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#000099" vlink="#0066FF" alink="#000099">
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4">Opening 
+  a new browser window</font></b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><img src="../images/full.gif" width="14" height="14"></font><font face="Arial, Helvetica, sans-serif" size="2"><img src="../images/full.gif" width="14" height="14"></font><font face="Arial, Helvetica, sans-serif" size="2"><img src="../images/full.gif" width="14" height="14"></font><font face="Arial, Helvetica, sans-serif" size="2"><img src="../images/empty.gif" width="14" height="14"></font><font face="Arial, Helvetica, sans-serif" size="2"><img src="../images/empty.gif" width="14" height="14"></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Opening a new browser window, 
+  can greatly improve user-friendlyness of your site. Read here, if you want to 
+  know how it's done.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 1.</b> Insert this 
+  JavaScript in the head of your main page:</font></p>
+<blockquote>
+  <p><tt>&lt;script language="JavaScript"><br>
+    function MM_openBrWindow(theURL,winName,features) { window.open(theURL,winName,features);<br>
+    }<br>
+    &lt;/script> </tt></p>
+</blockquote>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 2.</b> Now, go to 
+  the button, in your Flash movie, which you wan't to give the action to open 
+  a browser window. Click &quot;Properties&quot; for it.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 3.</b> Assign a 
+  &quot;Get URL&quot; command for this button, containging the following:</font></p>
+<blockquote>
+  <p><tt>javascript:MM_openBrWindow('file.html','Windownameinoneord','toolbar=yes,location=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,width=300,height=200')</tt></p>
+</blockquote>
+<p><b><font face="Arial, Helvetica, sans-serif" size="2">Step 4.</font></b><font face="Arial, Helvetica, sans-serif" size="2"> 
+  Make sure, that when you Aftershock your Flash movie, check the box called &quot;Enable 
+  browser scripting and FS Command&quot;.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Voila!<br><br>NOTE: Use this feature with care, people tend to get annoyed from popup windows. Limit the use...</font></p>
+</body>
+</html>

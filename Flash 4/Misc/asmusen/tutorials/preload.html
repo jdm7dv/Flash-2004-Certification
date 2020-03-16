@@ -1,0 +1,56 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#003535" text="#FFFFFF" link="#00CC66" vlink="#00CC66" alink="#00CC66">
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4">Creating 
+  a preloader</font></b></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/full.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"><img src="../images/empty.gif" width="14" height="14"></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><a href="prpreload.html" target="window">printable 
+  version</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><img src="fla.gif" width="20" height="20" align="top"> 
+  Downloadable <a href="motion.zip" target=""></a><a href="target.zip" target=""></a><a href="track.zip" target=""></a><a href="preload.zip" target="">FLA</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Would you also like to create 
+  a preloader, so that when the user enters your page, you can show him a tiny 
+  animation or welcome text as the site loads? It's not so difficult. This is 
+  how it's done:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 1.</b> Make a tiny 
+  animation you want to show as the site loads, at the beginning of your Flash 
+  movie.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 2.</b> At the last 
+  keyframe of the animation, make a Goto command to the first frame of the animation.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Now it loops.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 3.</b> Create a 
+  keyframe between the preloader and your site contents. Dump everything you want 
+  the preloader to load into this keyframe. Label it &quot;Preload&quot;.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">This is what it means, and 
+  why you should do it: &quot;If frame is loaded&quot; can only load one frame 
+  (we labelled the frame &quot;preload&quot;). When this frame is loaded, Flash 
+  will go on. Problem is, that YOU want to load the ENTIRE site, not just ONE 
+  FRAME. Solution: If the library was loaded, then most of the site would be loaded 
+  also, as all of your site uses what you have in your library... Therefore: &quot;Dump&quot; 
+  everything from the library into ONE FRAME. Label this frame Preload, and tell 
+  Flash to load THIS frame. Because when this frame is loaded, the entire library 
+  is loaded!</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">I've been asked to explain 
+  &quot;DUMP&quot;: I simply meant, you &quot;drag&quot; all of your symbols into 
+  ONE keyframe in ONE layer. Open your library by pressing CTRL + L, and then 
+  select the first symbol. With your left mousebutton, drag and drop the symbol 
+  onto the stage, anywhere. It doesn't matter, as the movie will not show this 
+  frame. It will only load it, and then skip it. Repeat this process for every 
+  symbol in your library (moving onto the scene). Thereby, you have dumped everything 
+  from your library to one keyframe. This is useful, because then you will only 
+  have to preload ONE frame, to have your entire LIBRARY preloaded.</font></p>
+<p><img src="preload.gif" width="461" height="250"></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 3.</b> At the first 
+  keyframe of the animation you created first, assign the action called &quot;If 
+  frame is loaded&quot;. Now click &quot;Label&quot;, and choose the label of 
+  the keyframe you just named &quot;Preload&quot;.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><b>Step 4.</b> Immediately 
+  after the &quot;If frame is loaded&quot; action, and before the &quot;End frame 
+  loaded&quot;, enter a &quot;Goto&quot; command you your main site content.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">That's it!</font></p>
+</body>
+</html>

@@ -1,0 +1,2 @@
+	
+The line above this one contains the "blank space" used in these sample source files.  Simply select it, copy it, and paste it as needed.
