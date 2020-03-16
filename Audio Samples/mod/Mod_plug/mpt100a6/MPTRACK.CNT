@@ -1,0 +1,32 @@
+:Base mptrack.hlp
+1 Introduction
+2 Software Information=html_intro.htm_software
+2 System Requirements=html_intro.htm_system
+2 Contact / Technical Support=html_intro.htm_contact
+2 Technical Information=html_intro.htm_techinfo
+2 Tracker features=html_intro.htm_features
+2 History=html_intro.htm_history
+
+2 Effects=html_effects.htm_top
+
+1 Menus
+2 File menu=html_file.htm_top
+2 Player menu=html_player.htm_top
+2 Edit menu=html_edit.htm_top
+2 View menu=html_view.htm_top
+2 Insert menu=html_insert.htm_top
+2 Window menu=html_window.htm_top
+2 Help menu=html_help.htm_top
+1 Keyboard
+2 Basic Keyboard Shortcuts=html_keyboard.htm_basic
+2 Keyboard shortcuts in the Global window=html_keyboard.htm_globals
+2 Keyboard shortcuts in the Pattern window=html_keyboard.htm_patterns
+2 Keyboard shortcuts in the Sample window=html_keyboard.htm_samples
+2 Keyboard shortcuts in the Instrument window=html_keyboard.htm_instruments
+1 Frequently Asked Questions (FAQ)
+2 IT Filters don't work=html_faq.htm_unsupported
+2 When I save my song as a MOD, the default tempo is lost=html_faq.htm_modtempo
+2 How can I record samples in ModPlug Tracker ?=html_faq.htm_sampler
+2 Why is the note being played a long time after I pressed the key?=html_faq.htm_latency
+2 Could you add more sample formats for import?=html_faq.htm_smpfmt
+2 How can I load the left or right channel of a stereo WAV file?=html_faq.htm_smpstereo
